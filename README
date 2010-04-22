@@ -6,8 +6,8 @@ but for now ...
 cd ~
 ln -s ~/github_repo/jakewendt/my
 
-ln -s ~/my/vim          .vim
-ln -s ~/my/vimrc        .vimrc
-ln -s ~/my/bashrc       .bashrc
-ln -s ~/my/bash_profile .bash_profile
+ln -s ~/my/init/vim          .vim
+ln -s ~/my/init/vimrc        .vimrc
+ln -s ~/my/init/bashrc       .bashrc
+ln -s ~/my/init/bash_profile .bash_profile
 

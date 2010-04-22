@@ -19,6 +19,7 @@
 ":map! [B j
 ":map! [C l
 ":map! [D h
+"	Rather than typing Ctrl-V then Up-Arrow, <up> (and other macros) works
 :map! <up>    <esc>k
 :map! <down>  <esc>j
 :map! <right> <esc>l
@@ -29,6 +30,14 @@ autocmd BufReadPost *
 \ if line("'\"") > 0 && line ("'\"") <= line("$") |
 \   exe "normal g'\"" |
 \ endif
+
+
+
+
+"
+"	Nothing below this is used
+"
+
 
 "
 ""this is for java, c++,c# can reshape as necessary
