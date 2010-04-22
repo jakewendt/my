@@ -1,0 +1,81 @@
+
+"	link this file as ~/.vimrc
+
+" kind of annoying
+":set foldmethod=syntax
+
+:syntax enable
+:set number
+
+":set softtabstop=0
+:set ts=2
+":set expandtab
+
+" ~/.vim/colors/wendt.vim
+:colorscheme wendt
+
+" map movement keys to "Escape" before moving
+":map! [A k
+":map! [B j
+":map! [C l
+":map! [D h
+:map! <up>    <esc>k
+:map! <down>  <esc>j
+:map! <right> <esc>l
+:map! <left>  <esc>h
+
+" Jump to last position
+autocmd BufReadPost *
+\ if line("'\"") > 0 && line ("'\"") <= line("$") |
+\   exe "normal g'\"" |
+\ endif
+
+"
+""this is for java, c++,c# can reshape as necessary
+"":ab ff <ESC>^d$ifor(int i=0;i<<ESC>pi.length;i++){<CR><CR>}//end for loop over array <ESC>pi[i]<ESC>==k==k==ji<TAB>
+"
+""
+""	Some abbreviations I found online (as examples)
+""  ibl   for inserting a block
+"ab ibl   {<ESC>o}<ESC>O
+""  def   for inserting "#define" at the start of line
+"ab def   #define
+""  inc   for inserting "#include" at start of line
+"ab inc   #include
+""  else if (  for inserting else if block
+"ab else if () {  else if () {<ESC>o}<ESC>k$2hi
+""  mfor   for inserting "for" statement
+"ab mfor   for (;;) {<ESC>o}<ESC>kwa
+""  mif    for inserting "if" statement
+"ab mif    if () {<ESC>o}<ESC>k$2hi
+""  mwhile for inserting "while" statement
+"ab mwhile while () {<ESC>o}<ESC>k$2hi
+""  mmain  for inserting "main" routine
+"ab mmain  main (argc,argv) <ESC>oint argc;<ESC>ochar *argv;<ESC>o{<ESC>o}<ESC>O
+"
+"	some html abbreviations
+"	What's the diff between iab and ab?
+"iab <t <target name="%"></target><esc>F%s<c-o>:call getchar()<cr>
+"iab <a   <a title="" href="%"></a><esc>F%s<c-o>:call getchar()<cr>
+"iab <img <img alt="" src="%" /><esc>F%s<c-o>:call getchar()<cr>
+"iab <s   <script language="JavaScript" type="text/javascript" src="%"></script><esc>F%s<c-o>:call getchar()<cr>
+"iab <h 
+"	\<html>
+"	\<cr><head>
+"	\<cr><title>My Title</title>
+"	\<cr></head>
+"	\<cr><body>
+"	\<cr>%
+"	\<cr></body>
+"	\<cr></html><esc>2k0C<tab><c-o>:call getchar()<cr>
+"
+"<lin doesn't work (is reserved or something?)
+"iab link <link rel="stylesheet" type="text/css" href="%" /><esc>F%s<c-o>:call getchar()<cr>
+"
+""	map some ruby shortcuts
+"iab <%   <%= X -%><esc>FXs<c-o>:call getchar()<cr>
+"iab def 
+"	\def
+"	\<cr>%
+"	\<cr>end<esc>1k0C<tab><c-o>:call getchar()<cr>
+
