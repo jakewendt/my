@@ -10,4 +10,5 @@ ln -s ~/my/init/vim          .vim
 ln -s ~/my/init/vimrc        .vimrc
 ln -s ~/my/init/bashrc       .bashrc
 ln -s ~/my/init/bash_profile .bash_profile
+ln -s ~/my/init/autotest     .autotest
 
