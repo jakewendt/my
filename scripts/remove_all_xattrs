@@ -1,0 +1,11 @@
+#!/bin/sh
+
+for each in $@
+do
+	echo 'Processing: ' $each
+	for attr in `xattr $@`
+	do
+		echo ' Attribute: ' $attr
+		xattr -d $attr $each
+	done
+done

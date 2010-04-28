@@ -1,0 +1,15 @@
+#!/bin/sh
+
+for each in $@
+do
+	# I suppose that I could use 'basename' here
+	filename=`echo $each | awk -F/ '{print $NF}'`
+	path=`echo $each | awk -F/ '{for (i=1;i<=NF-1;i++) printf ("%s/", $i);}'`
+	date=`date +%Y%m%d.%H%M%S`
+
+	mkdir -p ${path}versions
+	cp $each ${path}versions/$filename.$date
+	chmod -w ${path}versions/$filename.$date
+#	shift is used to modify $@, so why am I trying to use it here?
+#	shift
+done
