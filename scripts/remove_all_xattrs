@@ -1,11 +1,13 @@
 #!/bin/sh
 
-for each in $@
+while (($#))
 do
+	each=$1
 	echo 'Processing: ' $each
-	for attr in `xattr $@`
+	for attr in `xattr "$each"`
 	do
 		echo ' Attribute: ' $attr
-		xattr -d $attr $each
+		xattr -d $attr "$each"
 	done
+	shift
 done
