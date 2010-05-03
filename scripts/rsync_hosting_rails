@@ -11,5 +11,6 @@ rsync -avz \
 	--exclude="prod/sites/googleearth" \
 	--exclude="svn_old_server" \
 	--exclude=".trash" \
+	--exclude="prod/sites/*/log/*.log" \
 	--progress \
 	jakewen@jakewendt.com: ~/hosting_rails/
