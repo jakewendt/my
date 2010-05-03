@@ -1,0 +1,15 @@
+#!/bin/sh
+
+rsync -avz \
+	--exclude=".cpan" \
+	--exclude=".cpanel" \
+	--exclude=".cpcpan" \
+	--exclude="etc" \
+	--exclude=".gem" \
+	--exclude="mail" \
+	--exclude=".MirrorSearch" \
+	--exclude="prod/sites/googleearth" \
+	--exclude="svn_old_server" \
+	--exclude=".trash" \
+	--progress \
+	jakewen@jakewendt.com: ~/hosting_rails/
