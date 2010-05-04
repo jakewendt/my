@@ -1,0 +1,161 @@
+#!/bin/csh -f
+
+#	add alias to ensure that this .exrc is used when running vi
+#	don't think you can with vi, but i think that vim can
+
+echo "my.aliases"
+
+alias ,			'cd $dot'
+alias .			'pwd'
+alias ..		'cd ..'
+alias cd..		'cd ..'
+alias cdwd		'cd `pwd`'
+alias cwd		'echo $cwd'
+alias cdh		'cd `\pwd`' # escaped because pwd is diff on ops/off networks
+alias cdp		'cd $PWD'   # useful for when NFS handle is stale...
+alias cdl		'cd `\ls -1t | head -1`'
+
+alias files		'find \!:1 -type f -print'	# files x => list files in x
+alias ff		'find . -name \!:1 -print'	# ff x => find file named x
+alias line		'sed -n '\''\!:1 p'\'' \!:2'	# line 5 file => show line 5 of file
+
+unalias ls
+
+#
+#	If I install GNU's ls, then --color=auto would work
+#
+if ( ( $os =~ SunOS ) || ( $os =~ Linux ) ) then
+	alias ll 		'\ls -l   --color=auto'
+	alias lm			'\ls -lag --color=auto \!* | \more'		#	don't use less (will stop even if not needed)
+	alias l 		lm
+	alias la 		'\ls -al   --color=auto'
+	alias ld 		'\ls -dl   --color=auto'
+	alias isdcops  'ssh -X wendt@\!:0'
+	alias isdcsf1  'ssh -X $USER@\!:0'
+	alias isdcsf2  'ssh -X $USER@\!:0'
+	alias isdcsf3  'ssh -X $USER@\!:0'
+	alias isdcsf4  'ssh -X $USER@\!:0'
+	alias isdcsf5  'ssh -X $USER@\!:0'
+	alias perldoc  '/usr/perl5/bin/perldoc'
+else
+	alias ll       '\ls -lG   '
+	alias lm    '\ls -lag \!* | \more'     #  don't use less (will stop even if not needed)
+	alias l     lm
+	alias la       '\ls -al  '
+	alias ld       '\ls -dl  '
+endif
+
+
+
+
+alias term		'set noglob; unsetenv TERMCAP; eval `tset -s -I -Q - \!*`'
+alias word		'grep \!* /usr/share/dict/web2'	# Grep thru dictionary
+
+# I had to put two double quotes in the next line or the BBEdit colors got screwed
+alias wordcount	'(cat \!* | tr -s '\'' 	.,;:?\!()[]""'\'' '\''\012'\'' |' \
+		'cat -n | tail -1 | awk '\''{print $1}'\'')' # Histogram words
+		
+#alias ssh		'ssh -Y'
+#	alias creator ssh -X -l reduce creator.nrl.navy.mil
+#	alias louis14 ssh -X -l wendt louis14.nrl.navy.mil
+
+#	alias jscp		'scp \!* wendt@isdcul1:.'
+alias more		less
+
+#alias netscape	netscape7\&
+
+
+
+if ( $?TERM_PROGRAM ) then
+	if ("$TERM_PROGRAM" == "Apple_Terminal") then
+	    alias settermtitle 'echo -n "]2;\!:1"'
+	endif
+endif
+
+
+alias c          'repeat 100 echo " "'
+
+alias rp         'set prompt=$HOST":[ $PWD/ ] \\!> "'
+
+alias emacs      'emacs -u gaber -geometry 81x38 -background gainsboro \!* &'
+alias em         'emacs'
+
+alias setisdcenv 'source /isdc/scripts/login --ISDC_ENV=$PWD'
+alias settestenv 'source $GABERSCRIPTS/settestenv.csh'
+
+alias print1     '/unige/gnu/SunOS_5.8/bin/a2ps  -o \!*.ps \!*;  '
+alias print2a    '/unige/gnu/SunOS_5.8/bin/a2ps -2 -o \!*.ps \!*; lpr -o raw \!*.ps ; \rm \!*.ps '   # preferred
+
+alias rm         'rm -i'
+alias rmc        '\rm -f *~ .*~ *#* .*#* ; \rm -f core'
+alias rmold      '\rm -rf nbs*_OLD_200*'  
+alias rmnew      '\rm -rf nbs*_NEW_200*'  
+
+# alias sendmail   '/usr/lib/sendmail -t'
+alias testdata   'cd /isdc/testdata/unit_test'
+alias wintitle   'echo -n "`echo -n x|tr x \\33`]0; \!* "' # !! ^G is special !!
+alias win        'dtterm -title \!* &'
+
+alias fv         'fv \!* &'
+
+alias isdc_dircmp      '~isdc_tst/isdc_dircmp/prod/isdc_dircmp'
+alias VERSION_diff.pl  '~isdc_cms/icms/scripts/VERSION_diff.pl'
+
+# Note: the bell has to be turned on in the Common Desktop Environment.
+alias beep             'xset b; echo \\a; xset -b'
+alias b                'beep'
+
+setenv TERM dtterm       #   I do this for vi reasons.
+alias dtterm     'dtterm -bs -bg white -fn -misc-fixed-medium-r-\*-\*-14-\*-\*-\*-\*-\*-iso8859-1'
+
+
+alias lp 		lpr
+alias a2ps /unige/gnu/SunOS_5.8/bin/a2ps
+alias ln		ln -s		#	never needed regular ln
+
+alias grep		grep -i
+alias xgrep		/usr/xpg4/bin/grep -iE      #  allows xgrep "ll|ls" jakesaliases
+
+#	if awk is really awk
+#alias lpath 'echo $PATH | awk -F: '\''{for (i=1;i<=NF;printf ($i++"\n"))}'\'
+#	if awk is really gawk
+alias lpath 'echo $PATH | awk -F: '\''{for (i=1;i<=NF;i++) printf ($i"\n");}'\'
+alias lecho 'echo \!:1 |  awk -F: '\''{for (i=1;i<=NF;i++) printf ($i"\n");}'\'
+
+if ( $user == "isdc_int" ) then
+	# the following seem to take the same amount of time
+	alias wpline "( cd $ISDC_OPUS; \grep -i \!* nrt*/* pipelinelib/* | gawk -F/ '{print "\$1"}' | uniq -d )"
+	#	example:  wpline ibis_isgr_deadtime   ->  nrtscw
+	alias wpline2 "pushd $ISDC_OPUS; \grep -i \!* nrt*/* pipelinelib/* | gawk -F/ '{print "\$1"}' | uniq -d ; popd"
+	#	example:  wpline2 ibis_isgr_deadtime   ->  nrtscw
+    # alias /usr/local/bin/awk /usr/bin/awk
+endif
+
+
+#  TESTING SECTION 
+
+# would be nice to check the number of args
+# and make sure that the one is a link
+# and the next file actually exists
+alias relink '\rm \!:1; ln -s \!:2 \!:1'	#	point existing link to something else
+
+if ( $os =~ SunOS ) then
+	alias vi		'c; jbackup \!:*; \vim \!:*'
+else
+	alias vi		'c; jbackup \!:*; \vi  \!:*'
+endif
+
+#	alias gtar '/opt/sfw/bin/gtar'
+
+alias rup 'rup -l isdcsf1 isdcsf2 isdcsf3 isdcsf4 isdcsf5'
+
+#alias aaa	'echo \!:1:t'	#	echos only the filename
+#alias aaa	'echo \!:1:h'	#	echos only the pathname (no trailing slash)
+
+
+##
+# Read user's login
+##
+#if (-r "${tcsh_initdir}/login.mine") then
+#       source "${tcsh_initdir}/login.mine"
+#endif

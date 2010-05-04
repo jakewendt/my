@@ -20,5 +20,5 @@ but for now ...
 * Finish importing all other scripts and such
 * clean them up a bit
 * Rename scripts/ bin/ ???
-
+* Get rid of envv
 

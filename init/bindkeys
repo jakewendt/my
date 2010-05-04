@@ -1,0 +1,43 @@
+#!/bin/csh -f
+
+echo "my.bindkeys"
+
+bindkey -v								#	set all default vi commands
+bindkey "^R" i-search-back				#	from Mac default rc
+bindkey -k up history-search-backward	#
+bindkey -k down history-search-forward	#
+
+
+# vi-beginning-of-next-word Vi goto the beginning of next word
+# vi-add Vi enter insert mode after the cursor
+# vi-add-at-eol Vi enter insert mode at end of line
+# vi-chg-case Vi change case of character under cursor and advance one character
+# vi-chg-meta Vi change prefix command
+# vi-chg-to-eol Vi change to end of line
+# vi-cmd-mode Enter vi command mode (use alternative key bindings)
+# vi-cmd-mode-complete Vi command mode complete current word
+# vi-delprev Vi move to previous character (backspace)
+# vi-delmeta Vi delete prefix command
+# vi-endword Vi move to the end of the current space delimited word
+# vi-eword Vi move to the end of the current word
+# vi-char-back Vi move to the character specified backward
+# vi-char-fwd Vi move to the character specified forward
+# vi-charto-back Vi move up to the character specified backward
+# vi-charto-fwd Vi move up to the character specified forward
+# vi-insert Enter vi insert mode
+# vi-insert-at-bol Enter vi insert mode at beginning of line
+# vi-repeat-char-fwd Vi repeat current character search in the same search direction
+# vi-repeat-char-back Vi repeat current character search in the opposite search direction
+# vi-repeat-search-fwd Vi repeat current search in the same search direction
+# vi-repeat-search-back Vi repeat current search in the opposite search direction
+# vi-replace-char Vi replace character under the cursor with the next character typed
+# vi-replace-mode Vi replace mode
+# vi-search-back Vi search history backward
+# vi-search-fwd Vi search history forward
+# vi-substitute-char Vi replace character under the cursor and enter insert mode
+# vi-substitute-line Vi replace entire line
+# vi-word-back Vi move to the previous word
+# vi-word-fwd Vi move to the next word
+# vi-undo Vi undo last change
+# bindkey  vi-zero #	Vi goto the beginning of line
+

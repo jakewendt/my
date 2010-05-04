@@ -1,0 +1,111 @@
+#!/bin/csh
+#
+#       init/my.tcshrc must be sourced by hand
+#		from command line in order to set the !^ 
+#
+# potential problem as this is a relative filename
+#	but can make more permanent if attach it to `pwd`
+# echo "!^"
+# set thisfilename = `echo "!^"`
+# set filename=`echo $thisfilename | awk -F/ '{print $NF}'`
+# set filepath=`echo $thisfilename | awk -F/ '{for (i=1;i<=NF-1;i++) printf ("%s/", $i);}'`
+# echo $filepath
+# echo $filename
+#
+# alias filename  'echo \!:1:t'		#   echos only the filename
+# alias pathname  'echo \!:1:h'		#   echos only the pathname (no trailing slash)
+#
+
+if ( $# == 0 ) then							#	if called 	source init/my.tcshrc
+	#											# 	AND automatically sourced
+	#											#	HOW TO DIFFERENTIATE?
+	# how to determine if ! stuff exists without accessing, which causes a crash?????????????????????????????
+	# defined ( !! ) ?????
+	set tcsh_initdir = `echo !^:h`
+else if ( $# > 0 ) then						#	if called 	source init/my.tcshrc ~/init
+	set tcsh_initdir=`echo $1 | awk -F/ '{for (i=1;i<=NF;i++) printf ("%s/", $i);}'`
+else										#	if not automatically called without a parameter
+#	if ( ( $USER == "jake" ) || ( $USER == "Guest" ) ) then
+#		set tcsh_initdir = /Users/jake/init						#	do not wrap in quotes
+#	else
+#		set tcsh_initdir = /home/isdc/wendt/init		#	do not wrap in quotes
+#	endif
+endif
+
+
+#
+# SET UP HOST-DEPENDENT VARIABLES, ETC.
+#set host = `hostname`
+#set host = `echo $host | tr A-Z a-z`
+#
+#set user=`whoami`
+#
+#setenv HOST "${host}"
+#setenv USER "${user}"
+#
+
+# User ID (csh doesn't set $uid, tcsh does)
+if (! $?uid) set uid = `id | cut -d = -f 2 | cut -d \( -f 1`
+
+# MISCELLANEOUS SETS
+if (! $?version) set version = "unknown"
+
+# Non-root users
+if ($uid) then
+	unset autologout
+else
+	# Avoid closing of Terminal windows when logged in as root
+	if ($?TERM_PROGRAM && $?SHLVL) then
+		if ("$SHLVL" == "1") unset autologout
+	endif
+endif
+
+# ENVIRONMENT SETUP
+
+#if ($?prompt) set interactive	#	seems redundant.  $prompt can be used anywhere $interactive can, right?
+
+############################################################################
+#
+# DEFAULT LOGIN SOURCES ONLY FOR INTERACTIVE SHELLS
+#
+#	seems like using $?version is pointless as if it wasn't set, we set it
+#	and therefore will always be true.???  Way to go Wilfred!
+#	it is needed to ensure that it is a tcsh
+#	I don't really know what the noalias is for though.
+#
+#	if ($?prompt) then		#	this doesn't work.  apparently on solaris its always set
+#	if ( $?tty ) then			#	this doesn't work.  apparently on solaris its always set (just no value)
+if ( "$tty" != "" ) then	#	only interactive shells
+	
+	
+	
+	#	Always source if exists as sets are not passed down
+	if (-r "${tcsh_initdir}/sets") then
+		source "${tcsh_initdir}/sets"
+	endif
+	
+	if (! $?ENV_SET) then	# Top-most shell as they are automatically passed down
+		if (-r "${tcsh_initdir}/environment" && ($?prompt || $?XSESSION)) then
+			source "${tcsh_initdir}/environment"
+		endif
+	endif
+	
+	
+	set os = `uname -s`
+	
+	# These aren't useful for non-interactive sessions
+	
+	if (-r "${tcsh_initdir}/aliases"     && ! $?noalias) then
+		source "${tcsh_initdir}/aliases"
+	endif
+	if (-r "${tcsh_initdir}/completions" && ! $?noalias && $?version) then
+		if ("$version" =~ tcsh*) source "${tcsh_initdir}/completions"
+	endif
+	if (-r "${tcsh_initdir}/bindkeys"    && ! $?noalias && $?version ) then
+		if ("${version}" =~ tcsh*) source "${tcsh_initdir}/bindkeys"
+	endif
+	if (-r  "${tcsh_initdir}/colors"     && ! $?noalias && $?version ) then
+		which dircolors > /dev/null
+		if ( ! $? ) eval `dircolors "${tcsh_initdir}/colors"`
+	endif
+endif

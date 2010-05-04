@@ -1,0 +1,134 @@
+#!/bin/csh -f
+echo "my.sets"
+
+if ($?prompt) then		# For interactive shells only (ie. not scripts):
+
+	setenv SHELL tcsh
+
+	if ( -e /usr/bin/envv ) then
+		setenv ENVV /usr/bin/envv
+	else if ( -e ~/my/bin/envv ) then
+		setenv ENVV ~/my/bin/envv
+	else
+		setenv ENVV /usr/local/bin/envv
+	endif
+
+#	if ( `uname -s` == "Linux" ) then
+#		setenv ENVV /usr/bin/envv
+#	else if ( `uname -s` == "Darwin" ) then
+#		setenv ENVV ~/my/bin/envv
+#	else
+#		setenv ENVV /usr/local/bin/envv
+#	endif
+
+	eval `$ENVV del PATH .`
+	eval `$ENVV del PATH .`
+  
+#	if ( ( $USER == "jakewendt" ) || ( $USER == "jake" ) || ( $USER == "Guest" ) || ( $USER == "admin" ) ) then
+		#	Apple stuff
+#		eval `$ENVV add PATH /usr/local/bin 1`
+		eval `$ENVV add PATH /sw/bin 1`
+		eval `$ENVV add PATH /usr/bin 1`	#	new due to problem with Apple rsync (-E option)
+		eval `$ENVV add PATH /usr/local/bin 1` #	070517 - must be first for running ruby on rails scripts
+		eval `$ENVV add PATH /usr/local/mysql/bin 1`
+		eval `$ENVV add PATH /opt/local/bin 1`
+		eval `$ENVV add PATH ~/local/bin`
+		eval `$ENVV add PATH ~/my/scripts`
+		eval `$ENVV add PATH ~/my/init`
+		eval `$ENVV add PATH .`
+
+		setenv MAGICK_HOME "/Applications/ImageMagick-6.3.5"
+		setenv DYLD_LIBRARY_PATH "$MAGICK_HOME/lib"
+		eval `$ENVV add PATH $MAGICK_HOME/bin`
+#	else
+#		#	ISDC stuff
+#		eval `$ENVV add PATH ~wendt/my/init`
+#		eval `$ENVV add PATH ~wendt/my/scripts`
+#		eval `$ENVV add PATH ~wendt/local/bin 1`
+#		eval `$ENVV add PATH .`
+#	endif
+
+ 	set complete=enhance	#	auto upper or lower case
+
+  # Set up prompt
+  set promptchars = "%#"
+  if ("$version" =~ tcsh*) then
+	set prompt = "%B%n@%m : %c %h> %b"		#	from ISDC
+  else
+    if ($uid) then
+      set prompt = "[$host] $user% "
+    else
+      set prompt = "[$host] $user# "
+    endif
+  endif
+
+  set ignoreeof                       #       stops Ctrl-D from logging out
+  set prompt2 = "%R -> "	# if/while prompt
+  set prompt3 = "OK? %R? "	# Spell correction prompt
+
+  # History
+  set history =  500			# Number of commands saved as history
+  set savehist = ( 500 merge )
+  #set histlit				# Save literal (unparsed) history
+  set histfile = ~/.tcsh_history	# History file
+
+  set cdpath = (~)			# Path to search for directory changes
+
+  # Word Completion
+  set fignore = ( \~ .bak .o .bin RCS CVS )
+  set nostat = (/afs /net /Net /Network/Servers)
+  set recexact			# Exact word expands as well as beeps
+  set autolist			# List matching words
+  set matchbeep = notunique	# Beep if not unique
+  set autoexpand		# Expand history when completing
+  set autocorrect		# Correct spelling when completing
+  # set nobeep apparently means never, ever beep
+  set nobeep			# Don't beep when complete
+
+  # pushd/popd/cd
+  set dextract			# pushd +n gets stack item n
+  set dunique			# Only push unique directories
+  #set pushdtohome		# 'pushd' = 'pushd ~'
+  set symlinks = ignore		# 'cd ..' goes to previous dir, not $cwd/..
+
+  # Random
+  set correct = cmd		# Spell Correction on
+  set inputmode = insert	# Insert chars (not overwrite)
+  set listjobs = long		# List all jobs when suspending (long format)
+  set nokanji			# Disable kanji if enabled
+  #set rmstar			# Prompt before doing 'rm *'
+
+  # Command to execute before each prompt
+  #alias precmd 'noop'
+
+  # Command to execute periodically
+  #set tperiod = 10			# Period, in minutes
+  #alias periodic touch /dev/$tty	# Command
+
+  # Command to execute after changing directory
+  #alias cwdcmd 'noop'
+
+  # Command to execute when tcsh wants to beep.
+  #alias beepcmp 'noop'
+
+  # Automatic Logout/Lock
+  #set autologout = "60 10"	# Logout after 60 minutes, lock after 10
+
+  # Time reporting
+  #set time = 10
+
+  # WATCH FOR LOCAL LOGGINS
+  #set watch = ( 1 any any )
+  #set who = "%B%n%b %a %l from host %B%M%b at %t"
+
+  # Use bulitin version of ls (= ls -CF) because it's faster
+  #alias ls 'ls-F'
+
+endif
+
+##
+# Read user's login
+##
+#if (-r "${tcsh_initdir}/login.mine") then
+#       source "${tcsh_initdir}/login.mine"
+#endif
