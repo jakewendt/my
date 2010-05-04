@@ -5,13 +5,13 @@ if ($?prompt) then		# For interactive shells only (ie. not scripts):
 
 	setenv SHELL tcsh
 
-	if ( -e /usr/bin/envv ) then
-		setenv ENVV /usr/bin/envv
-	else if ( -e ~/my/bin/envv ) then
-		setenv ENVV ~/my/bin/envv
-	else
-		setenv ENVV /usr/local/bin/envv
-	endif
+#	if ( -e /usr/bin/envv ) then
+#		setenv ENVV /usr/bin/envv
+#	else if ( -e ~/my/bin/envv ) then
+#		setenv ENVV ~/my/bin/envv
+#	else
+#		setenv ENVV /usr/local/bin/envv
+#	endif
 
 #	if ( `uname -s` == "Linux" ) then
 #		setenv ENVV /usr/bin/envv
@@ -21,25 +21,27 @@ if ($?prompt) then		# For interactive shells only (ie. not scripts):
 #		setenv ENVV /usr/local/bin/envv
 #	endif
 
-	eval `$ENVV del PATH .`
-	eval `$ENVV del PATH .`
+#	eval `$ENVV del PATH .`
+#	eval `$ENVV del PATH .`
+
+setenv PATH /opt/local/bin:/usr/local/mysql/bin:/usr/local/bin:$PATH\:$HOME/local/bin:$HOME/my/scripts:.:/Applications/ImageMagick-6.3.5/bin
   
 #	if ( ( $USER == "jakewendt" ) || ( $USER == "jake" ) || ( $USER == "Guest" ) || ( $USER == "admin" ) ) then
 		#	Apple stuff
 #		eval `$ENVV add PATH /usr/local/bin 1`
-		eval `$ENVV add PATH /sw/bin 1`
-		eval `$ENVV add PATH /usr/bin 1`	#	new due to problem with Apple rsync (-E option)
-		eval `$ENVV add PATH /usr/local/bin 1` #	070517 - must be first for running ruby on rails scripts
-		eval `$ENVV add PATH /usr/local/mysql/bin 1`
-		eval `$ENVV add PATH /opt/local/bin 1`
-		eval `$ENVV add PATH ~/local/bin`
-		eval `$ENVV add PATH ~/my/scripts`
-		eval `$ENVV add PATH ~/my/init`
-		eval `$ENVV add PATH .`
-
-		setenv MAGICK_HOME "/Applications/ImageMagick-6.3.5"
-		setenv DYLD_LIBRARY_PATH "$MAGICK_HOME/lib"
-		eval `$ENVV add PATH $MAGICK_HOME/bin`
+#		eval `$ENVV add PATH /sw/bin 1`
+#		eval `$ENVV add PATH /usr/bin 1`	#	new due to problem with Apple rsync (-E option)
+#		eval `$ENVV add PATH /usr/local/bin 1` #	070517 - must be first for running ruby on rails scripts
+#		eval `$ENVV add PATH /usr/local/mysql/bin 1`
+#		eval `$ENVV add PATH /opt/local/bin 1`
+#		eval `$ENVV add PATH ~/local/bin`
+#		eval `$ENVV add PATH ~/my/scripts`
+#		eval `$ENVV add PATH ~/my/init`
+#		eval `$ENVV add PATH .`
+#
+#		setenv MAGICK_HOME "/Applications/ImageMagick-6.3.5"
+#		setenv DYLD_LIBRARY_PATH "$MAGICK_HOME/lib"
+#		eval `$ENVV add PATH $MAGICK_HOME/bin`
 #	else
 #		#	ISDC stuff
 #		eval `$ENVV add PATH ~wendt/my/init`
