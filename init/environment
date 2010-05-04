@@ -6,27 +6,29 @@ setenv ENV_SET			# avoid repeat
 
 umask 022			# files created are -rw-r--r--
 
-if ( "$USER" != "isdc_int" ) then
-	setenv GZIP "-1"	#	surprisingly not that fast or uncompressed
-endif
+#	this file is virtually pointless now that I don't work at the ISDC
 
-if ( $USER == "wendt" ) then
-	setenv ISDC_ENV /home/isdc/wendt/workspace/ISDC_ENV
-endif
+#if ( "$USER" != "isdc_int" ) then
+#	setenv GZIP "-1"	#	surprisingly not that fast or uncompressed
+#endif
+#
+#if ( $USER == "wendt" ) then
+#	setenv ISDC_ENV /home/isdc/wendt/workspace/ISDC_ENV
+#endif
 
 
-if ( ( $HOST =~ "isdc*" ) || ( $HOST =~ "ana*" ) || ( $HOST =~ "swsupport" ) || ( $HOST =~ "osa*" ) || ( $HOST =~ "*mgt" ) ) then		#	set work variables
-#if ( ( $USER != "jake" ) && ( $USER != "Guest" ) && ( $USER != "admin" ) ) then		#	set work variables
-	setenv PRINTER Pavillon1
-	if ( $?ISDC_ENV ) then
-		setenv CFITSIO_INCLUDE_FILES $ISDC_ENV/templates
-	endif
-	#source /isdc/scripts/login --ISDC_ENV=/home/isdc/wendt/workspace/ISDC_ENV
-	#setenv EDITOR /isdc/sw/compilers/WS/6.1/SUNWspro/bin/xemacs
-	#setenv EDITOR vi
-	setenv EDITOR vim
-	setenv CVSROOT ~/CVSROOT
-endif 
+#if ( ( $HOST =~ "isdc*" ) || ( $HOST =~ "ana*" ) || ( $HOST =~ "swsupport" ) || ( $HOST =~ "osa*" ) || ( $HOST =~ "*mgt" ) ) then		#	set work variables
+##if ( ( $USER != "jake" ) && ( $USER != "Guest" ) && ( $USER != "admin" ) ) then		#	set work variables
+#	setenv PRINTER Pavillon1
+#	if ( $?ISDC_ENV ) then
+#		setenv CFITSIO_INCLUDE_FILES $ISDC_ENV/templates
+#	endif
+#	#source /isdc/scripts/login --ISDC_ENV=/home/isdc/wendt/workspace/ISDC_ENV
+#	#setenv EDITOR /isdc/sw/compilers/WS/6.1/SUNWspro/bin/xemacs
+#	#setenv EDITOR vi
+#	setenv EDITOR vim
+#	setenv CVSROOT ~/CVSROOT
+#endif 
 
 ##
 # Read user's login

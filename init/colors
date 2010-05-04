@@ -1,12 +1,6 @@
 #!/bin/csh -f
 #	the above line is csh simply for the color scheme in vim
 
-
-
-#	link this file as ~/.vim/colors/wendt.vim
-
-
-
 # Configuration file for dircolors, a utility to help you set the
 # LS_COLORS environment variable used by GNU ls with the --color option.
 

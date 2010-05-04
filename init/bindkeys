@@ -7,7 +7,6 @@ bindkey "^R" i-search-back				#	from Mac default rc
 bindkey -k up history-search-backward	#
 bindkey -k down history-search-forward	#
 
-
 # vi-beginning-of-next-word Vi goto the beginning of next word
 # vi-add Vi enter insert mode after the cursor
 # vi-add-at-eol Vi enter insert mode at end of line
