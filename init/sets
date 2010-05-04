@@ -24,7 +24,8 @@ if ($?prompt) then		# For interactive shells only (ie. not scripts):
 #	eval `$ENVV del PATH .`
 #	eval `$ENVV del PATH .`
 
-setenv PATH /opt/local/bin:/usr/local/mysql/bin:/usr/local/bin:$PATH\:$HOME/local/bin:$HOME/my/scripts:.:/Applications/ImageMagick-6.3.5/bin
+#setenv PATH /opt/local/bin:/usr/local/mysql/bin:/usr/local/bin:$PATH\:$HOME/local/bin:$HOME/my/scripts:.:/Applications/ImageMagick-6.3.5/bin
+setenv PATH /opt/local/bin:/usr/local/mysql/bin:/usr/local/bin:${PATH}:$HOME/local/bin:$HOME/my/scripts:.
   
 #	if ( ( $USER == "jakewendt" ) || ( $USER == "jake" ) || ( $USER == "Guest" ) || ( $USER == "admin" ) ) then
 		#	Apple stuff
