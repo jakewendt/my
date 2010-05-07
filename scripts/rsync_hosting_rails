@@ -12,5 +12,7 @@ rsync -avz \
 	--exclude="svn_old_server" \
 	--exclude=".trash" \
 	--exclude="prod/sites/*/log/*.log" \
+	--exclude="prod/sites/my_tmp" \
+	--exclude="prod/sites/my.090712" \
 	--progress \
 	jakewen@jakewendt.com: ~/hosting_rails/
