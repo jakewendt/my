@@ -1,6 +1,7 @@
 #!/bin/sh
 
 rsync -avz \
+	--exclude=".lastlogin" \
 	--exclude=".cpan" \
 	--exclude=".cpanel" \
 	--exclude=".cpcpan" \
