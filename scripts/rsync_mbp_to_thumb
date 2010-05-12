@@ -1,0 +1,109 @@
+#!/bin/sh -x
+
+BackupDir=/Volumes/THUMB/MBP
+
+if [ ! -d $BackupDir ]
+then
+	echo "$BackupDir doesn't exist"
+	exit
+#	mkdir -p $BackupDir
+else
+	echo "$BackupDir exists"
+fi
+
+#	-a = -rlptgoD
+#	g - groups have become a problem so I'm ignorin em
+#	t - times have become a problem so I'm ignorin em
+#	D - devices are pointless here so I'm ignorin em
+#	r - recursive
+#	l - links
+#	p - permissions
+#	t - times
+#	o - owner
+#	v - verbose
+#	z - compression
+#rsync -avz \
+#	--delete \
+#	--extended-attributes \
+#	--size-only \
+#	--ignore-times \
+#	--exclude=Library \
+
+# /bin/rm -rf /Volumes/THUMB/MBP/Library/Mail/*/*/*/Attachments/
+#	/bin/rm -rf /Volumes/THUMB/MBP/Library/Mail/*/*/Attachments/
+#	/bin/rm -rf /Volumes/THUMB/MBP/hostingrails.svn/references/videos
+
+/usr/bin/rsync -avz \
+	--progress \
+	--delete \
+	--exclude="hostingrails.svn/references/videos/" \
+	--exclude="hostingrails.svn/sites/my/log/" \
+	--exclude="hostingrails.svn/sites/my/tmp/" \
+	--exclude="hostingrails.svn/sites/my/downloads/" \
+	--exclude="hostingrails.svn/sites/my/test/downloads/" \
+	--exclude="hostingrails.svn/sites/my/test/tmp/" \
+	--exclude="upillar.svn/motors" \
+	--exclude="upillar.svn/classifieds/trunk/tmp/markup/" \
+	--exclude="upillar.svn/classifieds/trunk/doc/mockups/final mockup psds"  \
+	--exclude=.rvm \
+	--exclude=rsync/private/Video \
+	--exclude=log/server.log \
+	--exclude=log/development.log \
+	--exclude=log/production.log \
+	--exclude=log/test.log \
+	--exclude=log/fastcgi.crash.log \
+	--exclude=.svn \
+	--exclude=versions \
+	--exclude=Desktop \
+	--exclude=Documents \
+	--exclude=Sites \
+	--exclude=rsync-backup \
+	--exclude="Admin Drop Box" \
+	--exclude=Music \
+	--exclude=Movies \
+	--exclude=Pictures \
+	--exclude=.TemporaryItems \
+	--exclude="Roxio Converted Items" \
+	--exclude="Microsoft User Data" \
+	--exclude="AppleWorks User Data" \
+	--exclude="Acrobat User Data" \
+	--exclude="TV Shows" \
+	--exclude=Podcasts \
+	--exclude=Temp \
+	--exclude=.Trash \
+	--exclude=.Trashes \
+	--exclude=.Spotlight-V100 \
+	--exclude=.dvdcss \
+	--exclude=.jpi_cache \
+	--exclude="Library/Screen Savers" \
+	--exclude="Library/Mail/*/*/Attachments" \
+	--exclude="Library/Mail/*/*/*/Attachments" \
+	--exclude="Library/Mail/RSS/*/Attachments" \
+	--exclude="Library/PubSub" \
+	--exclude="Library/Logs" \
+	--exclude="Library/Caches" \
+	--exclude="Library/Application Support/Garmin" \
+	--exclude=googleearth/kml/surfaces \
+	--exclude="*NOT_BACKED_UP*" \
+	--exclude="netflix/query.log*" \
+	--exclude="netflix/catalog" \
+	--exclude="netflix/queries_*" \
+	--exclude="netflix/DB*.sql" \
+	--exclude="rsync/private/Video" \
+	--exclude="Scanner Output" \
+	/Users/jake/ $BackupDir/
+
+/usr/bin/rsync -avz \
+	--progress \
+	--delete \
+	--extended-attributes \
+	--exclude="Scanner Output" \
+	--exclude="*NOT_BACKED_UP*" \
+	--exclude=log/server.log \
+	--exclude=log/development.log \
+	--exclude=log/production.log \
+	--exclude=log/test.log \
+	--exclude=log/fastcgi.crash.log \
+	/Users/jake/Documents/ $BackupDir/Documents/
+
+touch $BackupDir/`date "+%y%m%d:%H%M%S"`

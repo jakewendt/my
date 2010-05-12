@@ -1,0 +1,101 @@
+#!/bin/sh -x
+
+Date=`date "+%y%m%d%H%M%S"`
+
+BackupDir=/Volumes/LaCie328/Backups/MBP
+
+if [ ! -d $BackupDir ]
+then
+	echo "$BackupDir doesn't exist"
+	exit
+#	mkdir -p $BackupDir
+else
+	echo "$BackupDir exists"
+fi
+
+#	-a = -rlptgoD
+#	g - groups have become a problem so I'm ignorin em
+#	t - times have become a problem so I'm ignorin em
+#	D - devices are pointless here so I'm ignorin em
+#	r - recursive
+#	l - links
+#	p - permissions
+#	t - 
+#	o - owner
+#	v - verbose
+#	z - compression
+#	c - checksum
+#/usr/bin/rsync -avz \
+#	--delete \
+#	--exclude=Library \
+/usr/bin/rsync -rltpvz \
+	--progress \
+	--delete --backup --backup-dir rsync-backup-$Date \
+	--exclude=rsync-backup\* \
+	--exclude=Desktop/Incomplete \
+	--exclude=Desktop/\*NOT_BACKED_UP\* \
+	--exclude=Desktop \
+	--exclude="Roxio Converted Items" \
+	--exclude="Microsoft User Data" \
+	--exclude="AppleWorks User Data" \
+	--exclude="Acrobat User Data" \
+	--exclude="TV Shows" \
+	--exclude="log/*.log" \
+	--exclude=Podcasts \
+	--exclude=Documents \
+	--exclude=Library/Caches \
+	--exclude=Temp \
+	--exclude=.Trash \
+	--exclude=.Trashes \
+	--exclude=.TemporaryItems \
+	--exclude=.Spotlight-V100 \
+	--exclude=.dvdcss \
+	--exclude=.jpi_cache \
+	/Users/jake/ $BackupDir/jake/
+
+/usr/bin/rsync -rltpvz \
+	--progress \
+	--extended-attributes \
+	--delete --backup --backup-dir rsync-backup-$Date \
+	--exclude=rsync-backup\* \
+	/Users/jake/Documents/ $BackupDir/jake/Documents/
+
+/usr/bin/rsync -rltpvz --progress \
+	--delete --backup --backup-dir rsync-backup-$Date \
+	--exclude=rsync-backup\* \
+	--exclude=temp \
+	--exclude=Viewed \
+	--exclude=Incomplete \
+	--exclude=Xtorrent \
+	--exclude=\*NOT_BACKED_UP\* \
+	/Users/Shared/ $BackupDir/Shared/
+
+/usr/bin/rsync -rltpvz \
+	--progress \
+	--delete --backup --backup-dir rsync-backup-$Date \
+	--exclude=rsync-backup\* \
+	/Users/Shared/iTunes/ $BackupDir/Shared/iTunes/
+
+#  /Users/jake/Music/iTunes/iTunes\ Music/Podcasts/
+
+#/usr/bin/rsync -avz \
+#/usr/bin/rsync -rltpovz \
+#	--progress \
+#	--delete \
+#	/Users/jake/Library/Mozilla/ $MozillaDir/
+
+#	/usr/bin/rsync -avz --progress /Users/Shared/TV/Unviewed/ /Volumes/LaCie328/Public/TV/All\ Unviewed/
+#	/usr/bin/rsync -avz --progress /Users/jake/Desktop/TV/All\ Unviewed/ /Volumes/LaCie328/Public/TV/All\ Unviewed/
+
+#	/usr/bin/rsync -avz --progress /Users/Shared/Xtorrent/ /Volumes/LaCie328/Public/TV/Xtorrent/
+
+#	/usr/bin/rsync -avz --progress /Users/Shared/iTunes/ /Volumes/LaCie328/Public/iTunes/
+
+#	/usr/bin/rsync -avz --progress --exclude="Incomplete" /Users/Shared/Xtorrent/ /Volumes/LaCie328/Public/TV/Xtorrent/
+
+#	/usr/bin/rsync -rltpovz --progress /Users/jake/Desktop/KeepOut/ /Volumes/LaCie328/KeepOut/
+
+#	/usr/bin/rsync -rltpovz --progress --delete /Users/jake/Desktop/KeepOut/ /Volumes/LaCie328/KeepOut/
+
+#	/usr/bin/rsync -rltpovz --progress --delete /Users/jake/Music/ /Volumes/LaCie328/Backups/iMacG5/Music/
+
