@@ -1,0 +1,30 @@
+
+echo "my.login"
+
+##
+# Set paths
+##
+#set path = ( \
+#		/usr/local/bin /usr/bin /bin		\
+#		/usr/local/sbin /usr/sbin /sbin		\
+#	   )
+
+#if ($?version) then
+#  if ("$version" =~ tcsh*) then
+#    set path = ( "~/bin/${MACHTYPE}-${VENDOR}-${OSTYPE}" $path )
+#  endif
+#endif
+
+setenv MANPATH "${HOME}/local/man:/usr/local/share/man:/usr/share/man"
+
+#if (-r "${tcsh_initdir}/path") source "${tcsh_initdir}/path"
+
+##
+# Read user's login
+##
+#if (-r "${tcsh_initdir}/login.mine") then
+#	source "${tcsh_initdir}/login.mine"
+#endif
+
+#if( -r /isdc/scripts/login ) source /isdc/scripts/login
+
