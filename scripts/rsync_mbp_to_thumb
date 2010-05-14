@@ -45,6 +45,7 @@ fi
 	--exclude="upillar.svn/motors" \
 	--exclude="upillar.svn/classifieds/trunk/tmp/markup/" \
 	--exclude="upillar.svn/classifieds/trunk/doc/mockups/final mockup psds"  \
+	--exclude=.fseventsd \
 	--exclude=.rvm \
 	--exclude=rsync/private/Video \
 	--exclude=log/server.log \
