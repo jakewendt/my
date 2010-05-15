@@ -36,6 +36,7 @@ fi
 /usr/bin/rsync -avz \
 	--progress \
 	--delete \
+	--exclude="hosting_rails" \
 	--exclude="hostingrails.svn/references/videos/" \
 	--exclude="hostingrails.svn/sites/my/log/" \
 	--exclude="hostingrails.svn/sites/my/tmp/" \
