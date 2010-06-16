@@ -36,6 +36,7 @@ fi
 	--exclude=.rvm \
 	--exclude=rsync-backup\* \
 	--exclude="Desktop/Firefox Downloads/*.mp4" \
+	--exclude="Desktop/Firefox Downloads/*/*.mp4" \
 	--exclude="Roxio Converted Items" \
 	--exclude="Microsoft User Data" \
 	--exclude="AppleWorks User Data" \
