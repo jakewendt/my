@@ -35,8 +35,13 @@ fi
 	--exclude=.fseventsd \
 	--exclude=.rvm \
 	--exclude=rsync-backup\* \
+	--exclude="Desktop/Firefox Downloads/xxx" \
 	--exclude="Desktop/Firefox Downloads/*.mp4" \
 	--exclude="Desktop/Firefox Downloads/*/*.mp4" \
+	--exclude="Library/Preferences/Macromedia" \
+	--exclude="Library/Application Support/SyncServices" \
+	--exclude="Library/Google" \
+	--exclude="Library/Logs" \
 	--exclude="Roxio Converted Items" \
 	--exclude="Microsoft User Data" \
 	--exclude="AppleWorks User Data" \
