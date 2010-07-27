@@ -1,1 +1,48 @@
 if [[ -s ~/.rvm/scripts/rvm ]] ; then source ~/.rvm/scripts/rvm ; fi
+
+
+
+#	Aliases
+#	alias ,="cd $dot" What is $dot?
+#	.	pwd			NO. . is already an alias for source
+alias ..="cd .."
+#	alias b="beep"
+#	alias beep="xset b; echo \\a; xset -b"		no beep
+#	alias c='repeat 100 echo " "'			No repeat
+alias cd..="cd .."
+#	cdh	cd `\pwd`
+#	cdl	cd `\ls -1t | head -1`
+#	cdp	cd $PWD
+#	cdwd	cd `pwd`
+#	cwd	echo $cwd
+#	ff	find . -name !:1 -print
+#	files	find !:1 -type f -print
+#	fv	fv !* &
+alias grep="grep -i"
+#	alias l="lm"			#	lm doesn't work
+alias la="\ls -al"
+#	alias ld="\ls -dl"	is an 'ld'
+#	lecho	echo !:1 |  awk -F: '{for (i=1;i<=NF;i++) printf ($i"\n");}'
+#	line	sed -n '!:1 p' !:2
+#	list_all_hostnames	grep -v "^#" /etc/hosts
+alias ll="\ls -lG"
+#	alias lm="\ls -lag !* | \more"		#	!* doesn't work in bash
+alias ln="ln -s"
+#	lp	lpr
+#	lpath	echo $PATH | awk -F: '{for (i=1;i<=NF;i++) printf ($i"\n");}'
+alias more="less"
+#	print1	/unige/gnu/SunOS_5.8/bin/a2ps  -o !*.ps !*;  
+#	print2a	/unige/gnu/SunOS_5.8/bin/a2ps -2 -o !*.ps !*; lpr -o raw !*.ps ; \rm !*.ps 
+#	alias relink="\rm !:1; ln -s !:2 !:1"	#	!:1 doesn't seem to work in bash
+alias rm="rm -i"
+#	rmc	\rm -f *~ .*~ *#* .*#* ; \rm -f core
+#	rmnew	\rm -rf nbs*_NEW_200*
+#	rmold	\rm -rf nbs*_OLD_200*
+#	rp	set prompt=$HOST":[ $PWD/ ] \!> "
+#	rup	rup -l isdcsf1 isdcsf2 isdcsf3 isdcsf4 isdcsf5
+#	vi	c; jbackup !:*; \vi  !:*
+#	win	dtterm -title !* &
+#	wintitle	echo -n "`echo -n x|tr x \\33`]0; !* ^G"
+#	word	grep !* /usr/share/dict/web2
+#	wordcount	((cat !* | tr -s ' 	.,;:?!()[]""' '\012' | cat -n | tail -1 | awk '{print $1}'))
+#	xgrep	(/usr/xpg4/bin/grep -iE)
