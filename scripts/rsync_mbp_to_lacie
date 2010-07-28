@@ -51,6 +51,7 @@ fi
 	--exclude=.Spotlight-V100 \
 	--exclude=.dvdcss \
 	--exclude=.jpi_cache \
+	--exclude=.rvm \
 	/Users/jake/ $BackupDir/jake/
 
 /usr/bin/rsync -rltpvz \

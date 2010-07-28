@@ -1,0 +1,125 @@
+gems:
+  - actionmailer
+  - actionpack
+  - name: actionwebservice
+    lib: action_web_service
+  - active_shipping
+  - activerecord
+  - activeresource
+  - activesupport
+  - acts_as_ferret
+  - aegis
+  - authlogic
+  - name: autotest-rails
+    lib: autotest/rails
+  - name: aws-s3
+    lib: aws/s3
+  - name: aws-sdb
+    lib: aws_sdb
+  - builder
+  - capistrano
+  - ccsv
+  - cgi_multipart_eof_fix
+  - chronic
+  - daemons
+  - dnssd
+  - eventmachine
+  - fastercsv
+  - fastthread
+  - fcgi
+  - ferret
+  - flickr
+  - gem_plugin
+  - gravatar
+  - haml
+  - highline
+  - hoe
+  - hpricot
+  - name: jdbc-mysql
+    lib: jdbc/mysql
+  - name: jdbc-sqlite3
+    lib: jdbc/sqlite3
+  - jrails
+#  - jruby-jars
+#	The existance of this openssl.rb blocks access to the core openssl.rb
+#	which is a problem in non-jruby setups
+#  - name: jruby-openssl
+#    lib: openssl
+#  - jruby-rack
+  - json
+  - name: json_pure
+    lib: json
+  - name: libxml-ruby
+    lib: libxml
+  - name: maccman-juggernaut
+    lib: juggernaut
+  - name: mime-types
+    lib: mime/types
+  - mocha
+  - mongrel
+  - mysql
+  - needle
+  - net-ldap
+  - name: net-scp
+    lib: net/scp
+  - name: net-sftp
+    lib: net/sftp
+  - name: net-ssh
+    lib: net/ssh
+  - name: net-ssh-gateway
+    lib: net/ssh/gateway
+  - oauth
+  - packet
+  - paperclip
+  - prawn
+  - name: prawn-core
+    lib: prawn/core
+  - name: prawn-layout
+    lib: prawn/layout
+  - name: prawn-security
+    lib: prawn/security
+  - rack
+#  - rails
+  - rake
+  - rcov
+  - rdoc
+  - name: rdoc-data
+    lib: rdoc/data
+  - RedCloth
+  - rmagick
+  - name: rmagick4j
+    lib: rmagick4j/rmagick4j
+  - name: ruby-hmac
+    lib: ruby_hmac
+  - name: ruby-net-ldap
+    lib: net/ldap
+  - name: ruby-openid
+    lib: openid
+  - ruby-prof
+  - name: ruby-yadis
+    lib: yadis
+  - rubycas-client
+  - rubyforge
+  - name: rubygems-update
+    lib: rubygems
+  - rubynode
+  - name: rubyzip
+    lib: zip/zip
+  - rvm
+  - name: ryanb-acts-as-list
+    lib: acts_as_list
+  - name: sqlite3-ruby
+    lib: sqlite3
+  - ssl_requirement
+  - surveyor
+  - termios
+  - name: thoughtbot-factory_girl
+    lib: factory_girl
+  - ucb_ldap
+  - uuidtools
+#  - warbler
+  - will_paginate
+  - name: xml-simple
+    lib: xmlsimple
+  - xmpp4r
+  - ZenTest
