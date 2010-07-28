@@ -1,0 +1,93 @@
+repo: ~/github_repo
+login: jakewendt
+users: 
+  - user: jakewendt
+    except: empty_repo
+  - user: breakpointer
+    only: surveyor
+  - user: gunark
+    only: rubycas-client
+  - user: grimen
+    only: validatious-on-rails
+  - user: thoughtbot
+    only: [ factory_girl, paperclip ]
+  - user: chinasaur
+    only: rdoc_rails
+  - user: gnufied
+    only: backgroundrb
+  - user: makandra
+    only: aegis
+  - user: peter
+    only: html_test
+  - user: aaronchi
+    only: jrails
+  - user: wayneeseguin
+    only: rvm
+#    except: ruby
+  - danahern
+  - armagad
+  - user: Shopify
+    only: active_shipping
+  - user: ryanb
+    only: acts-as-list
+  - user: relevance
+    only: rcov
+  - user: floehopper
+    only: mocha
+  - user: jquery
+    only: [ jquery, jquery-ui ]
+  - user: thenduks
+    only: flot
+  - user: mislav
+    only: will_paginate
+  - user: bansalakhil
+    only: aws_sdb_proxy
+  - user: remi
+    only: use_db
+  - user: rails
+    only: [ rails, ssl_requirement ]
+  - user: maccman
+    only: [ juggernaut_gem, juggernaut_plugin ]
+  - user: markaby
+    only: markaby
+  - user: sandal
+    only: prawn
+  - user: thorny-sun
+    only: prawnto
+  - user: mojombo
+    only: chronic
+  - user: chris
+    only: better_nested_set
+  - user: m4n
+    only: flags_column
+  - user: ptb
+    only: geokit
+  - user: fauna
+    only: has_many_polymorphs
+  - user: technoweenie
+    except: [ fake_gmaps, mechano ]
+  - user: jamesgolick
+    only: markaby
+  - user: bruce
+    only: bitmask-attribute
+  - user: tekin
+    only: file_column
+  - user: jackdempsey
+    only: acts_as_commentable
+  - user: rares
+    only: netflix
+  - user: infused
+    only: test_injector
+
+  - user: brettstimmerman
+    #  lace is Lightweight Ajaxian Communication Engine (PHP)
+    only: lace
+  - user: handlino
+    #  chatlino is a rails and juggernaut chat demo app
+    only: chatlino
+  - user: tobi
+    only: liquid
+  - user: codeprimate
+    only: acts_as_translatable
+  - user: azul
+    only: acts_as_translatable
