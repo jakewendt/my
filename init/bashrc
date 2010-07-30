@@ -1,5 +1,21 @@
 if [[ -s ~/.rvm/scripts/rvm ]] ; then source ~/.rvm/scripts/rvm ; fi
 
+#export JAVA_OPTS="$JAVA_OPTS -J-Xmx1024M"
+#export JRUBY_OPTS="$JRUBY_OPTS -J-Xmx1024M"
+#export JRUBY_OPTS="$JRUBY_OPTS -Xmx1024M"
+
+#export JAVA_OPTS="-Xmx1024M"
+#JAVA_OPTS="-server -Xms768m -Xmx768m -XX:NewSize=200M -XX:MaxNewSize=200M -XX:MaxPermSize=256m"
+#export JAVA_OPTS="$JAVA_OPTS -Xms768m -Xmx1024m"
+# -XX:NewSize=200M -XX:MaxNewSize=200M -XX:MaxPermSize=256m"
+
+#	This seems to fix the jruby homex test failure
+#		Exception in thread "Poller SunPKCS11-Darwin" 
+#		java.lang.OutOfMemoryError: Java heap space
+export JAVA_MEM="-Xmx1024m -Xms768m"
+#export JAVA_STACK="-Xss1024k"
+
+
 
 
 #	Aliases
