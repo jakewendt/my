@@ -13,6 +13,7 @@ but for now ...
 	ln -s ~/my/init/bashrc       .bashrc
 	ln -s ~/my/init/bash_profile .bash_profile
 	ln -s ~/my/init/autotest     .autotest
+	ln -s ~/my/init/subversion   .subversion
 
 
 ## Todo
