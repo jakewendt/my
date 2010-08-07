@@ -2,3 +2,4 @@
 .DS_Store
 .svn/
 versions/
+init/subversion/auth/svn.*
