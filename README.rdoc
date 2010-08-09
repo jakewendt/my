@@ -28,6 +28,8 @@ but for now ...
 
 == Installation (eventually)
 
+http://www.gnu.org/software/autoconf/manual/autoconf.html#Automake
+
 * run 'autoconf' to create 'configure' from 'configure.in'
 * run 'configure' to create 'Makefile' from 'Makefile.in'
 * run 'make' to compile source code
