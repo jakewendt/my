@@ -30,8 +30,17 @@ but for now ...
 
 http://www.gnu.org/software/autoconf/manual/autoconf.html#Automake
 
-* run 'autoconf' to create 'configure' from 'configure.in'
+* run 'autoconf' to create 'configure' from 'configure.ac'
 * run 'configure' to create 'Makefile' from 'Makefile.in'
 * run 'make' to compile source code
 * run 'make test' to test
+
+
+== Developer (me) Preparation
+
+* http://www.seul.org/docs/autotut/
+* http://mij.oltrelinux.com/devel/autoconf-automake/
+* autoscan
+* autoconf
+* automake
 

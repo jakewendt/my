@@ -8,3 +8,4 @@ lib/
 autom4te.cache/
 configure
 Makefile
+autoscan.log
