@@ -1,6 +1,6 @@
-CC = @CC@
-VERSION = @VERSION@
-CFLAGS = @CFLAGS@
+CC = gcc
+VERSION = 0.0.1
+CFLAGS = -g -O2
 
 all: pi-bin
 

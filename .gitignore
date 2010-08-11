@@ -6,6 +6,4 @@ init/subversion/auth/svn.*
 bin/
 lib/
 autom4te.cache/
-configure
-Makefile
 autoscan.log

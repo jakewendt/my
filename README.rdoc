@@ -40,7 +40,12 @@ http://www.gnu.org/software/autoconf/manual/autoconf.html#Automake
 
 * http://www.seul.org/docs/autotut/
 * http://mij.oltrelinux.com/devel/autoconf-automake/
-* autoscan
-* autoconf
-* automake
+* autoscan generates a poor configure.scan (rename to configure.ac)
+* autoheader generates a config.h.in
+* automake --add-missing generates some links
+* autoconf generates a configure
+* automake generates ... actually it just bitches
+* ...
+* ./configure generates Makefile ??
+* make generates ... happiness
 
