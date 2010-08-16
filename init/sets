@@ -5,6 +5,8 @@ if ($?prompt) then		# For interactive shells only (ie. not scripts):
 
 	setenv SHELL tcsh
 
+	setenv JEWELER_OPTS "--testunit"
+
 #	if ( -e /usr/bin/envv ) then
 #		setenv ENVV /usr/bin/envv
 #	else if ( -e ~/my/bin/envv ) then
