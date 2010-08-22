@@ -8,6 +8,132 @@ require 'fileutils'
 require 'erb'
 require 'yaml'
 
+class Array
+	def extract_options!
+		( last.is_a?(Hash) ) ? pop : {}
+	end
+	def empty?
+		length <= 0
+	end
+end
+
+module Github
+	class User
+		attr_accessor :login, :name, :location, :options
+		attr_accessor :inclusions, :exclusions, :repositories
+		def initialize(*args)
+			@options = args.extract_options!
+			@options.keys.each do |key|
+				send("#{key}=",options[key]) if respond_to?(key)
+			end
+
+			@login = case 
+				when !args.empty?       then args.first
+				when !@options['user'].nil? then @options['user']
+				else raise
+			end
+			puts "#\n#\tProcessing github user:#{login}\n#"
+
+			@inclusions = ( options['only']   ) ? [options['only']].flatten   : []
+			@exclusions = ( options['except'] ) ? [options['except']].flatten : []
+
+			if File.exists?(login_path)
+				unless File.directory?(login_path)
+					puts
+					puts	"#{login_path} is not a directory?  Skipping user"
+					puts
+					next
+				end
+			else
+				puts "#"
+				puts "#\t#{login_path} does not exist.  Creating..."
+				puts "#"
+				FileUtils.mkdir(login_path)
+			end
+			Dir.chdir(login_path)
+
+			#	json = `curl http://github.com/api/v1/json/#{user}`
+
+			r = Net::HTTP.get_response  "github.com","/api/v1/json/#{login}"
+			next unless r.code.to_s == '200'
+			json = r.body
+
+			user_response = JSON.parse(json)
+			File.open("#{login}.yml",'w') { |f| f.puts user_response.to_yaml }
+			@repositories = []
+			(user_response['user']['repositories']||[]).each{ |repo|
+				repositories << github_repo = Github::Repository.new(repo)
+#	Wait until all wikis are new wikis (late September)
+#				if github_repo.has_wiki
+#					wiki = repo.clone
+#					wiki['name'] += ".wiki"
+#					repositories << ( github_repo = Github::Repository.new(wiki) )
+#				end
+			}
+			self
+		end
+	protected
+		def login_path
+			"#{GITHUB['repo']}/#{login}"
+		end
+	end
+	class Repository
+		attr_accessor :options, :name, :owner, :has_wiki
+		#	, :url	(http://github.com/jakewendt/my_core) not very helpful here
+		#	:description
+		#	:has_downloads
+		#	:pushed_at
+		#	:homepage
+		#	:fork
+		#	:open_issues
+		#	:watchers
+		#	:private
+		#	:has_issues
+		#	:forks
+		#	:created_at
+		def initialize(options)
+			@options = options
+			options.keys.each do |key|
+				if respond_to?(key)
+					send("#{key}=",options[key])
+				end
+			end
+		end
+		def git_url(current_user = '')
+			((( owner == current_user ) ? "git@github.com:" : "git://github.com/" ) + "#{owner}/#{name}.git" )
+		end
+		def owner_path
+			"#{GITHUB['repo']}/#{owner}"
+		end
+		def local_path
+			"#{owner_path}/#{name}"
+		end
+		def update( current_user = '' )
+#			puts git_url(current_user)
+#			puts local_path
+	
+			if File.exists?(local_path)
+				puts "-- #{@name} exists.  Updating."
+				if File.directory?(local_path)
+					Dir.chdir(local_path)
+					puts `git pull`
+					Dir.chdir(owner_path)
+				else
+					"-? #{name} is not a directory.  Skipping."
+				end
+			else
+				puts "-! #{name} does not exist.  Cloning."
+				puts `git clone #{git_url(current_user)}`
+#-! rubycas-client.wiki does not exist.  Cloning.
+#fatal: The remote end hung up unexpectedly
+#Initialized empty Git repository in /Users/jake/github_repo/gunark/rubycas-client.wiki/.git/
+			end
+		end
+	end
+end
+
+######################################################################
+
 GITHUB = YAML::load(ERB.new(IO.read(
 	File.join(File.dirname(__FILE__),'github_raider.yml'))).result)
 
@@ -18,9 +144,7 @@ if File.exists?(GITHUB['repo'])
 	if File.directory?(GITHUB['repo'])
 		Dir.chdir(GITHUB['repo'])
 	else
-		puts
-		puts	"#{GITHUB['repo']} is not a directory?"
-		puts
+		puts	"\n#{GITHUB['repo']} is not a directory?\n"
 		exit
 	end
 else
@@ -29,66 +153,20 @@ else
 end
 
 GITHUB['users'].each do |_user|
-	inclusions = []
-	exclusions = []
-	user = case _user
-		when String then _user
-		when Hash   then _user['user']
-	end
-	if _user.is_a?(Hash)
-		inclusions = [_user['only']].flatten   if _user['only']
-		exclusions = [_user['except']].flatten if _user['except']
-	end
-
-	puts user
-
-	if File.exists?("#{GITHUB['repo']}/#{user}")
-		unless File.directory?("#{GITHUB['repo']}/#{user}")
-			puts
-			puts	"#{GITHUB['repo']}/#{user} is not a directory?  Skipping user"
-			puts
-			next
-		end
-	else
-		puts "#{GITHUB['repo']}/#{user} does not exist.  Creating..."
-		FileUtils.mkdir("#{GITHUB['repo']}/#{user}") 
-	end
-	Dir.chdir("#{GITHUB['repo']}/#{user}")
-
-#	json = `curl http://github.com/api/v1/json/#{user}`
-
-	r = Net::HTTP.get_response  "github.com","/api/v1/json/#{user}"
-	next unless r.code.to_s == '200'
-	json = r.body
-	
-	response = JSON.parse(json)
-	File.open("#{user}.yml",'w') { |f| f.puts response.to_yaml }
-
-	#	happens for users without repos
-	next if response['user']['repositories'].nil?
-	response['user']['repositories'].each do |repo|
-		next if !exclusions.empty? &&  exclusions.include?(repo['name'])
-		next if !inclusions.empty? && !inclusions.include?(repo['name'])
-
-		url = ( response['user']['login'] == (GITHUB['login']||'') ) ? 
-			"git@github.com:" : "git://github.com/"
-		url << "#{repo['owner']}/#{repo['name']}.git"
-		puts url
-	
-		if File.exists?("#{GITHUB['repo']}/#{user}/#{repo['name']}")
-			puts "#{repo['name']} exists.  Updating."
-			if File.directory?("#{GITHUB['repo']}/#{user}/#{repo['name']}")
-				Dir.chdir("#{GITHUB['repo']}/#{user}/#{repo['name']}")
-				puts `git pull`
-				Dir.chdir("#{GITHUB['repo']}/#{user}")
-			else
-				"#{repo['name']} is not a directory.  Skipping."
-			end
-		else
-			puts "#{repo['name']} does not exist.  Cloning."
-			puts `git clone #{url}`
-		end
+	github_user = Github::User.new(_user)
+	github_user.repositories.each do |repo|
+		next if !github_user.exclusions.empty? &&
+			github_user.exclusions.include?(repo.name)
+		next if !github_user.inclusions.empty? && (
+			!github_user.inclusions.include?(repo.name) &&
+			!github_user.inclusions.include?(repo.name.sub(/\.wiki$/,''))
+		)
+#			!github_user.inclusions.include?(repo.name + '.wiki')
+#	add wiki exception here
+		repo.update( GITHUB['login'] )
 	end
 	Dir.chdir("#{GITHUB['repo']}")
 end
 Dir.chdir(pwd)
+
+#	last line
