@@ -7,4 +7,5 @@ bin/
 lib/
 autom4te.cache/
 autoscan.log
+gem_updater.yml
 github_raider.yml
