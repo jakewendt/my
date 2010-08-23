@@ -1,0 +1,13 @@
+#	
+#	GEM_PATH=$GEM_PATH:$HOME/.gem
+#	export GEM_PATH
+#	
+#	GEM_HOME=~/.gem
+#	export GEM_HOME
+#	
+#	PATH=$PATH:$HOME/bin
+#	export PATH
+#	
+#	EDITOR=vi
+#	export EDITOR
+#	
