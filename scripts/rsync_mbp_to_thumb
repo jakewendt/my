@@ -38,6 +38,15 @@ fi
 	--delete \
 	--exclude="hosting_rails" \
 	--exclude="hostingrails.svn/references/videos/" \
+	--exclude="github_repo/jakewendt/my_core/tmp/" \
+	--exclude="github_repo/jakewendt/my_core/downloads/" \
+	--exclude="github_repo/jakewendt/my_core/test/tmp/" \
+	--exclude="github_repo/jakewendt/my_core/test/downloads/" \
+	--exclude="hostingrails.svn/sites/attic/my/log/" \
+	--exclude="hostingrails.svn/sites/attic/my/tmp/" \
+	--exclude="hostingrails.svn/sites/attic/my/downloads/" \
+	--exclude="hostingrails.svn/sites/attic/my/test/downloads/" \
+	--exclude="hostingrails.svn/sites/attic/my/test/tmp/" \
 	--exclude="hostingrails.svn/sites/my/log/" \
 	--exclude="hostingrails.svn/sites/my/tmp/" \
 	--exclude="hostingrails.svn/sites/my/downloads/" \
@@ -49,11 +58,7 @@ fi
 	--exclude=.fseventsd \
 	--exclude=.rvm \
 	--exclude=rsync/private/Video \
-	--exclude=log/server.log \
-	--exclude=log/development.log \
-	--exclude=log/production.log \
-	--exclude=log/test.log \
-	--exclude=log/fastcgi.crash.log \
+	--exclude="log/*.log" \
 	--exclude=.svn \
 	--exclude=versions \
 	--exclude=Desktop \
@@ -101,11 +106,7 @@ fi
 	--extended-attributes \
 	--exclude="Scanner Output" \
 	--exclude="*NOT_BACKED_UP*" \
-	--exclude=log/server.log \
-	--exclude=log/development.log \
-	--exclude=log/production.log \
-	--exclude=log/test.log \
-	--exclude=log/fastcgi.crash.log \
+	--exclude="log/*.log" \
 	/Users/jake/Documents/ $BackupDir/Documents/
 
 touch $BackupDir/`date "+%y%m%d:%H%M%S"`
