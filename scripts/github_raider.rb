@@ -1,5 +1,34 @@
 #!/usr/bin/env ruby
 
+#
+#	http://develop.github.com/p/issues.html
+#
+#	Ex: curl http://github.com/api/v2/json/issues/list/jakewendt/my/open
+#
+#	curl http://github.com/api/v2/:format/issues/list/:login/:repo/open
+#		:format => ( json, yaml )
+#
+#	curl http://github.com/api/v2/json/issues/list/:user/:repo/open
+#	curl http://github.com/api/v2/json/issues/list/:user/:repo/closed
+#
+#
+#	http://develop.github.com/p/gist.html
+#
+#	Ex: curl http://gist.github.com/api/v1/json/gists/jakewendt
+#
+#	curl http://gist.github.com/api/v1/:format/gists/:login
+#
+#	curl http://gist.github.com/api/v1/json/gists/jakewendt
+#		=> gist titles
+#
+#	{"gists":[{"description":null,"public":true,"repo":"137373","files":["array_extension.rb"],
+#		"owner":"jakewendt","created_at":"2009/06/28 14:15:20 -0700"},
+#
+#	curl http://gist.github.com/raw/:gist_id/:filename
+#
+#	curl http://gist.github.com/raw/137373/array_extension.rb
+#
+
 require 'rubygems'
 require 'net/http'
 require 'open-uri'
