@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
 
+gem 'activesupport', '2.3.8'
+#	I think that newer versions of the gem do not include alias_method_chain
 require 'active_support'	#	for alias_method_chain
 
 #	how do I colorize with the whole red green thing
