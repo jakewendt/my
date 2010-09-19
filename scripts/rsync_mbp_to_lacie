@@ -32,15 +32,24 @@ fi
 	--progress \
 	--delete --backup --backup-dir rsync-backup-$Date \
 	--exclude=rsync-backup\* \
-	--exclude=Desktop/Incomplete \
-	--exclude=Desktop/\*NOT_BACKED_UP\* \
-	--exclude=Desktop \
+	--exclude=.fseventsd \
+	--exclude=.rvm \
+	--exclude=rsync-backup\* \
+	--exclude="Desktop/Firefox Downloads/xxx" \
+	--exclude="Desktop/Firefox Downloads/*.mp4" \
+	--exclude="Desktop/Firefox Downloads/*/*.mp4" \
+	--exclude="Library/Preferences/Macromedia" \
+	--exclude="Library/Application Support/SyncServices" \
+	--exclude="Library/Google" \
+	--exclude="Library/Logs" \
 	--exclude="Roxio Converted Items" \
 	--exclude="Microsoft User Data" \
 	--exclude="AppleWorks User Data" \
 	--exclude="Acrobat User Data" \
 	--exclude="TV Shows" \
 	--exclude="log/*.log" \
+	--exclude=\*NOT_BACKED_UP\* \
+	--exclude=Desktop/Incomplete \
 	--exclude=Podcasts \
 	--exclude=Documents \
 	--exclude=Library/Caches \
@@ -51,7 +60,9 @@ fi
 	--exclude=.Spotlight-V100 \
 	--exclude=.dvdcss \
 	--exclude=.jpi_cache \
-	--exclude=.rvm \
+	--exclude="Library/Application Support/Garmin/Maps/*.gmap" \
+	--exclude=Desktop \
+	--exclude="TV Shows" \
 	/Users/jake/ $BackupDir/jake/
 
 /usr/bin/rsync -rltpvz \
