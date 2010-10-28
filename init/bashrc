@@ -16,6 +16,7 @@ export JAVA_MEM="-Xmx1024m -Xms768m"
 #export JAVA_STACK="-Xss1024k"
 
 
+export AUTOTEST_RERUN_ALL=false
 
 
 #	Aliases
