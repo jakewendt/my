@@ -8,3 +8,7 @@
 - http://gems.rubyforge.org/
 - http://gems.github.com
 - http://gemcutter.org
+- http://rubygems.org/
+install: --env-shebang
+update: --env-shebang
+gem: --no-ri --no-rdoc
