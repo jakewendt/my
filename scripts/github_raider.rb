@@ -30,7 +30,7 @@
 #
 
 require 'rubygems'
-require 'net/http'
+require 'net/https'
 require 'open-uri'
 require 'json'
 require 'fileutils'
@@ -83,7 +83,15 @@ module Github
 
 			#	json = `curl http://github.com/api/v1/json/#{user}`
 
-			r = Net::HTTP.get_response  "github.com","/api/v1/json/#{login}"
+#			r = Net::HTTP.get_response  "github.com","/api/v1/json/#{login}", 443
+
+uri = URI.parse("https://github.com/api/v1/json/#{login}")
+http = Net::HTTP.new(uri.host, uri.port)
+http.use_ssl = true
+http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+request = Net::HTTP::Get.new(uri.request_uri)
+r = http.request(request)
+
 			unless r.code.to_s == '200'
 				puts "Response Code was not 200"
 				puts r.code
