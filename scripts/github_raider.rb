@@ -84,7 +84,7 @@ module Github
 			#	json = `curl http://github.com/api/v1/json/#{user}`
 
 			r = Net::HTTP.get_response  "github.com","/api/v1/json/#{login}"
-			next unless r.code.to_s == '200'
+			raise unless r.code.to_s == '200'
 			json = r.body
 
 			user_response = JSON.parse(json)
