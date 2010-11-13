@@ -24,7 +24,8 @@ GEMS['gems'].each do |gem|
 		gem['lib']
 	end
 	
-	if Gem.searcher.find(gem_lib)
+	if !Gem.source_index.find_name(gem_name).empty?
+#	if Gem.searcher.find(gem_lib)
 		puts "Gem #{gem_name} found."
 	else
 		puts "Gem #{gem_name} not found."
