@@ -19,13 +19,18 @@ DIRS="${DIRS} ucb_ccls_homex"
 
 echo $DIRS
 
+i=-1
 for dir in $DIRS
 do
+#	add some sort of sleep time to delay to avoid crushing the processor
+i=`expr $i + 1`
+naptime=`expr 60 \* $i`
+#	sleep $naptime
 cat << EOF | osascript > /dev/null 2>&1
 tell application "System Events" to tell process "Terminal" to keystroke "t" using command down
 tell application "Terminal" to do script "cd github_repo/jakewendt/$dir" in selected tab of the front window
 tell application "Terminal" to do script "bash" in selected tab of the front window
-tell application "Terminal" to do script "nice -n 20 autotest" in selected tab of the front window
+tell application "Terminal" to do script "sleep $naptime; nice -n 20 autotest" in selected tab of the front window
 EOF
 done
 
