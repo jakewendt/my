@@ -1,21 +1,21 @@
 #!/bin/sh
 
-DIRS="calnet_authenticated"
-DIRS="${DIRS} simply_authorized"
-DIRS="${DIRS} simply_commentable"
-DIRS="${DIRS} simply_discussable"
-DIRS="${DIRS} simply_documents"
-DIRS="${DIRS} simply_helpful"
-DIRS="${DIRS} simply_pages"
-DIRS="${DIRS} simply_photos"
-DIRS="${DIRS} simply_taggable"
-DIRS="${DIRS} simply_testable"
-DIRS="${DIRS} simply_trackable"
-DIRS="${DIRS} ucb_ccls_abstracts"
-DIRS="${DIRS} ucb_ccls_buffler"
-DIRS="${DIRS} ucb_ccls_clic"
-DIRS="${DIRS} ucb_ccls_engine"
-DIRS="${DIRS} ucb_ccls_homex"
+DIRS="jakewendt/calnet_authenticated"
+DIRS="${DIRS} jakewendt/simply_authorized"
+DIRS="${DIRS} jakewendt/simply_commentable"
+DIRS="${DIRS} jakewendt/simply_discussable"
+DIRS="${DIRS} jakewendt/simply_documents"
+DIRS="${DIRS} jakewendt/simply_helpful"
+DIRS="${DIRS} jakewendt/simply_pages"
+DIRS="${DIRS} jakewendt/simply_photos"
+DIRS="${DIRS} jakewendt/simply_taggable"
+DIRS="${DIRS} jakewendt/simply_testable"
+DIRS="${DIRS} jakewendt/simply_trackable"
+DIRS="${DIRS} jakewendt/ucb_ccls_engine"
+DIRS="${DIRS} ccls/abstracts"
+DIRS="${DIRS} ccls/buffler"
+DIRS="${DIRS} ccls/clic"
+DIRS="${DIRS} ccls/homex"
 
 echo $DIRS
 
@@ -28,7 +28,7 @@ naptime=`expr 60 \* $i`
 #	sleep $naptime
 cat << EOF | osascript > /dev/null 2>&1
 tell application "System Events" to tell process "Terminal" to keystroke "t" using command down
-tell application "Terminal" to do script "cd github_repo/jakewendt/$dir" in selected tab of the front window
+tell application "Terminal" to do script "cd github_repo/$dir" in selected tab of the front window
 tell application "Terminal" to do script "bash" in selected tab of the front window
 tell application "Terminal" to do script "sleep $naptime; nice -n 20 autotest" in selected tab of the front window
 EOF
