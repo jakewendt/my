@@ -11,11 +11,11 @@ DIRS="${DIRS} jakewendt/simply_photos"
 DIRS="${DIRS} jakewendt/simply_taggable"
 DIRS="${DIRS} jakewendt/simply_testable"
 DIRS="${DIRS} jakewendt/simply_trackable"
-DIRS="${DIRS} jakewendt/ucb_ccls_engine"
 DIRS="${DIRS} ccls/abstracts"
 DIRS="${DIRS} ccls/buffler"
 DIRS="${DIRS} ccls/clic"
 DIRS="${DIRS} ccls/homex"
+DIRS="${DIRS} ccls/ucb_ccls_engine"
 
 echo $DIRS
 
