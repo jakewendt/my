@@ -98,6 +98,7 @@ fi
 	--exclude="netflix/DB*.sql" \
 	--exclude="rsync/private/Video" \
 	--exclude="Scanner Output" \
+	--exclude="Records/private/Video" \
 	/Users/jake/ $BackupDir/
 
 /usr/bin/rsync -avz \
