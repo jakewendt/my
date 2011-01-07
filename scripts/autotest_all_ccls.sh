@@ -37,3 +37,7 @@ done
 
 
 #	http://elsethenif.wordpress.com/2009/06/11/open-a-new-tab-on-terminal-with-the-same-path-on-mac-os-x/
+
+
+#	DO NOT MINIMIZE THE CALLING WINDOW BEFORE THE TABS ARE CREATED
+#	OTHERWISE THE COMMANDS GET SENT TO ANOTHER WINDOW AND IT ENDS BADLY!
