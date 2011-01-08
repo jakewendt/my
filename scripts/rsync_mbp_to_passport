@@ -79,6 +79,9 @@ fi
 	--exclude=Incomplete \
 	--exclude=Xtorrent \
 	--exclude=\*NOT_BACKED_UP\* \
+	--exclude="Desktop/Firefox Downloads/vid*" \
+	--exclude="Desktop/Firefox Downloads/*.mp4" \
+	--exclude="Desktop/Firefox Downloads/*/*.mp4" \
 	/Users/Shared/ $BackupDir/Shared/
 
 #
