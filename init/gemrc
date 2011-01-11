@@ -12,3 +12,5 @@
 install: --env-shebang
 update: --env-shebang
 gem: --no-ri --no-rdoc
+:requirements:
+  rails: ["< 3.0.0"]
