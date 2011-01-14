@@ -35,9 +35,9 @@ fi
 	--exclude=.fseventsd \
 	--exclude=.rvm \
 	--exclude=rsync-backup\* \
-	--exclude="Desktop/Firefox Downloads/vid*" \
-	--exclude="Desktop/Firefox Downloads/*.mp4" \
-	--exclude="Desktop/Firefox Downloads/*/*.mp4" \
+	--exclude="Desktop/Downloads/vid*" \
+	--exclude="Desktop/Downloads/*.mp4" \
+	--exclude="Desktop/Downloads/*/*.mp4" \
 	--exclude="Library/Preferences/Macromedia" \
 	--exclude="Library/Application Support/SyncServices" \
 	--exclude="Library/Google" \
@@ -60,6 +60,8 @@ fi
 	--exclude=.Spotlight-V100 \
 	--exclude=.dvdcss \
 	--exclude=.jpi_cache \
+	--exclude=Eclipse \
+	--exclude=Android \
 	--exclude="Library/Application Support/Garmin/Maps/*.gmap" \
 	/Users/jake/ $BackupDir/jake/
 
@@ -79,9 +81,9 @@ fi
 	--exclude=Incomplete \
 	--exclude=Xtorrent \
 	--exclude=\*NOT_BACKED_UP\* \
-	--exclude="Desktop/Firefox Downloads/vid*" \
-	--exclude="Desktop/Firefox Downloads/*.mp4" \
-	--exclude="Desktop/Firefox Downloads/*/*.mp4" \
+	--exclude="Desktop/Downloads/vid*" \
+	--exclude="Desktop/Downloads/*.mp4" \
+	--exclude="Desktop/Downloads/*/*.mp4" \
 	/Users/Shared/ $BackupDir/Shared/
 
 #
