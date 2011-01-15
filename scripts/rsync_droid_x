@@ -1,0 +1,7 @@
+#!/bin/sh
+
+rsync -rvz --size-only \
+	--progress \
+	--exclude='xfiles' \
+	--exclude='Music' \
+	"/Volumes/NO NAME/" ~/droid_x/
