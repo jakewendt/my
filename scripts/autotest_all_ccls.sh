@@ -30,10 +30,13 @@ naptime=`expr 60 \* $i`
 cat << EOF | osascript > /dev/null 2>&1
 tell application "System Events" to tell process "Terminal" to keystroke "t" using command down
 tell application "Terminal" to do script "cd github_repo/$dir" in selected tab of the front window
-tell application "Terminal" to do script "bash" in selected tab of the front window
-tell application "Terminal" to do script "sleep $naptime; nice -n 20 autotest" in selected tab of the front window
+tell application "Terminal" to do script "sleep $naptime; nice +20 autotest" in selected tab of the front window
 EOF
 done
+#tell application "Terminal" to do script "bash" in selected tab of the front window
+#	in my tcsh, the -n can't be used and the number must have a sign
+#	gotta love it when people follow standards
+#tell application "Terminal" to do script "sleep $naptime; nice -n 20 autotest" in selected tab of the front window
 
 
 #	http://elsethenif.wordpress.com/2009/06/11/open-a-new-tab-on-terminal-with-the-same-path-on-mac-os-x/
