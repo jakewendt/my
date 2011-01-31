@@ -35,9 +35,9 @@ fi
 	--exclude=.fseventsd \
 	--exclude=.rvm \
 	--exclude=rsync-backup\* \
-	--exclude="Desktop/Firefox Downloads/vid*" \
-	--exclude="Desktop/Firefox Downloads/*.mp4" \
-	--exclude="Desktop/Firefox Downloads/*/*.mp4" \
+	--exclude="Desktop/**/vid*" \
+	--exclude="Desktop/**/*.mp4" \
+	--exclude="Desktop/**/*/*.mp4" \
 	--exclude="Library/Preferences/Macromedia" \
 	--exclude="Library/Application Support/SyncServices" \
 	--exclude="Library/Google" \

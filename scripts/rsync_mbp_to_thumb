@@ -32,16 +32,57 @@ fi
 # /bin/rm -rf /Volumes/THUMB/MBP/Library/Mail/*/*/*/Attachments/
 #	/bin/rm -rf /Volumes/THUMB/MBP/Library/Mail/*/*/Attachments/
 #	/bin/rm -rf /Volumes/THUMB/MBP/hostingrails.svn/references/videos
+#	--exclude="upillar.svn/motors" \
+#	--exclude="upillar.svn/classifieds/trunk/tmp/markup/" \
+#	--exclude="upillar.svn/classifieds/trunk/doc/mockups/final mockup psds"  \
 
 /usr/bin/rsync -avz \
 	--progress \
 	--delete \
-	--exclude="hosting_rails" \
-	--exclude="hostingrails.svn/references/videos/" \
+	--extended-attributes \
+	--exclude="Acrobat User Data" \
+	--exclude="Admin Drop Box" \
+	--exclude="Android" \
+	--exclude="AppleWorks User Data" \
+	--exclude="Desktop" \
+	--exclude="Documents" \
+	--exclude="Downloads" \
+	--exclude="Eclipse" \
+	--exclude="Library/Screen Savers" \
+	--exclude="Library/Mail/*/*/Attachments" \
+	--exclude="Library/Mail/*/*/*/Attachments" \
+	--exclude="Library/Mail/RSS/*/Attachments" \
+	--exclude="Library/PubSub" \
+	--exclude="Library/Logs" \
+	--exclude="Library/Caches" \
+	--exclude="Library/Fonts" \
+	--exclude="Library/Application Support/Adobe" \
+	--exclude="Library/Application Support/Skype" \
+	--exclude="Library/Application Support/Garmin" \
+	--exclude="Microsoft User Data" \
+	--exclude="Movies" \
+	--exclude="Music" \
+	--exclude="Pictures" \
+	--exclude="Podcasts" \
+	--exclude="Records/private/Video" \
+	--exclude="Roxio Converted Items" \
+	--exclude="Scanner Output" \
+	--exclude="Sites" \
+	--exclude="Temp" \
+	--exclude="TV Shows" \
+	--exclude="googleearth/kml/surfaces" \
+	--exclude="*NOT_BACKED_UP*" \
+	--exclude="netflix/query.log*" \
+	--exclude="netflix/catalog" \
+	--exclude="netflix/queries_*" \
+	--exclude="netflix/DB*.sql" \
 	--exclude="github_repo/jakewendt/my_core/tmp/" \
 	--exclude="github_repo/jakewendt/my_core/downloads/" \
 	--exclude="github_repo/jakewendt/my_core/test/tmp/" \
 	--exclude="github_repo/jakewendt/my_core/test/downloads/" \
+	--exclude="hosting_rails" \
+	--exclude="hostingrails.svn/**/attic/" \
+	--exclude="hostingrails.svn/references/videos/" \
 	--exclude="hostingrails.svn/sites/attic/my/log/" \
 	--exclude="hostingrails.svn/sites/attic/my/tmp/" \
 	--exclude="hostingrails.svn/sites/attic/my/downloads/" \
@@ -52,62 +93,30 @@ fi
 	--exclude="hostingrails.svn/sites/my/downloads/" \
 	--exclude="hostingrails.svn/sites/my/test/downloads/" \
 	--exclude="hostingrails.svn/sites/my/test/tmp/" \
-	--exclude="upillar.svn/motors" \
-	--exclude="upillar.svn/classifieds/trunk/tmp/markup/" \
-	--exclude="upillar.svn/classifieds/trunk/doc/mockups/final mockup psds"  \
-	--exclude=.fseventsd \
-	--exclude=.rvm \
-	--exclude=rsync/private/Video \
-	--exclude="log/*.log" \
-	--exclude=.svn \
-	--exclude=versions \
-	--exclude=Desktop \
-	--exclude=Documents \
-	--exclude=Sites \
-	--exclude=rsync-backup \
-	--exclude="Admin Drop Box" \
-	--exclude=Music \
-	--exclude=Movies \
-	--exclude=Pictures \
-	--exclude=.TemporaryItems \
-	--exclude="Roxio Converted Items" \
-	--exclude="Microsoft User Data" \
-	--exclude="AppleWorks User Data" \
-	--exclude="Acrobat User Data" \
-	--exclude="TV Shows" \
-	--exclude=Podcasts \
-	--exclude=Temp \
-	--exclude=.Trash \
-	--exclude=.Trashes \
-	--exclude=.Spotlight-V100 \
-	--exclude=.dvdcss \
-	--exclude=.jpi_cache \
-	--exclude="Library/Screen Savers" \
-	--exclude="Library/Mail/*/*/Attachments" \
-	--exclude="Library/Mail/*/*/*/Attachments" \
-	--exclude="Library/Mail/RSS/*/Attachments" \
-	--exclude="Library/PubSub" \
-	--exclude="Library/Logs" \
-	--exclude="Library/Caches" \
-	--exclude="Library/Application Support/Garmin" \
-	--exclude=googleearth/kml/surfaces \
-	--exclude="*NOT_BACKED_UP*" \
-	--exclude="netflix/query.log*" \
-	--exclude="netflix/catalog" \
-	--exclude="netflix/queries_*" \
-	--exclude="netflix/DB*.sql" \
+	--exclude="rsync-backup" \
+	--exclude="upillar.svn/" \
 	--exclude="rsync/private/Video" \
-	--exclude="Scanner Output" \
-	--exclude="Records/private/Video" \
+	--exclude="log/*.log" \
+	--exclude="versions" \
+	--exclude=".fseventsd" \
+	--exclude=".rvm" \
+	--exclude=".svn" \
+	--exclude=".TemporaryItems" \
+	--exclude=".Trash" \
+	--exclude=".Trashes" \
+	--exclude=".Spotlight-V100" \
+	--exclude=".dvdcss" \
+	--exclude=".jpi_cache" \
+	--exclude="*sparsebundle" \
 	/Users/jake/ $BackupDir/
 
-/usr/bin/rsync -avz \
-	--progress \
-	--delete \
-	--extended-attributes \
-	--exclude="Scanner Output" \
-	--exclude="*NOT_BACKED_UP*" \
-	--exclude="log/*.log" \
-	/Users/jake/Documents/ $BackupDir/Documents/
+#/usr/bin/rsync -avz \
+#	--progress \
+#	--delete \
+#	--extended-attributes \
+#	--exclude="Scanner Output" \
+#	--exclude="*NOT_BACKED_UP*" \
+#	--exclude="log/*.log" \
+#	/Users/jake/Documents/ $BackupDir/Documents/
 
 touch $BackupDir/`date "+%y%m%d:%H%M%S"`

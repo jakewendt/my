@@ -29,15 +29,15 @@ fi
 #	--exclude=Library \
 #	--exclude=Desktop \
 #	--exclude="Firefox Downloads" \
+#	--exclude="Downloads/vid*" \
+#	--exclude="Downloads/*.mp4" \
 /usr/bin/rsync -rltpvz \
 	--progress \
 	--delete --backup --backup-dir rsync-backup-$Date \
 	--exclude=.fseventsd \
 	--exclude=.rvm \
 	--exclude=rsync-backup\* \
-	--exclude="Desktop/Downloads/vid*" \
-	--exclude="Desktop/Downloads/*.mp4" \
-	--exclude="Desktop/Downloads/*/*.mp4" \
+	--exclude="Downloads/**/*.mp4" \
 	--exclude="Library/Preferences/Macromedia" \
 	--exclude="Library/Application Support/SyncServices" \
 	--exclude="Library/Google" \
@@ -81,10 +81,11 @@ fi
 	--exclude=Incomplete \
 	--exclude=Xtorrent \
 	--exclude=\*NOT_BACKED_UP\* \
-	--exclude="Desktop/Downloads/vid*" \
-	--exclude="Desktop/Downloads/*.mp4" \
-	--exclude="Desktop/Downloads/*/*.mp4" \
+	--exclude="Downloads/**/*.mp4" \
 	/Users/Shared/ $BackupDir/Shared/
+#	--exclude="Desktop/Downloads/vid*" \
+#	--exclude="Desktop/Downloads/*.mp4" \
+#	--exclude="Desktop/Downloads/*/*.mp4" \
 
 #
 #	Why do I do this?  Wouldn't iTunes be included in the above call?
