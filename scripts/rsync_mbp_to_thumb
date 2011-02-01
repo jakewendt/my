@@ -95,6 +95,11 @@ fi
 	--exclude="hostingrails.svn/sites/my/test/tmp/" \
 	--exclude="rsync-backup" \
 	--exclude="upillar.svn/" \
+	--exclude="upillar.svn/motors/data_scripts/" \
+	--exclude="upillar.svn/motors/vendor/" \
+	--exclude="upillar.svn/motors/public/video/" \
+	--exclude="upillar.svn/classifieds/trunk/lib/data/" \
+	--exclude="upillar.svn/classifieds/trunk/vendor/" \
 	--exclude="rsync/private/Video" \
 	--exclude="log/*.log" \
 	--exclude="versions" \
