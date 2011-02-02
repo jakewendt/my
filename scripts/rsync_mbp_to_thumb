@@ -35,23 +35,24 @@ fi
 #	--exclude="upillar.svn/motors" \
 #	--exclude="upillar.svn/classifieds/trunk/tmp/markup/" \
 #	--exclude="upillar.svn/classifieds/trunk/doc/mockups/final mockup psds"  \
+#	--exclude="Library/Mail/*/*/*/Attachments" \
+#	--exclude="Library/Mail/RSS/*/Attachments" \
+#	--exclude="Documents" \
 
 /usr/bin/rsync -avz \
 	--progress \
 	--delete \
+	--delete-excluded \
 	--extended-attributes \
 	--exclude="Acrobat User Data" \
 	--exclude="Admin Drop Box" \
 	--exclude="Android" \
 	--exclude="AppleWorks User Data" \
 	--exclude="Desktop" \
-	--exclude="Documents" \
 	--exclude="Downloads" \
 	--exclude="Eclipse" \
 	--exclude="Library/Screen Savers" \
-	--exclude="Library/Mail/*/*/Attachments" \
-	--exclude="Library/Mail/*/*/*/Attachments" \
-	--exclude="Library/Mail/RSS/*/Attachments" \
+	--exclude="Library/Mail/**/Attachments" \
 	--exclude="Library/PubSub" \
 	--exclude="Library/Logs" \
 	--exclude="Library/Caches" \
@@ -63,6 +64,7 @@ fi
 	--exclude="Movies" \
 	--exclude="Music" \
 	--exclude="Pictures" \
+	--exclude="Pics2WorkOn/*.psd" \
 	--exclude="Podcasts" \
 	--exclude="Records/private/Video" \
 	--exclude="Roxio Converted Items" \
@@ -72,10 +74,6 @@ fi
 	--exclude="TV Shows" \
 	--exclude="googleearth/kml/surfaces" \
 	--exclude="*NOT_BACKED_UP*" \
-	--exclude="netflix/query.log*" \
-	--exclude="netflix/catalog" \
-	--exclude="netflix/queries_*" \
-	--exclude="netflix/DB*.sql" \
 	--exclude="github_repo/jakewendt/my_core/tmp/" \
 	--exclude="github_repo/jakewendt/my_core/downloads/" \
 	--exclude="github_repo/jakewendt/my_core/test/tmp/" \
@@ -93,6 +91,20 @@ fi
 	--exclude="hostingrails.svn/sites/my/downloads/" \
 	--exclude="hostingrails.svn/sites/my/test/downloads/" \
 	--exclude="hostingrails.svn/sites/my/test/tmp/" \
+	--exclude="hostingrails.svn/sites/netflix/query.log*" \
+	--exclude="hostingrails.svn/sites/netflix/catalog" \
+	--exclude="hostingrails.svn/sites/netflix/queries_*" \
+	--exclude="hostingrails.svn/sites/netflix/DB*.sql" \
+	--exclude="hostingrails.svn/sites/netflix/catalog*.sql" \
+	--exclude="hostingrails.svn/sites/raider/query.log" \
+	--exclude="hostingrails.svn/sites/raider/DB*.sql" \
+	--exclude="hostingrails.svn/sites/www/ZNP?" \
+	--exclude="hostingrails.svn/sites/www/LVPanorama" \
+	--exclude="hostingrails.svn/sites/www/VRGPanorama" \
+	--exclude="hostingrails.svn/sites/www/Speed" \
+	--exclude="hostingrails.svn/sites/www/lamps" \
+	--exclude="hostingrails.svn/sites/www/img" \
+	--exclude="vendor/rails" \
 	--exclude="rsync-backup" \
 	--exclude="upillar.svn/" \
 	--exclude="upillar.svn/motors/data_scripts/" \
@@ -112,6 +124,7 @@ fi
 	--exclude=".Spotlight-V100" \
 	--exclude=".dvdcss" \
 	--exclude=".jpi_cache" \
+	--exclude=".DS_Store" \
 	--exclude="*sparsebundle" \
 	/Users/jake/ $BackupDir/
 
