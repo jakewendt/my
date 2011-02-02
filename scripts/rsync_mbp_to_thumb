@@ -60,6 +60,7 @@ fi
 	--exclude="Library/Application Support/Adobe" \
 	--exclude="Library/Application Support/Skype" \
 	--exclude="Library/Application Support/Garmin" \
+	--exclude="Library/Mail/Bundles (Disabled)" \
 	--exclude="Microsoft User Data" \
 	--exclude="Movies" \
 	--exclude="Music" \
