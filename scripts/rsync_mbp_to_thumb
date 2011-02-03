@@ -47,6 +47,7 @@ fi
 	--exclude="Acrobat User Data" \
 	--exclude="Admin Drop Box" \
 	--exclude="Android" \
+	--exclude="Applications" \
 	--exclude="AppleWorks User Data" \
 	--exclude="Desktop" \
 	--exclude="Downloads" \
@@ -60,12 +61,14 @@ fi
 	--exclude="Library/Application Support/Adobe" \
 	--exclude="Library/Application Support/Skype" \
 	--exclude="Library/Application Support/Garmin" \
+	--exclude="Library/Application Support/CrashReporter" \
 	--exclude="Library/Mail/Bundles (Disabled)" \
 	--exclude="Microsoft User Data" \
 	--exclude="Movies" \
 	--exclude="Music" \
 	--exclude="Pictures" \
 	--exclude="Pics2WorkOn/*.psd" \
+	--exclude="Pics2WorkOn/**/*.psd" \
 	--exclude="Podcasts" \
 	--exclude="Records/private/Video" \
 	--exclude="Roxio Converted Items" \
