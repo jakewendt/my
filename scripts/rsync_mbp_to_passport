@@ -33,45 +33,45 @@ fi
 #	--exclude="Downloads/*.mp4" \
 /usr/bin/rsync -rltpvz \
 	--progress \
+	--extended-attributes \
 	--delete --backup --backup-dir rsync-backup-$Date \
-	--exclude=.fseventsd \
-	--exclude=.rvm \
-	--exclude=rsync-backup\* \
-	--exclude="Downloads/**/*.mp4" \
-	--exclude="Library/Preferences/Macromedia" \
-	--exclude="Library/Application Support/SyncServices" \
-	--exclude="Library/Google" \
-	--exclude="Library/Logs" \
-	--exclude="Roxio Converted Items" \
-	--exclude="Microsoft User Data" \
 	--exclude="AppleWorks User Data" \
 	--exclude="Acrobat User Data" \
+	--exclude="Android" \
+	--exclude="Desktop/Incomplete" \
+	--exclude="Downloads/**/*.mp4" \
+	--exclude="Eclipse" \
+	--exclude="Library/Preferences/Macromedia" \
+	--exclude="Library/Application Support/Garmin/Maps/*.gmap" \
+	--exclude="Library/Application Support/SyncServices" \
+	--exclude="Library/Caches" \
+	--exclude="Library/Google" \
+	--exclude="Library/Logs" \
+	--exclude="Podcasts" \
+	--exclude="Roxio Converted Items" \
+	--exclude="Microsoft User Data" \
+	--exclude="Temp" \
 	--exclude="TV Shows" \
+	--exclude="rsync-backup*" \
 	--exclude="log/*.log" \
-	--exclude=\*NOT_BACKED_UP\* \
-	--exclude=Desktop/Incomplete \
-	--exclude=Podcasts \
-	--exclude=Documents \
-	--exclude=Library/Caches \
-	--exclude=Temp \
+	--exclude=.fseventsd \
+	--exclude=.rvm \
 	--exclude=.Trash \
 	--exclude=.Trashes \
 	--exclude=.TemporaryItems \
 	--exclude=.Spotlight-V100 \
 	--exclude=.dvdcss \
 	--exclude=.jpi_cache \
-	--exclude=Eclipse \
-	--exclude=Android \
-	--exclude="Library/Application Support/Garmin/Maps/*.gmap" \
+	--exclude=\*NOT_BACKED_UP\* \
 	/Users/jake/ $BackupDir/jake/
 
-/usr/bin/rsync -rltpvz \
-	--progress \
-	--extended-attributes \
-	--delete --backup --backup-dir rsync-backup-$Date \
-	--exclude=\*NOT_BACKED_UP\* \
-	--exclude=rsync-backup\* \
-	/Users/jake/Documents/ $BackupDir/jake/Documents/
+#/usr/bin/rsync -rltpvz \
+#	--progress \
+#	--extended-attributes \
+#	--delete --backup --backup-dir rsync-backup-$Date \
+#	--exclude=\*NOT_BACKED_UP\* \
+#	--exclude=rsync-backup\* \
+#	/Users/jake/Documents/ $BackupDir/jake/Documents/
 
 /usr/bin/rsync -rltpvz --progress \
 	--delete --backup --backup-dir rsync-backup-$Date \
