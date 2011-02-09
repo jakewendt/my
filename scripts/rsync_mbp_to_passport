@@ -46,6 +46,7 @@ fi
 	--exclude="Library/Application Support/SyncServices" \
 	--exclude="Library/Caches" \
 	--exclude="Library/Google" \
+	--exclude="Library/Mail/Bundles (Disabled)/GPGMail.mailbundle" \
 	--exclude="Library/Logs" \
 	--exclude="Podcasts" \
 	--exclude="Roxio Converted Items" \
