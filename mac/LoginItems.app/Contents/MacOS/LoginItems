@@ -1,0 +1,24 @@
+#!/bin/sh
+
+#	http://www.macenterprise.org/articles/runningitemsatlogin
+
+#	I tried this as just a shell script, but wouldn't run
+#wFeb 10 23:08:17 mbp-3 loginwindow[351]: Login items - LSOpenApplication returned error -10827, url=/Users/Shared/login_items.sh
+#	I tried different directories, but no joy.
+#	I put it in the app bundle format and voila.
+
+echo "Running login items..."
+
+#echo "Opening TextEdit"
+#/usr/bin/open /Applications/TextEdit.app
+
+echo "Mounting sparse bundles ..."
+#/usr/bin/hdiutil attach -mountpoint /Users/jake/EncryptedAncestry /Users/jake/Ancestry.sparsebundle
+#/Users/jake/Ancestry.sparsebundle
+#/Users/jake/Books.sparsebundle
+#/Users/jake/Documents.sparsebundle
+#/Users/jake/DroidX.sparsebundle
+#/Users/jake/Recipes.sparsebundle
+#/Users/jake/Records.sparsebundle
+
+echo "Completed running login items."
