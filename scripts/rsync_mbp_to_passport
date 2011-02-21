@@ -83,6 +83,7 @@ fi
 	--exclude=Xtorrent \
 	--exclude=\*NOT_BACKED_UP\* \
 	--exclude="Downloads/**/*.mp4" \
+	--exclude="Downloads/**/*.wmv" \
 	/Users/Shared/ $BackupDir/Shared/
 #	--exclude="Desktop/Downloads/vid*" \
 #	--exclude="Desktop/Downloads/*.mp4" \

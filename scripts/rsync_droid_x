@@ -1,7 +1,11 @@
 #!/bin/sh
 
+Date=`date "+%y%m%d%H%M%S"`
+
 rsync -rvz --size-only \
 	--progress \
+	--backup --backup-dir rsync-backup-$Date \
+	--exclude="rsync-backup*" \
 	--exclude='xfiles' \
 	--exclude='Music' \
 	"/Volumes/NO NAME/" ~/droid_x/
