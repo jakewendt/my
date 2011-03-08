@@ -36,7 +36,8 @@ users:
     only: mocha
   - user: jquery
     only: [ jquery, jquery-ui ]
-  - user: thenduks
+#  - user: thenduks
+  - user: rfunduk
     only: flot
   - user: mislav
     only: will_paginate

@@ -65,6 +65,7 @@ module Github
 
 			@inclusions = ( options['only']   ) ? [options['only']].flatten   : []
 			@exclusions = ( options['except'] ) ? [options['except']].flatten : []
+			@repositories = []
 
 			if File.exists?(login_path)
 				unless File.directory?(login_path)
@@ -96,13 +97,15 @@ r = http.request(request)
 				puts "Response Code was not 200"
 				puts r.code
 				puts r.body
-				raise 
+				puts r.inspect
+				puts uri.inspect
+#				raise 
+				return
 			end
 			json = r.body
 
 			user_response = JSON.parse(json)
 			File.open("#{login}.yml",'w') { |f| f.puts user_response.to_yaml }
-			@repositories = []
 			(user_response['user']['repositories']||[]).each{ |repo|
 				repositories << github_repo = Github::Repository.new(repo)
 #	Wait until all wikis are new wikis (late September)
@@ -196,7 +199,7 @@ end
 
 GITHUB['users'].each do |_user|
 	github_user = Github::User.new(_user)
-	github_user.repositories.each do |repo|
+	github_user.repositories.send(:each) do |repo|
 		next if !github_user.exclusions.empty? &&
 			github_user.exclusions.include?(repo.name)
 		next if !github_user.inclusions.empty? && (
