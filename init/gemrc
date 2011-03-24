@@ -5,7 +5,11 @@
 - http://gems.github.com
 - http://gemcutter.org
 - http://rubygems.org/
-gem: --no-ri --no-rdoc
+#	Added --bindir /usr/bin to install in the right place
+#	EXECUTABLE DIRECTORY still says /System/Library/Frameworks/Ruby.framework/Versions/1.8.7/usr/bin
+#	but actually installs in /usr/bin
+#	This is really stupid that there isn't a simple way to do this properly
+gem: --no-ri --no-rdoc --bindir /usr/bin
 install: --env-shebang
 :verbose: true
 :backtrace: false
