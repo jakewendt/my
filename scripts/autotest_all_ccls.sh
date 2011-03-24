@@ -1,7 +1,7 @@
 #!/bin/sh
 
 DIRS=""
-#DIRS="ccls/calnet_authenticated"
+DIRS="ccls/calnet_authenticated"
 DIRS="${DIRS} jakewendt/simply_sessions"
 DIRS="${DIRS} jakewendt/rails_extension"
 DIRS="${DIRS} jakewendt/ruby_extension"
