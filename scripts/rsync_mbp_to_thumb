@@ -62,8 +62,14 @@ fi
 	--exclude="Library/Application Support/Skype" \
 	--exclude="Library/Application Support/Garmin" \
 	--exclude="Library/Application Support/CrashReporter" \
+	--exclude="Library/Application Support/SyncServices" \
 	--exclude="Library/Mail/Bundles (Disabled)" \
 	--exclude="Library/Internet Plug-Ins" \
+	--exclude="Library/Preferences/NeoOffice-*" \
+	--exclude="Library/Preferences/Macromedia" \
+	--exclude="Library/Preferences/EPSON" \
+	--exclude="Library/Saved Searches" \
+	--exclude="Library/Widgets" \
 	--exclude="Microsoft User Data" \
 	--exclude="Movies" \
 	--exclude="Music" \
