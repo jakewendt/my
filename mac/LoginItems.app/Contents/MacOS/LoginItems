@@ -14,11 +14,13 @@ echo "Running login items..."
 
 echo "Mounting sparse bundles ..."
 
-/usr/bin/hdiutil attach -mountpoint \
-	/Users/jake/Documents.TESTING /Users/jake/Documents.sparsebundle
+#/usr/bin/hdiutil attach -mountpoint \
+#	/Users/jake/Documents.TESTING /Users/jake/Documents.sparsebundle
+/usr/bin/hdiutil attach /Users/jake/Documents.sparsebundle
 
-/usr/bin/hdiutil attach -mountpoint \
-	/Users/jake/Records.TESTING /Users/jake/Records.sparsebundle
+#/usr/bin/hdiutil attach -mountpoint \
+#	/Users/jake/Records.TESTING /Users/jake/Records.sparsebundle
+/usr/bin/hdiutil attach /Users/jake/Records.sparsebundle
 
 #/usr/bin/hdiutil attach -mountpoint /Users/jake/EncryptedAncestry /Users/jake/Ancestry.sparsebundle
 #/Users/jake/Ancestry.sparsebundle
