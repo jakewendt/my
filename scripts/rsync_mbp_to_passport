@@ -52,6 +52,7 @@ fi
 	--exclude="Roxio Converted Items" \
 	--exclude="Microsoft User Data" \
 	--exclude="Temp" \
+	--exclude="hosting_rails/prod/sites/www/*.m4v" \
 	--exclude="TV Shows" \
 	--exclude="rsync-backup*" \
 	--exclude="log/*.log" \
