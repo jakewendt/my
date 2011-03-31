@@ -105,7 +105,10 @@ alias fv         'fv \!* &'
 alias beep             'xset b; echo \\a; xset -b'
 alias b                'beep'
 
-setenv TERM dtterm       #   I do this for vi reasons.
+#	20110331 - I removed this because an ssh connection brings this with it
+#		and genepi1 does not like dtterm
+setenv TERM xterm
+#setenv TERM dtterm       #   I do this for vi reasons.
 alias dtterm     'dtterm -bs -bg white -fn -misc-fixed-medium-r-\*-\*-14-\*-\*-\*-\*-\*-iso8859-1'
 
 
