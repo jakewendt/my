@@ -11,7 +11,9 @@
 #	This is really stupid that there isn't a simple way to do this properly
 #	And this breaks in the rvm environment, because it trumps
 #	the rvm setting for bin/
-gem: --no-ri --no-rdoc --bindir /usr/bin
+#	Just set GEM_HOME and then put a link to /usr/bin in it.
+#	Really should be variable like GEM_BIN or something.
+gem: --no-ri --no-rdoc #	--bindir /usr/bin
 install: --env-shebang
 :verbose: true
 :backtrace: false

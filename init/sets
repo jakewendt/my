@@ -7,6 +7,8 @@ if ($?prompt) then		# For interactive shells only (ie. not scripts):
 
 	setenv JEWELER_OPTS "--testunit"
 
+	setenv GEM_HOME /usr/lib/ruby/user-gems/1.8
+
 #	if ( -e /usr/bin/envv ) then
 #		setenv ENVV /usr/bin/envv
 #	else if ( -e ~/my/bin/envv ) then
