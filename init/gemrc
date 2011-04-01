@@ -9,6 +9,8 @@
 #	EXECUTABLE DIRECTORY still says /System/Library/Frameworks/Ruby.framework/Versions/1.8.7/usr/bin
 #	but actually installs in /usr/bin
 #	This is really stupid that there isn't a simple way to do this properly
+#	And this breaks in the rvm environment, because it trumps
+#	the rvm setting for bin/
 gem: --no-ri --no-rdoc --bindir /usr/bin
 install: --env-shebang
 :verbose: true
