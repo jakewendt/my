@@ -4,6 +4,10 @@
 " kind of annoying
 ":set foldmethod=syntax
 
+"	show special characters
+":set invlist (what's the difference between list and invlist?)
+:set list
+
 :syntax enable
 :set number
 
