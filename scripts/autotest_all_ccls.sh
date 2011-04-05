@@ -20,6 +20,7 @@ DIRS="${DIRS} ccls/abstracts"
 DIRS="${DIRS} ccls/buffler"
 DIRS="${DIRS} ccls/clic"
 DIRS="${DIRS} ccls/homex"
+DIRS="${DIRS} ccls/odms"
 DIRS="${DIRS} ccls/ucb_ccls_engine"
 
 echo $DIRS
