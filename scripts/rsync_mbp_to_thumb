@@ -63,6 +63,7 @@ fi
 	--exclude="Library/Application Support/Garmin" \
 	--exclude="Library/Application Support/CrashReporter" \
 	--exclude="Library/Application Support/SyncServices" \
+	--exclude="Library/Application Support/Firefox" \
 	--exclude="Library/Mail/Bundles (Disabled)" \
 	--exclude="Library/Internet Plug-Ins" \
 	--exclude="Library/Preferences/NeoOffice-*" \
