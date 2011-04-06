@@ -69,6 +69,8 @@ fi
 	--exclude="Library/Preferences/NeoOffice-*" \
 	--exclude="Library/Preferences/Macromedia" \
 	--exclude="Library/Preferences/EPSON" \
+	--exclude="Library/Preferences/Microsoft" \
+	--exclude="Library/Preferences/Thoth Preferences" \
 	--exclude="Library/Saved Searches" \
 	--exclude="Library/Widgets" \
 	--exclude="Microsoft User Data" \
