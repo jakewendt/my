@@ -6,7 +6,7 @@
 
 "	show special characters
 ":set invlist (what's the difference between list and invlist?)
-:set list
+":set list
 
 :syntax enable
 :set number
