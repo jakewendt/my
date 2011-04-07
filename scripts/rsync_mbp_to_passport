@@ -39,6 +39,7 @@ fi
 	--exclude="Acrobat User Data" \
 	--exclude="Android" \
 	--exclude="Desktop/Incomplete" \
+	--exclude="Downloads/*.mp4" \
 	--exclude="Downloads/**/*.mp4" \
 	--exclude="Eclipse" \
 	--exclude="Library/Preferences/Macromedia" \
@@ -83,6 +84,7 @@ fi
 	--exclude=Incomplete \
 	--exclude=Xtorrent \
 	--exclude=\*NOT_BACKED_UP\* \
+	--exclude="Downloads/*.mp4" \
 	--exclude="Downloads/**/*.mp4" \
 	--exclude="Downloads/**/*.wmv" \
 	/Users/Shared/ $BackupDir/Shared/
