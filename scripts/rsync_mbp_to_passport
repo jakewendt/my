@@ -24,13 +24,6 @@ fi
 #	v - verbose
 #	z - compression
 #	c - checksum
-#/usr/bin/rsync -avz \
-#	--delete \
-#	--exclude=Library \
-#	--exclude=Desktop \
-#	--exclude="Firefox Downloads" \
-#	--exclude="Downloads/vid*" \
-#	--exclude="Downloads/*.mp4" \
 /usr/bin/rsync -rltpvz \
 	--progress \
 	--extended-attributes \
@@ -39,6 +32,7 @@ fi
 	--exclude="Acrobat User Data" \
 	--exclude="Android" \
 	--exclude="Desktop/Incomplete" \
+	--exclude="Downloads/*.mp4" \
 	--exclude="Downloads/**/*.mp4" \
 	--exclude="Eclipse" \
 	--exclude="Library/Preferences/Macromedia" \
@@ -56,6 +50,7 @@ fi
 	--exclude="TV Shows" \
 	--exclude="rsync-backup*" \
 	--exclude="log/*.log" \
+	--exclude=.DS_Store \
 	--exclude=.fseventsd \
 	--exclude=.rvm \
 	--exclude=.Trash \
@@ -67,53 +62,18 @@ fi
 	--exclude=\*NOT_BACKED_UP\* \
 	/Users/jake/ $BackupDir/jake/
 
-#/usr/bin/rsync -rltpvz \
-#	--progress \
-#	--extended-attributes \
-#	--delete --backup --backup-dir rsync-backup-$Date \
-#	--exclude=\*NOT_BACKED_UP\* \
-#	--exclude=rsync-backup\* \
-#	/Users/jake/Documents/ $BackupDir/jake/Documents/
 
 /usr/bin/rsync -rltpvz --progress \
 	--delete --backup --backup-dir rsync-backup-$Date \
 	--exclude=rsync-backup\* \
+	--exclude=.DS_Store \
 	--exclude=temp \
 	--exclude=Viewed \
 	--exclude=Incomplete \
 	--exclude=Xtorrent \
 	--exclude=\*NOT_BACKED_UP\* \
+	--exclude="Downloads/*.mp4" \
 	--exclude="Downloads/**/*.mp4" \
 	--exclude="Downloads/**/*.wmv" \
 	/Users/Shared/ $BackupDir/Shared/
-#	--exclude="Desktop/Downloads/vid*" \
-#	--exclude="Desktop/Downloads/*.mp4" \
-#	--exclude="Desktop/Downloads/*/*.mp4" \
-
-#
-#	Why do I do this?  Wouldn't iTunes be included in the above call?
-#
-#/usr/bin/rsync -rltpvz \
-#	--progress \
-#	--delete --backup --backup-dir rsync-backup-$Date \
-#	--exclude=rsync-backup\* \
-#	--exclude=\*NOT_BACKED_UP\* \
-#	/Users/Shared/iTunes/ $BackupDir/Shared/iTunes/
-
-
-#  /Users/jake/Music/iTunes/iTunes\ Music/Podcasts/
-
-#/usr/bin/rsync -avz \
-#/usr/bin/rsync -rltpovz \
-#	--progress \
-#	--delete \
-#	/Users/jake/Library/Mozilla/ $MozillaDir/
-#	/usr/bin/rsync -avz --progress /Users/Shared/TV/Unviewed/ /Volumes/LaCie328/Public/TV/All\ Unviewed/
-#	/usr/bin/rsync -avz --progress /Users/jake/Desktop/TV/All\ Unviewed/ /Volumes/LaCie328/Public/TV/All\ Unviewed/
-#	/usr/bin/rsync -avz --progress /Users/Shared/Xtorrent/ /Volumes/LaCie328/Public/TV/Xtorrent/
-#	/usr/bin/rsync -avz --progress /Users/Shared/iTunes/ /Volumes/LaCie328/Public/iTunes/
-#	/usr/bin/rsync -avz --progress --exclude="Incomplete" /Users/Shared/Xtorrent/ /Volumes/LaCie328/Public/TV/Xtorrent/
-#	/usr/bin/rsync -rltpovz --progress /Users/jake/Desktop/KeepOut/ /Volumes/LaCie328/KeepOut/
-#	/usr/bin/rsync -rltpovz --progress --delete /Users/jake/Desktop/KeepOut/ /Volumes/LaCie328/KeepOut/
-#	/usr/bin/rsync -rltpovz --progress --delete /Users/jake/Music/ /Volumes/LaCie328/Backups/iMacG5/Music/
 

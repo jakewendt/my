@@ -1,0 +1,40 @@
+#!/bin/sh -x
+
+BackupDir=/Volumes/Documents/
+
+if [ ! -d $BackupDir ]
+then
+	echo "$BackupDir doesn't exist"
+	exit
+#	mkdir -p $BackupDir
+else
+	echo "$BackupDir exists"
+fi
+
+
+#	-a = -rlptgoD
+#	g - groups have become a problem so I'm ignorin em
+#	t - times have become a problem so I'm ignorin em
+#	D - devices are pointless here so I'm ignorin em
+#	r - recursive
+#	l - links
+#	p - permissions
+#	t - times
+#	o - owner
+#	v - verbose
+#	z - compression
+
+
+/usr/bin/rsync -avz \
+	--progress \
+	--delete \
+	--delete-excluded \
+	--extended-attributes \
+	--exclude=".DS_Store" \
+	--exclude=".android" \
+	--exclude=".fseventsd" \
+	--exclude=".Trash" \
+	--exclude=".Trashes" \
+	--exclude=".Spotlight-V100" \
+	/Users/jake/Documents/ $BackupDir
+
