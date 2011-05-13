@@ -24,12 +24,13 @@ fi
 #	v - verbose
 #	z - compression
 
+#	None of my records use extended attributes
+#	--extended-attributes \
 
 /usr/bin/rsync -avz \
 	--progress \
 	--delete \
 	--delete-excluded \
-	--extended-attributes \
 	--exclude=".DS_Store" \
 	--exclude=".android" \
 	--exclude=".fseventsd" \
