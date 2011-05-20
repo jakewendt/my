@@ -4,6 +4,7 @@
 - http://gems.rubyforge.org/
 - http://gemcutter.org
 - http://rubygems.org/
+- http://gems.github.com
 #- http://gems.github.com
 #	Added --bindir /usr/bin to install in the right place
 #	EXECUTABLE DIRECTORY still says /System/Library/Frameworks/Ruby.framework/Versions/1.8.7/usr/bin
