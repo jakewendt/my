@@ -13,7 +13,7 @@ if [[ -s ~/.rvm/scripts/rvm ]] ; then source ~/.rvm/scripts/rvm ; fi
 #		Exception in thread "Poller SunPKCS11-Darwin" 
 #		java.lang.OutOfMemoryError: Java heap space
 #export JAVA_MEM="-Xmx1024m -Xms768m"
-export JAVA_MEM="-Xmx2048m -Xms2048m"
+export JAVA_MEM="-Xmx4096m -Xms2048m"
 #export JAVA_STACK="-Xss1024k"
 
 
