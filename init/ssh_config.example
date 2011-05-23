@@ -1,0 +1,8 @@
+# ~/.ssh/config
+#
+#	I'm not putting my real one here as I don't
+#	want to advertise all of this info
+#
+Host some_host_name
+  User your_user_name_on_said_host
+  Port perhaps_a_special_port_on_this_host
