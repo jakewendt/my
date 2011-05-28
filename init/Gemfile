@@ -4,6 +4,7 @@ source "http://gems.rubyforge.org"
 source "http://gemcutter.org"
 source "http://gems.github.com"
 
+
 #
 #	NO SPACES BETWEEN OPERATOR AND VERSION NUMBER!
 #
@@ -25,19 +26,13 @@ gem "jdbc-mysql"
 gem "jdbc-sqlite3"
 gem "jeweler"
 gem "jrails"
-gem "jruby-jars"
-gem "jruby-openssl"
-gem "jruby-rack"
-gem "mysql"
 gem "paperclip"
 #	causes rails 2.3.2 and associated to be installed???
 #gem "rack"	
 # (1.3.0, 1.2.2, 1.1.2, 1.1.0, 1.0.1)
 gem "rcov"
 gem "rdoc"
-gem "rmagick"
 gem "ryanb-acts-as-list"
-gem "sqlite3"
 gem "ssl_requirement"
 gem "thoughtbot-factory_girl"
 gem "warbler"
@@ -58,3 +53,17 @@ gem "jakewendt-simply_photos"
 gem "jakewendt-simply_sessions"
 gem "jakewendt-simply_trackable"
 gem "jakewendt-use_db"
+
+if RUBY_PLATFORM =~ /java/
+	gem "jruby-jars"
+	gem "jruby-openssl"
+	gem "jruby-rack"
+else
+
+#	problems in jruby
+gem "mysql"
+#	problems in jruby
+gem "rmagick"
+#	problems in jruby
+gem "sqlite3"
+end
