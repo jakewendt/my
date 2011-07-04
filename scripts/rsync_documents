@@ -24,11 +24,11 @@ fi
 #	v - verbose
 #	z - compression
 
+#	--delete-excluded \
 
 /usr/bin/rsync -avz \
 	--progress \
 	--delete \
-	--delete-excluded \
 	--extended-attributes \
 	--exclude=".DS_Store" \
 	--exclude=".android" \

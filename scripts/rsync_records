@@ -26,11 +26,11 @@ fi
 
 #	None of my records use extended attributes
 #	--extended-attributes \
+#	--delete-excluded \
 
 /usr/bin/rsync -avz \
 	--progress \
 	--delete \
-	--delete-excluded \
 	--exclude=".DS_Store" \
 	--exclude=".android" \
 	--exclude=".fseventsd" \
