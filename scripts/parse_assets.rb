@@ -1,28 +1,47 @@
 #!/usr/bin/env ruby
 
+String.class_eval do
+	def squish
+		self.gsub(/^\s*/,'').gsub(/\s*$/,'')
+	end
+end
+
 $*.each do |filename|
-	puts "Read #{filename}"
+#	puts "Read #{filename}"
+	assets = Array.new
 	File.open(filename,'r') do |f|
 		count = 0
-		title, creators, price = nil
+		title, creators, model, price = nil
+		asset = Hash.new
 		while line = f.gets
 			if line =~ /^\s*$/ and !title.nil? and !creators.nil?
+				assets.push asset
+				asset = Hash.new
 #				puts "#{title} - #{creators} : #{price}"
-				puts "#{title} - #{creators}"
+#				puts "#{title} - #{creators}"
 #				puts "#{title}"
 				title, creators, price = nil
 				count+=1
 			end
 			if line =~ /^Title: (.*)$/
-				title = $1
+				asset[:title] = title = $1.squish
 			end
 			if line =~ /^Creators\(s\): (.*)$/
-				creators = $1
+				asset[:creators] = creators = $1.squish
 			end
 			if line =~ /Price: (.*)$/
-				price = $1
+				asset[:price] = price = $1.squish
+			end
+			if line =~ /Model: (.*)Serial:/
+				asset[:model] = model = $1.squish
 			end
 		end
+#assets.sort_by{|x| x[:creators] }.each{|a|
+#	puts "#{a[:creators]} - #{a[:title]}"
+#}
+assets.sort_by{|x| x[:title] }.each{|a|
+	puts "#{a[:title]} - #{a[:creators]} - #{a[:model]} : #{a[:price]}"
+}
 	end
 end
 
