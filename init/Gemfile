@@ -10,6 +10,7 @@ source "http://gems.github.com"
 #
 gem "rake", '=0.8.7'
 gem "rails", "~>2"
+gem "mongrel"
 gem "active_shipping"
 gem "RedCloth"
 gem "arel", "=2.0.2"
@@ -51,6 +52,7 @@ gem "jakewendt-simply_helpful"
 gem "jakewendt-simply_pages"
 gem "jakewendt-simply_photos"
 gem "jakewendt-simply_sessions"
+#gem "jakewendt-simply_testable"
 gem "jakewendt-simply_trackable"
 gem "jakewendt-use_db"
 
