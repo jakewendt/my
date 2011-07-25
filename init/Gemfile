@@ -18,13 +18,30 @@ gem "authlogic", "~>2"
 gem "autotest-rails"
 gem "aws-s3"
 gem "aws-sdb"
-gem "chronic"
+#	jakewendt@dev : ccls 589> irb
+#	>> gem 'chronic', '0.6.0'
+#	=> true
+#	>> require 'chronic'
+#	=> true
+#	>> Chronic::VERSION
+#	=> "0.6.0"
+#	>> Chronic.parse('Jan 1 2000')
+#	=> nil
+#	>> quit
+#	jakewendt@dev : ccls 590> irb
+#	>> gem 'chronic', '0.5.0'
+#	=> true
+#	>> require 'chronic'
+#	=> true
+#	>> Chronic::VERSION
+#	=> "0.5.0"
+#	>> Chronic.parse('Jan 1 2000')
+#	=> Sat Jan 01 12:00:00 -0800 2000
+gem "chronic", '=0.5.0'	#	0.6.0 doesn't parse correctly which is odd
 gem "gravatar"
 gem "haml"
 gem "hpricot"
 gem "i18n"
-gem "jdbc-mysql"
-gem "jdbc-sqlite3"
 gem "jeweler"
 gem "jrails"
 gem "paperclip"
@@ -36,7 +53,6 @@ gem "rdoc"
 gem "ryanb-acts-as-list"
 gem "ssl_requirement"
 gem "thoughtbot-factory_girl"
-gem "warbler"
 gem "will_paginate"
 
 gem "ccls-calnet_authenticated"
@@ -57,15 +73,15 @@ gem "jakewendt-simply_trackable"
 gem "jakewendt-use_db"
 
 if RUBY_PLATFORM =~ /java/
+	gem "warbler"
 	gem "jruby-jars"
 	gem "jruby-openssl"
 	gem "jruby-rack"
+	gem "jdbc-mysql"
+	gem "jdbc-sqlite3"
 else
-
-#	problems in jruby
-gem "mysql"
-#	problems in jruby
-gem "rmagick"
-#	problems in jruby
-gem "sqlite3"
+	#	problems in jruby
+	gem "mysql"
+	gem "rmagick"
+	gem "sqlite3"
 end
