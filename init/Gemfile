@@ -5,6 +5,16 @@ source "http://gemcutter.org"
 source "http://gems.github.com"
 
 
+#	rubygems > 1.6.2 is EVIL!  If you update, you deal with it.
+#		generates all kinds of new errors and deprecation warnings
+#		somehow loads older versions of gems, then bitches when you try to load the newest.
+#		(may be fixable with "gem pristine --all --no-extensions", but haven't tried)
+#	rake 0.9.0 caused some errors.  can't remember
+#	arel > 2.0.2 caused some errors.
+#	some gem versions require rails 3, so have to use older versions
+#		authlogic, will_paginate
+
+
 #
 #	NO SPACES BETWEEN OPERATOR AND VERSION NUMBER!
 #
@@ -78,7 +88,27 @@ gem "jakewendt-use_db"
 #	from /Library/Ruby/Gems/1.8/gems/ZenTest-4.6.0/bin/autotest:6
 #	from /usr/bin/autotest:19:in `load'
 #	from /usr/bin/autotest:19
-gem 'ZenTest', '!=4.6.0'
+gem 'ZenTest', '~>4.5.0'
+#gem 'ZenTest', '!=4.6.0'
+#gem 'ZenTest', '!=4.6.1'	#	requires
+#	rubygems > 1.6.2 (mostly the 1.8 family) just bitches and causes all kinds of errors
+#	somehow older versions of gems get activated, then when something tries to use the latest
+#	I get stuff like ...
+#/Library/Ruby/Site/1.8/rubygems/specification.rb:1603:in `raise_if_conflicts': can't activate jakewendt-simply_helpful-2.2.14, already activated jakewendt-simply_helpful-2.2.12 (Gem::LoadError)
+#	why was 2.2.12 activated?  I never explicitly activated any version of simply_helpful
+#	I tried "gem cleanup" but that failed with ... for every gem
+# ERROR:  While executing gem ... (ArgumentError)
+#    wrong number of arguments (3 for 2)
+#
+#	also get lots of ...
+#Gem.source_index called from /usr/lib/ruby/user-gems/1.8/gems/rails-2.3.12/lib/rails/gem_dependency.rb:78.
+#NOTE: Gem::SourceIndex#each is deprecated with no replacement. It will be removed on or after 2011-11-01.
+#Gem::SourceIndex#each called from /usr/lib/ruby/user-gems/1.8/gems/rails-2.3.12/lib/rails/vendor_gem_source_index.rb:123.
+#NOTE: Gem::SourceIndex#each is deprecated with no replacement. It will be removed on or after 2011-11-01.
+#Gem::SourceIndex#each called from /usr/lib/ruby/user-gems/1.8/gems/rails-2.3.12/lib/rails/vendor_gem_source_index.rb:124.
+#	I hope that there is a rails-2.3.13 in the works to shut this up since I can't upgrade to 3
+
+
 
 if RUBY_PLATFORM =~ /java/
 	gem "warbler"
