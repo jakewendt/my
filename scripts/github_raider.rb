@@ -162,6 +162,8 @@ r = http.request(request)
 				if File.directory?(local_path)
 					Dir.chdir(local_path)
 					puts `git pull`
+					#	raise error if git pull fails
+					raise "git pull failed for #{current_user}:#{@name}" unless $? == 0
 					Dir.chdir(owner_path)
 				else
 					"-? #{name} is not a directory.  Skipping."
