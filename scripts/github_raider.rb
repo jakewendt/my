@@ -158,12 +158,12 @@ r = http.request(request)
 #			puts local_path
 	
 			if File.exists?(local_path)
-				puts "-- #{@name} exists.  Updating."
+				puts "-- #{name} exists.  Updating."
 				if File.directory?(local_path)
 					Dir.chdir(local_path)
 					puts `git pull`
 					#	raise error if git pull fails
-					raise "git pull failed for #{current_user}:#{@name}" unless $? == 0
+					raise "git pull failed for #{owner}:#{name}" unless $? == 0
 					Dir.chdir(owner_path)
 				else
 					"-? #{name} is not a directory.  Skipping."
