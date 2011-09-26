@@ -32,6 +32,7 @@ fi
 	--exclude="Acrobat User Data" \
 	--exclude="Android" \
 	--exclude="Desktop/Incomplete" \
+	--exclude="Documents" \
 	--exclude="Downloads/*.mp4" \
 	--exclude="Downloads/**/*.mp4" \
 	--exclude="Eclipse" \
@@ -43,6 +44,7 @@ fi
 	--exclude="Library/Mail/Bundles (Disabled)/GPGMail.mailbundle" \
 	--exclude="Library/Logs" \
 	--exclude="Podcasts" \
+	--exclude="Records" \
 	--exclude="Roxio Converted Items" \
 	--exclude="Microsoft User Data" \
 	--exclude="Temp" \
