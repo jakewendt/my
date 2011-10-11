@@ -1,29 +1,19 @@
 #!/bin/sh
 
 DIRS=""
-#DIRS="${DIRS} jakewendt/simply_sessions"
-#DIRS="${DIRS} jakewendt/rails_extension"
-#DIRS="${DIRS} jakewendt/ruby_extension"
-#DIRS="${DIRS} jakewendt/simply_authorized"
-#DIRS="${DIRS} jakewendt/simply_commentable"
-#DIRS="${DIRS} jakewendt/simply_discussable"
-#DIRS="${DIRS} jakewendt/simply_documents"
-#DIRS="${DIRS} jakewendt/simply_helpful"
-#DIRS="${DIRS} jakewendt/simply_pages"
-#DIRS="${DIRS} jakewendt/simply_photos"
-#DIRS="${DIRS} jakewendt/simply_taggable"
-##DIRS="${DIRS} jakewendt/simply_testable"
-#DIRS="${DIRS} jakewendt/simply_trackable"
-#DIRS="${DIRS} jakewendt/use_db"
+DIRS="${DIRS} ccls/ruby_extension"
+DIRS="${DIRS} ccls/rails_extension"
+DIRS="${DIRS} ccls/simply_authorized"
+DIRS="${DIRS} ccls/simply_helpful"
+DIRS="${DIRS} ccls/use_db"
 DIRS="${DIRS} ccls/calnet_authenticated"
-#DIRS="${DIRS} ccls/common_lib"
+DIRS="${DIRS} ccls/common_lib"
 DIRS="${DIRS} ccls/ccls_engine"
 DIRS="${DIRS} ccls/abstracts"
 DIRS="${DIRS} ccls/buffler"
 DIRS="${DIRS} ccls/clic"
 DIRS="${DIRS} ccls/homex"
 DIRS="${DIRS} ccls/odms"
-#DIRS="${DIRS} ccls/clic_solr_search_demo"
 
 echo $DIRS
 
@@ -37,11 +27,12 @@ naptime=`expr 60 \* $i`
 cat << EOF | osascript > /dev/null 2>&1
 tell application "System Events" to tell process "Terminal" to keystroke "t" using command down
 tell application "Terminal" to do script "cd github_repo/$dir" in selected tab of the front window
-tell application "Terminal" to do script "sleep $naptime; rake test:coverage ; nice +20 autotest" in selected tab of the front window
+tell application "Terminal" to do script "sleep $naptime; rake test:coverage ; rake test ; nice +20 autotest" in selected tab of the front window
 EOF
 done
 #tell application "Terminal" to do script "sleep $naptime; nice +20 autotest" in selected tab of the front window
 #tell application "Terminal" to do script "sleep $naptime; rake test:coverage ; nice +20 autotest" in selected tab of the front window
+#tell application "Terminal" to do script "sleep $naptime; rake test:coverage ; rake test ; nice +20 autotest" in selected tab of the front window
 #tell application "Terminal" to do script "bash" in selected tab of the front window
 #	in my tcsh, the -n can't be used and the number must have a sign
 #	gotta love it when people follow standards
