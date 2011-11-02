@@ -68,7 +68,7 @@ gem "will_paginate", "~>2"
 
 gem "ccls-calnet_authenticated"
 gem "ccls-ccls_engine"
-gem "ccls-surveyor"
+#gem "ccls-surveyor"
 gem "jakewendt-html_test"
 gem "jakewendt-rails_extension"
 gem "jakewendt-rdoc_rails"
