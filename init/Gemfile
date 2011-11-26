@@ -147,3 +147,6 @@ gem "sunspot_rails"
 gem "sunspot"
 gem "packet"	#	don't remember why
 
+gem "webrat"
+gem "capybara"
+
