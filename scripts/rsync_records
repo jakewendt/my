@@ -1,4 +1,10 @@
-#!/bin/sh -x
+#!/bin/sh
+##!/bin/sh -x
+
+echo
+echo "Don't do this anymore."
+echo
+exit
 
 BackupDir=/Volumes/Records/
 
@@ -28,14 +34,14 @@ fi
 #	--extended-attributes \
 #	--delete-excluded \
 
-/usr/bin/rsync -avz \
-	--progress \
-	--delete \
-	--exclude=".DS_Store" \
-	--exclude=".android" \
-	--exclude=".fseventsd" \
-	--exclude=".Trash" \
-	--exclude=".Trashes" \
-	--exclude=".Spotlight-V100" \
-	/Users/jake/Records/ $BackupDir
+#/usr/bin/rsync -avz \
+#	--progress \
+#	--delete \
+#	--exclude=".DS_Store" \
+#	--exclude=".android" \
+#	--exclude=".fseventsd" \
+#	--exclude=".Trash" \
+#	--exclude=".Trashes" \
+#	--exclude=".Spotlight-V100" \
+#	/Users/jake/Records/ $BackupDir
 
