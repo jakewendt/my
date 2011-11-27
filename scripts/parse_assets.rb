@@ -36,12 +36,12 @@ $*.each do |filename|
 				asset[:model] = model = $1.squish
 			end
 		end
-#assets.sort_by{|x| x[:creators] }.each{|a|
-#	puts "#{a[:creators]} - #{a[:title]}"
-#}
-assets.sort_by{|x| x[:title] }.each{|a|
-	puts "#{a[:title]} - #{a[:creators]} - #{a[:model]} : #{a[:price]}"
+assets.sort_by{|x| x[:creators] }.each{|a|
+	puts "#{a[:creators]} - #{a[:title]}"
 }
+#assets.sort_by{|x| x[:title] }.each{|a|
+#	puts "#{a[:title]} - #{a[:creators]} - #{a[:model]} : #{a[:price]}"
+#}
 	end
 end
 

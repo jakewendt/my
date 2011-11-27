@@ -6,6 +6,14 @@
 #wFeb 10 23:08:17 mbp-3 loginwindow[351]: Login items - LSOpenApplication returned error -10827, url=/Users/Shared/login_items.sh
 #	I tried different directories, but no joy.
 #	I put it in the app bundle format and voila.
+#	Then add it System Preferences > Accounts > Login Items
+#
+#	I'm trying to avoid using File Vault and encrypting my entire home directory
+#		as this has some undesired side effects.
+#		* Seems to forget my settings ...
+#			* default browser
+#			* opening video with MPlayer rather than iTunes or Quicktime
+#
 
 echo "Running login items..."
 
@@ -16,11 +24,21 @@ echo "Mounting sparse bundles ..."
 
 #/usr/bin/hdiutil attach -mountpoint \
 #	/Users/jake/Documents.TESTING /Users/jake/Documents.sparsebundle
+#	I was just about to move Documents to something else and make the mountpoint 
+#		of my encrypted Documents there and ...
+#		"Documents" can't be modified or deleted because it is required by Mac OS X
+#		Looks like I'm gonna have to do this a little differently.
+
+#	This will create a /Volumes/Documents
 /usr/bin/hdiutil attach /Users/jake/Documents.sparsebundle
 
 #/usr/bin/hdiutil attach -mountpoint \
 #	/Users/jake/Records.TESTING /Users/jake/Records.sparsebundle
-/usr/bin/hdiutil attach /Users/jake/Records.sparsebundle
+/usr/bin/hdiutil attach -mountpoint \
+	/Users/jake/Records /Users/jake/Records.sparsebundle
+
+#	This will create a /Volumes/Records
+#/usr/bin/hdiutil attach /Users/jake/Records.sparsebundle
 
 #/usr/bin/hdiutil attach -mountpoint /Users/jake/EncryptedAncestry /Users/jake/Ancestry.sparsebundle
 #/Users/jake/Ancestry.sparsebundle
@@ -31,3 +49,4 @@ echo "Mounting sparse bundles ..."
 #/Users/jake/Records.sparsebundle
 
 echo "Completed running login items."
+

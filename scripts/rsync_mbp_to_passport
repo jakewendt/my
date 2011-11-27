@@ -43,7 +43,9 @@ fi
 	--exclude="Library/Mail/Bundles (Disabled)/GPGMail.mailbundle" \
 	--exclude="Library/Logs" \
 	--exclude="Podcasts" \
+	--exclude="Records.original" \
 	--exclude="Records" \
+	--exclude="EncryptedRecords" \
 	--exclude="Roxio Converted Items" \
 	--exclude="Microsoft User Data" \
 	--exclude="Temp" \

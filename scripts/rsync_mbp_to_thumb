@@ -80,7 +80,6 @@ fi
 	--exclude="Pics2WorkOn/*.psd" \
 	--exclude="Pics2WorkOn/**/*.psd" \
 	--exclude="Podcasts" \
-	--exclude="Records/private/Video" \
 	--exclude="Roxio Converted Items" \
 	--exclude="Scanner Output" \
 	--exclude="Sites" \
@@ -140,13 +139,16 @@ fi
 	--exclude=".dvdcss" \
 	--exclude=".jpi_cache" \
 	--exclude=".DS_Store" \
+	--exclude="Records.original" \
 	--exclude="Records" \
+	--exclude="EncryptedRecords" \
 	--exclude="Documents" \
 	--exclude="DroidX.sparsebundle" \
 	--exclude="Recipe.sparsebundle" \
 	--exclude="droid_x*" \
 	/Users/jake/ $BackupDir/
 
+#	--exclude="Records/private/Video" \
 #	--exclude="*sparsebundle" \
 
 #/usr/bin/rsync -avz \
