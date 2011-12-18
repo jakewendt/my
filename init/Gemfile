@@ -20,7 +20,7 @@ source "http://gems.github.com"
 #
 gem "rake", '=0.8.7'
 gem "rails", "~>2"
-#gem "test-unit"
+#gem "test-unit"	#	don't do this just yet
 gem "mongrel"
 gem "active_shipping"
 gem "RedCloth", '<4.2.8'
@@ -84,7 +84,6 @@ gem "ccls-calnet_authenticated"
 gem "ccls-ccls_engine"
 gem "ccls-use_db"
 
-#gem "ccls-surveyor"
 gem "jakewendt-html_test"
 gem "jakewendt-rails_extension"
 gem "jakewendt-rdoc_rails"
@@ -95,7 +94,6 @@ gem "jakewendt-simply_helpful"
 gem "jakewendt-simply_pages"
 gem "jakewendt-simply_photos"
 gem "jakewendt-simply_sessions"
-#gem "jakewendt-simply_testable"
 gem "jakewendt-simply_trackable"
 gem "jakewendt-use_db"
 
@@ -139,14 +137,107 @@ else
 	#	problems in jruby
 	gem "mysql"
 	gem "rmagick"
-	gem "sqlite3", '!=1.3.4'
+#	gem "sqlite3", '!=1.3.4'
+	gem "sqlite3", '=1.3.3'
 end
 
 gem "fastercsv"
-gem "sunspot_rails"
-gem "sunspot"
+
+#	apparently sunspot_rails has been merged into sunspot
+#gem "sunspot_rails", '=1.2.1'	#	1.3.0 will require some modifications to the code using it
+#gem "sunspot", '=1.2.1'	#	1.3.0 will require some modifications to the code using it
+
 gem "packet"	#	don't remember why
 
-gem "webrat"
-gem "capybara"
+#gem "webrat"
+#gem "capybara"
+#gem "capybara-webkit"
 
+#
+#	As of 20111127, having problems getting 'sudo bundle update' to get past the 'Fetching source index' step
+#		commenting out some gems to see if it fixes this, but still no success.
+#		Seems that the sunspot stuff was causing the issue.
+#
+#	One of these gems is causing the installation of rails 2.3.2, which will probably cause an issue.
+#
+#Using rake (0.8.7) 
+#Installing RedCloth (4.2.7) with native extensions 
+#Using ZenTest (4.5.0) 
+#Installing activesupport (2.3.2) 
+#Installing actionpack (2.3.2) 
+#Installing actionmailer (2.3.2) 
+#Installing active_shipping (0.1.4) 
+#Installing activerecord (2.3.2) 
+#Installing activeresource (2.3.2) 
+#Using arel (2.0.2) 
+#Using authlogic (2.1.6) 
+#Using autotest-rails (4.1.1) 
+#Using builder (3.0.0) 
+#Using mime-types (1.17.2) 
+#Using xml-simple (1.1.1) 
+#Using aws-s3 (0.6.2) 
+#Using uuidtools (2.1.2) 
+#Using aws-sdb (0.3.1) 
+#Using bundler (1.0.13) 
+#Using nokogiri (1.5.0) 
+#Installing rack (1.3.5) 
+#Installing rack-test (0.6.1) 
+#Using ffi (1.0.11) 
+#Installing childprocess (0.2.3) 
+#Installing json_pure (1.6.2) 
+#Installing rubyzip (0.9.5) 
+#Using selenium-webdriver (2.13.0) 
+#Using xpath (0.1.4) 
+#Using capybara (1.1.2) 
+#Installing chronic (0.6.6) 
+#Installing rails (2.3.2) 
+#Using ryanb-acts-as-list (0.1.2) 
+#Using ssl_requirement (0.1.0) 
+#Using thoughtbot-factory_girl (1.2.2) 
+#Installing ccls-common_lib (0.1.1) 
+#Using jrails (0.6.0) 
+#Installing rubycas-client (2.3.6) 
+#Using ruby-net-ldap (0.0.4) 
+#Using ucb_ldap (1.4.2) 
+#Using ccls-calnet_authenticated (1.3.0) 
+#Using ccls-simply_authorized (1.4.0) 
+#Using ccls-use_db (0.9.3) 
+#Using ccls-ccls_engine (3.10.0) 
+#Using ccls-html_test (0.2.3) 
+#Using ccls-simply_sessions (0.0.7) 
+#Using cgi_multipart_eof_fix (2.5.0) 
+#Using cocaine (0.2.0) 
+#Using daemons (1.1.4) 
+#Using fastercsv (1.5.4) 
+#Using fastthread (1.0.7) 
+#Using gem_plugin (0.2.3) 
+#Using git (1.2.5) 
+#Using gravatar (1.0) 
+#Installing haml (3.1.4) 
+#Using hpricot (0.8.4) 
+#Using i18n (0.6.0) 
+#Using jakewendt-html_test (0.2.3) 
+#Using jakewendt-rails_extension (2.0.22) 
+#Using rdoc (2.5.11) 
+#Using jakewendt-rdoc_rails (0.0.2) 
+#Using jakewendt-ruby_extension (1.0.6) 
+#Using jakewendt-simply_authorized (1.3.6) 
+#Using jakewendt-simply_helpful (2.2.14) 
+#Using paperclip (2.4.2) 
+#Using ruby-hmac (0.4.0) 
+#Using jakewendt-simply_documents (1.3.4) 
+#Using jakewendt-simply_pages (2.0.0) 
+#Using jakewendt-simply_photos (2.0.0) 
+#Using jakewendt-simply_sessions (0.0.5) 
+#Using jakewendt-simply_trackable (1.3.7) 
+#Using jakewendt-use_db (0.9.1) 
+#Using jeweler (1.6.4) 
+#Using mongrel (1.1.5) 
+#Using mysql (2.8.1) 
+#Using packet (0.1.15) 
+#Using rcov (0.9.11) 
+#Using rmagick (2.13.1) 
+#Using sqlite3 (1.3.3) 
+#Using webrat (0.7.3) 
+#Using will_paginate (2.3.16) 
+#
