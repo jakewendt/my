@@ -79,6 +79,15 @@ begin
 
 end while unsearched.length > 0
 
+#	This was working, but taking forever.
+#	Occurring in memory, I can't even continue.
+#	I'm working on a separate project to find a better way.
+#Searching for friends of claves
+#Current strangers count:260823
+#Current network count:521
+#Current unsearched count:2717
+#17242.647u 75.212s 4:52:24.41 98.7%	0+0k 0+2io 0pf+0w
+
 puts "All Done."
 puts "Final Network Count:#{network.length} (includes #{me})"
 puts "Final Stranger Count:#{strangers.length}"
