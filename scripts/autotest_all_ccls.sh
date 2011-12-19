@@ -1,19 +1,23 @@
 #!/bin/sh
 
 DIRS=""
-DIRS="${DIRS} ccls/ruby_extension"
-DIRS="${DIRS} ccls/rails_extension"
+#DIRS="${DIRS} ccls/ruby_extension"
+#DIRS="${DIRS} ccls/rails_extension"
 DIRS="${DIRS} ccls/simply_authorized"
-DIRS="${DIRS} ccls/simply_helpful"
-DIRS="${DIRS} ccls/use_db"
+#DIRS="${DIRS} ccls/simply_helpful"
+#DIRS="${DIRS} ccls/use_db"
 DIRS="${DIRS} ccls/calnet_authenticated"
 DIRS="${DIRS} ccls/common_lib"
-DIRS="${DIRS} ccls/ccls_engine"
-DIRS="${DIRS} ccls/abstracts"
 DIRS="${DIRS} ccls/buffler"
 DIRS="${DIRS} ccls/clic"
+DIRS="${DIRS} ccls/ccls_engine"
+DIRS="${DIRS} ccls/abstracts"
 DIRS="${DIRS} ccls/homex"
 DIRS="${DIRS} ccls/odms"
+
+#
+#	come Monday, these'll all need tested (after update of gems!)
+#
 
 echo $DIRS
 
@@ -27,7 +31,7 @@ naptime=`expr 60 \* $i`
 cat << EOF | osascript > /dev/null 2>&1
 tell application "System Events" to tell process "Terminal" to keystroke "t" using command down
 tell application "Terminal" to do script "cd github_repo/$dir" in selected tab of the front window
-tell application "Terminal" to do script "sleep $naptime; rake test:coverage ; rake test ; nice +20 autotest" in selected tab of the front window
+tell application "Terminal" to do script "sleep $naptime; rake test:coverage ; nice +20 autotest" in selected tab of the front window
 EOF
 done
 #tell application "Terminal" to do script "sleep $naptime; nice +20 autotest" in selected tab of the front window
