@@ -83,6 +83,7 @@ Date=`date "+%y%m%d%H%M%S"`
 	--delete --backup --backup-dir rsync-backup-$Date \
 	--extended-attributes \
 	--exclude=rsync-backup\* \
+	--exclude="Downloads/**/*.mp4" \
 	--exclude=temp \
 	--exclude=Viewed \
 	--exclude=Incomplete \
