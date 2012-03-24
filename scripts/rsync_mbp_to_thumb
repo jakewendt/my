@@ -38,6 +38,12 @@ fi
 #	--exclude="Library/Mail/*/*/*/Attachments" \
 #	--exclude="Library/Mail/RSS/*/Attachments" \
 #	--exclude="Documents" \
+#	--exclude="Library/Application Support/Adobe" \
+#	--exclude="Library/Application Support/Skype" \
+#	--exclude="Library/Application Support/Garmin" \
+#	--exclude="Library/Application Support/CrashReporter" \
+#	--exclude="Library/Application Support/SyncServices" \
+#	--exclude="Library/Application Support/Firefox" \
 
 /usr/bin/rsync -avz \
 	--progress \
@@ -58,12 +64,7 @@ fi
 	--exclude="Library/Logs" \
 	--exclude="Library/Caches" \
 	--exclude="Library/Fonts" \
-	--exclude="Library/Application Support/Adobe" \
-	--exclude="Library/Application Support/Skype" \
-	--exclude="Library/Application Support/Garmin" \
-	--exclude="Library/Application Support/CrashReporter" \
-	--exclude="Library/Application Support/SyncServices" \
-	--exclude="Library/Application Support/Firefox" \
+	--exclude="Library/Application Support" \
 	--exclude="Library/Mail/Bundles (Disabled)" \
 	--exclude="Library/Internet Plug-Ins" \
 	--exclude="Library/Preferences/NeoOffice-*" \

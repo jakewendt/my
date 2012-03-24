@@ -40,6 +40,7 @@ fi
 	--exclude="Library/Application Support/SyncServices" \
 	--exclude="Library/Caches" \
 	--exclude="Library/Google" \
+	--exclude="Library/Internet Plug-Ins" \
 	--exclude="Library/Mail/Bundles (Disabled)/GPGMail.mailbundle" \
 	--exclude="Library/Logs" \
 	--exclude="Podcasts" \
