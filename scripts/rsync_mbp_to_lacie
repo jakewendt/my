@@ -31,6 +31,7 @@ fi
 #	--exclude="Records.original" \
 #	--exclude="Records" \
 #	--exclude="EncryptedRecords" \
+#	--exclude="Records.sparsebundle" \
 /usr/bin/rsync -rltpvz \
 	--progress \
 	--extended-attributes \
@@ -52,7 +53,6 @@ fi
 	--exclude="Library/Mail/Bundles (Disabled)/GPGMail.mailbundle" \
 	--exclude="Library/Logs" \
 	--exclude="Podcasts" \
-	--exclude="Records.sparsebundle" \
 	--exclude="Roxio Converted Items" \
 	--exclude="Microsoft User Data" \
 	--exclude="Temp" \
