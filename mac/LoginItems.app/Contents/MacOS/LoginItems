@@ -32,13 +32,13 @@ echo "Mounting sparse bundles ..."
 #
 
 #	This will create a /Volumes/Documents
-/usr/bin/hdiutil attach /Users/jake/Documents.sparsebundle
+#/usr/bin/hdiutil attach /Users/jake/Documents.sparsebundle
 
 #/usr/bin/hdiutil attach -mountpoint \
 #	/Users/jake/Records.TESTING /Users/jake/Records.sparsebundle
 
-/usr/bin/hdiutil attach -mountpoint \
-	/Users/jake/Records /Users/jake/Records.sparsebundle
+#/usr/bin/hdiutil attach -mountpoint \
+#	/Users/jake/Records /Users/jake/Records.sparsebundle
 
 #	This will create a /Volumes/Records
 #/usr/bin/hdiutil attach /Users/jake/Records.sparsebundle
