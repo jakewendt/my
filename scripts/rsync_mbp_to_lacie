@@ -27,6 +27,10 @@ fi
 #/usr/bin/rsync -avz \
 #	--delete \
 #	--exclude=Library \
+#	--exclude="Documents" \
+#	--exclude="Records.original" \
+#	--exclude="Records" \
+#	--exclude="EncryptedRecords" \
 /usr/bin/rsync -rltpvz \
 	--progress \
 	--extended-attributes \
@@ -38,7 +42,6 @@ fi
 	--exclude="Desktop/**/vid*" \
 	--exclude="Desktop/**/*.mp4" \
 	--exclude="Desktop/**/*/*.mp4" \
-	--exclude="Documents" \
 	--exclude="Downloads/**/*.mp4" \
 	--exclude="Eclipse" \
 	--exclude="Library/Preferences/Macromedia" \
@@ -49,9 +52,7 @@ fi
 	--exclude="Library/Mail/Bundles (Disabled)/GPGMail.mailbundle" \
 	--exclude="Library/Logs" \
 	--exclude="Podcasts" \
-	--exclude="Records.original" \
-	--exclude="Records" \
-	--exclude="EncryptedRecords" \
+	--exclude="Records.sparsebundle" \
 	--exclude="Roxio Converted Items" \
 	--exclude="Microsoft User Data" \
 	--exclude="Temp" \
