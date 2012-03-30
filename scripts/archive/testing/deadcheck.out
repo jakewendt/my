@@ -1,0 +1,1891 @@
+/isdc/arc/rev_2/scw//0001/000100000012.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0001/000100000021.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0001/000100000031.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0001/000100000041.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0001/000100000051.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0001/000100000060.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0001/000100000071.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0001/000100000081.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0001/000100000091.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0001/000100000101.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0001/000100000111.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0001/000100000121.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0001/000100000131.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0001/000100000141.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0001/000100000151.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0001/000100000161.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0001/000100000171.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0001/000100000181.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0001/000100000191.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0001/000100000201.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0001/000100000211.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0001/000100000221.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0001/000100000231.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0001/000100000241.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0001/000100000251.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0001/000100000261.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0001/000100000271.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0001/000100000281.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0001/000100000290.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0001/000100000300.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0002/000200000012.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=         4
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=         4
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=         4
+/isdc/arc/rev_2/scw//0002/000200000020.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1125
+/isdc/arc/rev_2/scw//0002/000200000030.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       549
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       549
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       549
+/isdc/arc/rev_2/scw//0002/000251500010.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1125
+/isdc/arc/rev_2/scw//0002/000251500020.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1125
+/isdc/arc/rev_2/scw//0002/000251500030.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       214
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       214
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       214
+/isdc/arc/rev_2/scw//0002/000260600010.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       922
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       922
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       922
+/isdc/arc/rev_2/scw//0002/000260700010.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=        25
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=        25
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=         1
+/isdc/arc/rev_2/scw//0002/000260700020.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       241
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       241
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       241
+/isdc/arc/rev_2/scw//0002/000260700031.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       343
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       343
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       343
+/isdc/arc/rev_2/scw//0002/000270600010.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       673
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       673
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       673
+/isdc/arc/rev_2/scw//0002/000270700010.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       219
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       219
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       219
+/isdc/arc/rev_2/scw//0002/000270700021.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1069
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1069
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1069
+/isdc/arc/rev_2/scw//0002/000280310010.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1121
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1121
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1121
+/isdc/arc/rev_2/scw//0002/000280320010.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       756
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       756
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       756
+/isdc/arc/rev_2/scw//0002/000280320021.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1124
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1124
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1124
+/isdc/arc/rev_2/scw//0002/000280320031.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1125
+/isdc/arc/rev_2/scw//0002/000280320041.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1125
+/isdc/arc/rev_2/scw//0002/000280320051.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       774
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       774
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       774
+/isdc/arc/rev_2/scw//0002/000280610010.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       186
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       186
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       186
+/isdc/arc/rev_2/scw//0002/000280620010.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       163
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       163
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       163
+/isdc/arc/rev_2/scw//0002/000280630010.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1125
+/isdc/arc/rev_2/scw//0002/000280630020.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       592
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       592
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       592
+/isdc/arc/rev_2/scw//0002/000280640010.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1125
+/isdc/arc/rev_2/scw//0002/000280640020.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       376
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       376
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       376
+/isdc/arc/rev_2/scw//0002/000280650010.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1125
+/isdc/arc/rev_2/scw//0002/000280650020.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       301
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       301
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       301
+/isdc/arc/rev_2/scw//0002/000280650031.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       134
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       134
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       134
+/isdc/arc/rev_2/scw//0002/000280710010.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       906
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       906
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       906
+/isdc/arc/rev_2/scw//0002/000280720010.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       316
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       316
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       316
+/isdc/arc/rev_2/scw//0002/000280730010.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       631
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       631
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       631
+/isdc/arc/rev_2/scw//0002/000280730021.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1125
+/isdc/arc/rev_2/scw//0002/000280730031.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0002/000280730041.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0002/000280730051.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0002/000280730061.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0002/000280730071.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0002/000280730081.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0002/000280730090.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0002/000280730100.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000300000012.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000300000020.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000300000030.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       787
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       787
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       787
+/isdc/arc/rev_2/scw//0003/000300000040.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000300000050.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000300000060.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000300000070.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000300000080.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000351900010.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1125
+/isdc/arc/rev_2/scw//0003/000351900020.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388100010.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1125
+/isdc/arc/rev_2/scw//0003/000388100020.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1125
+/isdc/arc/rev_2/scw//0003/000388100030.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388100040.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388100050.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388100060.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388100070.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388100080.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388100090.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388100100.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388100110.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388100121.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388100130.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388100141.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200010.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200020.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200031.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200041.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200051.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200060.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200071.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200080.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200091.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200100.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200111.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200120.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200131.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200140.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200151.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200160.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200171.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200180.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200191.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200200.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200211.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200220.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200231.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200240.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200251.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200260.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200271.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200280.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200291.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200300.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200311.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200320.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200331.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200340.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200351.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200360.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200371.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200380.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200391.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200400.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200411.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200420.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200431.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200440.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=         1
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=         1
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=         1
+/isdc/arc/rev_2/scw//0003/000388200451.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200460.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=         1
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=         1
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=         1
+/isdc/arc/rev_2/scw//0003/000388200471.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200480.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=         2
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=         2
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=         2
+/isdc/arc/rev_2/scw//0003/000388200491.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200500.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=         2
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=         2
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=         2
+/isdc/arc/rev_2/scw//0003/000388200511.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200520.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=         1
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=         1
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=         1
+/isdc/arc/rev_2/scw//0003/000388200531.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200540.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=         2
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=         2
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=         2
+/isdc/arc/rev_2/scw//0003/000388200551.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200560.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=         1
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=         1
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=         1
+/isdc/arc/rev_2/scw//0003/000388200571.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200580.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200591.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200600.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200611.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200620.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200631.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200640.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200651.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200660.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200671.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200680.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200691.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200700.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200711.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200720.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200731.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200740.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200751.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200760.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200771.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200780.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200791.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200800.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200811.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200820.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200831.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200840.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=         1
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=         1
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=         1
+/isdc/arc/rev_2/scw//0003/000388200851.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200860.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=         2
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=         2
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=         2
+/isdc/arc/rev_2/scw//0003/000388200871.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200880.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=         1
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=         1
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=         1
+/isdc/arc/rev_2/scw//0003/000388200891.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200900.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=         2
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=         2
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=         2
+/isdc/arc/rev_2/scw//0003/000388200911.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200920.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=         1
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=         1
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=         1
+/isdc/arc/rev_2/scw//0003/000388200931.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200940.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=         1
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=         1
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=         1
+/isdc/arc/rev_2/scw//0003/000388200951.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200960.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=         1
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=         1
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=         1
+/isdc/arc/rev_2/scw//0003/000388200971.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388200980.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=         1
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=         1
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=         1
+/isdc/arc/rev_2/scw//0003/000388200991.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388201001.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0003/000388201011.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0004/000400000012.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=         1
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=         1
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=         1
+/isdc/arc/rev_2/scw//0004/000400000021.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1126
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1126
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1126
+/isdc/arc/rev_2/scw//0004/000400000031.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       499
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       499
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       499
+/isdc/arc/rev_2/scw//0004/000488300010.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0004/000488300021.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0004/000488300031.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0004/000488300041.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0004/000488300051.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0004/000488300061.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0004/000488500010.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0004/000488500020.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0004/000488500030.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0004/000488500040.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0004/000488500050.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0004/000488500060.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0004/000488500070.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0004/000488500080.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0004/000488500090.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0004/000488500100.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0004/000488500110.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0004/000488600010.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0004/000488600020.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0004/000488600030.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0004/000488600041.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0004/000488600050.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       525
+/isdc/arc/rev_2/scw//0004/000488600061.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0004/000488600070.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       504
+/isdc/arc/rev_2/scw//0004/000488600081.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0004/000488600090.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       579
+/isdc/arc/rev_2/scw//0004/000488600101.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0004/000488600110.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       385
+/isdc/arc/rev_2/scw//0004/000488600121.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       181
+/isdc/arc/rev_2/scw//0004/000488600130.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+/isdc/arc/rev_2/scw//0004/000488600140.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+/isdc/arc/rev_2/scw//0004/000488600150.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1125
+/isdc/arc/rev_2/scw//0004/000488600160.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+/isdc/arc/rev_2/scw//0004/000488600170.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+/isdc/arc/rev_2/scw//0004/000488600180.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+/isdc/arc/rev_2/scw//0004/000488600190.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0004/000488600200.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0005/000500000012.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=         1
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=         1
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=         1
+/isdc/arc/rev_2/scw//0005/000500000020.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1126
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1126
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1126
+/isdc/arc/rev_2/scw//0005/000500000030.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1125
+/isdc/arc/rev_2/scw//0005/000500000040.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1096
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1096
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1096
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1096
+/isdc/arc/rev_2/scw//0005/000571000010.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+/isdc/arc/rev_2/scw//0005/000571000020.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+/isdc/arc/rev_2/scw//0005/000571000030.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1126
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+/isdc/arc/rev_2/scw//0005/000571000040.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+/isdc/arc/rev_2/scw//0005/000571000050.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+/isdc/arc/rev_2/scw//0005/000571000060.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       455
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       455
+/isdc/arc/rev_2/scw//0005/000588700010.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       562
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       562
+/isdc/arc/rev_2/scw//0005/000588700020.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+/isdc/arc/rev_2/scw//0005/000588700030.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0005/000588700040.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0005/000588700050.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0005/000588700060.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0005/000588700070.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0005/000588700080.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0005/000588700090.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1125
+/isdc/arc/rev_2/scw//0005/000588700100.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       520
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       520
+/isdc/arc/rev_2/scw//0005/000588700111.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=        16
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=        16
+/isdc/arc/rev_2/scw//0005/000588700120.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+/isdc/arc/rev_2/scw//0005/000588700130.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+/isdc/arc/rev_2/scw//0005/000588700140.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1021
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+/isdc/arc/rev_2/scw//0005/000588700150.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       524
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       524
+/isdc/arc/rev_2/scw//0005/000588700160.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1122
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1087
+/isdc/arc/rev_2/scw//0005/000588700170.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+/isdc/arc/rev_2/scw//0005/000588700180.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       214
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       214
+/isdc/arc/rev_2/scw//0005/000588700191.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1126
+/isdc/arc/rev_2/scw//0005/000588700201.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1125
+/isdc/arc/rev_2/scw//0005/000588700211.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0005/000588700221.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0005/000588700231.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0006/000600000012.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=         2
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=         2
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=         2
+/isdc/arc/rev_2/scw//0006/000600000021.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1125
+/isdc/arc/rev_2/scw//0006/000600000031.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1125
+/isdc/arc/rev_2/scw//0006/000600000041.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1125
+/isdc/arc/rev_2/scw//0006/000600000051.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1125
+/isdc/arc/rev_2/scw//0006/000600000061.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1125
+/isdc/arc/rev_2/scw//0006/000600000071.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1125
+/isdc/arc/rev_2/scw//0006/000600000081.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1125
+/isdc/arc/rev_2/scw//0006/000600000091.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1125
+/isdc/arc/rev_2/scw//0006/000600000101.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1125
+/isdc/arc/rev_2/scw//0006/000600000111.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1125
+/isdc/arc/rev_2/scw//0006/000600000121.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1089
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1089
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1089
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1089
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1089
+/isdc/arc/rev_2/scw//0006/000600000131.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1125
+/isdc/arc/rev_2/scw//0006/000600000141.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1125
+/isdc/arc/rev_2/scw//0006/000600000151.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1125
+/isdc/arc/rev_2/scw//0006/000600000161.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       475
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       475
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       475
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       475
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       475
+/isdc/arc/rev_2/scw//0006/000689010010.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1126
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+/isdc/arc/rev_2/scw//0006/000689010020.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+/isdc/arc/rev_2/scw//0006/000689010030.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1124
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1126
+/isdc/arc/rev_2/scw//0006/000689010040.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+/isdc/arc/rev_2/scw//0006/000689010050.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+/isdc/arc/rev_2/scw//0006/000689010060.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+/isdc/arc/rev_2/scw//0006/000689010070.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       190
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       190
+/isdc/arc/rev_2/scw//0006/000689010081.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=        44
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=        44
+/isdc/arc/rev_2/scw//0006/000689010090.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       240
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       240
+/isdc/arc/rev_2/scw//0006/000689010101.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       315
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       315
+/isdc/arc/rev_2/scw//0006/000689010110.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       180
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       180
+/isdc/arc/rev_2/scw//0006/000689010121.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+/isdc/arc/rev_2/scw//0006/000689010131.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+/isdc/arc/rev_2/scw//0006/000689010141.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+/isdc/arc/rev_2/scw//0006/000689010151.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+/isdc/arc/rev_2/scw//0006/000689010161.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+/isdc/arc/rev_2/scw//0006/000689010171.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0007/000700000012.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0007/000700000021.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0007/000700000031.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+/isdc/arc/rev_2/scw//0007/000700000041.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+/isdc/arc/rev_2/scw//0007/000700000051.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+/isdc/arc/rev_2/scw//0007/000700000061.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+/isdc/arc/rev_2/scw//0007/000700000071.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       226
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       226
+/isdc/arc/rev_2/scw//0007/000752000010.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+/isdc/arc/rev_2/scw//0007/000752000020.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+/isdc/arc/rev_2/scw//0007/000752000030.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1125
+/isdc/arc/rev_2/scw//0007/000752000040.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1125
+/isdc/arc/rev_2/scw//0007/000752000050.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+/isdc/arc/rev_2/scw//0007/000752000060.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+/isdc/arc/rev_2/scw//0007/000752000070.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+/isdc/arc/rev_2/scw//0007/000752000080.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       279
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       279
+/isdc/arc/rev_2/scw//0007/000752000090.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+/isdc/arc/rev_2/scw//0007/000752000100.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+/isdc/arc/rev_2/scw//0007/000752000110.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1122
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1124
+/isdc/arc/rev_2/scw//0007/000752000120.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+/isdc/arc/rev_2/scw//0007/000752000130.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       984
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       984
+/isdc/arc/rev_2/scw//0007/000752200010.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+/isdc/arc/rev_2/scw//0007/000752200020.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+/isdc/arc/rev_2/scw//0007/000752200030.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       797
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       797
+/isdc/arc/rev_2/scw//0007/000752200040.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       447
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       447
+/isdc/arc/rev_2/scw//0007/000752200051.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       267
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       267
+/isdc/arc/rev_2/scw//0007/000752200060.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       522
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       522
+/isdc/arc/rev_2/scw//0007/000752200071.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=         5
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=         5
+/isdc/arc/rev_2/scw//0007/000752200080.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       552
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       552
+/isdc/arc/rev_2/scw//0007/000752200091.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=         5
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=         5
+/isdc/arc/rev_2/scw//0007/000752200100.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       361
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       361
+/isdc/arc/rev_2/scw//0007/000752200111.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=         5
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=         5
+/isdc/arc/rev_2/scw//0007/000752200120.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       348
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       348
+/isdc/arc/rev_2/scw//0007/000752200131.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=         5
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=         5
+/isdc/arc/rev_2/scw//0007/000752200140.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       363
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       363
+/isdc/arc/rev_2/scw//0007/000752200151.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=         4
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=         4
+/isdc/arc/rev_2/scw//0007/000752200160.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       706
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       706
+/isdc/arc/rev_2/scw//0007/000752200171.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=         5
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=         5
+/isdc/arc/rev_2/scw//0007/000752200180.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+/isdc/arc/rev_2/scw//0007/000752200190.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+/isdc/arc/rev_2/scw//0007/000752200200.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0008/000800000012.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=         1
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=         1
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=         1
+/isdc/arc/rev_2/scw//0008/000800000020.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1125
+/isdc/arc/rev_2/scw//0008/000800000030.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1125
+/isdc/arc/rev_2/scw//0008/000800000040.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1125
+/isdc/arc/rev_2/scw//0008/000800000050.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1125
+/isdc/arc/rev_2/scw//0008/000800000060.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       428
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       428
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       428
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       428
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       428
+/isdc/arc/rev_2/scw//0008/000853000010.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1125
+/isdc/arc/rev_2/scw//0008/000853000020.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1125
+/isdc/arc/rev_2/scw//0008/000853000030.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1125
+/isdc/arc/rev_2/scw//0008/000853000040.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1125
+/isdc/arc/rev_2/scw//0008/000853000050.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1125
+/isdc/arc/rev_2/scw//0008/000853000060.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1125
+/isdc/arc/rev_2/scw//0008/000853000070.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1125
+/isdc/arc/rev_2/scw//0008/000853000080.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1125
+/isdc/arc/rev_2/scw//0008/000853000090.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1125
+/isdc/arc/rev_2/scw//0008/000853000100.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       752
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       752
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       752
+/isdc/arc/rev_2/scw//0008/000854000010.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0008/000854000020.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0008/000854000030.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0008/000854100010.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0008/000854100020.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0008/000854100030.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0008/000854100040.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0008/000855000010.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1125
+/isdc/arc/rev_2/scw//0008/000855000020.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1125
+/isdc/arc/rev_2/scw//0008/000855000030.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1125
+/isdc/arc/rev_2/scw//0008/000855000040.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1125
+/isdc/arc/rev_2/scw//0008/000855000050.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       766
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       766
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       766
+/isdc/arc/rev_2/scw//0008/000855500010.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1125
+/isdc/arc/rev_2/scw//0008/000855500020.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1125
+/isdc/arc/rev_2/scw//0008/000855500030.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0009/000900000012.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=         1
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=         1
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=         1
+/isdc/arc/rev_2/scw//0009/000900000020.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1125
+/isdc/arc/rev_2/scw//0009/000900000030.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0009/000900000040.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1025
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1025
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1025
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1025
+/isdc/arc/rev_2/scw//0009/000900000051.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1125
+/isdc/arc/rev_2/scw//0009/000900000061.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=        15
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=        15
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=        15
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=        15
+/isdc/arc/rev_2/scw//0009/000923010010.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       414
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       414
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       414
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       414
+/isdc/arc/rev_2/scw//0009/000923010021.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=         4
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=         4
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=         4
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=         4
+/isdc/arc/rev_2/scw//0009/000923020010.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1125
+/isdc/arc/rev_2/scw//0009/000923020020.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=        81
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=        81
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=        81
+/isdc/arc/rev_2/scw//0009/000923020031.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=         5
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=         5
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=         5
+/isdc/arc/rev_2/scw//0009/000923030010.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       109
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       109
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       109
+/isdc/arc/rev_2/scw//0009/000923030021.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=         5
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=         5
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=         5
+/isdc/arc/rev_2/scw//0009/000923040010.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1125
+/isdc/arc/rev_2/scw//0009/000923040020.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=        74
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=        74
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=        74
+/isdc/arc/rev_2/scw//0009/000923040031.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=         4
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=         4
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=         4
+/isdc/arc/rev_2/scw//0009/000923050010.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1125
+/isdc/arc/rev_2/scw//0009/000923050020.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       203
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       203
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       203
+/isdc/arc/rev_2/scw//0009/000923050031.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=         5
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=         5
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=         5
+/isdc/arc/rev_2/scw//0009/000923060010.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1125
+/isdc/arc/rev_2/scw//0009/000923060020.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1125
+/isdc/arc/rev_2/scw//0009/000923060030.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1125
+/isdc/arc/rev_2/scw//0009/000923060040.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       564
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       564
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       564
+/isdc/arc/rev_2/scw//0009/000956000010.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1125
+/isdc/arc/rev_2/scw//0009/000956000020.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1125
+/isdc/arc/rev_2/scw//0009/000956000030.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1125
+/isdc/arc/rev_2/scw//0009/000956000040.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1125
+/isdc/arc/rev_2/scw//0009/000956000050.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1125
+/isdc/arc/rev_2/scw//0009/000956000060.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       355
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       355
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       355
+/isdc/arc/rev_2/scw//0009/000956000070.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       674
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       674
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       674
+/isdc/arc/rev_2/scw//0009/000956000080.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       972
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       972
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       972
+/isdc/arc/rev_2/scw//0009/000956000090.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       718
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       718
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       718
+/isdc/arc/rev_2/scw//0009/000956500010.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1125
+/isdc/arc/rev_2/scw//0009/000956500020.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1125
+/isdc/arc/rev_2/scw//0009/000956500030.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1125
+/isdc/arc/rev_2/scw//0009/000956500040.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1125
+/isdc/arc/rev_2/scw//0009/000956500050.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1125
+/isdc/arc/rev_2/scw//0009/000956500060.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1125
+/isdc/arc/rev_2/scw//0009/000956500070.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1125
+/isdc/arc/rev_2/scw//0009/000956500080.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1125
+/isdc/arc/rev_2/scw//0009/000956500090.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0010/001000000012.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0010/001000000020.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0010/001000000030.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       291
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       291
+/isdc/arc/rev_2/scw//0010/001061210010.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       350
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       350
+/isdc/arc/rev_2/scw//0010/001061220010.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       247
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       247
+/isdc/arc/rev_2/scw//0010/001061230010.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       240
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       240
+/isdc/arc/rev_2/scw//0010/001061240010.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       265
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       265
+/isdc/arc/rev_2/scw//0010/001061250010.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       242
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       242
+/isdc/arc/rev_2/scw//0010/001061260010.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       736
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       736
+/isdc/arc/rev_2/scw//0010/001061260020.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       239
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       239
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       239
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       239
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       239
+/isdc/arc/rev_2/scw//0010/001061260030.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       253
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       253
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       253
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       253
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       253
+/isdc/arc/rev_2/scw//0010/001061260040.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       239
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       239
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       239
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       239
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       239
+/isdc/arc/rev_2/scw//0010/001061260050.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       252
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       252
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       252
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       252
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       252
+/isdc/arc/rev_2/scw//0010/001061260060.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       254
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       254
+/isdc/arc/rev_2/scw//0010/001061260070.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       251
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       251
+/isdc/arc/rev_2/scw//0010/001061260081.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       778
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       778
+/isdc/arc/rev_2/scw//0010/001061260090.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+/isdc/arc/rev_2/scw//0010/001061260100.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+/isdc/arc/rev_2/scw//0010/001061260110.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+/isdc/arc/rev_2/scw//0010/001061260120.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+/isdc/arc/rev_2/scw//0010/001061260130.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       823
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       823
+/isdc/arc/rev_2/scw//0010/001061260140.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+/isdc/arc/rev_2/scw//0010/001061260150.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       788
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       788
+/isdc/arc/rev_2/scw//0010/001061260160.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1125
+/isdc/arc/rev_2/scw//0010/001061260170.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1125
+/isdc/arc/rev_2/scw//0010/001061260180.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       316
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       316
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       316
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       316
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       316
+/isdc/arc/rev_2/scw//0010/001061260190.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       609
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       609
+/isdc/arc/rev_2/scw//0010/001061260200.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=        22
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=        22
+/isdc/arc/rev_2/scw//0010/001061260211.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=         4
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=         4
+/isdc/arc/rev_2/scw//0010/001061260220.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       357
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       357
+/isdc/arc/rev_2/scw//0010/001061260231.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=         5
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=         5
+/isdc/arc/rev_2/scw//0010/001061260240.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       353
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       352
+/isdc/arc/rev_2/scw//0010/001061260251.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=         5
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=         5
+/isdc/arc/rev_2/scw//0010/001061260260.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       951
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       951
+/isdc/arc/rev_2/scw//0010/001061260270.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+/isdc/arc/rev_2/scw//0010/001061260280.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0010/001061260290.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0010/001061260300.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0010/001061260310.001/ibis_deadtime.fits.gz
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1125
+/isdc/arc/rev_2/scw//0010/001061260320.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1125
+/isdc/arc/rev_2/scw//0010/001061260330.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1125
+/isdc/arc/rev_2/scw//0010/001061260340.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=      1125
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=      1125
+/isdc/arc/rev_2/scw//0010/001061260350.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+/isdc/arc/rev_2/scw//0010/001061260360.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+/isdc/arc/rev_2/scw//0010/001061260370.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0011/001100000012.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0011/001100000020.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0011/001100000031.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0011/001100010010.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0011/001100010021.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0011/001100020010.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0011/001100020021.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=        11
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=        11
+/isdc/arc/rev_2/scw//0011/001100030010.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       473
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       473
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       473
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       473
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       473
+/isdc/arc/rev_2/scw//0011/001100030021.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=         5
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=         5
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=         5
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=         5
+/isdc/arc/rev_2/scw//0011/001129010010.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       314
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       314
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       314
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       314
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       314
+/isdc/arc/rev_2/scw//0011/001129010021.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=         5
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=         5
+/isdc/arc/rev_2/scw//0011/001129010030.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       180
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       180
+/isdc/arc/rev_2/scw//0011/001129010041.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0011/001129020010.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       474
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       474
+/isdc/arc/rev_2/scw//0011/001129020021.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0011/001129030010.001/ibis_deadtime.fits
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       941
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       941
+/isdc/arc/rev_2/scw//0011/001129030021.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0011/001129040010.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1017
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1017
+/isdc/arc/rev_2/scw//0011/001129040021.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1011
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1011
+/isdc/arc/rev_2/scw//0011/001129050010.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+/isdc/arc/rev_2/scw//0011/001129050020.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       941
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       941
+/isdc/arc/rev_2/scw//0011/001129050031.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=         4
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=         4
+/isdc/arc/rev_2/scw//0011/001129050040.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       921
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       921
+/isdc/arc/rev_2/scw//0011/001129050051.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=         5
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=         5
+/isdc/arc/rev_2/scw//0011/001129060010.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       468
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       468
+/isdc/arc/rev_2/scw//0011/001129060021.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=         5
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=         5
+/isdc/arc/rev_2/scw//0011/001129070010.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       918
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       918
+/isdc/arc/rev_2/scw//0011/001129070021.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=         5
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=         5
+/isdc/arc/rev_2/scw//0011/001129080010.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       469
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       469
+/isdc/arc/rev_2/scw//0011/001129080021.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=         4
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=         4
+/isdc/arc/rev_2/scw//0011/001129090010.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       919
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       919
+/isdc/arc/rev_2/scw//0011/001129090021.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=         4
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=         4
+/isdc/arc/rev_2/scw//0011/001129100010.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       469
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       469
+/isdc/arc/rev_2/scw//0011/001129100021.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=         5
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=         5
+/isdc/arc/rev_2/scw//0011/001129110010.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       918
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       918
+/isdc/arc/rev_2/scw//0011/001129110021.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=         5
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=         5
+/isdc/arc/rev_2/scw//0011/001129120010.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       465
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       465
+/isdc/arc/rev_2/scw//0011/001129120021.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=         4
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=         4
+/isdc/arc/rev_2/scw//0011/001129130010.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       914
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       914
+/isdc/arc/rev_2/scw//0011/001130000010.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=      1125
+/isdc/arc/rev_2/scw//0011/001130000020.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       738
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       738
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       738
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       738
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       738
+/isdc/arc/rev_2/scw//0011/001130000031.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=        11
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=        11
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=        11
+/isdc/arc/rev_2/scw//0011/001130000040.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       178
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       178
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       178
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       178
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       178
+/isdc/arc/rev_2/scw//0011/001130000051.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=        11
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=        11
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=        11
+/isdc/arc/rev_2/scw//0011/001130000060.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       711
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       711
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       710
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       710
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       710
+/isdc/arc/rev_2/scw//0011/001130000071.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=        11
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=        11
+/isdc/arc/rev_2/scw//0011/001130000080.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       225
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       225
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       225
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       225
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       225
+/isdc/arc/rev_2/scw//0011/001130000091.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=        11
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=        11
+/isdc/arc/rev_2/scw//0011/001130000100.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       227
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       227
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       227
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       227
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       227
+/isdc/arc/rev_2/scw//0011/001130000111.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=        11
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=        11
+/isdc/arc/rev_2/scw//0011/001130000120.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       225
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       225
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       225
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       225
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       225
+/isdc/arc/rev_2/scw//0011/001130000131.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=        11
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=        11
+/isdc/arc/rev_2/scw//0011/001130000140.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       228
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       228
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       228
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       228
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       228
+/isdc/arc/rev_2/scw//0011/001130000151.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=        11
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=        11
+/isdc/arc/rev_2/scw//0011/001130000160.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       228
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       228
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       228
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       228
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       228
+/isdc/arc/rev_2/scw//0011/001130000171.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=        11
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=        11
+/isdc/arc/rev_2/scw//0011/001130000180.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       226
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       226
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       226
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       226
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       226
+/isdc/arc/rev_2/scw//0011/001130000191.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=        11
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=        11
+/isdc/arc/rev_2/scw//0011/001130000200.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       226
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       226
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       226
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       226
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       226
+/isdc/arc/rev_2/scw//0011/001130000211.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=        11
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=        11
+/isdc/arc/rev_2/scw//0011/001130000220.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       226
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       226
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       226
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       226
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       226
+/isdc/arc/rev_2/scw//0011/001130000231.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=        10
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=        10
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=        10
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=        10
+/isdc/arc/rev_2/scw//0011/001130000240.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       227
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       227
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       227
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       227
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       227
+/isdc/arc/rev_2/scw//0011/001130000251.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=        11
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=        11
+/isdc/arc/rev_2/scw//0011/001130000260.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       225
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       225
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       225
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       225
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       225
+/isdc/arc/rev_2/scw//0011/001130000271.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=        11
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=        11
+/isdc/arc/rev_2/scw//0011/001130000280.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       458
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       458
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       458
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       458
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       458
+/isdc/arc/rev_2/scw//0011/001130000291.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=        11
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=        11
+/isdc/arc/rev_2/scw//0011/001130000300.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       229
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       229
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       229
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       229
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       229
+/isdc/arc/rev_2/scw//0011/001130000311.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=        10
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=        10
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=        10
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=        10
+/isdc/arc/rev_2/scw//0011/001130000320.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       226
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       226
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       226
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       226
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       226
+/isdc/arc/rev_2/scw//0011/001130000331.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=        11
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=        11
+/isdc/arc/rev_2/scw//0011/001130000340.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       226
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       226
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       226
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       226
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       226
+/isdc/arc/rev_2/scw//0011/001130000351.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=        11
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=        11
+/isdc/arc/rev_2/scw//0011/001130000360.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       226
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       226
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       226
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       226
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       226
+/isdc/arc/rev_2/scw//0011/001130000371.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=        10
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=        10
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=        10
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=        10
+/isdc/arc/rev_2/scw//0011/001130000380.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       227
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       227
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       227
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       227
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       227
+/isdc/arc/rev_2/scw//0011/001130000391.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=        11
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=        11
+/isdc/arc/rev_2/scw//0011/001130000400.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       226
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       226
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       226
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       226
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       226
+/isdc/arc/rev_2/scw//0011/001130000411.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=        10
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=        10
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=        10
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=        10
+/isdc/arc/rev_2/scw//0011/001130000420.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       229
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       229
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       229
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       229
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       229
+/isdc/arc/rev_2/scw//0011/001130000431.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=        10
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=        10
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=        10
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=        10
+/isdc/arc/rev_2/scw//0011/001130000440.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       760
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       761
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       760
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       760
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       760
+/isdc/arc/rev_2/scw//0011/001130000451.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=        11
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=        11
+/isdc/arc/rev_2/scw//0011/001130000460.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       227
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       227
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       227
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       227
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       227
+/isdc/arc/rev_2/scw//0011/001130000471.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=        11
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=        11
+/isdc/arc/rev_2/scw//0011/001130000480.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       225
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       225
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       225
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       225
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       225
+/isdc/arc/rev_2/scw//0011/001130000491.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=        11
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=        11
+/isdc/arc/rev_2/scw//0011/001130000500.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       228
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       228
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       228
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       228
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       228
+/isdc/arc/rev_2/scw//0011/001130000511.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=        11
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=        11
+/isdc/arc/rev_2/scw//0011/001130000520.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       229
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       229
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       229
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       229
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       229
+/isdc/arc/rev_2/scw//0011/001130000531.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=        11
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=        11
+/isdc/arc/rev_2/scw//0011/001130000540.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       225
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       225
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       225
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       225
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       225
+/isdc/arc/rev_2/scw//0011/001130000551.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=        11
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=        11
+/isdc/arc/rev_2/scw//0011/001130000560.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       436
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       436
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       436
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       436
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       436
+/isdc/arc/rev_2/scw//0011/001130000571.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=        11
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=        11
+/isdc/arc/rev_2/scw//0011/001130000580.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       225
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       225
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       225
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       225
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       225
+/isdc/arc/rev_2/scw//0011/001130000591.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=        11
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=        11
+/isdc/arc/rev_2/scw//0011/001130000600.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       227
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       227
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       227
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       227
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       227
+/isdc/arc/rev_2/scw//0011/001130000611.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=        11
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=        11
+/isdc/arc/rev_2/scw//0011/001130000620.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       225
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       225
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       225
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       225
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       225
+/isdc/arc/rev_2/scw//0011/001130000631.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=        11
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=        11
+/isdc/arc/rev_2/scw//0011/001130000640.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       228
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       228
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       228
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       228
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       228
+/isdc/arc/rev_2/scw//0011/001130000651.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=        11
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=        11
+/isdc/arc/rev_2/scw//0011/001130000660.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       229
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       229
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       229
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       229
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       229
+/isdc/arc/rev_2/scw//0011/001130000671.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=        11
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=        11
+/isdc/arc/rev_2/scw//0011/001130000680.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       225
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       225
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       225
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       225
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       225
+/isdc/arc/rev_2/scw//0011/001130000691.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=        11
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=        11
+/isdc/arc/rev_2/scw//0011/001130000700.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       227
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       227
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       227
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       227
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       227
+/isdc/arc/rev_2/scw//0011/001130000711.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=        11
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=        11
+/isdc/arc/rev_2/scw//0011/001130000720.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       225
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       225
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       225
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       225
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       225
+/isdc/arc/rev_2/scw//0011/001130000731.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=        11
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=        11
+/isdc/arc/rev_2/scw//0011/001130000740.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       227
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       227
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       227
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       227
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       227
+/isdc/arc/rev_2/scw//0011/001130000751.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=        11
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=        11
+/isdc/arc/rev_2/scw//0011/001130000760.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       225
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       225
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       225
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       225
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       225
+/isdc/arc/rev_2/scw//0011/001130000771.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=        11
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=        11
+/isdc/arc/rev_2/scw//0011/001130000780.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       228
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       228
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       228
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       228
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       228
+/isdc/arc/rev_2/scw//0011/001130000791.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=        11
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=        11
+/isdc/arc/rev_2/scw//0011/001130000800.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       332
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       332
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       332
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       332
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       332
+/isdc/arc/rev_2/scw//0011/001130000811.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=        11
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=        11
+/isdc/arc/rev_2/scw//0011/001130000820.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       225
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       225
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       225
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       225
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       225
+/isdc/arc/rev_2/scw//0011/001130000831.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=        11
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=        11
+/isdc/arc/rev_2/scw//0011/001130000840.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       227
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       227
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       227
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       227
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       227
+/isdc/arc/rev_2/scw//0011/001130000851.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=        11
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=        11
+/isdc/arc/rev_2/scw//0011/001130000860.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       225
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       225
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       225
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       225
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       225
+/isdc/arc/rev_2/scw//0011/001130000871.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=        11
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=        11
+/isdc/arc/rev_2/scw//0011/001130000880.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       227
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       227
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       227
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       227
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       227
+/isdc/arc/rev_2/scw//0011/001130000891.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=        11
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=        11
+/isdc/arc/rev_2/scw//0011/001130000900.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       225
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       225
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       225
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       225
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       225
+/isdc/arc/rev_2/scw//0011/001130000911.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=        11
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=        11
+/isdc/arc/rev_2/scw//0011/001130000920.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       228
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       228
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       228
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       228
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       228
+/isdc/arc/rev_2/scw//0011/001130000931.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=        11
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=        11
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=        11
+/isdc/arc/rev_2/scw//0011/001130000940.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       229
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       229
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       229
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       229
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       229
+/isdc/arc/rev_2/scw//0011/001130000951.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=        10
+/isdc/arc/rev_2/scw//0011/001130000960.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       226
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       226
+/isdc/arc/rev_2/scw//0011/001130000971.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0011/001130000980.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0011/001130000991.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0011/001130001000.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0011/001130001011.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0011/001130001020.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0011/001130001031.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0011/001130001040.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0012/001200000012.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0012/001200000020.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0012/001200000032.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0012/001200000041.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0012/001200010010.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0012/001200010021.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=        90
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=        90
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=        90
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=        90
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=        90
+/isdc/arc/rev_2/scw//0012/001200020010.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       840
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       840
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       840
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       840
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       840
+/isdc/arc/rev_2/scw//0012/001200020020.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       440
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       440
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       440
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       440
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       440
+/isdc/arc/rev_2/scw//0012/001200020030.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       439
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       440
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       440
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       440
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       440
+/isdc/arc/rev_2/scw//0012/001200020040.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       472
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       471
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       471
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       471
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       471
+/isdc/arc/rev_2/scw//0012/001200020052.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       112
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       112
+Log_1  : ISGR-DEAD-SCP        TABLE Cols=         9, Rows=       112
+Log_1  : COMP-DEAD-SCP        TABLE Cols=         9, Rows=       112
+Log_1  : PICS-DEAD-SCP        TABLE Cols=        17, Rows=       112
+/isdc/arc/rev_2/scw//0012/001200020061.001/ibis_deadtime.fits.gz
+Log_1  : JMX1-DEAD-SCP        TABLE Cols=         4, Rows=       241
+Log_1  : JMX2-DEAD-SCP        TABLE Cols=         4, Rows=       241
+/isdc/arc/rev_2/scw//0012/001200030010.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0012/001200030021.001/ibis_deadtime.fits.gz
+/isdc/arc/rev_2/scw//0012/001200040010.001/ibis_deadt

@@ -1,0 +1,24 @@
+#!/bin/sh
+
+#
+#	This should be running on isdc_int@isdcul19 and isdc_int@isdcul21
+#
+
+/usr/bin/at -s 8am tomorrow < /home/isdc_guest/isdc_int/quotachecker
+
+date=`date '+%Y%m%d'`
+system=`uname -n`
+
+echo "From:     jake.wendt@obs.unige.ch" > .quotamail.${system}
+echo "To:       jake.wendt@obs.unige.ch" >> .quotamail.${system}
+echo "Subject:  Quota Check $date\n"     >> .quotamail.${system}
+echo >> .quotamail.${system}
+echo "Automated quota check for ${USER}@${system}" >> .quotamail.${system}
+echo >> .quotamail.${system}
+
+/usr/sbin/quota -v >> .quotamail.${system}
+
+/usr/lib/sendmail -t < .quotamail.${system}
+
+
+

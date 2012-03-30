@@ -1,0 +1,2 @@
+#!/usr/bin/sh -f
+echo command args are $*

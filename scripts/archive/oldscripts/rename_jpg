@@ -1,0 +1,8 @@
+#!/bin/sh
+
+for i in `/bin/ls *.jpg`
+do
+	num=`echo $i | awk -F_ '{print $2}'`
+	mv $i dcp_"$num".jpg
+done
+

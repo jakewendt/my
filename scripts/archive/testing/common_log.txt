@@ -1,0 +1,38 @@
+Log_1   2004-11-19T12:52:16 dal_list 1.8: Task dal_list running in SINGLE mode
+Log_1   2004-11-19T12:52:16 dal_list 1.8: Beginning parameters
+Log_1   2004-11-19T12:52:16 dal_list 1.8: Parameter dol = /isdc/arc/rev_2/scw/0070/007000730010.001/swg.fits+1
+Log_1   2004-11-19T12:52:16 dal_list 1.8: Parameter extname = *DEAD*
+Log_1   2004-11-19T12:52:16 dal_list 1.8: Parameter exact = no
+Log_1   2004-11-19T12:52:16 dal_list 1.8: Parameter longlisting = yes
+Log_1   2004-11-19T12:52:16 dal_list 1.8: Parameter fulldols = n
+Log_1   2004-11-19T12:52:16 dal_list 1.8: Parameter mode = ql
+Log_1   2004-11-19T12:52:16 dal_list 1.8: Ending parameters
+Log_1   2004-11-19T12:52:16 dal_list 1.8: Running in normal mode, default parameter prompting
+Log_1   2004-11-19T12:52:18 dal_list 1.8: ISGR-DEAD-SCP        TABLE Cols=         9, Rows=        81
+Log_1   2004-11-19T12:52:18 dal_list 1.8: COMP-DEAD-SCP        TABLE Cols=         9, Rows=        81
+Log_1   2004-11-19T12:52:18 dal_list 1.8: PICS-DEAD-SCP        TABLE Cols=        17, Rows=        81
+Log_1   2004-11-19T12:52:18 dal_list 1.8: Task dal_list terminating with status 0
+Log_1   2004-11-19T14:06:40 dal_list 1.8: Task dal_list running in SINGLE mode
+Log_1   2004-11-19T14:06:40 dal_list 1.8: Beginning parameters
+Log_1   2004-11-19T14:06:40 dal_list 1.8: Parameter dol = /isdc/arc/rev_2/scw//0009/000900000030.001/ibis_deadtime.fits.gz+1
+Log_1   2004-11-19T14:06:40 dal_list 1.8: Parameter extname = 
+Log_1   2004-11-19T14:06:40 dal_list 1.8: Parameter exact = no
+Log_1   2004-11-19T14:06:40 dal_list 1.8: Parameter longlisting = yes
+Log_1   2004-11-19T14:06:40 dal_list 1.8: Parameter fulldols = no
+Log_1   2004-11-19T14:06:40 dal_list 1.8: Parameter mode = ql
+Log_1   2004-11-19T14:06:40 dal_list 1.8: Ending parameters
+Log_1   2004-11-19T14:06:40 dal_list 1.8: Running in normal mode, default parameter prompting
+Log_1   2004-11-19T14:06:40 dal_list 1.8: ISGR-DEAD-SCP        TABLE Cols=         9, Rows=         0
+Log_1   2004-11-19T14:06:40 dal_list 1.8: Task dal_list terminating with status 0
+Log_1   2004-11-19T14:07:17 dal_list 1.8: Task dal_list running in SINGLE mode
+Log_1   2004-11-19T14:07:17 dal_list 1.8: Beginning parameters
+Log_1   2004-11-19T14:07:17 dal_list 1.8: Parameter dol = /isdc/arc/rev_2/scw//0001/000100000271.001/ibis_deadtime.fits.gz+1
+Log_1   2004-11-19T14:07:17 dal_list 1.8: Parameter extname = 
+Log_1   2004-11-19T14:07:17 dal_list 1.8: Parameter exact = no
+Log_1   2004-11-19T14:07:17 dal_list 1.8: Parameter longlisting = yes
+Log_1   2004-11-19T14:07:17 dal_list 1.8: Parameter fulldols = no
+Log_1   2004-11-19T14:07:17 dal_list 1.8: Parameter mode = ql
+Log_1   2004-11-19T14:07:17 dal_list 1.8: Ending parameters
+Log_1   2004-11-19T14:07:17 dal_list 1.8: Running in normal mode, default parameter prompting
+Log_1   2004-11-19T14:07:17 dal_list 1.8: ISGR-DEAD-SCP        TABLE Cols=         9, Rows=         0
+Log_1   2004-11-19T14:07:17 dal_list 1.8: Task dal_list terminating with status 0

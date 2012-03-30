@@ -1,0 +1,17 @@
+#!/bin/sh
+
+case $# in
+        0) INPUT=/dev/stdin; OUTPUT=/dev/stdout; BRK=44;;
+        1) INPUT=$1; OUTPUT=/dev/stdout; BRK=44;;
+        2) INPUT=$1; OUTPUT=$2; BRK=44;;
+        3) INPUT=$1; OUTPUT=$2; BRK=$3;;
+        *) echo "Syntax: booklet [ infile [ outfile ] ]";;
+esac
+
+echo $INPUT $OUTPUT $BRK
+
+psbook -s$BRK $INPUT /tmp/booklet.tmp
+pstops -q "4:0L@.7(21cm,0)+1L@.7(21cm,14.85cm),2R@.7(0,29.7cm)+3R@.7(0,14.85cm)" /tmp/booklet.tmp $OUTPUT
+rm /tmp/booklet.tmp
+
+

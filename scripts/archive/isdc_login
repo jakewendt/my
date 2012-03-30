@@ -1,0 +1,2423 @@
+# -*- sh -*-
+###############################################################################
+#
+#                       INTEGRAL Science Data Centre
+#
+#  File:      /isdc/scripts/login.new
+#
+#  Version:   !!! DO NOT CHANGE THE LAYOUT OF THE VERSION LINES !!!!
+              setenv isdc_login_version 2.19
+#
+#  Author(s): Mathias.Beck@obs.unige.ch (MB)
+#
+#  Purpose:   Script to initialize the ISDC software environment
+#
+#             The sequence of action is
+#
+#             1. setenv the default values for the user overwritables as well
+#                as other variables.
+#
+#                Note, user overwritables are explained in the help section
+#
+#             2. Scan the options from the input
+#
+#             3. Add the compilers to the environment
+#
+#             4. Add make to the environment
+#
+#             5. Add 
+#
+#                a: PERL,
+#                b: FTOOLS,
+#                c: ROOT,
+#                d: AstroROOT,
+#                e: NAG and
+#                f: TOOLS
+#
+#                to the environment
+#
+#             6. Add ISDC_ENV to the environment
+#
+#             7. Add JAVA to the environment
+#
+#             8. Add OPUS to the environment
+#
+#             9. Clean up
+#
+#  Revision History:
+#
+#     2.19   06-Sep-2007   MG   - The new Fedora 7 C and C++ compilers being
+#                               used are using the .ccache by default.  This 
+#                               may cause quota problems to users, so the 
+#                               option is being disabled with the environment
+#                               variable CCACHE_DISABLED.
+#                               - F90 is now set to g95-x86_64 if it is an
+#                               x86_64 system.
+#
+#     2.18   04-Sep-2007   MG   - Now supporting specifying alternatives to the
+#                               two isdcrc files used by the login script.  The
+#                               new option are:
+#                                  --isdcrcUserDefHomeDir=dir
+#                                  --isdcrcUserDefDefault=file
+#                               They are mostly for the WCT; when a 
+#                               contradiction with the option --with-isdc-
+#                               defaults arises, --with-isdc-defaults will be
+#                               followed and all three isdcrc files under the 
+#                               users control will be ignored.
+#                               - The internal option --with-user-defaults
+#                               has been removed.  It was no longer really 
+#                               needed, it complicated the code, and offered
+#                               the possibility of more complicated 
+#                               contradictions.
+#                               - Now supporting the setenving of 
+#                               ISDCRC_VERSION if found in the .isdcrc file.
+#                               
+#     2.17   05-Oct-2006   MG   During the NBS port to g5t, it was noticed that
+#                               F90 was not being set for Darwin.  The three 
+#                               variables CC, CXX, F90 are now being set 
+#                               explicitely for the case of Darwin.
+#
+#     2.16   07-Aug-2006   MG   support for OS/X: updated calculation of 
+#                               SAORD_ROOT for Darwin.
+#
+#     2.15   28-Jun-2006   MG   support for OS/X, namely, ROOTSYS
+#
+#     2.14   18-Apr-2006   MB   support for OS/X
+#
+#     2.13   05-Apr-2006   MB   1. opus_login.csh is always source'ed (not 
+#                                  only for SunOS)
+#                               2. ISDC_OPUS_VERSION is passed to opus_login.csh
+#     2.12   07-Feb-2006   MB   source the compiler configuration
+#                               file $ISDC_ENV/compilers.config
+#                               needed by the WCT (SCREW-1814)
+#
+#     2.11   29-Nov-2005   MB   1. NAGLIB is now isdcmath
+#                               2. default F90 compiler on Linux is
+#                                  now g95 instead of ifc
+#                               3. Because of a problem using MINUIT
+#                                  within ROOT the FTOOLS setup is now
+#                                  done before the ROOT setup.
+#                                  Both come with libMinuit but
+#                                  different implementations
+#
+#     2.10.1 04-Jul-2005   MB   SAORD_ROOT not working properly after
+#                               change for 2.10
+#
+#     2.10   20-Jun-2005   MB   FTOOLS version > 6 changed initialisation
+#
+#     2.9.1  15-Mar-2005   MB   1. addition of AstroROOT broke without-root option
+#
+#     2.9    09-Jan-2005   MB   added AstroROOT support
+#
+#     2.8.3  10-Jul-2003   MB   fixed unmatched " when called with --help
+#
+#     2.8.2  03-Jul-2003   MB   fix in 2.8.1 did not work when giving
+#                               --ROOTSYS=dir on the command line
+#
+#     2.8.1  02-Jul-2003   MB   '--without-root' did not work
+#
+#     2.8    09-Apr-2003   MB   1. root version >= 3.04.02 needs special
+#                                  treatment
+#
+#                               2. under Linux, the default Fortran
+#                                  compiler is INTEL 7.0 if gcc is
+#                                  chosen
+#
+#            07-Mar-2003   MB   workshop version >= 7 needs special
+#                               treatment
+#
+#     2.7    07-Jan-2003   MB   1. The code for the dereferencing was
+#                                  broken
+#
+#                               2. the dereferencing is now optional
+#                                  via --without-deref
+#
+#     2.6.1  19-Oct-2002   MB   The code put in for the dereferencing
+#                               did not work when the directory
+#                               pointed to by ISDC_ENV did not yet exist
+#
+#     2.6    11-Oct-2002   MB   If the ISDC_ENV is existing, 
+#                               dereference ISDC_ENV. This is needed 
+#                               to be able to update 'prod' versions
+#                               of ISDC specific S/W installation
+#                               (e.g. iosm, osa_sw, full_system)
+#
+#     2.5    03-Jul-2002   MB   fixed a BUG when setting env. var. F90
+#                               on Solaris
+#
+#            25-Jun-2002   MB   added handling for env. variable
+#                               ISDC_REF_CAT
+#
+#     2.4.1  18-Jun-2002   MB   SPR-01445: the SPR was updated to set
+#                                          F90 the same on all Linux
+#                                          platforms
+#
+#     2.4    03-Jun-2002   MB   added handling for env. variable
+#                               ISDC_IC_TREE
+#
+#            30-May-2002   MB   SPR-01445: corrected setting of CXX for g++
+#                                          and F90 on isdcpc4
+#
+#            24-May-2002   MB   include support for archive set-up
+#                               
+#     2.3    15-May-2002   MB   1. Added intel compiler for Linux
+#                               2. SCREW-00563: PFILES are now correctly changed
+#                                  when ISDC_ENV is changed.
+#
+#     2.2    30-Jan-2002   MB   Added Java Runtime Environment
+#
+#     2.1.1  28-Jan-2002   MB   OPUS_MISC_REP is now $ISDC_SITE/run instead
+#                               of $ISDC_SITE only.
+#
+#            08-Jan-2002   MB   Corrected a small typo in the handling of option
+#                               --AUXL_REF_DIR
+#
+#            07-Jan-2002   MB   Reverted the sequence of assigning ISDC_ENV
+#                               and ISDC_SITE. Like that constructs like
+#                               ISDC_ENV = ${ISDC_SITE}/sw/prod etc. are
+#                               possible.
+#
+#     2.1    24-Sep-2001   MB   1. Added the support for DDD
+#                               2. Added support for Fujitsu FORTRAN compiler
+#
+#
+#     2.0.1  15-Aug-2001   MB   1. Added the display of CFITSIO_INCLUDE_FILES
+#                                  when called with the --show-config option.
+#                               2. Improved the processing speed by modifying
+#                                  icms_envv.pl
+# 
+#     2.0    06-Aug-2001   MB   1. ROOT, NAG and PERL are not installed all
+#                                  together in /isdc/refsoftware anymore, but
+#                                  rather in individual directories:
+#                                  /isdc/sw/{root,nag,perl}. -> Get rid of
+#                                  REFSOFTWARE
+#
+#                               2. Support multiple directories (separated
+#                                  by ':') in ISDC_ENV.
+#
+#                               3. Added the following options:
+#
+#                                  --show-config   to display the current setup
+#                                  --show-defaults to display the default setup
+#                                  --with-isdc-defaults to use ISDC defaults
+#                                    rather than the defaults described
+#                                    in ${HOME}/.isdcrc
+#
+#                               4. Added the reading of environment variable
+#                                  contents from ${HOME}/.isdcrc
+#
+#     1.14   25-Jul-2001   MB   The resetting of PATH, MANPATH and LD_LIBRARY_PATH
+#                               to STD_* is now optional via '--reset'. The
+#                               default is NOT to reset. This will allow
+#                               a more user friendly interactive work with the
+#                               script.
+#
+#     1.13   24-Jul-2001   MB   The order of directories in STD_PATH,...
+#                               was not kept as is. This has been fixed now.
+#
+#     1.12   17-Jul-2001   MB   1. Updating for RP-3.0 the default WORKSHOP
+#                                  directory in /isdc/support-sw was not
+#                                  changed from 6.0 to 6.1. This is fixed now.
+#                               2. The handling of FTOOLS login was slightly
+#                                  modified. Env. var. LHEASOFT and SAORD_ROOT
+#                                  are set independently of the 
+#                                  --without-ftools flag. This facilitates the
+#                                  manual source $LHEASOFT/lhea-init.csh 
+#
+#     1.11   16-Jul-2001   MB   Temporarily changed the default WORKSHOP
+#                               and ROOTSYS to provide RP-3.0 until JB
+#                               installed everything in the right place.
+#
+#     1.10   11-Jul-2001   MB   1. Re-worked the BUG fix for LD_LIBRARY_PATH
+#                                  when overwriting the default ROOTSYS.
+#                                  ${REFSOFTWARE}/lib was incorrectly removed
+#                                  from ${LD_LIBRARY_PATH}. Similarily
+#                                  ${REFSOFTWARE}/bin was incorrectly removed
+#                                  from ${PATH}
+#                               2. Removed the call to the OPUS login script
+#                                  This caused problems on the office network
+#                                  on Linux. Note, this was working and only
+#                                  after a system change it failed.
+#
+#     1.9    06-Jun-2001   MB   Fixed a BUG with LD_LIBRARY_PATH. When
+#                               ROOTSYS is not the default ${REFSOFTWARE}/lib
+#                               is not in the LD_LIBRARY_PATH causing problems
+#                               due to a wrong nag lib found.
+#
+#     1.8    07-May-2001   MB   isdcroot-2.2 reqires Workshop 6.1 due to
+#                               KPIC/pic bug in Workshop 6.0. Use Workshop
+#                               6.1 for internal testing. Therefore:
+#                               Introduced the functionality to overwrite
+#                               the default WORKSHOP setting at script
+#                               invocation via the --WORKSHOP option.
+#
+#     1.7    23-Apr-2001   MB   1. Fixed a bug when the script was called a
+#                                  second time. The LHEASOFT set-up was only
+#                                  done if env. var. LHEASOFT is not set. This
+#                                  caused problems for (at least) xspec.
+#                                  LHEASOFT set-up is now always done.
+#                               2. The default ISDC_ENV is again
+#                                  /isdc/support-sw/prod
+#
+#     1.6    17-Apr-2001   MB   1. Dropped support for /isdc/support-sw/old and
+#                                  added /isdc/support-sw/test instead.
+#                               2. Changed the default ISDC_ENV temporarily to
+#                                  /isdc/support-sw/test. This will be changed
+#                                  back to /isdc/support-sw/prod after release
+#                                  of Support Software 2.2
+#
+#     1.5    08-Feb-2001   MB   Changed the handling of PFILES to adopt the
+#                               location of ISDC par-files in
+#                               ${ISDC_ENV}/pfiles instead of ${ISDC_ENV}/bin.
+#            07-Feb-2001   MB   Fixed a BUG when overwriting the default
+#                               ISDC_ENV with /isdc/support-sw/* containing
+#                               a trailing slash.
+# 
+#     1.4    06-Feb-2001   MB   Fixed a BUG when overwriting the default
+#                               ISDC_ENV from the command line under LINUX.
+#
+#     1.3    25-Jan-2001   MB   Added definition of ISDC_TEST_DATA_DIR
+#
+#     1.2    01-Dec-2000   MB   1. modified the setting of ISDC_ENV to take
+#                                  the architecture into account
+#                                  - SunOS_{5.6,5.8}, Linux
+#                                  - WS {5.0,6.0}, gcc -- under Solaris only 
+#                               2. introduced OS dependent setting of PATH
+#                                  w.r.t. OPUS and SAO
+#
+#     1.1    28-Nov-2000   MB   added /usr/share/man to the MANPATH for Linux
+#                               and remove the temporary welcome message
+#
+#     1.0    14-Nov-2000   MB   added /isdc/gcc to the environment
+#                               This is done by default for Linux.
+#                               To avoid compiler clashes under Solaris the use
+#                               of gcc has to be specified as an option.
+#
+#     0.2.1  07-Nov-2000   MB   the ROOT installation changed w.r.t.
+#                               LD_LIBRARY_PATH the trailing root was removed.
+#
+#     0.2    02-Nov-2000   MB   adapt the script to RP 2.0 and the ops-network
+#
+#     0.1    23-Oct-2000   MB   initial version, adopted from various login
+#                               scripts
+#
+#
+###############################################################################
+
+
+###############################################################################
+#
+# what's the ISDC network and OS we are running on?
+#
+###############################################################################
+
+    setenv isdc_network "office"
+
+    # 2.14: change for OS/X
+    setenv os        "`\uname -s`"
+    setenv osMachHw  "`\uname -m`"
+    setenv osrelarch "`\uname -mrs | tr ' ' '_'`"
+
+###############################################################################
+#
+# 1. Set the default values for the user overwritables as well
+#    as other variables.
+#
+###############################################################################
+
+    setenv isdc_pfiles_dir       "pfiles"
+
+    #
+    # 2.14 introduce variable HOME_ICMS
+    #
+    if ( ${os} == "Darwin" ) then
+       setenv HOME_ICMS "/Users/isdc_cms"
+    else
+       setenv HOME_ICMS "/home/isdc/isdc_cms"
+    endif
+
+    setenv ICMS_ENVV  "${HOME_ICMS}/icms/scripts/icms_envv.pl "
+
+###############################################################################
+#
+# 2. Scan the options from the input
+#
+###############################################################################
+
+    setenv without_make      "no"
+    setenv without_compiler  "no"
+    setenv without_perl      "no"
+    setenv without_root      "no"
+    setenv without_astroroot "no"
+    setenv without_nag       "no"
+    setenv without_ftools    "no"
+    setenv without_tools     "no"
+    setenv without_java      "yes"
+    setenv without_opus      "yes"
+    setenv without_archive   "yes"
+    setenv without_tec014    "no"
+    setenv without_deref     "no"
+            
+    setenv isdc_defaults_flag ""
+    setenv reset             "no"
+    setenv debug             "no"
+    unset  isdcrcUserDefDefault # user val of full pathname of default file
+    unset  isdcrcUserDefHomeDir # user val of dir containin HOME isdcrc version
+
+    while ($# > 0)
+    
+	switch ("${argv[1]}")
+	
+    	    case --with-isdc-defaults:
+
+    	    	setenv isdc_defaults_flag "--with-isdc-defaults"
+    	    	breaksw
+
+    	    case --show-isdc-defaults:
+
+    	    	echo ""
+    	    	echo ""
+    	    	echo "Default ISDC software environment:"
+    	    	echo ""
+    	    	echo "   ISDC_ACTIVITY         = "`${ICMS_ENVV}	--with-isdc-defaults 'Activity'`
+    	    	echo ""
+    	    	echo "   ISDC_MAKE_VERSION     = "`${ICMS_ENVV}	--with-isdc-defaults 'Make.Version'`
+    	    	echo "   ISDC_MAKE_BASE        = "`${ICMS_ENVV}	--with-isdc-defaults 'Make.Root'`"/"`${ICMS_ENVV} --with-isdc-defaults 'Make.Version'`"/"`${ICMS_ENVV} --with-isdc-defaults 'Compiler.Name'`"/"`${ICMS_ENVV} --with-isdc-defaults 'Compiler.Version'`
+    	    	echo ""
+    	    	echo "   ISDC_COMPILER_NAME    = "`${ICMS_ENVV}	--with-isdc-defaults 'Compiler.Name'`
+    	    	echo "   ISDC_COMPILER_VERSION = "`${ICMS_ENVV} --with-isdc-defaults 'Compiler.Version'`
+    	    	echo "   ISDC_COMPILER_BASE    = "`${ICMS_ENVV} --with-isdc-defaults 'Compiler.Root'`"/"`${ICMS_ENVV} 'Compiler.Name'`"/"`${ICMS_ENVV} 'Compiler.Version'`"/"`${ICMS_ENVV} 'Compiler.Type'`
+    	    	echo ""
+    	    	echo "   ISDC_PERL_VERSION     = "`${ICMS_ENVV} --with-isdc-defaults 'Perl.Version'`
+    	    	echo "   ISDC_PERL_BASE        = "`${ICMS_ENVV} --with-isdc-defaults 'Perl.Root'`"/"`${ICMS_ENVV} 'Perl.Version'`"/"`${ICMS_ENVV} 'Compiler.Name'`"/"`${ICMS_ENVV} 'Compiler.Version'`
+    	    	echo ""
+    	    	echo "   ISDC_ROOT_VERSION     = "`${ICMS_ENVV} --with-isdc-defaults 'Root.Version'`
+    	    	echo "   ROOTSYS               = "`${ICMS_ENVV} --with-isdc-defaults 'Root.Root'`"/"`${ICMS_ENVV} 'Root.Version'`"/"`${ICMS_ENVV} 'Compiler.Name'`"/"`${ICMS_ENVV} 'Compiler.Version'`
+    	    	echo ""
+    	    	echo "   ISDC_ASTROROOT_VERSION  = "`${ICMS_ENVV} --with-isdc-defaults 'AstroRoot.Version'`
+    	    	echo "   ISDC_ASTROROOT_BASE   = "`${ICMS_ENVV} --with-isdc-defaults 'AstroRoot.Root'`"/"`${ICMS_ENVV} 'Root.Version'`"/"`${ICMS_ENVV} 'Compiler.Name'`"/"`${ICMS_ENVV} 'Compiler.Version'`
+    	    	echo ""
+    	    	echo "   ISDC_NAG_VERSION      = "`${ICMS_ENVV} --with-isdc-defaults 'Nag.Version'`
+    	    	echo "   ISDC_NAG_BASE         = "`${ICMS_ENVV} --with-isdc-defaults 'Nag.Root'`"/"`${ICMS_ENVV} 'Nag.Version'`"/"`${ICMS_ENVV} 'Compiler.Name'`"/"`${ICMS_ENVV} 'Compiler.Version'`
+    	    	echo ""
+    	    	echo "   ISDC_FTOOLS_VERSION   = "`${ICMS_ENVV} --with-isdc-defaults 'Ftools.Version'`
+    	    	echo "   ISDC_FTOOLS_BASE      = "`${ICMS_ENVV} --with-isdc-defaults 'Ftools.Root'`"/"`${ICMS_ENVV} 'Ftools.Version'`"/"`${ICMS_ENVV} 'Compiler.Name'`"/"`${ICMS_ENVV} 'Compiler.Version'`
+    	    	echo ""
+    	    	echo "   ISDC_TOOLS_VERSION    = "`${ICMS_ENVV} --with-isdc-defaults 'Tools.Version'`
+    	    	echo "   ISDC_TOOLS_BASE       = "`${ICMS_ENVV} --with-isdc-defaults 'Tools.Root'`"/"`${ICMS_ENVV} 'Tools.Version'`"/"`${ICMS_ENVV} 'Compiler.Name'`"/"`${ICMS_ENVV} 'Compiler.Version'`
+    	    	echo ""
+    	    	echo "   ISDC_JAVA_VERSION     = not defined"
+    	    	echo "   ISDC_JAVA_BASE        = not defined"
+    	    	echo ""
+    	    	echo "   ISDC_OPUS_VERSION     = not defined"
+    	    	echo "   ISDC_OPUS_BASE        = not defined"
+    	    	echo ""
+    	    	echo "   ISDC_ENV              = "`${ICMS_ENVV} --with-isdc-defaults 'Env'`
+    	    	echo "   ISDC_SITE             = "`${ICMS_ENVV} --with-isdc-defaults 'Site'`
+    	    	set rep_base_prod = `${ICMS_ENVV} --with-isdc-defaults 'RepBaseProd'`
+    	    	if (${rep_base_prod} == "") then
+       	    	    echo "   REP_BASE_PROD         = not defined"
+		else
+       	    	    echo "   REP_BASE_PROD         = ${rep_base_prod}"
+		endif
+    	    	unset rep_base_prod
+    	    	set rep_base_tm = `${ICMS_ENVV} --with-isdc-defaults 'RepBaseTm'`
+    	    	if (${rep_base_tm} == "") then
+       	    	    echo "   REP_BASE_TM           = not defined"
+		else
+       	    	    echo "   REP_BASE_TM           = ${rep_base_tm}"
+		endif
+    	    	unset rep_base_tm
+    	    	set auxl_ref_dir = `${ICMS_ENVV} --with-isdc-defaults 'AuxlRefDir'`
+    	    	if (${auxl_ref_dir} == "") then
+       	    	    echo "   AUXL_REF_DIR          = not defined"
+		else
+       	    	    echo "   AUXL_REF_DIR          = ${auxl_ref_dir}"
+		endif
+    	    	unset auxl_ref_dir
+    	    	set ic_tree = `${ICMS_ENVV} --with-isdc-defaults 'ISDC_IC_TREE'`
+    	    	if (${ic_tree} == "") then
+       	    	    echo "   ISDC_IC_TREE          = not defined"
+		else
+       	    	    echo "   ISDC_IC_TREE          = ${ic_tree}"
+		endif
+    	    	unset ic_tree
+    	    	set ref_cat = `${ICMS_ENVV} --with-isdc-defaults 'ISDC_REF_CAT'`
+    	    	if (${ic_tree} == "") then
+       	    	    echo "   ISDC_REF_CAT          = not defined"
+		else
+       	    	    echo "   ISDC_REF_CAT          = ${ref_cat}"
+		endif
+    	    	unset ref_cat
+    	    	set commonlogfile = `${ICMS_ENVV} --with-isdc-defaults 'Common.LogFile'`
+    	    	if (${commonlogfile} == "") then
+       	    	    echo "   COMMONLOGFILE         = not defined"
+		else
+       	    	    echo "   COMMONLOGFILE         = ${commonlogfile}"
+		endif
+    	    	unset commonlogfile
+    	    	set commonscript = `${ICMS_ENVV} --with-isdc-defaults 'Common.Script'`
+    	    	if (${commonscript} == "") then
+       	    	    echo "   COMMONSCRIPT          = not defined"
+		else
+       	    	    echo "   COMMONSCRIPT          = ${commonscript}"
+		endif
+    	    	unset commonscript
+    	    	set dal_open_all = `${ICMS_ENVV} --with-isdc-defaults 'Dal.OpenAll'`
+    	    	if (${dal_open_all} == "") then
+       	    	    echo "   DAL_OPEN_ALL          = not defined"
+		else
+       	    	    echo "   DAL_OPEN_ALL          = ${dal_open_all}"
+		endif
+    	    	unset dal_open_all
+    	    	echo ""
+    	    	echo ""
+    	    	exit 0
+	    	breaksw
+		
+    	    case --show-config:
+
+    	    	echo ""
+    	    	echo ""
+    	    	echo "Current ISDC software environment:"
+    	    	echo ""
+                if ($?ISDC_ACTIVITY) then
+    	    	    echo "   ISDC_ACTIVITY         = ${ISDC_ACTIVITY}"
+		else
+    	    	    echo "   ISDC_ACTIVITY         = not defined"
+		endif
+    	    	echo ""
+                if ($?ISDC_LOGIN_VERSION) then
+    	    	    echo "   ISDC_LOGIN_VERSION    = ${ISDC_LOGIN_VERSION}"
+		else
+    	    	    echo "   ISDC_LOGIN_VERSION    = not defined"
+		endif
+                if ($?ISDCRC_VERSION) then
+                    echo "   ISDCRC_VERSION        = ${ISDCRC_VERSION}"
+                else
+                    echo "   ISDCRC_VERSION        = not defined"
+                endif
+    	    	echo ""
+                if ($?ISDC_MAKE_BASE) then
+    	    	    echo "   ISDC_MAKE_VERSION     = ${ISDC_MAKE_VERSION}"
+    	    	    echo "   ISDC_MAKE_BASE        = ${ISDC_MAKE_BASE}"
+		else
+    	    	    echo "   ISDC_MAKE_VERSION     = not defined"
+        	    echo "   ISDC_MAKE_BASE        = not defined"
+		endif
+    	    	echo ""
+                if ($?ISDC_COMPILER_BASE) then
+        	    echo "   ISDC_COMPILER_NAME    = ${ISDC_COMPILER_NAME}"
+    	    	    echo "   ISDC_COMPILER_VERSION = ${ISDC_COMPILER_VERSION}"
+    	    	    echo "   ISDC_COMPILER_BASE    = ${ISDC_COMPILER_BASE}"
+                else
+        	    echo "   ISDC_COMPILER_NAME    = not defined"
+    	    	    echo "   ISDC_COMPILER_VERSION = not defined"
+        	    echo "   ISDC_COMPILER_BASE    = not defined"
+		endif
+    	    	echo ""
+                if ($?ISDC_PERL_BASE) then
+    	    	    echo "   ISDC_PERL_VERSION     = ${ISDC_PERL_VERSION}"
+    	    	    echo "   ISDC_PERL_BASE        = ${ISDC_PERL_BASE}"
+                else
+    	    	    echo "   ISDC_PERL_VERSION     = not defined"
+        	    echo "   ISDC_PERL_BASE        = not defined"
+		endif
+    	    	echo ""
+                if ($?ROOTSYS) then
+    	    	    echo "   ISDC_ROOT_VERSION     = ${ISDC_ROOT_VERSION}"
+    	    	    echo "   ROOTSYS               = ${ROOTSYS}"
+                else
+    	    	    echo "   ISDC_ROOT_VERSION     = not defined"
+        	    echo "   ROOTSYS               = not defined"
+		endif
+    	    	echo ""
+                if ($?ISDC_ASTROROOT_BASE) then
+    	    	    echo "   ISDC_ASTROROOT_VERSION      = ${ISDC_ASTROROOT_VERSION}"
+    	    	    echo "   ISDC_ASTROROOT_BASE         = ${ISDC_ASTROROOT_BASE}"
+                else
+    	    	    echo "   ISDC_ASTROROOT_VERSION      = not defined"
+        	    echo "   ISDC_ASTROROOT_BASE         = not defined"
+		endif
+    	    	echo ""
+                if ($?ISDC_NAG_BASE) then
+    	    	    echo "   ISDC_NAG_VERSION      = ${ISDC_NAG_VERSION}"
+    	    	    echo "   ISDC_NAG_BASE         = ${ISDC_NAG_BASE}"
+                else
+    	    	    echo "   ISDC_NAG_VERSION      = not defined"
+        	    echo "   ISDC_NAG_BASE         = not defined"
+		endif
+    	    	echo ""
+                if ($?ISDC_NAG_BASE) then
+    	    	    echo "   ISDC_NAG_VERSION      = ${ISDC_NAG_VERSION}"
+    	    	    echo "   ISDC_NAG_BASE         = ${ISDC_NAG_BASE}"
+                else
+    	    	    echo "   ISDC_NAG_VERSION      = not defined"
+        	    echo "   ISDC_NAG_BASE         = not defined"
+		endif
+    	    	echo ""
+                if ($?ISDC_FTOOLS_BASE) then
+    	    	    echo "   ISDC_FTOOLS_VERSION   = ${ISDC_FTOOLS_VERSION}"
+    	    	    echo "   ISDC_FTOOLS_BASE      = ${ISDC_FTOOLS_BASE}"
+                else
+    	    	    echo "   ISDC_FTOOLS_VERSION   = not defined"
+        	    echo "   ISDC_FTOOLS_BASE      = not defined"
+		endif
+    	    	echo ""
+                if ($?SAORD_ROOT) then
+    	    	    echo "   SAORD_ROOT            = ${SAORD_ROOT}"
+                else
+        	    echo "   SAORD_ROOT            = not defined"
+		endif
+    	    	echo ""
+                if ($?ISDC_TOOLS_BASE) then
+    	    	    echo "   ISDC_TOOLS_VERSION    = ${ISDC_TOOLS_VERSION}"
+    	    	    echo "   ISDC_TOOLS_BASE       = ${ISDC_TOOLS_BASE}"
+                else
+    	    	    echo "   ISDC_TOOLS_VERSION    = not defined"
+        	    echo "   ISDC_TOOLS_BASE       = not defined"
+		endif
+    	    	echo ""
+                if ($?ISDC_JAVA_BASE) then
+    	    	    echo "   ISDC_JAVA_VERSION     = ${ISDC_JAVA_VERSION}"
+    	    	    echo "   ISDC_JAVA_BASE        = ${ISDC_JAVA_BASE}"
+                else
+    	    	    echo "   ISDC_JAVA_VERSION     = not defined"
+        	    echo "   ISDC_JAVA_BASE        = not defined"
+		endif
+    	    	echo ""
+                if ($?ISDC_OPUS_BASE) then
+    	    	    echo "   ISDC_OPUS_VERSION     = ${ISDC_OPUS_VERSION}"
+    	    	    echo "   ISDC_OPUS_BASE        = ${ISDC_OPUS_BASE}"
+                else
+    	    	    echo "   ISDC_OPUS_VERSION     = not defined"
+        	    echo "   ISDC_OPUS_BASE        = not defined"
+		endif
+    	    	echo ""
+                if ($?ISDC_ENV) then
+    	    	    echo "   ISDC_ENV              = ${ISDC_ENV}"
+    	    	    echo "   ISDC_SITE             = ${ISDC_SITE}"
+    	    	    if ($?REP_BASE_PROD) then
+		    	echo "   REP_BASE_PROD         = ${REP_BASE_PROD}"
+                    else
+    	    	        echo "   REP_BASE_PROD         = not defined"
+    		    endif
+    	    	    if ($?REP_BASE_TM) then
+        	    	echo "   REP_BASE_TM           = ${REP_BASE_TM}"
+                    else
+    	    	        echo "   REP_BASE_TM           = not defined"
+    		    endif
+    	    	    if ($?AUXL_REF_DIR) then
+		    	echo "   AUXL_REF_DIR          = ${AUXL_REF_DIR}"
+                    else
+    	    	        echo "   AUXL_REF_DIR          = not defined"
+    		    endif
+    	    	    if ($?ISDC_IC_TREE) then
+		    	echo "   ISDC_IC_TREE          = ${ISDC_IC_TREE}"
+                    else
+    	    	        echo "   ISDC_IC_TREE          = not defined"
+    		    endif
+    	    	    if ($?ISDC_REF_CAT) then
+		    	echo "   ISDC_REF_CAT          = ${ISDC_REF_CAT}"
+                    else
+    	    	        echo "   ISDC_REF_CAT          = not defined"
+    		    endif
+		    if ($?COMMONLOGFILE) then
+		    	echo "   COMMONLOGFILE         = ${COMMONLOGFILE}"
+		    else
+    	    	        echo "   COMMONLOGFILE         = not defined"
+		    endif
+		    if ($?COMMONSCRIPT) then
+		    	echo "   COMMONSCRIPT          = ${COMMONSCRIPT}"
+		    else
+    	    	        echo "   COMMONSCRIPT          = not defined"
+		    endif
+		    if ($?DAL_OPEN_ALL) then
+		    	echo "   DAL_OPEN_ALL          = ${DAL_OPEN_ALL}"
+		    else
+    	    	        echo "   DAL_OPEN_ALL          = not defined"
+		    endif
+		    if ($?CFITSIO_INCLUDE_FILES) then
+		    	echo "   CFITSIO_INCLUDE_FILES = ${CFITSIO_INCLUDE_FILES}"
+		    else
+    	    	        echo "   CFITSIO_INCLUDE_FILES = not defined"
+		    endif
+                else
+        	    echo "   ISDC_ENV              = not defined"
+    	    	    echo "   ISDC_SITE             = not defined"
+    	    	    echo "   REP_BASE_PROD         = not defined"
+    	    	    echo "   REP_BASE_TM           = not defined"
+    	    	    echo "   COMMONLOGFILE         = not defined"
+    	    	    echo "   COMMONSCRIPT          = not defined"
+    	    	    echo "   DAL_OPEN_ALL          = not defined"
+    	            echo "   CFITSIO_INCLUDE_FILES = not defined"
+		endif
+    	    	echo ""
+    	    	echo ""
+    	    	exit 0
+	    	breaksw
+		
+	    case --help:
+	    
+		echo ""
+		echo ""
+		echo "    Use source /isdc/scripts/login to set up the ISDC software environment"
+		echo ""
+		echo ""
+		echo "    Supported options are:"
+		echo ""
+		echo "        --help:                     display this help message"
+		echo ""
+		echo "        --show-config:              display the current setup"
+		echo ""
+		echo "        --show-isdc-defaults:       display the ISDC default setup"
+		echo ""
+		echo "        --with-isdc-defaults:       disable the reading of ${HOME}/.isdcrc"
+		echo ""
+		echo "        --without-compiler:         disable the adding of compilers"
+		echo ""
+		echo "        --without-make:             disable the adding of make"
+		echo ""
+		echo "        --without-perl:             disable the adding of PERL"
+		echo ""
+		echo "        --without-root:             disable the adding of ROOT"
+		echo ""
+		echo "        --without-astroroot:        disable the adding of AstroROOT"
+		echo ""
+		echo "        --without-nag:              disable the adding of NAG"
+		echo ""
+		echo "        --without-ftools:           disable the adding of FTOOLS"
+		echo ""
+		echo "        --without-tools:            disable the adding of TOOLS"
+		echo ""
+		echo "        --with-opus:                enable the adding of OPUS"
+		echo ""
+		echo "        --with-archive:             enable the adding of the archive env."
+		echo ""
+                echo "        --without-tec014:           disable the application of ISDC/TEC014 on data rights"
+                echo "                                    (only taken into account if --with-archive is given)"
+                echo "        --without-deref:            disable the dereferencing of ISDC_ENV"
+                echo ""
+		echo "        --ACTIVITY=xxxx:            assign ACTIVITY to xxxx instead"
+                echo "                                    of the default setting."
+		echo ""
+		echo "        --COMPILER_BASE=dir:        assign COMPILER_BASE to dir instead"
+                echo "                                    of the default setting."
+		echo ""
+		echo "        --COMPILER_NAME=WS|gcc|intel: assign COMPILER_NAME to "
+		echo "                                    WS or gcc for Solaris or"
+		echo "                                    gcc or intel for Linux instead"
+                echo "                                    of the default setting."
+		echo ""
+		echo "        --COMPILER_VERSION=version: assign COMPILER_VERSION to version instead"
+                echo "                                    of the default setting."
+		echo ""
+		echo "        --MAKE_BASE=dir:            assign MAKE_BASE to dir instead of the"
+                echo "                                    default setting."
+		echo ""
+		echo "        --MAKE_VERSION=version:     assign MAKE_VERSION to version instead of"
+                echo "                                    the default setting."
+		echo ""
+		echo "        --PERL_BASE=dir:            assign PERL_BASE to dir instead of the"
+                echo "                                    default setting."
+		echo ""
+		echo "        --PERL_VERSION=version:     assign PERL_VERSION to version instead of"
+                echo "                                    the default setting."
+		echo ""
+		echo "        --ROOTSYS=dir:              assign ROOTSYS to dir instead of the"
+                echo "                                    default setting."
+		echo ""
+		echo "        --ROOT_VERSION=version:     assign ROOT_VERSION to version instead of"
+                echo "                                    the default setting."
+		echo ""
+		echo "        --ROOTSYS=dir:              assign ROOTSYS to dir instead of the"
+                echo "                                    default setting."
+		echo ""
+		echo "        --ROOT_VERSION=version:     assign ROOT_VERSION to version instead of"
+                echo "                                    the default setting."
+		echo ""
+		echo "        --ISDC_ASTROROOT_BASE=dir:  assign ASTROROOT_BASE to dir instead of the"
+                echo "                                    default setting."
+		echo ""
+		echo "        --ASTOROOT_VERSION=version: assign ASTROROOT_VERSION to version instead of"
+                echo "                                    the default setting."
+		echo ""
+		echo "        --NAG_BASE=dir:             assign NAG_BASE to dir instead of the"
+                echo "                                    default setting."
+		echo ""
+		echo "        --NAG_VERSION=version:      assign NAG_VERSION to version instead of"
+                echo "                                    the default setting."
+		echo ""
+		echo "        --FTOOLS_BASE=dir:          assign FTOOLS_BASE to dir instead of the"
+                echo "                                    default setting."
+		echo ""
+		echo "        --FTOOLS_VERSION=version:   assign FTOOLS_VERSION to version instead"
+                echo "                                    of the default setting."
+		echo ""
+		echo "        --TOOLS_BASE=dir:           assign TOOLS_BASE to dir instead of the"
+                echo "                                    default setting."
+		echo ""
+		echo "        --TOOLS_VERSION=version:    assign TOOLS_VERSION to version instead"
+                echo "                                    of the default setting."
+		echo ""
+		echo "        --ISDC_ENV=dir_list:        assign ISDC_ENV to dir_list instead of"
+                echo "                                    the default setting."
+		echo ""
+		echo "        --ISDC_SITE=dir:            assign ISDC_SITE to dir instead of"
+                echo "                                    the default setting."
+		echo ""
+		echo "        --REP_BASE_PROD=dir:        assign REP_BASE_PROD to dir instead of"
+                echo "                                    the default setting."
+		echo ""
+		echo "        --REP_BASE_TM=dir:          assign REP_BASE_TM to dir instead of"
+                echo "                                    the default setting."
+		echo ""
+		echo "        --AUXL_REF_DIR=dir:         assign AUXL_REF_DIR to dir instead of"
+                echo "                                    the default setting."
+		echo ""
+		echo "        --IC_TREE=dir:              assign ISDC_IC_TREE to dir instead of"
+                echo "                                    the default setting."
+		echo ""
+		echo "        --REF_CAT=dol:              assign ISDC_REF_CAT to dol instead of"
+                echo "                                    the default setting."
+		echo ""
+		echo "        --JAVA_BASE=dir:            assign JAVA_BASE to dir instead of the"
+                echo "                                    default setting."
+		echo ""
+		echo "        --JAVA_VERSION=version:     assign JAVA_VERSION to version instead"
+                echo "                                    of the default setting."
+		echo ""
+		echo "        --OPUS_BASE=dir:            assign OPUS_BASE to dir instead of the"
+                echo "                                    default setting."
+		echo ""
+		echo "        --OPUS_VERSION=version:     assign OPUS_VERSION to version instead"
+                echo "                                    of the default setting."
+		echo ""
+                echo "        --ISDCRC_DEFAULT=filename:  let the specified isdcrc file be the one"
+                echo "                                    used instead of the usual default file."
+                echo ""
+                echo "        --ISDCRC_HOMEDIR=filename:  use the directory provided instead of"
+                echo "                                    "'$'"HOME as the location of the user's "
+                echo "                                    .isdcrc file"
+                echo ""
+		echo "        --reset:                    reset the PATH, MANPATH and LD_LIBRARY_PATH"
+                echo "                                    to the STD_* before setting up the environment"
+		echo ""
+		echo "        --debug:                    be verbose for debugging purposes"
+		echo ""
+		echo ""
+		echo "    This script can be sourced as many times as wished."
+		echo "    No overflow of environment variables will appear."
+		echo ""
+		echo "    If one wishes to change the ISDC_ENV from one directory"
+		echo "    to another, calling the script with the --ISDC_ENV=dir_list option"
+		echo "    will first remove the old ISDC_ENV from the environment"
+		echo "    and then add the new settings. The same is true for other options as well."
+		echo ""
+		echo ""
+		
+		exit 0
+		breaksw
+		
+	    case --without-compiler:
+	    
+		setenv without_compiler "yes"
+		breaksw
+		
+	    case --without-make:
+	    
+		setenv without_make "yes"
+		breaksw
+		
+	    case --without-perl:
+	    
+		setenv without_perl     "yes"
+		breaksw
+		
+	    case --without-root:
+	    
+		setenv without_root     "yes"
+		setenv without_astroroot     "yes"
+		breaksw
+		
+	    case --without-astroroot:
+	    
+		setenv without_astroroot     "yes"
+		breaksw
+		
+	    case --without-nag:
+	    
+		setenv without_nag      "yes"
+		breaksw
+		
+	    case --without-ftools:
+	    
+		setenv without_ftools   "yes"
+		breaksw
+		
+	    case --without-tools:
+	    
+		setenv without_tools    "yes"
+		breaksw
+		
+	    case --with-java:
+	    
+		setenv without_java     "no"
+		breaksw
+		
+	    case --with-opus:
+	    
+		setenv without_opus     "no"
+		setenv without_java     "no"
+		breaksw
+		
+	    case --with-archive:
+	    
+		setenv without_archive  "no"
+		breaksw
+		
+	    case --without-tec014:
+	    
+		setenv without_tec014   "yes"
+		breaksw
+		
+	    case --without-deref:
+	    
+		setenv without_deref   "yes"
+		breaksw
+		
+	    case --reset:
+	    
+		setenv reset            "yes"
+		breaksw
+
+	    case --debug:
+	    
+		setenv debug            "yes"
+		breaksw
+		
+	    case --ACTIVITY=*:
+	    
+		setenv ACTIVITY_NEW `echo "$argv[1]" | cut -d"=" -f2`
+		breaksw
+
+	    case --COMPILER_BASE=*:
+	    
+		setenv COMPILER_BASE_NEW `echo "$argv[1]" | cut -d"=" -f2`
+		breaksw
+
+	    case --COMPILER_NAME=*:
+	    
+		setenv COMPILER_NAME_NEW `echo "$argv[1]" | cut -d"=" -f2`
+
+#		if( ${COMPILER_NAME_NEW} != "WS" || 
+#		    ${COMPILER_NAME_NEW} != "gcc" ) then
+#
+#		    echo "***** Error: unsupported compiler name: ${COMPILER_NAME_NEW}."
+#		    echo "             Possible options are WS or gcc. -> Abort."
+#		    exit 1 
+#
+#		endif
+		breaksw
+
+	    case --COMPILER_VERSION=*:
+	    
+		setenv COMPILER_VERSION_NEW `echo "$argv[1]" | cut -d"=" -f2`
+		breaksw
+
+	    case --MAKE_BASE=*:
+	    
+		setenv MAKE_BASE_NEW `echo "$argv[1]" | cut -d"=" -f2`
+		breaksw
+		
+	    case --MAKE_VERSION=*:
+	    
+		setenv MAKE_VERSION_NEW `echo "$argv[1]" | cut -d"=" -f2`
+		breaksw
+		
+	    case --PERL_BASE=*:
+	    
+		setenv PERL_BASE_NEW `echo "$argv[1]" | cut -d"=" -f2`
+		breaksw
+		
+	    case --PERL_VERSION=*:
+	    
+		setenv PERL_VERSION_NEW `echo "$argv[1]" | cut -d"=" -f2`
+		breaksw
+		
+	    case --ROOTSYS=*:
+	    
+		setenv ROOTSYS_NEW `echo "$argv[1]" | cut -d"=" -f2`
+		breaksw
+		
+	    case --ROOT_VERSION=*:
+	    
+		setenv ROOT_VERSION_NEW `echo "$argv[1]" | cut -d"=" -f2`
+		breaksw
+		
+	    case --ASTROROOTBASE=*:
+	    
+		setenv ASTROROOT_BASE_NEW `echo "$argv[1]" | cut -d"=" -f2`
+		breaksw
+		
+	    case --ASTROROOT_VERSION=*:
+	    
+		setenv ASTROROOT_VERSION_NEW `echo "$argv[1]" | cut -d"=" -f2`
+		breaksw
+		
+	    case --NAG_BASE=*:
+	    
+		setenv NAG_BASE_NEW `echo "$argv[1]" | cut -d"=" -f2`
+		breaksw
+		
+	    case --NAG_VERSION=*:
+	    
+		setenv NAG_VERSION_NEW `echo "$argv[1]" | cut -d"=" -f2`
+		breaksw
+		
+	    case --FTOOLS_BASE=*:
+	    
+		setenv FTOOLS_BASE_NEW `echo "$argv[1]" | cut -d"=" -f2`
+		breaksw
+		
+	    case --FTOOLS_VERSION=*:
+	    
+		setenv FTOOLS_VERSION_NEW `echo "$argv[1]" | cut -d"=" -f2`
+		breaksw
+		
+	    case --TOOLS_BASE=*:
+	    
+		setenv TOOLS_BASE_NEW `echo "$argv[1]" | cut -d"=" -f2`
+		breaksw
+		
+	    case --TOOLS_VERSION=*:
+	    
+		setenv TOOLS_VERSION_NEW `echo "$argv[1]" | cut -d"=" -f2`
+		breaksw
+		
+	    case --ISDC_ENV=*:
+	    
+		setenv ISDC_ENV_NEW `echo "$argv[1]" | cut -d"=" -f2`
+		breaksw
+		
+	    case --ISDC_SITE=*:
+	    
+		setenv ISDC_SITE_NEW `echo "$argv[1]" | cut -d"=" -f2`
+		breaksw
+		
+	    case --REP_BASE_PROD=*:
+	    
+		setenv REP_BASE_PROD_NEW `echo "$argv[1]" | cut -d"=" -f2`
+		breaksw
+		
+	    case --REP_BASE_TM=*:
+	    
+		setenv REP_BASE_TM_NEW `echo "$argv[1]" | cut -d"=" -f2`
+		breaksw
+		
+	    case --AUXL_REF_DIR=*:
+	    
+		setenv AUXL_REF_DIR_NEW `echo "$argv[1]" | cut -d"=" -f2`
+		breaksw
+		
+	    case --IC_TREE=*:
+	    
+		setenv IC_TREE_NEW `echo "$argv[1]" | cut -d"=" -f2`
+		breaksw
+		
+	    case --REF_CAT=*:
+	    
+		setenv REF_CAT_NEW `echo "$argv[1]" | cut -d"=" -f2`
+		breaksw
+		
+	    case --JAVA_BASE=*:
+	    
+		setenv JAVA_BASE_NEW `echo "$argv[1]" | cut -d"=" -f2`
+		breaksw
+		
+	    case --JAVA_VERSION=*:
+	    
+		setenv JAVA_VERSION_NEW `echo "$argv[1]" | cut -d"=" -f2`
+		breaksw
+		
+	    case --OPUS_BASE=*:
+	    
+		setenv OPUS_BASE_NEW `echo "$argv[1]" | cut -d"=" -f2`
+		breaksw
+		
+	    case --OPUS_VERSION=*:
+	    
+		setenv OPUS_VERSION_NEW `echo "$argv[1]" | cut -d"=" -f2`
+		breaksw
+		
+	    case --ISDCRC_DEFAULT=*:
+	    
+		set isdcrcUserDefDefault=`echo "$argv[1]" | cut -d"=" -f2`
+                if ("" == "$isdcrcUserDefDefault" ) then
+                  echo "***** Error: ISDCRC_DEFAULT  option specified, but  "
+                  echo "      value is empty.  Please verify that you are "
+                  echo "      using form (no spaces around the equals sign):"
+                  echo "         --ISDCRC_DEFAULT=fileLocation"
+                  echo "      The location may be given by an absolute or "
+                  echo "      relative path.  Aborting."
+                  exit 1
+                endif
+                if (! -r "$isdcrcUserDefDefault" ) then
+                  echo "***** Error: ISDCRC_DEFAULT option specified, but file"
+                  echo "      is absent or not readable.  Please check."
+                  echo "      ISDCRC_DEFAULT given: + $isdcrcUserDefDefault +"
+                  echo "      Aborting."
+                  exit 1
+                endif
+
+# 2.18 MG: This redefinition of ICMS_ENVV is a shortcut to avoid having to 
+# modify all lines invoking icms_envv.pl which would otherwise be required
+# due to the change in interface needed to support the specification of the 
+# isdcrc default file to use.
+                setenv ICMS_ENVV "$ICMS_ENVV --isdcrcUserDefDefault $isdcrcUserDefDefault "
+		breaksw
+
+	    case --ISDCRC_HOMEDIR=*:
+	    
+		set isdcrcUserDefHomeDir=`echo "$argv[1]" | cut -d"=" -f2`
+                if ("" == "$isdcrcUserDefHomeDir" ) then
+                  echo "***** Error: ISDCRC_HOMEDIR  option specified, but  "
+                  echo "      value is empty.  Please verify that you are "
+                  echo "      using form (no spaces around the equals sign):"
+                  echo "         --ISDCRC_HOMEDIR=dirLocation"
+                  echo "      The location may be given by an absolute or "
+                  echo "      relative path.  Aborting."
+                  exit 1
+                endif
+                if (! -d "$isdcrcUserDefHomeDir" ) then
+                  echo "***** Error: ISDCRC_HOMEDIR option specified, but "
+                  echo "      value provided is not a directory. Please check."
+                  echo "      ISDCRC_HOMEDIR given: + $isdcrcUserDefHomeDir +"
+                  echo "      Aborting."
+                  exit 1
+                endif
+
+# 2.18 MG: This redefinition of ICMS_ENVV is a shortcut to avoid having to 
+# modify all lines invoking icms_envv.pl which would otherwise be required
+# due to the change in interface needed to support the specification of the 
+# isdcrc homeDir to use.
+                setenv ICMS_ENVV "$ICMS_ENVV --isdcrcUserDefHomeDir $isdcrcUserDefHomeDir "
+		breaksw
+
+	    default:
+	    
+		echo "***** Error: unsupported option: ${argv[1]}. -> Abort"
+		exit 1
+		
+	endsw
+	
+	shift
+    
+    end
+
+#
+# Reset the indicator for successful execution of the login script
+#
+    if (-f ${HOME}/.isdc_login_ok) then
+
+	\rm -f ${HOME}/.isdc_login_ok
+
+    endif
+
+    touch ${HOME}/.isdc_login_failed
+    setenv ISDC_LOGIN_VERSION NaN
+
+
+###############################################################################
+#
+# locate envv
+#
+###############################################################################
+
+    #
+    # first try /usr/bin
+    #
+    setenv ENVV /usr/bin/envv
+    if (! -x ${ENVV}) then
+
+	#
+	# then try /usr/local/bin
+	#
+	setenv ENVV /usr/local/bin/envv
+
+	if (! -x ${ENVV}) then
+
+	    #
+	    # then try home directory of user isdc_cms
+	    #
+            # changed for OS/X support
+            #
+	    setenv ENVV ${HOME_ICMS}/bin/envv
+
+	    if (! -x ${ENVV}) then
+
+		echo "***** Error: could not find envv. -> Abort."
+		exit 2
+
+	    endif
+	endif
+    endif
+
+
+###############################################################################
+#
+# Reset the PATH, LD_LIBRARY_PATH and MANPATH (optional)
+#
+###############################################################################
+
+    if (${reset} == "yes") then
+
+	if ($?STD_PATH) \
+	    eval `${ENVV} set PATH ${STD_PATH}`
+	if ($?STD_LIBRARY_PATH) \
+	    eval `${ENVV} set LD_LIBRARY_PATH ${STD_LD_LIBRARY_PATH}`
+	if ($?STD_MANPATH) \
+	    eval `${ENVV} set MANPATH ${STD_MANPATH}`
+
+    endif
+
+
+###############################################################################
+#
+# Set the activity
+#
+###############################################################################
+
+    if ($?ACTIVITY_NEW) then
+    	eval `${ENVV} set ISDC_ACTIVITY ${ACTIVITY_NEW}`
+    	unsetenv ACTIVITY_NEW
+    else
+   	eval `${ICMS_ENVV} ${isdc_defaults_flag} 'Activity' ISDC_ACTIVITY`
+    endif
+
+
+###############################################################################
+#
+# 3. Add the compilers to the environment
+#
+###############################################################################
+# 2.19 MG: this is to avoid disk quota problems due to a big .ccache directory.
+    eval `${ENVV} set CCACHE_DISABLE "1"`
+
+    if (${debug} == "yes") then
+	echo ">>>>> Step 3: Add the compilers to the environment ..."
+    endif
+
+    #
+    # In any case remove the old compiler settings from the environment
+    #
+
+    if ($?ISDC_COMPILER_BASE) then
+
+	if (${debug} == "yes") then
+	    echo ">>>>> Step 3.1: Removing old compiler settings from the environment ..."
+	endif
+
+	eval `${ENVV} del PATH            ${ISDC_COMPILER_BASE}/bin`
+	eval `${ENVV} del LD_LIBRARY_PATH ${ISDC_COMPILER_BASE}/lib`
+	eval `${ENVV} del MANPATH         ${ISDC_COMPILER_BASE}/man`
+    	if (${os} == Linux && ${ISDC_COMPILER_NAME} == "gcc") then
+            if (${debug} == "yes") then
+               echo ">>>>> removing fcc"
+	    endif
+            eval `${ENVV} del PATH            /isdc/sw/compilers/ffc/prod/bin`
+      	    eval `${ENVV} del LD_LIBRARY_PATH /isdc/sw/compilers/ffc/prod/lib`
+	    eval `${ENVV} del MANPATH         /isdc/sw/compilers/ffc/prod/man`
+	endif
+
+	unsetenv ISDC_COMPILER_BASE
+	unsetenv ISDC_COMPILER_NAME
+	unsetenv ISDC_COMPILER_VERSION
+
+	unsetenv CC
+	unsetenv CXX
+	unsetenv F90
+
+	if (${debug} == "yes") then
+	    echo ">>>>> Step 3.1: Done"
+	endif
+
+    endif
+
+    if (${debug} == "yes") then
+        echo ">>>>> Step 3.2: Adding compiler settings to the environment ..."
+    endif
+
+    if ($?COMPILER_BASE_NEW) then
+	eval `${ENVV} set ISDC_COMPILER_BASE ${COMPILER_BASE_NEW}`
+    	unsetenv COMPILER_BASE_NEW
+    else if (${without_compiler} == "no") then
+        if ($?COMPILER_NAME_NEW) then
+	    eval `${ENVV} set ISDC_COMPILER_NAME ${COMPILER_NAME_NEW}`
+    	    unsetenv COMPILER_NAME_NEW
+        else
+   	     eval `${ICMS_ENVV} ${isdc_defaults_flag} 'Compiler.Name' ISDC_COMPILER_NAME`
+        endif
+
+        if ($ISDC_COMPILER_NAME == "WS") then
+	    setenv isdc_compiler_type "SUNWspro"
+        else if ($ISDC_COMPILER_NAME == "intel") then
+            setenv isdc_compiler_type "ia32"
+        else
+            setenv isdc_compiler_type ""
+        endif
+
+        if ($?COMPILER_VERSION_NEW) then
+    	    eval `${ENVV} set ISDC_COMPILER_VERSION ${COMPILER_VERSION_NEW}`
+    	    unsetenv COMPILER_VERSION_NEW
+        else
+ 	    eval `${ICMS_ENVV} ${isdc_defaults_flag} 'Compiler.Version' ISDC_COMPILER_VERSION`
+        endif
+
+    	eval `${ICMS_ENVV} ${isdc_defaults_flag} 'Compiler.Root' isdc_compiler_root`
+    	eval `${ENVV} set ISDC_COMPILER_BASE ${isdc_compiler_root}/${ISDC_COMPILER_NAME}/${ISDC_COMPILER_VERSION}/${isdc_compiler_type}`
+    	unsetenv isdc_compiler_root
+	
+	if (${os} == Linux) then
+	    if (${ISDC_COMPILER_NAME} == "intel") then
+	       eval `${ENVV} set CC "icc -Df2cFortran"`
+	       eval `${ENVV} set CXX "icc -Df2cFortran"`
+	       eval `${ENVV} set F90 "ifc -Vaxlib"`
+	    else if (${ISDC_COMPILER_NAME} == "gcc") then
+	       eval `${ENVV} set CC "gcc -Df2cFortran"`
+	       eval `${ENVV} set CXX "g++ -Df2cFortran"`
+      	       #
+      	       # that was the code for the FUJITSU compiler
+       	       #
+      	       # eval `${ENVV} set F90 "f90 -static-flib"`
+      	       #
+	       # use the INTEL Fortran compiler
+	       #
+	       eval `${ENVV} set F90 "g95"`
+               if (${osMachHw} == "x86_64") then
+                 eval `${ENVV} set F90 "g95-${osMachHw}"`
+               endif
+
+            else
+	       echo "***** Error: ${ISDC_COMPILER_NAME} compiler is not available under ${os}. -> Abort."
+               exit 1
+      	    endif
+
+	else if (${os} == Darwin) then
+	    if (${ISDC_COMPILER_NAME} == "gcc") then
+		eval `${ENVV} set CC  "gcc -Df2cFortran"`
+		eval `${ENVV} set CXX "g++ -Df2cFortran"`
+                eval `${ENVV} set F90 "g95"`
+            else
+	       echo "***** Error: ${ISDC_COMPILER_NAME} compiler is not available under ${os}. -> Abort."
+               exit 1
+	    endif
+
+	else
+	    if (${ISDC_COMPILER_NAME} == "WS") then
+		eval `${ENVV} set CC cc`
+		eval `${ENVV} set CXX CC`
+		eval `${ENVV} set F90 f90`
+	    else if (${ISDC_COMPILER_NAME} == "gcc") then
+		eval `${ENVV} set CC "gcc -Df2cFortran"`
+		eval `${ENVV} set CXX "g++ -Df2cFortran"`
+            else
+	       echo "***** Error: ${ISDC_COMPILER_NAME} compiler is not available under ${os}. -> Abort."
+               exit 1
+	    endif
+	endif
+
+	if (${debug} == "yes") then
+	    echo ">>>>> Step 3.2: Done"
+	endif
+
+    endif
+
+    if ($?ISDC_COMPILER_BASE && -d ${ISDC_COMPILER_BASE}) then
+        eval `${ENVV} add PATH            ${ISDC_COMPILER_BASE}/bin 1`
+	eval `${ENVV} add LD_LIBRARY_PATH ${ISDC_COMPILER_BASE}/lib 1`
+	eval `${ENVV} add MANPATH         ${ISDC_COMPILER_BASE}/man 1`
+      	if (${ISDC_COMPILER_NAME} == "WS" && ${ISDC_COMPILER_VERSION} == "7") then
+      	    eval `${ENVV} add PATH            /isdc/reference/SunONEStudio-4.1-ForJava/bin 1`
+        endif
+    	if (${os} == Linux && ${ISDC_COMPILER_NAME} == "gcc") then
+      	    #
+	    # this was the code for the FUJITSU compiler
+	    #
+            # eval `${ENVV} add PATH            /isdc/sw/compilers/ffc/prod/bin 1`
+      	    # eval `${ENVV} add LD_LIBRARY_PATH /isdc/sw/compilers/ffc/prod/lib 1`
+	    # eval `${ENVV} add MANPATH         /isdc/sw/compilers/ffc/prod/man 1`
+      	    #
+	    # use the INTEL Fortran compiler
+	    #
+            eval `${ENVV} add PATH            /isdc/sw/compilers/intel/prod/ia32/bin 1`
+      	    eval `${ENVV} add LD_LIBRARY_PATH /isdc/sw/compilers/intel/prod/ia32/lib 1`
+	    eval `${ENVV} add MANPATH         /isdc/sw/compilers/intel/prod/man 1`
+	endif
+    endif
+
+    if (${debug} == "yes") then
+	echo ">>>>> Step 3: Done"
+    endif
+
+
+###############################################################################
+#
+# 4: Add MAKE to the environment
+#
+###############################################################################
+
+    if (${debug} == "yes") then
+	echo ">>>>> Step 4: Add MAKE to the environment ..."
+    endif
+
+    #
+    # In any case remove the old MAKE settings from the environment
+    #
+
+    if ($?ISDC_MAKE_BASE) then
+
+	if (${debug} == "yes") then
+	    echo ">>>>> Step 4.1: Removing old MAKE settings from the environment ..."
+	endif
+
+	eval `${ENVV} del PATH            ${ISDC_MAKE_BASE}/bin`
+	eval `${ENVV} del LD_LIBRARY_PATH ${ISDC_MAKE_BASE}/lib`
+	eval `${ENVV} del MANPATH         ${ISDC_MAKE_BASE}/man`
+
+	unsetenv ISDC_MAKE_BASE
+	unsetenv ISDC_MAKE_VERSION
+
+	if (${debug} == "yes") then
+	    echo ">>>>> Step 4.1: Done"
+	endif
+
+    endif
+
+    if ($?MAKE_BASE_NEW) then
+
+	eval `${ENVV} set ISDC_MAKE_BASE ${MAKE_BASE_NEW}`
+
+    else if (${without_make} == "no") then
+
+	if (${debug} == "yes") then
+	    echo ">>>>> Step 4.2: Adding MAKE settings to the environment ..."
+	endif
+
+	if ($?MAKE_VERSION_NEW) then
+	    eval `${ENVV} set ISDC_MAKE_VERSION ${MAKE_VERSION_NEW}`
+            unsetenv MAKE_VERSION_NEW
+	else
+            eval `${ICMS_ENVV} ${isdc_defaults_flag} 'Make.Version' ISDC_MAKE_VERSION`
+	endif
+	
+        eval `${ICMS_ENVV} ${isdc_defaults_flag} 'Make.Root' isdc_make_root`
+    	setenv ISDC_MAKE_BASE ${isdc_make_root}/${ISDC_MAKE_VERSION}/${ISDC_COMPILER_NAME}/${ISDC_COMPILER_VERSION}
+    	unsetenv isdc_make_root
+	
+	if (${debug} == "yes") then
+	    echo ">>>>> Step 4.2: Done"
+	endif
+
+    endif
+
+    if ($?ISDC_MAKE_BASE && -d ${ISDC_MAKE_BASE}) then
+
+	eval `${ENVV} add PATH            ${ISDC_MAKE_BASE}/bin 1`
+	eval `${ENVV} add LD_LIBRARY_PATH ${ISDC_MAKE_BASE}/lib 1`
+	eval `${ENVV} add MANPATH         ${ISDC_MAKE_BASE}/man 1`
+
+    endif
+
+    if (${debug} == "yes") then
+	echo ">>>>> Step 4: Done"
+    endif
+
+
+###############################################################################
+#
+# 5.a: Add PERL to the environment
+#
+###############################################################################
+
+    if (${debug} == "yes") then
+	echo ">>>>> Step 5.a: Add PERL to the environment ..."
+    endif
+
+    #
+    # In any case remove the old PERL settings from the environment
+    #
+
+    if ($?ISDC_PERL_BASE) then
+
+	if (${debug} == "yes") then
+	    echo ">>>>> Step 5.a.1: Removing old PERL settings from the environment ..."
+	endif
+
+	eval `${ENVV} del PATH            ${ISDC_PERL_BASE}/bin`
+	eval `${ENVV} del LD_LIBRARY_PATH ${ISDC_PERL_BASE}/lib`
+	eval `${ENVV} del MANPATH         ${ISDC_PERL_BASE}/man`
+
+	eval `${ENVV} del PERLLIB         ${ISDC_PERL_BASE}/lib`
+	eval `${ENVV} del PERL5LIB        ${ISDC_PERL_BASE}/lib`
+
+	unsetenv ISDC_PERL_BASE
+	unsetenv ISDC_PERL_VERSION
+
+	if (${debug} == "yes") then
+	    echo ">>>>> Step 5.a.1: Done"
+	endif
+
+    endif
+
+    if ($?PERL_BASE_NEW) then
+	eval `${ENVV} set ISDC_PERL_BASE ${PERL_BASE_NEW}`
+    	unsetenv PERL_BASE_NEW	
+    else if (${without_perl} == "no") then
+
+	if (${debug} == "yes") then
+	    echo ">>>>> Step 5.a.2: Adding PERL settings to the environment ..."
+	endif
+
+	if ($?PERL_VERSION_NEW) then
+	    eval `${ENVV} set ISDC_PERL_VERSION ${PERL_VERSION_NEW}`
+    	    unsetenv PERL_VERSION_NEW
+	else
+            eval `${ICMS_ENVV} ${isdc_defaults_flag} 'Perl.Version' ISDC_PERL_VERSION`
+	endif
+	
+        eval `${ICMS_ENVV} ${isdc_defaults_flag} 'Perl.Root' isdc_perl_root`
+    	setenv ISDC_PERL_BASE ${isdc_perl_root}/${ISDC_PERL_VERSION}/${ISDC_COMPILER_NAME}/${ISDC_COMPILER_VERSION}
+    	unsetenv isdc_perl_root
+
+	if (${debug} == "yes") then
+	    echo ">>>>> Step 5.a.2: Done"
+	endif
+
+    endif
+
+    if ($?ISDC_PERL_BASE && -d ${ISDC_PERL_BASE}) then
+
+	eval `${ENVV} add PATH            ${ISDC_PERL_BASE}/bin 1`
+	eval `${ENVV} add LD_LIBRARY_PATH ${ISDC_PERL_BASE}/lib 1`
+	eval `${ENVV} add MANPATH         ${ISDC_PERL_BASE}/man 1`
+
+	eval `${ENVV} add PERLLIB         ${ISDC_PERL_BASE}/lib 1`
+	eval `${ENVV} add PERL5LIB        ${ISDC_PERL_BASE}/lib 1`
+
+    endif
+
+    if (${debug} == "yes") then
+	echo ">>>>> Step 5.a: Done"
+    endif
+
+
+###############################################################################
+#
+# 5.b: Add FTOOLS to the environment
+#
+###############################################################################
+
+    if (${debug} == "yes") then
+	echo ">>>>> Step 5.b: Add FTOOLS to the environment ..."
+    endif
+
+
+    if ($?ISDC_FTOOLS_BASE) then
+
+	if (${debug} == "yes") then
+	    echo ">>>>> Step 5.b.1: Removing old FTOOLS settings from the environment ..."
+	endif
+
+        if ($?SAORD_ROOT) then
+	   if (${os} == "Linux") then
+	       eval `${ENVV} del PATH ${SAORD_ROOT}/bin.linux`
+	   else if (${os} == "Darwin") then
+	       eval `${ENVV} del PATH ${SAORD_ROOT}/bin.darwin`
+	   else
+	       eval `${ENVV} del PATH ${SAORD_ROOT}/bin.sun4-sol26`
+	   endif
+	   unsetenv SAORD_ROOT
+        endif
+
+	unsetenv ISDC_FTOOLS_BASE
+	unsetenv ISDC_FTOOLS_VERSION
+
+	unsetenv LHEASOFT
+        unsetenv HEADAS
+
+	if (${debug} == "yes") then
+	    echo ">>>>> Step 5.b.1: Done"
+	endif
+
+    endif
+
+    if ($?FTOOLS_BASE_NEW) then
+	eval `${ENVV} set ISDC_FTOOLS_BASE ${FTOOLS_BASE_NEW}`
+        unsetenv FTOOLS_BASE_NEW
+    else
+
+	if (${debug} == "yes") then
+	    echo ">>>>> Step 5.b.2: Adding FTOOLS settings to the environment ..."
+	endif
+
+	if ($?FTOOLS_VERSION_NEW) then
+	    eval `${ENVV} set ISDC_FTOOLS_VERSION ${FTOOLS_VERSION_NEW}`
+    	    unsetenv FTOOLS_VERSION_NEW
+	else
+            eval `${ICMS_ENVV} ${isdc_defaults_flag} 'Ftools.Version' ISDC_FTOOLS_VERSION`
+	endif
+	
+        eval `${ICMS_ENVV} ${isdc_defaults_flag} 'Ftools.Root' isdc_ftools_root`
+    	setenv ISDC_FTOOLS_BASE ${isdc_ftools_root}/${ISDC_FTOOLS_VERSION}/${ISDC_COMPILER_NAME}/${ISDC_COMPILER_VERSION}
+    	unsetenv isdc_ftools_root
+
+        if ( "${ISDC_FTOOLS_VERSION}" == "5.3.1" || \
+	   "${ISDC_FTOOLS_VERSION}" == "5.3") then
+	   eval `${ENVV} set LHEASOFT ${ISDC_FTOOLS_BASE}/lheasoft/${osrelarch}`
+	   eval `${ENVV} set SAORD_ROOT ${ISDC_FTOOLS_BASE}/saord`
+        else
+	   eval `${ENVV} set HEADAS ${ISDC_FTOOLS_BASE}/headas-${ISDC_FTOOLS_VERSION}/${osrelarch}`
+	   eval `${ENVV} set SAORD_ROOT ${ISDC_FTOOLS_BASE}/saord`
+	endif
+      
+	if (${debug} == "yes") then
+	    echo ">>>>> Step 5.b.2: Done"
+	endif
+
+    endif
+
+    if (( $?ISDC_FTOOLS_BASE ) && ( ${without_ftools} == "no" )) then
+	
+        if ( "${ISDC_FTOOLS_VERSION}" == "5.3.1" || \
+	   "${ISDC_FTOOLS_VERSION}" == "5.3") then
+	      source ${LHEASOFT}/lhea-init.csh
+       else
+	   if (-e ${HEADAS}/BUILD_DIR/headas-init.csh) \
+	      source ${HEADAS}/BUILD_DIR/headas-init.csh
+       endif
+
+      #
+      # SAO toolset
+      #
+
+      if (-d ${SAORD_ROOT}) then
+           if (${os} == "Linux") then
+                eval `${ENVV} add PATH ${SAORD_ROOT}/bin.linux 1`
+	   else if (${os} == "Darwin") then
+	        eval `${ENVV} add PATH ${SAORD_ROOT}/bin.darwin 1`
+           else
+                eval `${ENVV} add PATH ${SAORD_ROOT}/bin.sun4-sol26 1`
+           endif
+      endif
+
+    endif
+    
+    if (${debug} == "yes") then
+	echo ">>>>> Step 5.b: Done"
+    endif
+
+
+
+
+###############################################################################
+#
+# 5.e: Add NAG to the environment
+#
+###############################################################################
+
+   eval `${ENVV} set NAGLIB                 isdcmath`
+
+#
+#    if (${debug} == "yes") then
+#	echo ">>>>> Step 5.e: Add NAG to the environment ..."
+#    endif
+#
+#    #
+#    # In any case remove the old NAG settings from the environment
+#    #
+#
+#    if ($?ISDC_NAG_BASE) then
+#
+#	if (${debug} == "yes") then
+#	    echo ">>>>> Step 5.e.1: Removing old NAG settings from the environment ..."
+#	endif
+#
+#	eval `${ENVV} del LD_LIBRARY_PATH ${ISDC_NAG_BASE}/lib`
+#	eval `${ENVV} del MANPATH         ${ISDC_NAG_BASE}/man`
+#
+#	unsetenv ISDC_NAG_BASE
+#	unsetenv ISDC_NAG_VERSION
+#	unsetenv EXTERN_1_INC_DIR
+#	unsetenv EXTERN_1_LIB_DIR
+#       unsetenv NAGLIB
+#	
+#	if (${debug} == "yes") then
+#	    echo ">>>>> Step 5.e.1: Done"
+#	endif
+#
+#   endif
+#
+#    if ($?NAG_BASE_NEW) then
+#	eval `${ENVV} set ISDC_NAG_BASE ${NAG_BASE_NEW}`
+#       unsetenv NAG_BASE_NEW
+#    else if (${without_nag} == "no") then
+#
+#	if (${debug} == "yes") then
+#	    echo ">>>>> Step 5.e.2: Adding NAG settings to the environment ..."
+#	endif
+#
+#	if ($?NAG_VERSION_NEW) then
+#	    eval `${ENVV} set ISDC_NAG_VERSION ${NAG_VERSION_NEW}`
+#    	    unsetenv NAG_VERSION_NEW
+#	else
+#            eval `${ICMS_ENVV} ${isdc_defaults_flag} 'Nag.Version' ISDC_NAG_VERSION`
+#	endif
+#	
+#        eval `${ICMS_ENVV} ${isdc_defaults_flag} 'Nag.Root' isdc_nag_root`
+#    	setenv ISDC_NAG_BASE ${isdc_nag_root}/${ISDC_NAG_VERSION}/${ISDC_COMPILER_NAME}/${ISDC_COMPILER_VERSION}
+#    	unsetenv isdc_nag_root
+#
+#	eval `${ENVV} set EXTERN_1_INC_DIR       ${ISDC_NAG_BASE}/include`
+#	eval `${ENVV} set EXTERN_1_LIB_DIR       ${ISDC_NAG_BASE}/lib`
+#        eval `${ENVV} set NAGLIB                 isdcmath`
+#
+#	if (${debug} == "yes") then
+#	    echo ">>>>> Step 5.e.2: Done"
+#	endif
+#
+#    endif
+
+#    if ($?ISDC_NAG_BASE) then
+#
+#	eval `${ENVV} add LD_LIBRARY_PATH ${ISDC_NAG_BASE}/lib 1`
+#	eval `${ENVV} add MANPATH         ${ISDC_NAG_BASE}/man 1`
+#
+#    endif
+
+#    if (${debug} == "yes") then
+#	echo ">>>>> Step 5.e: Done"
+#    endif
+
+
+###############################################################################
+#
+# 5.f: Add TOOLS to the environment
+#
+###############################################################################
+
+    if (${debug} == "yes") then
+	echo ">>>>> Step 5.f: Add TOOLS to the environment ..."
+    endif
+
+    #
+    # In any case remove the old TOOLS settings from the environment
+    #
+
+    if ($?ISDC_TOOLS_BASE) then
+
+	if (${debug} == "yes") then
+	    echo ">>>>> Step 5.f.1: Removing old TOOLS settings from the environment ..."
+	endif
+
+	eval `${ENVV} del PATH            ${ISDC_TOOLS_BASE}/bin`
+	eval `${ENVV} del LD_LIBRARY_PATH ${ISDC_TOOLS_BASE}/lib`
+	eval `${ENVV} del MANPATH         ${ISDC_TOOLS_BASE}/man`
+
+	unsetenv ISDC_TOOLS_BASE
+	unsetenv ISDC_TOOLS_VERSION
+    	if ($?DDD_HOME) unsetenv DDD_HOME
+	
+	if (${debug} == "yes") then
+	    echo ">>>>> Step 5.f.1: Done"
+	endif
+
+    endif
+
+    if ($?TOOLS_BASE_NEW) then
+	eval `${ENVV} set ISDC_TOOLS_BASE ${TOOLS_BASE_NEW}`
+    	unsetenv TOOLS_BASE_NEW
+    else if (${without_tools} == "no") then
+
+	if (${debug} == "yes") then
+	    echo ">>>>> Step 5.f.2: Adding TOOLS settings to the environment ..."
+	endif
+
+	if ($?TOOLS_VERSION_NEW) then
+	    eval `${ENVV} set ISDC_TOOLS_VERSION ${TOOLS_VERSION_NEW}`
+    	    unsetenv TOOLS_VERSION_NEW
+	else
+            eval `${ICMS_ENVV} ${isdc_defaults_flag} 'Tools.Version' ISDC_TOOLS_VERSION`
+	endif
+	
+        eval `${ICMS_ENVV} ${isdc_defaults_flag} 'Tools.Root' isdc_tools_root`
+    	setenv ISDC_TOOLS_BASE ${isdc_tools_root}/${ISDC_TOOLS_VERSION}/${ISDC_COMPILER_NAME}/${ISDC_COMPILER_VERSION}
+    	unsetenv isdc_tools_root
+
+    	if (${debug} == "yes") then
+	    echo ">>>>> Step 5.f.2: Done"
+	endif
+
+    endif
+
+    if ($?ISDC_TOOLS_BASE && -d ${ISDC_TOOLS_BASE}) then
+
+	eval `${ENVV} add PATH            ${ISDC_TOOLS_BASE}/bin 1`
+	eval `${ENVV} add LD_LIBRARY_PATH ${ISDC_TOOLS_BASE}/lib 1`
+	eval `${ENVV} add MANPATH         ${ISDC_TOOLS_BASE}/man 1`
+
+    	setenv DDD_HOME ${ISDC_TOOLS_BASE}
+	
+    endif
+
+    if (${debug} == "yes") then
+	echo ">>>>> Step 5.f: Done"
+    endif
+
+
+###############################################################################
+#
+# 6. Add ISDC_ENV to the environment
+#
+###############################################################################
+
+    if (${debug} == "yes") then
+	echo ">>>>> Step 6: Add ISDC_ENV to the environment ..."
+    endif
+
+
+    #
+    # In any case remove the old ISDC_ENV settings from the environment
+    #
+
+    if ($?ISDC_ENV) then
+
+	if (${debug} == "yes") then
+	    echo ">>>>> Step 6.1: Removing old ISDC_ENV settings from the environment ..."
+	endif
+
+	#
+	# split the ISDC_ENV into the sub-directories
+	#
+
+	setenv isdc_envs `echo $ISDC_ENV | awk -F':' '{ for (i = NF; i > 0; --i) printf( "%s ", $i ); }'`
+
+        setenv sys_pfiles `echo $PFILES | cut -d';' -f2`
+	setenv usr_pfiles `echo $PFILES | cut -d';' -f1`
+
+	foreach tmp_isdc_env ( ${isdc_envs} ) 
+	    eval `${ENVV} del PATH                  ${tmp_isdc_env}/bin`
+	    eval `${ENVV} del PATH                  ${tmp_isdc_env}/bin/ac_stuff`
+	    eval `${ENVV} del LD_LIBRARY_PATH       ${tmp_isdc_env}/lib`
+	    eval `${ENVV} del sys_pfiles            ${tmp_isdc_env}/pfiles`
+	    eval `${ENVV} del usr_pfiles            ${tmp_isdc_env}/pfiles`
+      	end
+
+        setenv PFILES "${usr_pfiles};${sys_pfiles}"
+        unsetenv sys_pfiles
+        unsetenv usr_pfiles
+	
+	unsetenv ISDC_TEST_DATA_DIR
+	unsetenv ISDC_SCRIPT_PATH
+	unsetenv CFITSIO_INCLUDE_FILES
+        unsetenv DAL_OPEN_ALL
+
+	unsetenv ISDC_ENV
+	unsetenv ISDC_SITE
+
+	if ($?AUXL_REF_DIR)  unsetenv AUXL_REF_DIR
+	if ($?ISDC_IC_TREE)  unsetenv ISDC_IC_TREE
+	if ($?ISDC_REF_CAT)  unsetenv ISDC_REF_CAT
+    	if ($?REP_BASE_PROD) unsetenv REP_BASE_PROD
+    	if ($?REP_BASE_TM)   unsetenv REP_BASE_TM
+        if ($?COMMONLOGFILE)   unsetenv COMMONLOGFILE 
+        if ($?COMMONSCRIPT)    unsetenv COMMONSCRIPT 
+
+	if (${debug} == "yes") then
+	    echo ">>>>> Step 6.1: Done"
+	endif
+
+    endif
+
+    if (${debug} == "yes") then
+        echo ">>>>> Step 6.2: Adding ISDC_ENV settings to the environment ..."
+    endif
+
+    if ($?ISDC_SITE_NEW) then
+	eval `${ENVV} set ISDC_SITE ${ISDC_SITE_NEW}`
+    	unsetenv ISDC_SITE_NEW
+    else
+    	eval `${ICMS_ENVV} 'Site' ISDC_SITE`
+    endif
+
+    if ($?ISDC_ENV_NEW) then
+	eval `${ENVV} set ISDC_ENV_TMP ${ISDC_ENV_NEW}`
+    	unsetenv ISDC_ENV_NEW
+    else
+    	 eval `${ICMS_ENVV} 'Env' ISDC_ENV_TMP`
+    endif
+
+    #
+    # dereference ISDC_ENV
+    #
+    if (${without_deref} == "no") then
+       if (-d ${ISDC_ENV_TMP}) then
+          set old_dir = `/bin/pwd`
+          cd ${ISDC_ENV_TMP}
+          setenv ISDC_ENV_TMP `/bin/pwd`
+          cd ${old_dir}
+          unset old_dir
+       endif
+    endif
+
+    setenv ISDC_ENV ${ISDC_ENV_TMP}
+    unsetenv ISDC_ENV_TMP
+    
+    if ($?REP_BASE_PROD_NEW) then
+	eval `${ENVV} set REP_BASE_PROD ${REP_BASE_PROD_NEW}`
+    	unsetenv REP_BASE_PROD_NEW
+    else
+    	eval `${ICMS_ENVV} 'RepBaseProd' REP_BASE_PROD`
+    endif
+
+    if ($?REP_BASE_TM_NEW) then
+	eval `${ENVV} set REP_BASE_TM ${REP_BASE_TM_NEW}`
+    	unsetenv REP_BASE_TM_NEW
+    else
+    	eval `${ICMS_ENVV} 'RepBaseTm' REP_BASE_TM`
+    endif
+
+    if ($?AUXL_REF_DIR_NEW) then
+	eval `${ENVV} set AUXL_REF_DIR ${AUXL_REF_DIR_NEW}`
+    	unsetenv AUXL_REF_DIR_NEW
+    else
+    	eval `${ICMS_ENVV} 'AuxlRefDir' AUXL_REF_DIR`
+    endif
+
+    if ($?IC_TREE_NEW) then
+	eval `${ENVV} set ISDC_IC_TREE ${IC_TREE_NEW}`
+    	unsetenv IC_TREE_NEW
+    else
+    	eval `${ICMS_ENVV} 'ISDC_IC_TREE' ISDC_IC_TREE`
+    endif
+
+    if ($?REF_CAT_NEW) then
+	eval `${ENVV} set ISDC_REF_CAT "${REF_CAT_NEW}"`
+    	unsetenv REF_CAT_NEW
+    else
+    	eval `${ICMS_ENVV} 'ISDC_REF_CAT' ISDC_REF_CAT`
+    endif
+
+    if ($?ISDC_ENV) then
+
+      if (-f $ISDC_ENV/compilers.config) then
+         source $ISDC_ENV/compilers.config
+      endif
+      
+	#
+	# split the ISDC_ENV into the sub-directories
+	#
+
+	set isdc_envs = `echo ${ISDC_ENV} | awk -F':' '{ for (i = NF; i > 0; --i) printf( "%s ", $i ); }'`
+
+	foreach tmp_isdc_env ( ${isdc_envs} ) 
+
+            if (-d ${tmp_isdc_env}) then
+	    	eval `${ENVV} add PATH                  ${tmp_isdc_env}/bin 1`
+	    	eval `${ENVV} add PATH                  ${tmp_isdc_env}/bin/ac_stuff 1`
+	    	eval `${ENVV} add LD_LIBRARY_PATH       ${tmp_isdc_env}/lib 1`
+
+	    	eval `${ENVV} add ISDC_SCRIPT_PATH      ${tmp_isdc_env}/scripts 1`
+	    	eval `${ENVV} add CFITSIO_INCLUDE_FILES ${tmp_isdc_env}/templates 1`
+    	    endif
+	    
+	end
+
+        if (${without_archive} != "yes") then
+	
+	    set isdc_envs = `echo ${ISDC_ENV} | awk -F':' '{ for (i = NF; i > 0; --i) printf( "%s ", $i ); }'`
+
+	    foreach tmp_isdc_env ( ${isdc_envs} ) 
+
+               if (-r ${tmp_isdc_env}/bin/arcIngestConfig.csh) then
+                  if (${debug} == "yes") then
+                     echo ">>>>> Step 6.2.1: setting up archive environment"
+		  endif
+	          source ${tmp_isdc_env}/bin/arcIngestConfig.csh
+                  if (${without_tec014} == "yes") then
+                     if (${debug} == "yes") then
+                     	echo ">>>>> Step 6.2.2: removing data rights implementation"
+		     endif
+		     setenv ARC_INGEST_NO_TEC014 true
+		  endif
+    	       endif
+	    
+	    end
+        endif
+
+	#
+	# repeat the same for the PFILES but in reversed order
+	# That's because we are not adding to the front of PFILES but to
+	# the end (remark: the PFILES contains the ';' to separate USER and
+	# system part. This is not properly handled by envv)
+	#
+
+	setenv isdc_envs `echo $ISDC_ENV | awk -F':' '{ for (i = 1; i <= NF; i++) printf( "%s ", $i ); }'`
+
+	foreach tmp_isdc_env ( ${isdc_envs} ) 
+	    if ($?PFILES == 0) then
+	    	eval `${ENVV} set PFILES "${HOME}/pfiles;${tmp_isdc_env}/${isdc_pfiles_dir}"`
+	    else
+		eval `${ENVV} add PFILES "${tmp_isdc_env}/${isdc_pfiles_dir}"`
+	    endif
+	end
+
+	eval `${ENVV} set ISDC_TEST_DATA_DIR        /isdc/testdata/unit_test`
+        
+        eval `${ICMS_ENVV} 'Dal.OpenAll' DAL_OPEN_ALL` 
+        eval `${ICMS_ENVV} 'Common.LogFile' COMMONLOGFILE` 
+        eval `${ICMS_ENVV} 'Common.Script'  COMMONSCRIPT` 
+
+	if (! -d ${HOME}/pfiles) then
+	    mkdir -p ${HOME}/pfiles
+	endif
+
+    endif
+
+    if (${debug} == "yes") then
+        echo ">>>>> Step 6.2: Done"
+    endif
+
+    if (${debug} == "yes") then
+	echo ">>>>> Step 6: Done"
+    endif
+###############################################################################
+#
+# 5.c: Add ROOT to the environment
+#
+###############################################################################
+
+    if (${debug} == "yes") then
+	echo ">>>>> Step 5.c: Add ROOT to the environment ..."
+    endif
+
+    #
+    # In any case remove the old ROOT settings from the environment
+    #
+
+    if ($?ROOTSYS) then
+
+	if (${debug} == "yes") then
+	    echo ">>>>> Step 5.c.1: Removing old ROOT settings from the environment ..."
+	endif
+
+	eval `${ENVV} del PATH            ${ROOTSYS}/bin`
+	eval `${ENVV} del LD_LIBRARY_PATH ${ROOTSYS}/lib`
+	eval `${ENVV} del MANPATH         ${ROOTSYS}/man`
+
+	unsetenv ROOTSYS
+	unsetenv ISDC_ROOT_VERSION
+	unsetenv ROOTSYS
+
+	if (${debug} == "yes") then
+	    echo ">>>>> Step 5.c.1: Done"
+	endif
+
+    endif
+
+   if ($?ROOTSYS_NEW) then
+      eval `${ENVV} set ROOTSYS ${ROOTSYS_NEW}`
+      unsetenv ROOTSYS_NEW
+
+      if (-f ${ROOTSYS}/include/RVersion.h) then
+         setenv ISDC_ROOT_VERSION `grep 'define ROOT_RELEASE ' ${ROOTSYS}/include/RVersion.h | awk ' { print $3 } ' | sed -e 's/"//g' | sed -e 's/\//\./'`
+      endif
+
+   else if (${without_root} == "no") then
+
+      if (${debug} == "yes") then
+         echo ">>>>> Step 5.c.2: Adding ROOT settings to the environment ..."
+      endif
+
+      if ($?ROOT_VERSION_NEW) then
+         eval `${ENVV} set ISDC_ROOT_VERSION ${ROOT_VERSION_NEW}`
+         unsetenv ROOT_VERSION_NEW
+      else
+         eval `${ICMS_ENVV} ${isdc_defaults_flag} 'Root.Version' ISDC_ROOT_VERSION`
+      endif
+	
+      if (-d ${ISDC_ENV}/root) then
+         setenv ROOTSYS ${ISDC_ENV}/root
+         if (-f ${ROOTSYS}/include/RVersion.h) then
+            setenv ISDC_ROOT_VERSION `grep 'define ROOT_RELEASE ' ${ROOTSYS}/include/RVersion.h | awk ' { print $3 } ' | sed -e 's/"//g' | sed -e 's/\//\./'`
+         endif
+      else
+         eval `${ICMS_ENVV} ${isdc_defaults_flag} 'Root.Root' isdc_root_root`
+         setenv ROOTSYS ${isdc_root_root}/${ISDC_ROOT_VERSION}/${ISDC_COMPILER_NAME}/${ISDC_COMPILER_VERSION}
+         unsetenv isdc_root_root
+
+         if ("${ISDC_ROOT_VERSION}" != "3.03.07" && \
+            "${ISDC_ROOT_VERSION}" != "3.02.07"	) then
+            if (${os} == "SunOS") then
+               setenv ROOTSYS ${ROOTSYS}/sparc-sun-solaris2.8
+            else if ("${os}" == "Darwin") then
+               setenv ROOTSYS ${ROOTSYS}/powerpc-apple-darwin8.2.1
+            else
+               setenv ROOTSYS ${ROOTSYS}/i686-pc-linux-gnu
+            endif
+         endif
+      endif
+   endif
+	
+	if (${debug} == "yes") then
+	    echo ">>>>> Step 5.c.2: Done"
+	endif
+
+
+    endif
+
+    if ($?ROOTSYS ) then
+      	 if ( -d ${ROOTSYS}) then
+	    eval `${ENVV} add PATH            ${ROOTSYS}/bin 1`
+	    eval `${ENVV} add LD_LIBRARY_PATH ${ROOTSYS}/lib 1`
+	    eval `${ENVV} add MANPATH         ${ROOTSYS}/man 1`
+        endif
+    endif
+
+    if (${debug} == "yes") then
+	echo ">>>>> Step 5.c: Done"
+    endif
+
+
+###############################################################################
+#
+# 5.d: Add AstroROOT to the environment
+#
+###############################################################################
+
+    if (${debug} == "yes") then
+	echo ">>>>> Step 5.d: Add AstroROOT to the environment ..."
+    endif
+
+    #
+    # In any case remove the old AstroROOT settings from the environment
+    #
+
+    if ($?ISDC_ASTROROOT_BASE) then
+
+	if (${debug} == "yes") then
+	    echo ">>>>> Step 5.d.1: Removing old AstroROOT settings from the environment ..."
+	endif
+
+	eval `${ENVV} del PATH            ${ISDC_ASTROROOT_BASE}/bin`
+	eval `${ENVV} del LD_LIBRARY_PATH ${ISDC_ASTROROOT_BASE}/lib`
+	eval `${ENVV} del MANPATH         ${ISDC_ASTROROOT_BASE}/man`
+
+	unsetenv ISDC_ASTROROOT_BASE
+	unsetenv ISDC_ASTROROOT_VERSION
+        unsetenv WORK_ENV
+	
+	if (${debug} == "yes") then
+	    echo ">>>>> Step 5.d.1: Done"
+	endif
+
+    endif
+
+    if ($?ASTROROOT_BASE_NEW) then
+	eval `${ENVV} set ISDC_ASTROROOT_BASE ${ASTROROOT_BASE_NEW}`
+    	unsetenv ASTROROOT_BASE_NEW
+    else if (${without_astroroot} == "no") then
+
+	if (${debug} == "yes") then
+	    echo ">>>>> Step 5.d.2: Adding AstroROOT settings to the environment ..."
+	endif
+
+	if ($?ASTROROOT_VERSION_NEW) then
+	    eval `${ENVV} set ISDC_ASTROROOT_VERSION ${ASTROROOT_VERSION_NEW}`
+    	    unsetenv ASTROROOT_VERSION_NEW
+	else
+            eval `${ICMS_ENVV} ${isdc_defaults_flag} 'AstroROOT.Version' ISDC_ASTROROOT_VERSION`
+	endif
+	
+        eval `${ICMS_ENVV} ${isdc_defaults_flag} 'AstroROOT.Root' isdc_astroroot_root`
+
+        setenv ISDC_ASTROROOT_BASE ${isdc_astroroot_root}/${ISDC_ASTROROOT_VERSION}/${ISDC_ROOT_VERSION}/${os}
+    	unsetenv isdc_astroroot_root
+
+
+    endif
+
+    if ($?ISDC_ASTROROOT_BASE ) then
+        if (-r ${ISDC_ASTROROOT_BASE}/bin/astroroot_init_env.csh) then
+	    setenv WORK_ENV ${ISDC_ASTROROOT_BASE}
+            source ${ISDC_ASTROROOT_BASE}/bin/astroroot_init_env.csh
+	endif
+    endif
+
+    if (${debug} == "yes") then
+	echo ">>>>> Step 5.d: Done"
+    endif
+
+
+###############################################################################
+#
+# 7. Add JAVA Run-time Environment to the environment
+#
+###############################################################################
+
+    if (${debug} == "yes") then
+	echo ">>>>> Step 7: Add JAVA to the environment ..."
+    endif
+
+    #
+    # In any case remove the old JAVA settings from the environment
+    #
+
+    if ($?ISDC_JAVA_BASE) then
+
+	if (${debug} == "yes") then
+	    echo ">>>>> Step 7.1: Removing old JAVA settings from the environment ..."
+	endif
+
+	eval `${ENVV} del PATH             ${ISDC_JAVA_BASE}/jre/bin`
+
+	unsetenv ISDC_JAVA_BASE
+	unsetenv ISDC_JAVA_VERSION
+
+	if (${debug} == "yes") then
+	    echo ">>>>> Step 7.1: Done"
+	endif
+
+    endif
+
+    if ($?JAVA_BASE_NEW) then
+	eval `${ENVV} set ISDC_JAVA_BASE ${JAVA_BASE_NEW}`
+    	unsetenv JAVA_BASE_NEW
+    else if (${without_java} == "no") then
+
+	if (${debug} == "yes") then
+	    echo ">>>>> Step 7.2: Adding JAVA settings to the environment ..."
+	endif
+
+	if ($?JAVA_VERSION_NEW) then
+	    eval `${ENVV} set ISDC_JAVA_VERSION ${JAVA_VERSION_NEW}`
+    	    unsetenv JAVA_VERSION_NEW
+	else
+            eval `${ICMS_ENVV} ${isdc_defaults_flag} 'Java.Version' ISDC_JAVA_VERSION`
+	endif
+	
+        eval `${ICMS_ENVV} ${isdc_defaults_flag} 'Java.Root' isdc_java_root`
+	if (${isdc_network} == "office") then
+    	    setenv ISDC_JAVA_BASE ${isdc_java_root}/${ISDC_JAVA_VERSION}
+    	else
+    	    setenv ISDC_JAVA_BASE ${isdc_java_root}/${ISDC_JAVA_VERSION}
+	endif
+    	unsetenv isdc_java_root
+
+	if (${debug} == "yes") then
+	    echo ">>>>> Step 7.2: Done"
+	endif
+
+    endif
+
+    if ($?ISDC_JAVA_BASE) then
+        eval `${ENVV} add PATH      ${ISDC_JAVA_BASE}/jre/bin 1`
+    endif
+
+    if (${debug} == "yes") then
+	echo ">>>>> Step 7: Done"
+    endif
+
+
+###############################################################################
+#
+# 8. Add OPUS to the environment
+#
+###############################################################################
+
+    if (${debug} == "yes") then
+	echo ">>>>> Step 8: Add OPUS to the environment ..."
+    endif
+
+    #
+    # In any case remove the old OPUS settings from the environment
+    #
+
+    if ($?ISDC_OPUS_BASE) then
+
+	if (${debug} == "yes") then
+	    echo ">>>>> Step 8.1: Removing old OPUS settings from the environment ..."
+	endif
+
+	if (${os} == "Linux") then
+
+	    eval `${ENVV} del PATH         ${ISDC_OPUS_BASE}/bin/linux`
+
+	else
+
+	    eval `${ENVV} del PATH         ${ISDC_OPUS_BASE}/bin/sparc_solaris`
+
+	endif
+
+	eval `${ENVV} del PATH             ${ISDC_OPUS_BASE}/com`
+
+	if ($?ISDC_OPUS) then
+
+	    eval `${ENVV} del PERLLIB      ${ISDC_OPUS}/pipeline_lib`
+	    eval `${ENVV} del PERL5LIB     ${ISDC_OPUS}/pipeline_lib`
+
+	endif
+
+	unsetenv ISDC_OPUS_BASE
+	unsetenv ISDC_OPUS_VERSION
+
+	if ($?ISDC_OPUS) unsetenv ISDC_OPUS
+	if ($?OPUS_MISC_REP) unsetenv OPUS_MISC_REP
+	if ($?OPUS_WORK) unsetenv OPUS_WORK
+
+	if (${debug} == "yes") then
+	    echo ">>>>> Step 8.1: Done"
+	endif
+
+    endif
+
+    if ($?OPUS_BASE_NEW) then
+	eval `${ENVV} set ISDC_OPUS_BASE ${OPUS_BASE_NEW}`
+    	unsetenv OPUS_BASE_NEW
+    else if (${without_opus} == "no") then
+
+	if (${debug} == "yes") then
+	    echo ">>>>> Step 8.2: Adding OPUS settings to the environment ..."
+	endif
+
+	if ($?OPUS_VERSION_NEW) then
+	    eval `${ENVV} set ISDC_OPUS_VERSION ${OPUS_VERSION_NEW}`
+    	    unsetenv OPUS_VERSION_NEW
+	else
+            eval `${ICMS_ENVV} ${isdc_defaults_flag} 'Opus.Version' ISDC_OPUS_VERSION`
+	endif
+	
+        eval `${ICMS_ENVV} ${isdc_defaults_flag} 'Opus.Root' isdc_opus_root`
+    	setenv ISDC_OPUS_BASE ${isdc_opus_root}/${ISDC_OPUS_VERSION}/${ISDC_COMPILER_NAME}/${ISDC_COMPILER_VERSION}
+    	unsetenv isdc_opus_root
+
+	if (${debug} == "yes") then
+	    echo ">>>>> Step 8.2: Done"
+	endif
+
+    endif
+
+    if ($?ISDC_OPUS_BASE) then
+
+	#
+	# Find the first installation of ISDC OPUS scripts in ${ISDC_ENV}
+	#
+	setenv isdc_envs `echo $ISDC_ENV | awk -F':' '{ for (i = NF; i > 0; --i) printf( "%s ", $i ); }'`
+
+	foreach tmp_isdc_env ( ${isdc_envs} ) 
+	    if (-d ${tmp_isdc_env}/opus) then
+		eval `${ENVV} set ISDC_OPUS ${tmp_isdc_env}/opus`
+	    endif
+	end
+
+	if ($?ISDC_OPUS) then
+	    eval `${ENVV} set OPUS_MISC_REP ${ISDC_SITE}/run`
+    	    eval `${ICMS_ENVV} 'Opus.Work' OPUS_WORK`
+#	    eval `${ENVV} set OPUS_WORK     ${OPUS_MISC_REP}/pipelines`
+		
+	    eval `${ENVV} add PERLLIB       ${ISDC_OPUS}/pipeline_lib`
+	    eval `${ENVV} add PERL5LIB      ${ISDC_OPUS}/pipeline_lib`
+
+      	    if ($?OPUS_WORK) then
+	        if (-d ${ISDC_OPUS_BASE}) then
+	    	    if (${os} == "Linux") then
+		        eval `${ENVV} add PATH      ${ISDC_OPUS_BASE}/opus/bin/linux 1`
+	    	    else
+		        eval `${ENVV} add PATH      ${ISDC_OPUS_BASE}/opus/bin/sparc_solaris 1`
+	    	    endif
+
+	    	    eval `${ENVV} add PATH          ${ISDC_OPUS_BASE}/opus/com 1`
+
+#	    	    if (${os} == "SunOS") then
+		        if  (-e ${ISDC_OPUS}/pipeline_lib/opus_login.csh) \
+			    source  ${ISDC_OPUS}/pipeline_lib/opus_login.csh \
+      	             	      ${ISDC_OPUS_VERSION} > /dev/null
+#	    	    endif
+	        endif
+	    endif
+    	endif
+    endif
+
+    if (${debug} == "yes") then
+	echo ">>>>> Step 8: Done"
+    endif
+
+
+###############################################################################
+#
+# 9. Clean up
+#
+###############################################################################
+
+    if ($?ISDCRC_VERSION) then
+      unsetenv ISDCRC_VERSION
+    endif
+    eval `${ICMS_ENVV} ${isdc_defaults_flag} 'isdcrc.version' ISDCRC_VERSION`
+
+    if (${debug} == "yes") then
+	echo ">>>>> Step 9: clean up ..."
+    endif
+
+
+    unsetenv isdc_pfiles_dir
+        
+    unsetenv without_compiler
+    unsetenv without_perl
+    unsetenv without_root
+    unsetenv without_nag
+    unsetenv without_ftools
+    unsetenv without_tools
+    unsetenv without_java
+    unsetenv without_opus
+    unsetenv isdc_defaults_flag
+    unsetenv isdc_envs
+    unsetenv isdc_compiler_type
+    unsetenv without_archive
+    unsetenv without_tec014
+    unsetenv without_deref
+
+    unsetenv reset
+
+    unsetenv os
+    unsetenv osrelarch
+
+    unset    isdcrcUserDefDefault
+    unset    isdcrcUserDefHomeDir
+
+
+    if (${debug} == "yes") then
+	echo ">>>>> Step 9: Done"
+    endif
+
+    
+    if (-f ${HOME}/.isdc_login_failed) then
+
+	\rm -f ${HOME}/.isdc_login_failed
+
+    endif
+
+    touch ${HOME}/.isdc_login_ok
+    setenv ISDC_LOGIN_VERSION ${isdc_login_version}
+
+    
+    if (${debug} == "yes") then
+	echo ">>>>> ISDC environment successfully set up"
+    endif
+
+#
+# This has to be done as the last step -- otherwise the debug
+# statements will not be executed
+#
+    unsetenv isdc_login_version
+    unsetenv debug
+    

@@ -1,0 +1,25 @@
+#!/usr/bin/perl -w
+
+use strict;
+
+my $filename = "";
+
+exit unless ( $#ARGV >= 0 );
+
+while ( $ARGV[0] ) {
+	$filename = $ARGV[0];
+	open CURFILE, $filename;
+	while (<CURFILE>) {
+		next if ( /^\s*#/ );		#	whole line is a comment
+		next if ( /^\s*my \$osf_status_/ );	#	variable declaration (the whole point)
+		next if ( /\#+.*?[\/\"\'\^]+[gvcwxph_]+[\/\"\'\$]+/ );	#	match is in a comment
+		print $filename." : ".$_ if ( /[\/\"\'\^]+[gvcwxph]{2,}[\/\"\'\$]+/ );
+	}
+	close CURFILE;
+	shift @ARGV;
+}     # while options left on the command line
+
+exit;
+
+
+

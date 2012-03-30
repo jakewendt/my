@@ -1,0 +1,14 @@
+#!/bin/sh
+
+for dir in `ls -d1 ~/iPhotoLibrary/[12]???/??/??`
+do
+	echo $dir
+	for pic in `ls -1 ${dir}/*.{JPG,jpg}`
+	do
+		fname=`echo $pic | awk -F/ '{print $NF}'`
+		/bin/ls -il $pic
+		find ~/Pictures/ -name $fname 
+	done
+done
+
+

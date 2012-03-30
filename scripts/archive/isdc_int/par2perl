@@ -1,0 +1,87 @@
+#!/usr/bin/perl
+#
+#  Transform par file into Perl formatted pars (ISDCPipeline::PipelineStep
+#	specific format), 
+#  i.e. turn
+#        dol,s,a,"file.fits[1]",,,"Input DOL"
+#  into
+#        "par_dol" => "file.fits[1]",
+#
+
+if ( (!@ARGV) or ($ARGV[0] eq "--h")) {
+  print "USAGE:  par2perl executable.par [outfile.pl]\n";
+  exit;
+}
+
+my $parfile = $ARGV[0];
+my $outfile = $ARGV[1];
+my $oldout;
+my ($par,$type,$mode,$default,$min,$max,$comment);
+my @parts;
+
+open(PARS,"$parfile") or die "Cannot open $parfile\n";
+
+# Open output file, or leave STDOUT
+if ($outfile) {
+  open(OUT,">$outfile") or die "Cannot open $outfile to write\n";
+  $oldout = select OUT;
+}
+
+# For each line in the par file, construct Perl line
+while(<PARS>) {
+  # real par lines, as oposed to comments which can be in various forms, must
+  #  begin with a word character (could be stricter, but this should do)
+  next unless (/^\s*\w/);
+
+  ($par,$type,$mode,$default,$min,$max,$comment) = ParParse($_);
+
+
+#  if (/\"/) {
+#    
+#    print "WARNING:  can't pars $_\n";
+#    next;
+#  }
+#  else {
+#    
+    # split by commas
+#    ($par,$type,$mode,$default,$min,$max,$comment) = split ',';
+#  }
+  
+  # remove any white spaces in parameter
+  $par =~ s/\s+//g;
+  #  and replace mutliple whitespace with single space in default value
+  $default =~ s/\s+/ /g;
+  # remove any quotes (Do these have to be escaped?)
+  $default =~ s/\"|\'//g;
+  #  Remove leading or trailing spaces.
+  $default =~ s/^\s*(\S*)\s*$/$1/g;
+
+  #  Replace $ with $ENV{}
+  #  This is:    $ {? xxx  }?  $ENV{xxx}  
+  $default =~ s/\$\{?(\w+)\}?/\$ENV\{$1\}/;
+  
+
+  print "\t\"par_${par}\" => \"$default\",\n";
+
+
+} # end foreach par line
+
+select $oldout if ($oldout);
+#print "\nDone\n";
+exit;
+  
+  
+  #  This is straight out of the Perl cookbook, pg 31, sect 1.15:
+sub ParParse {
+  
+  my $text = shift;
+  my @new = ();
+  push(@new,$+) while $text =~ m{
+				 "([^\"\\]*(?:\\.[^\"\\]*)*)",?
+				 |  ([^,]+),?
+				 | ,
+				}gx;
+  push(@new,undef) if substr($text, -1,1) eq ',';
+  return @new;
+
+}

@@ -1,0 +1,38 @@
+#-----------------------------------------------------------------------------
+# Name:      ~/local/bin/isdc_int-crontab-040723
+# Purpose:   Run by cron for pre-scheduled actions
+# Date:      
+# Author:    Mark Gaber
+#
+# Revisions:
+#
+#-----------------------------------------------------------------------------
+#
+#-----------------------------------------------------------------------------
+# General Information
+#-----------------------------------------------------------------------------
+# WARNING: there should be no blank lines!!
+#
+# Command to update backup file:  crontab -l > cronFileIsdcul15-02
+#
+# Syntax:
+#
+# minute  hour  mday  month    wday         action
+#  0-59   0-23  1-31  1-12   0-6 (0=Sun)
+#
+#-----------------------------------------------------------------------------
+# Cron Jobs
+#-----------------------------------------------------------------------------
+#
+# For isdcMon:
+# 00,15,30,45 *  *  *  0-6 /home/isdc/gaber/scripts/isdcMon/isdcMon.pl
+#
+# 
+  00 08  *  *  * /home/isdc/wendt/local/scripts/isdc_int/quotacheck.pl
+#
+#
+# For quota functionality of mailDiskMonitor.pl...
+#  05 05 * * * hostQuota=isdcsf3; rsh $hostQuota "quota -v > .quota.$hostQuota"
+#
+#
+# Last line

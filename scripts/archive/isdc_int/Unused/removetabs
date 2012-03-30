@@ -1,0 +1,8 @@
+#!/bin/sh
+
+for each in `/bin/ls -1 *tpl`
+do
+	echo $each
+	sed 's/	/   /g' $each > /tmp/temp-template
+	mv /tmp/temp-template $each
+done

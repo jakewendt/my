@@ -1,0 +1,1 @@
+fdump infile=/isdc/arc/rev_2/cat/hec/gnrl_refr_cat_0027.fits rows="-" pagewidth=256 page=n prhead=n showunit=n showrow=n showcol=n outfile='STDOUT' fldsep=, wrap=y columns='NAME, RA_OBJ, DEC_OBJ, SOURCE_ID, ISGRI_FLAG, CLASS' | sort -t , -k 6,6n -k 1,1 

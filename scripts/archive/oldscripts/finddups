@@ -1,0 +1,9 @@
+#!/bin/sh
+
+for each in `ls Me/*{JPG,jpg}`
+do
+	/bin/ls -ali $each
+	fname=`echo $each | awk -F/ '{print $NF}' | awk -F. '{print $1}'`
+	find . -name $fname\* -ls
+done
+

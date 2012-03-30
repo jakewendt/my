@@ -1,0 +1,18 @@
+<perldata>
+ <arrayref memory_address="0x115cac">
+  <item key="0">
+   <hashref memory_address="0x38930">
+    <item key="fname">Fred</item>
+    <item key="lname">Flintstone</item>
+    <item key="residence">Bedrock</item>
+   </hashref>
+  </item>
+  <item key="1">
+   <hashref memory_address="0x38888">
+    <item key="fname">Barney</item>
+    <item key="lname">Rubble</item>
+    <item key="residence">Bedrock</item>
+   </hashref>
+  </item>
+ </arrayref>
+</perldata>

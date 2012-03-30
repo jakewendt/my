@@ -1,0 +1,11 @@
+<opt>
+  <A name="Test name" id="Test id" text1="Each scheme will be tried in turn in the hope of finding a cached pre-parsed representation of the XML file. If no cached copy is found, the file will be parsed and the first cache scheme in the list will be used to save a copy of the results. The following cache schemes have been implemented:" text2="Each scheme will be tried in turn in the hope of finding a cached pre-parsed representation of the XML file. If no cached copy is found, the file will be parsed and the first cache scheme in the list will be used to save a copy of the results. The following cache schemes have been implemented:" />
+  <B name="Test name" id="Test id" text="Each scheme will be tried in turn in the hope of finding a cached pre-parsed representation of the XML file. If no cached copy is found, the file will be parsed and the first cache scheme in the list will be used to save a copy of the results. The following cache schemes have been implemented:Test id">
+    <arr>This</arr>
+    <arr>is</arr>
+    <arr>a</arr>
+    <arr>test</arr>
+    <arr>array</arr>
+  </B>
+</opt>
+

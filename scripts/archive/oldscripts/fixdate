@@ -1,0 +1,8 @@
+
+#!/bin/sh
+mkdir Corrected
+
+for each in `/bin/ls DCP*`
+do
+sed  s/2000:01:03\ 02/2002:09:21\ 20/g  $each > ./Corrected/$each
+done

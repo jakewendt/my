@@ -1,0 +1,12 @@
+From:     jake.wendt@obs.unige.ch
+To:       jake.wendt@obs.unige.ch
+Subject:  Quota Check 20040721
+
+
+Automated quota check for isdc_int@isdcul19
+
+Disk  : /export/diskA1 
+usage = 122136 
+quota = 250000 
+limit = 300000 
+

@@ -1,0 +1,35 @@
+#!/usr/bin/perl -ws
+
+use strict;
+
+my $filename = "";
+my $FUNCNAME = "template";
+my $FUNCVERSION = "0.0";
+
+if ( ( $h ) || ( $help ) ) {
+	print "Help message.\n";
+	exit;
+}
+
+
+
+
+
+#	exit unless ( $#ARGV >= 0 );
+
+#	loop through all the rest after the first without a leading -
+while ( $ARGV[0] ) {
+	$filename = $ARGV[0];
+	print $filename."\n";
+	open CURFILE, $filename;
+	while (<CURFILE>) {
+		print $_;
+	}
+	close CURFILE;
+	shift @ARGV;
+}     # while options left on the command line
+
+exit;
+
+
+

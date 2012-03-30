@@ -1,0 +1,1009 @@
+#! /bin/sh
+#------------------------------------------------------------------------------
+# NAME: verify_delivery.sh
+#
+# Version: Please see FUNCVERSION below
+#
+# PURPOSE: Perform checks and run the compilation
+#          and unit test for a given delivery
+#
+#     (*) Main of this script is to be found at end of file
+#         as for each sh scripts
+#
+# CREATED:  SEP-2001  MB
+#
+# MODIFIED: 
+#
+# 2004-10-05 Mark Gaber 2.02
+# - 
+#
+# 2004-08-13 Mark Gaber 2.01
+# - The testing of the --v option is now done with the installed_locally/ 
+# version.  This is because Preproc does not put its executable in the same
+# location as all other components, it puts it in comp_2_validate/test/.
+#
+# 2004-05-13 Mark Gaber 2.00
+# - At B. O'Neel's suggestion, added .cxx files in gcc -Wall test
+#
+# 2004-04-21 Mark Gaber 1.9.9
+# - The way to determine the previous version of a component was to do a
+# ls -lrt  $component*.  This is insufficient because dal-3.0.1 was being 
+# beat out by dal_copy.  Since dashes are never in component names (so far)
+# introducing a dash in the ls solves the problem.
+#
+# 2004-04-02 Mark Gaber 1.9.8
+# - Replace sendmail command with cat|rsh crab sendmail because isdcpc7
+# mailer has been permanently disabled for security reasons following an 
+# attack mid-March 2004
+# - no longer use the sendmail -f option (which specifies the From
+# field) as tests have shown the mailer can figure it out itself.
+# This translates to less maintenance.
+#
+# 2004-02-16 Mark Gaber 1.9.7
+# - Previous version will now be untarred in another location:
+#   nnn/previousVersion/                <-- new location
+#   nnn/comp_2_validate/prevVersion     <-- old location
+#
+# 2004-01-28 Mark Gaber 1.9.6
+# - Implemented the untarring of the previous version for the check on changes
+# in the parameter file.
+#
+#
+#   15-Oct-2003 DL version 1.9.5 : Reduce size of e-mail when too big
+#    6-OCT-2003 DL version 1.9.4.1 : Fixed pid problem + version diff 
+#    3-OCT-2003 DL version 1.9.4 : Fixing pid problem [TBD]
+#    3-OCT-2003 DL version 1.9.3 : Added -I. in call to gcc as code analyser
+#       May an environment variable (INCLUDE_PATH) not set for gcc use ?
+#   25-AUG-2003 DL version 1.9.2 : Removed nawk
+#   08-JUL-2003 DL version 1.9.1 : Updated ic tree.tar.gz files location
+#            
+#   30-JUN-2003 DL version 1.9.0 : 
+#           * New header for gcc results : GCC COMPILER WARNINGS
+#
+#    4-JUN-2003 DL version 1.8.9 : Added -I$ROOTSYS/include in gcc
+#      check call.
+#   26-MAY-2003 DL version 1.8.7 : Remove *.o's after gcc check.
+#   26-MAY-2003 DL version 1.8.6 : Reduce possibilities of *.c* files to
+#                                  list for gcc check
+#   22-MAY-2003 DL version 1.8.5 : Extended installed_locally/include
+#                                  to not customised dependencies
+#   21-MAY-2003 DL version 1.8.4 : Added -I/...installed_locally/include
+#                                  to gcc parameters. Prepare use of 
+#                                  -pedantic (too verbose for the moment)
+#   20-MAY-2003 DL version 1.8.3 : Replace lint,splint by gcc -Wall
+#    6-MAY-2003 DL version 1.8.2 : Kill persistent version search processes
+#   23-APR-2003 DL version 1.8.0 : Set only a warning if proper version number 
+#                                  is not required 
+#   08-APR-2003 DL version 1.7.9 : Allows to check before having component in official list
+#   28-FEB-2003 DL version 1.7.8.1 : Send email with URL linked to delivery_form.cgi
+#   28-FEB-2003 DL version 1.7.8 : Add untar of ic_tree if old version asked for
+#   28-FEB-2003 DL version 1.7.7 : Improved environment display
+#   26-FEB-2003 DL version 1.7.6 : Added search of library names using LIB_FULL_NAME
+#   24-FEB-2003 DL version 1.7.5 : Introduce make isdc_dircmp
+#   14-FEB-2003 DL version 1.7.4 : Look for icms_install exit
+#   12-FEB-2003 DL                 Set linux definition for EGREP
+#   12-FEB-2003 DL version 1.7.3 : Added link of the missing share files 
+#               in $ISDC_ENV/share from  comp_2_validate/installed_locally/share
+#   10-FEB-2003 DL version 1.7.2 : move from /isdc/scratch-sun to /isdc/isdc_lib 
+#    7-FEB-2003 DL version 1.7.1 : Modify Subject of e-mail 
+#   31-JAN-2003 DL version 1.7 : Implemented e-mail with
+#     delivery note in test.
+#   23-JAN-2003 DL version 1.6
+#   - Added a patch for Analysis scripts : j_scripts, ibis_scripts ...
+#     for the version number check
+#   15-JAN-2003 DL version 1.5
+#   - Stops the processing if version number is false for AS executables
+#   6-JAN-2003 DL version 1.4
+#  - Corrected call to Check_mandatory_keywords
+#  - use variable ${verify_delivery_log}
+#  31-OCT-2002 DL version 1.3
+#  - Use -oi options to avoid problem of points when using
+#  sendmail
+#  31-OCT-2002 DL
+#  - Set isdc_dircmp location from isdc_tst environment.
+#  10-OCT-2002 MG
+#  - The env variables are now displayed by echoEnv.csh
+#  09-OCT-2002 DL
+#  - Automatise search for isdc_dircmp last version
+#  08-OCT-2002 DL 
+#  - find $workdir -type "d" -exec chmod a+x
+#  04-OCT-2002 DL 
+#  - chmod -Rf +r after completion
+#  23-SEP-2002 DL 
+#  - Remove unit_test/out before running the unit tests
+#  12-SEP-2002 DL 
+#  - Created subroutine Check_mandatory_keywords
+#    for better readability. 
+#  11-SEP-2002 DL
+#  - Adding check on external packages from list in 
+#  /home/isdc/isdc_cms/icms/databases/icms_external_packages.txt   
+#  
+#  22-AUG-2002 DL
+#  - Use codes from components.htmli for comp_type
+#  to have a better management of not executable sets
+#  Look associated change in delivery_compile.pl
+#  
+#  19-AUG-2002 MG 
+#  - Changed name of FUNCNAME to funcname because on linux, bash 2.05
+#    has a bug causing a core dump (do google bash FUNCNAME)
+#  07-AUG-2002 MG 
+#  - Commented out exit if make test returns non-zero 
+#    value.  This is to allow executables (eg j_dead_time_calc-2.2)
+#    to confirm error codes at the end of the README.test
+#  - cosmetic changes to improve legibility
+#  26-JUL-2002 DL Create now RECORD_VERSION and
+#          the_testing 
+#  25-JUL-2002 DL link also ic tree in $ISDC_TEST_DATA_DIR
+#  
+#  23-JUL-2002 MG+DL Added environment variables display.
+#              Stop procedure if version number unvalid.
+#  12-JUL-2002 DL
+#   Migrated to /isdc/scratch-sun.
+#   Added Stop when unit test fails
+#  10-JUL-2002 DL
+#   Addded some redirections to log files
+#   Created a link to comp_2_validate directory to fit
+#   opus need to have component located in its official path.
+#  22-MAY-2002 DL
+#   Corrected path for grep on Linux ( /usr/xpg4/bin/ not defined )
+#  21-MAY-2002 DL
+#   Adapted PATH and isdc_dircmp call to Linux
+#  17-MAY-2002 DL
+#   Added printouts to show different steps of processing
+#   Adapted to evolving ISDC environment
+#
+#------------------------------------------------------------------------------
+
+
+#------------------------------------------------------------------------------
+# Function
+#------------------------------------------------------------------------------
+  send_mail_and_exit() {
+     status=`grep "isdc_dircmp exit value: 0" ${work_dir}/comp_validate.log`
+     status=`echo ${status} | awk '{print $1}'`
+
+     while [ $status ] ; do
+        status="successfully"
+        break;
+     done
+
+     echo "To: ${dev_email}" > ${work_dir}/mail.txt
+     if [ ${exit_status} -ne 0 ] ; then
+        echo "Subject: Your validation request for ${comp_name} version ${comp_version} FAILED" >> ${work_dir}/mail.txt
+     else
+        echo "Subject: Your validation request for ${comp_name} version ${comp_version} was ${status} processed." >> ${work_dir}/mail.txt
+     fi
+
+     delivery_note=`ls ${work_dir}/delivery_note* | head -1`
+     while [ ${delivery_note} ]; do
+        echo "*** You can find the delivery form  associated  to this compilation and unit test check on the following URL :" >> ${work_dir}/mail.txt;
+        echo " http://isdc.unige.ch/cgi-bin/cgiwrap/isdc_lib/cgi-bin/delivery_form.cgi?DELIVERY_NOTE=${delivery_note}" >> ${work_dir}/mail.txt;
+        echo "" >> ${work_dir}/mail.txt
+        break; 
+     done
+     echo "" >> ${work_dir}/mail.txt
+     echo "ISDC_ENV : ${ISDC_ENV}" >> ${work_dir}/mail.txt
+     echo "" >> ${work_dir}/mail.txt
+     echo "Below is the log produced by this check:" >> ${work_dir}/mail.txt
+     echo "" >> ${work_dir}/mail.txt
+
+# Limit size of e-mail:
+     nblin=`wc -l ${work_dir}/comp_validate.log | awk '{print $1}'`
+
+     if  [ $nblin -gt 10000 ] ;then
+
+        awk '{if (index($0,"isdc_dircmp exit value:")!=0){print $0;exit};print $0}' ${work_dir}/comp_validate.log  >> ${work_dir}/mail.txt
+        echo ""                      >> ${work_dir}/mail.txt
+        echo ""                      >> ${work_dir}/mail.txt
+        echo "    .../..."           >> ${work_dir}/mail.txt
+        echo ""                      >> ${work_dir}/mail.txt
+        echo "    ... Cutting lines as log is too long ($nblin lines)" >> ${work_dir}/mail.txt
+        echo "    ... Consult full log in ${work_dir}/comp_validate.log"  >> ${work_dir}/mail.txt
+        echo ""             >> ${work_dir}/mail.txt
+        echo "    .../..."  >> ${work_dir}/mail.txt
+        echo ""             >> ${work_dir}/mail.txt
+        tail -200 ${work_dir}/comp_validate.log >> ${work_dir}/mail.txt
+
+     else
+
+        cat ${work_dir}/comp_validate.log >> ${work_dir}/mail.txt
+
+     fi
+
+     echo "" >> ${work_dir}/mail.txt
+     echo "" >> ${work_dir}/mail.txt
+     echo "" >> ${work_dir}/mail.txt
+
+     cat ${work_dir}/infos.* >> ${work_dir}/mail.txt
+
+     cat ${work_dir}/mail.txt | rsh crab '/usr/lib/sendmail -oi -t'
+
+     exit $exit_status
+  }
+
+
+#------------------------------------------------------------------------------
+# Function
+#------------------------------------------------------------------------------
+  help() {
+
+     printf "verify_delivery: verify an ISDC software delivery\n\n"
+     printf "\tusage: verify_delivery.sh <comp_name> <comp_version> <gzip'ed tar-file> <comp_type> <comp_lang> <dep_type> <e_mail> [work_dir], where\n\n"
+     printf "\t\tcomp_name: is the name of the component to be verified\n"
+     printf "\t\tversion:   is the version number of the component to be verified\n"
+     printf "\t\ttar-file:  is the name of the gzip'ed tar-file for the component delivery\n"
+     printf "\t\tcomp_type: is the type of the component: AE, AS, P, S, LIB \n"
+     printf "\t\tcomp_lang: is the language the component is written in: c, cpp, f90, f77, pl, java\n"
+     printf "\t\tdep_type:  is the type of the dependencies: none, support_sw_old, support_sw_prod, support_sw_cur, custom\n\n"
+     printf "\t\twork_dir:  is the work_dir (optional), \n\n"
+
+     exit_status=1;
+# send_mail_and_exit
+     exit
+  }
+
+#------------------------------------------------------------------------------
+# Function Check_mandatory_keywords()
+#------------------------------------------------------------------------------
+  Check_mandatory_keywords() {
+# check the TXT file for mandatory keywords -- if a TXT file is present
+
+     if [ -r ${comp_name}.txt ] ; then
+
+        MISSING_KEY=FALSE
+
+        for KEY_WORD in NAME         \
+        USAGE        \
+        DESCRIPTION  \
+        PARAMETERS   \
+        EXAMPLES     \
+        BUGS         \
+        AUTHOR       \
+        "SEE ALSO"   \
+        ; do
+           if [ $os = "SunOS" ] ; then
+              gpath="/usr/xpg4/bin/"
+           else
+              gpath=""
+           fi 
+           RESULT=`$gpath""grep -x "[ ]*${KEY_WORD}[ ]*" ${comp_name}.txt 2>> ${verify_delivery_log}`
+
+           if [ "${RESULT}" = "" ] ; then
+
+              if [ ${MISSING_KEY} = "FALSE" ] ; then
+                 printf "***** ${comp_name}.txt is NOT CTS compliant\n" >> $LOGUSR
+                 MISSING_KEY=TRUE
+              fi
+
+              printf "***** Error: missing keyword: ${KEY_WORD}\n" >> ${log_file}
+
+           fi
+
+        done
+
+        if [ ${MISSING_KEY} = "FALSE" ] ; then
+
+           printf ">>>>> ${comp_name}.txt is CTS compliant\n" >> ${log_file}
+
+        fi
+     fi
+
+     return 
+  }
+
+#------------------------------------------------------------------------------
+# Function verify_delivery()
+#------------------------------------------------------------------------------
+  verify_delivery() {
+
+     exit_status=0
+
+     old_dir=`pwd`
+# if [ $# -ge 7 ] ; then
+#   work_dir=$7
+# else
+#   work_dir="${HOME}/tmp/comp_validate_"`/bin/date -u +"%Y_%m_%dT%H_%M_%S"`
+#   mkdir ${work_dir}
+# fi
+
+     cd ${work_dir}
+
+     if [ $# -lt 6 ] ; then
+        help
+     fi
+
+
+     comp_name=$1
+     comp_version=$2
+     comp_tar_file_name=$3
+     comp_type=$4
+     comp_lang=$5
+     dep_type=$6
+
+     lang_ext=${comp_lang}
+
+     if [ $# -ge 8 ] ; then
+        dev_email=$8
+     else
+        dev_email=""
+     fi
+
+##OBSOLETE  Last support-sw for isdc_dircmp call :
+##OBSOLETE    current_support_sw='5.1'    
+
+##    uname -n >> ${log_file}
+##    printf "\n\n" >> ${log_file}
+
+     printf "\n>>>> Verify the tar-file\n" >> ${log_file}
+# verify the tar-file accessibility
+
+     if [ ! -f ${comp_tar_file_name} ] ; then
+
+        printf "***** Error: The gzip'ed tar-file: ${comp_tar_file} is NOT accessible. -> exit.\n" >> ${log_file}
+        exit_status=2;
+        return
+     else
+
+        printf ">>>>> The gzip'ed tar-file is accessible.\n" >> ${log_file}
+
+     fi
+
+     printf "\n" >> ${log_file}
+# Verify the tar file name
+
+     if [ "`$gnubin""basename ${comp_tar_file_name} 2>> ${verify_delivery_log}`" != "${comp_name}-${comp_version}.tar.gz" ] ; then
+
+        printf "***** Inconsistency: Actual tar-file name ${comp_tar_file_name} does not match expected one: ${comp_name}-${comp_version}.tar.gz \n" >> ${log_file}
+
+     else
+
+        printf ">>>>> Actual tar-file name ${comp_tar_file_name} matches expected one.\n" >> ${log_file}
+
+     fi
+
+     printf "\n" >> ${log_file}
+# Un-tar the stuff
+
+     if [ -d ${work_dir}/comp_2_validate ] ; then
+        /bin/rm -rf ${work_dir}/comp_2_validate/* 2>> ${verify_delivery_log}
+     else
+        mkdir ${work_dir}/comp_2_validate 2>>  ${verify_delivery_log}
+     fi
+
+     cd ${work_dir}/comp_2_validate 2>>  ${verify_delivery_log}
+
+     $gnubin""gunzip -c ${comp_tar_file_name} | $gnubin""tar xf - > ${work_dir}/comp_2_validate/tar.log 2>&1
+     tar_exit=$?
+     if [ ${tar_exit} -ne 0 ] ; then
+
+        printf "***** Error: tar command NOT successfully run. exit code is ${tar_exit} instead of 0." >> ${log_file}
+        $gnubin""cat  ${work_dir}/comp_2_validate/tar.log >> ${log_file}
+        exit_status=3
+        return
+
+     else
+
+        printf ">>>>> tar command successfully run.\n" >> ${log_file}
+
+     fi
+
+     printf "\n>>>> Check for the presence of the mandatory files\n" >> ${log_file}
+# check for the presence of the mandatory files
+
+     if [ "${comp_type}" = "AE" -o "${comp_type}" = "AS" ] ; then
+
+        list_of_file_ext="_main.${lang_ext} .${lang_ext} .h .par .txt"
+
+     elif [ "${comp_type}" = "LIB" ] ; then
+
+        list_of_file_ext=".${lang_ext} .h .par .txt"
+
+     else
+
+        list_of_file_ext=""
+
+     fi
+
+
+# first we check for the makeisdc1.in
+
+  file_2_check="makeisdc1.in"
+
+  if [ ! -f ${file_2_check} ] ; then
+
+     printf "***** Error: mandatory file ${file_2_check} NOT included in delivery\n" >> ${log_file}
+
+  else
+
+     printf ">>>>> mandatory file ${file_2_check} is included in delivery\n" >> ${log_file}
+
+  fi
+
+
+# then for the rest of the files
+
+  if [ ! -f "${comp_name}.pl" ] ; then
+
+     for file_ext_2_check in ${list_of_file_ext} ; do
+
+     file_2_check=${comp_name}${file_ext_2_check}
+
+     if [ ! -f ${file_2_check} ] ; then
+
+        printf "***** Error: mandatory file ${file_2_check} NOT included in delivery\n" >> ${log_file}
+
+     else
+
+        printf ">>>>> mandatory file ${file_2_check} is included in delivery\n" >> ${log_file}
+
+     fi
+
+  done
+
+  fi
+
+# look if component is ISDC or not :    
+  external_list="${isdc_cm_base}/databases/icms_external_packages.txt"
+  status_component=`grep "^${comp_name}" $external_list`       
+
+# Next check is for ISDC components only :
+  until [ $status_component ] ; do
+     printf "\n>>>> Check the TXT file for mandatory keywords\n"  >> ${log_file};
+# Call subroutine : (see above)
+     Check_mandatory_keywords;    
+     break;
+  done
+
+  cd ${work_dir}  2>> ${verify_delivery_log}
+
+  if [  "${dep_type}" = "custom" ] ; then
+
+     printf "\n>>>> Launch configure+make for dependencies\n"   >> ${log_file}
+     echo "yes" > ${ISDC_ENV}/yes_file
+
+     echo "" >> ${log_file}
+     echo "${isdc_cm_base}/scripts/icms_install.sh  ${work_dir}/dependencies_list    < ${ISDC_ENV}/yes_file " >> ${log_file}
+#   echo "ISDC_ENV : ${ISDC_ENV}" >> ${log_file}
+     echo "" >> ${log_file}
+
+     ${isdc_cm_base}/scripts/icms_install.sh  ${work_dir}/dependencies_list    < ${ISDC_ENV}/yes_file     >> ${log_file}
+
+     icms_install_exit=$?
+     if [ ${icms_install_exit} -ne 0 ] ; then
+        printf "\nDependencies Installation failed \n"   >> ${log_file}
+        exit_status=4
+        return
+     fi
+
+# Replace component directory by a softlink to keep ISDC_ENV organisation:
+     comp_path=`grep " ${comp_name} " /isdc/WWW/Project/components.htmli | awk '{print $2$3}'`
+     printf ">>> component path:  +$comp_path+\n"  >> ${verify_delivery_log}  
+
+     while [ $comp_path ] ; do
+
+# Build directory and subdirectories ('mkdir -p' does not work on linux)
+        list=`echo $comp_path | awk -F/ 'BEGIN{xx=""}{for (i=NF;i>=1;i--){ xx=$i" "xx};}END{print xx}'`;
+
+        tdir=$work_dir;
+
+        for word in `echo $list` ; do
+           tdir=$tdir"/"$word;
+           if [ ! -d $tdir ] ; then
+              mkdir $tdir;
+           fi;
+        done;
+
+        \rm -rf ${work_dir}/${comp_path};
+
+        ln -s ${work_dir}/comp_2_validate ${work_dir}/${comp_path};
+
+        break;
+
+     done
+
+  else
+
+     printf "\n>>>> Launch configure+make \n"   >> ${log_file}
+
+  fi
+
+  until [ $status_component ] ; do
+     if [ ! -f $ISDC_ENV/bin/ac_stuff/configure ] ; then
+        printf "\nDependencies Installation failed  \n"   >> ${log_file}
+        exit_status=4
+        return
+     fi
+     status_component="ISDC"
+  done
+
+
+# configure 
+  cd ${work_dir}/comp_2_validate 2>> ${verify_delivery_log}
+  date > config_2_screen.log
+  if [ $status_component = "ISDC" ] ; then
+     printf ">> $ISDC_ENV/bin/ac_stuff//configure\n" >> ${log_file}
+     $ISDC_ENV/bin/ac_stuff/configure >> config_2_screen.log 2>&1
+  else
+     printf ">> ./configure\n" >> ${log_file}
+        ./configure >> config_2_screen.log 2>&1
+  fi
+  config_exit=$?
+  date >> config_2_screen.log
+  if [ ${config_exit} -ne 0 ] ; then
+
+     printf "***** Error: configure script NOT successfully run for component to validate. Exit code is ${config_exit} instead of 0.\n" >> ${log_file}
+     $gnubin""cat ${work_dir}/comp_2_validate/config_2_screen.log >> ${log_file}
+     exit_status=5
+     return
+  else
+     printf ">>>>> configure script successfully run for component to validate.\n" >> ${log_file}
+
+  fi
+
+
+# Add target to makeisdc1.in :
+  Makefile="${work_dir}/comp_2_validate/Makefile" 
+  /bin/cat ${isdc_cm_base}/scripts/icms_unit_test.in >>  ${Makefile}
+
+
+# Make
+  timeNow=`/bin/date -u +"%Y-%m-%dT%H:%M:%S"`
+
+  if [ $status_component != "ISDC" ] ; then
+
+     printf ">>>> Launch make \n"   >> ${log_file}
+     /isdc/reference/bin/make  > make.log 2>&1
+     make_exit=$?
+     if [ ${make_exit} -ne 0 ] ; then
+
+        printf "***** Error: make NOT successfully run for component to validate. Exit code is ${make_exit} instead of 0.\n" >> ${log_file}
+        $gnubin""cat ${work_dir}/comp_2_validate/make.log >> ${log_file}
+        exit_status=6
+        return
+
+     else
+
+        printf ">>>>> make successfully run for component to validate.\n" >> ${log_file}
+
+     fi
+
+  else
+
+     printf ">>>> Launch make install\n"   >> ${log_file}
+     /isdc/reference/bin/make install > make.log 2>&1
+     make_exit=$?
+     if [ ${make_exit} -ne 0 ] ; then
+
+        printf "***** Error: make NOT successfully run for component to validate. Exit code is ${make_exit} instead of 0.\n" >> ${log_file}
+        $gnubin""cat ${work_dir}/comp_2_validate/make.log >> ${log_file}
+        exit_status=6
+        return
+
+     else
+
+        printf ">>>>> make successfully run for component to validate.\n" >> ${log_file}
+
+     fi
+
+# make has finished without problems -> see if the stuff is installed
+
+     if [ "${comp_type}" = "AE" -o "${comp_type}" = "AS" -o "${comp_type}" = "S" ]; then
+
+        printf  "\n"   >> ${log_file}
+# the binary executable
+
+        if [ ! -f installed_locally/bin/${comp_name} ] ; then
+
+           printf "***** Error: binary executable NOT installed.\n" >> ${log_file}
+
+        else
+
+           printf ">>>>> binary executable installed\n" >> ${log_file}
+
+        fi
+
+        printf  "\n"  >> ${log_file}
+# the parameter file
+
+        if [ ! -f installed_locally/pfiles/${comp_name}.par ] ; then
+
+           printf "***** Error: parameter file \"${comp_name}.par\" NOT installed\n" >> ${log_file}
+
+        else
+
+           printf ">>>>> parameter file \"${comp_name}.par\" installed\n" >> ${log_file}
+
+        fi
+
+        printf  "\n>>>> execute the binary to access the version information\n"  >> ${log_file}
+
+        subdirs=`grep "SUBDIRS   +"  makeisdc1.in | awk '{print $3}'`
+
+        flag_script=0
+
+        for sc in `echo $subdirs` ; do
+
+           flag_component=`echo $sc | grep '\-sw' ` ;
+
+           until [ $flag_component ] ; do
+
+              flag_script=1;
+              break;
+
+           done
+
+        done
+
+        if [ $flag_script = 1 ] ; then
+
+
+           printf  "\n>>>> $comp_name is an analysis script and no version number has to be displayed \n"  >> ${log_file};
+
+        else
+
+#       version_string=`./${comp_name} --v > pidversion &` ;
+           version_string=`./installed_locally/bin/${comp_name} --v > pidversion &` ;
+           sleep 25;
+
+           version_string=`cat pidversion |  $gnubin""grep Log_1 | $gnubin""cut -d":" -f3 | sed -e 's/^ //g'`;
+
+# Kills persistent sub-processes
+           pid=`ps -ef | grep "[0-9] ./${comp_name} --v" | awk '{print $2}'`;
+
+           while [ $pid ] ; do
+
+              printf "PID: $pid \n" >> ${log_file};
+              printf "Killing this process.\n" >> ${log_file};
+              kill -9 $pid;
+
+              break;
+
+           done
+
+           if [ "${version_string}" != "${comp_name} ${comp_version}" ] ; then
+
+              printf "***** Error: The version string from the executable (== +${version_string}+) does NOT match the expected version string (== +${comp_name} ${comp_version}+).\n" >> ${log_file} ;
+
+
+              if [ "${comp_type}" = "AE" ] ; then
+
+                 exit_status=7;
+                 return;
+
+              fi
+
+           else
+
+              printf ">>>>> The version string from the executable (== ${version_string}) matches the expected version string.\n" >> ${log_file} ;
+
+           fi
+
+        fi 
+
+     else
+        printf  "\n"  >> ${log_file}
+# the binary executable
+
+        libfullname=`grep 'LIB_FULL_NAME' makeisdc1.in | head -1 |awk '{print $NF}'` 
+        until [ $libfullname ] ; do
+           libfullname="lib${comp_name}.a"
+           break;
+        done
+
+        if [ ! -f installed_locally/lib/${libfullname} ] ; then
+
+           printf "***** Error: library ${libfullnamelib} NOT installed\n" >> ${log_file}
+
+        else
+
+           printf ">>>>> Library ${libfullname} installed\n" >> ${log_file}
+
+        fi
+
+     fi
+
+  fi
+
+# Check the help file :
+#######################    
+
+  printf  "\n>>>> The help file:\n"   1>>${log_file}
+
+  if [ ! -f installed_locally/help/${comp_name}.txt  -a  ! -f installed_locally/help/${comp_name}.ps ] ; then
+
+     printf "***** Error: help file NOT installed\n" >>${log_file} 
+
+  else
+
+     printf ">>>>> help file installed\n" >>${log_file}
+
+  fi
+
+# Perform the gcc (lint replaced) :
+###################################
+  cfiles='*.c *.cpp *.cc *.CC *.Cpp *.cxx' 
+
+  c_language=`( ls $cfiles | head -1 ) 2>> ${verify_delivery_log}`
+# printf ">>>>> $c_language : \n"  >>${log_file}
+  printf "\n"  >>${log_file}
+
+  while [ $c_language ] ; do
+     printf  ">>>> gcc COMPILER WARNINGS \n"   1>>${log_file}
+
+     for cfile in `ls $cfiles` ; do
+        ( gcc -Wall -I. -I${ISDC_ENV}/include -I${ROOTSYS}/include -I${work_dir}/comp_2_validate/installed_locally/include -c $cfile ) 1>> ${log_file} 2>&1 ;
+        \rm *.o;
+     done
+
+#   printf  ">>>> Perform the lint\n"   1>>${log_file}
+#   if [ $os = "SunOS" ] ; then
+#     printf ">>>>> Output from lint : \n"  >>${log_file}
+#     (lint -Nlevel=4 -I${ISDC_ENV}/include -I. -c -errhdr=%all *.c ) 1>>${log_file} 2>&1 ;
+#   else
+#     printf ">>>>> Output from splint : \n"  >>${log_file}
+#     SPLINT="/home/isdc/isdc_lib/splint-3.0.1.6/src/splint"
+#     ($SPLINT -I${ISDC_ENV}/include -I.  *.c ) 1>>${log_file} 2>&1 ;
+#   fi
+
+     break;
+  done
+
+# pfiles :
+  if [ ! -d   ${work_dir}/pfiles ] ; then
+     mkdir ${work_dir}/pfiles
+  fi
+  ( cp *.par ${work_dir}/pfiles ) 2>>  ${verify_delivery_log}
+
+# share files: 
+  share_dir="${work_dir}/comp_2_validate/installed_locally/share"
+  for share_file in `ls ${share_dir} ` ; do
+     if [ ! -f $ISDC_ENV/share/${share_file} ] ; then
+        ln -s ${share_dir}/${share_file} ${ISDC_ENV}/share/${share_file}
+     fi
+  done
+
+
+
+# Performs unit test :
+######################
+
+  ut_exist=`( ls -d unit_test) 2>>  ${verify_delivery_log}`
+
+  until [ $ut_exist ] ; do
+     printf "\n>>>> Environment used:\n"  >>${log_file} ;
+     $librarian/WWW/cgi-bin/echoEnv.csh >> ${log_file} 2>&1 ;
+     break;
+  done
+
+  while [ $ut_exist ] ; do
+     ISDC_TEST_DATA_DIR=${work_dir}/test_data ; export ISDC_TEST_DATA_DIR ;
+
+     printf "\n>>>> Environment used:\n"  >>${log_file} ;
+     $librarian/WWW/cgi-bin/echoEnv.csh >> ${log_file} 2>&1 ;
+     printf "\n"  >>${log_file} ;
+
+     printf "\n>>>> Perform unit test\n"  >>${log_file} ;
+
+     here=`pwd`;
+
+# Generate links to ISDC_TEST_DATA_DIR files :
+     cd $ISDC_TEST_DATA_DIR ;
+     for file in `ls -d /isdc/testdata/unit_test/*` ; do 
+        bname=`basename $file`;
+        ln -s $file $bname; 
+     done
+
+     if [ ! -d ${ISDC_IC_TREE} ] ;  then
+        ic_dir="$ISDC_TEST_DATA_DIR/ic_tree"
+        echo "\n>> Could not find ${ISDC_IC_TREE}" >> ${log_file} ;
+        \rm $ic_dir    # erase link
+        mkdir $ic_dir
+        ic_tree_number=`echo ${ISDC_IC_TREE} | awk -F/ '{print $NF}'` ;
+        mkdir $ic_dir/${ic_tree_number}
+        cd ${ic_dir}/${ic_tree_number}
+
+        ic_tar_name="/isdc/release/tar_gz/ic_dev/ic_dev-${ic_tree_number}.tar.gz" ;
+        if [ ! -f ${ic_tar_name} ] ; then
+
+           ic_tar_name="/isdc/testdata/unit_test/ictree-${ic_tree_number}.tar.gz" ;
+
+        fi 
+
+        if [ -f ${ic_tar_name} ] ; then
+
+           echo "\n>> Untaring ${ic_tar_name} in ${ic_dir}/${ic_tree_number}" >> ${log_file} ;
+           $gnubin""gunzip -c ${ic_tar_name} | $gnubin""tar xf - >> ${log_file} ;
+           tar_exit=$? ;
+           if [ ${tar_exit} -ne 0 ] ; then
+              echo "\n>> Could not untar ${ic_tar_name}" >> ${log_file} ;
+           fi
+
+        else
+
+           echo "\n>> No tar file found for given ic" >> ${log_file};
+
+        fi
+
+
+     fi
+
+     cd $here ;
+
+# Remove existing unit_test/out
+     if [ -d unit_test/out ] ;  then 
+        chmod -Rf a+r unit_test/out
+     find unit_test -type "d" -exec chmod a+x {} \;
+     \rm -rf unit_test/out    
+  fi 
+
+# Unit test output 
+  ( make test ) 1>>${log_file} 2>&1 ;
+  make_exit=$?
+
+
+# Performs isdc_dircmp :
+########################
+  outref_exist=`( ls -d unit_test/outref ) 2>> ${verify_delivery_log}` ;
+
+  while [ $outref_exist ] ; do
+
+     printf "\n>>>> Perform isdc_dircmp\n"  >>${log_file} ;
+
+     cd ${work_dir}/comp_2_validate;
+
+     ( $ISDC_DIRCMP --v ) >> ${log_file} 2>&1 ;
+
+     make dircmp_only
+     cat make_test_dircmp.log >> ${log_file} 2>&1;
+
+     break;
+  done
+
+
+  break;
+  done
+
+
+# Untar the previous version of the component to check for .par file changes.
+#############################################################################
+
+  echo "Parameter change check - BEG " >> ${verify_delivery_log};
+
+  prevVersionTarFile=""
+# Dash is crucial in $comp_name-* below to make sure to get the right component
+# (eg. not get dal_copy confused with dal).
+  prevVersionTarFile=`ls -1rt $librarian/archive/deliveries/$comp_name-* 2> /dev/null|tail -1`
+  echo "prevVersionTarFile: + $prevVersionTarFile +" >> ${verify_delivery_log};
+
+  if [ "$prevVersionTarFile" = "" ] ; then 
+     echo "empty: + $prevVersionTarFile +" >> ${verify_delivery_log};
+  else 
+     echo "found: + $prevVersionTarFile +" >> ${verify_delivery_log};
+     cd ${work_dir};
+     mkdir -p previousVersion;
+     cd previousVersion;
+     tar zxvf $prevVersionTarFile;
+     versionNum=`basename $prevVersionTarFile .tar.gz`;
+     versionNum=`echo $versionNum|sed s/$comp_name\-//`;
+     echo "$comp_name $versionNum" > VERSION
+  fi
+
+  echo "Parameter change check - END " >> ${verify_delivery_log};
+
+
+
+# That's it. All checks are done. Bye, bye
+  return 
+  }
+
+
+###############################################################################
+#################################   MAIN   ####################################
+###############################################################################
+  os=`uname`
+  checkdir="/isdc/isdc_lib/CHECK_DELIVERIES"
+
+  isdc_cm_base=/home/isdc/isdc_cms/icms ; export isdc_cm_base
+  librarian=/home/isdc/isdc_lib; export librarian
+
+
+  PERL5LIB=${isdc_cm_base}/scripts ; export PERL5LIB
+  PERLLIB=${isdc_cm_base}/scripts ; export PERLLIB
+
+  funcname="verify_delivery.sh"
+  FUNCVERSION="2.02"
+
+  if [ $# -ge 7 ] ; then
+     work_dir=$7
+  else
+     work_dir="${HOME}/tmp/comp_validate_"`/bin/date -u +"%Y_%m_%dT%H_%M_%S"`
+     mkdir ${work_dir}
+  fi
+
+  verify_delivery_log=${work_dir}/verify_delivery.log
+  log_file=${work_dir}/comp_validate.log
+  LOGUSR=$work_dir"/comp_validate.log";
+  LOGNNN=$work_dir"/delivery_compile.log";
+
+  timeNow="Log_1   "`/bin/date -u +"%Y-%m-%dT%H:%M:%S"`":"
+  echo "$timeNow $funcname $FUNCVERSION --BEG--" >>  $LOGNNN
+
+  until [ $os ] ; do
+     timeNow="ERROR_1 "`/bin/date -u +"%Y-%m-%dT%H:%M:%S"`":"
+     echo "$timeNow OS could not be determined.  Aborting..." >> $LOGNNN;
+     exit 1;
+  done
+
+  if [ $os = "SunOS" ] ; then
+     gnubin="/unige/gnu/bin/"
+     EGREP="/usr/bin/egrep"
+  else
+     EGREP="/bin/egrep"
+     gnubin=""
+  fi
+
+  exit 0 ##############
+
+# Launch the processing
+  verify_delivery $1 $2 $3 $4 $5 $6 $7 $8
+
+  echo "$funcname $FUNCVERSION end   Exit status: $exit_status" >> $LOGNNN
+
+# Install auxiliary files for registration
+  RECORD_VERSION=`cat ${work_dir}/infos.* | $EGREP '(comp_name|version)' | awk 'BEGIN{xx=""}{xx=xx" "substr($0,index($0,">")+1)}END{print xx}'`
+
+
+  echo ${RECORD_VERSION} > ${work_dir}/RECORD_VERSION
+  printf ">>>>> TEST TEST ${work_dir}. +${RECORD_VERSION}+\n" >> $LOGNNN
+
+  if [ ! -f ${work_dir}/RECORD_VERSION ] ; then
+     echo "${work_dir}/RECORD_VERSION not created" >> ${verify_delivery_log}
+  fi
+
+  if [ -f ${work_dir}/comp_validate.log ] ; then
+     ln -s ${work_dir}/comp_validate.log ${work_dir}/the_testing
+  fi
+
+  if [ ! -f ${work_dir}/the_testing ] ; then
+     echo "${work_dir}/the_testing not created" >> ${verify_delivery_log}
+  fi
+
+# Give read access to the results
+  chmod -Rf a+r ${work_dir}
+  find ${work_dir} -type "d" -exec chmod a+x {} \;
+
+  while [ ${dev_email} ] ; do
+     send_mail_and_exit;
+     break;
+  done 
+
+# remove remaining trigger files in case of abortion
+  work_dirnumber=`echo ${work_dir} | awk -F/ '{print $NF}' `
+  work_dirname=`ls -l ${checkdir} | grep ${work_dirnumber} | awk '{if (index($0,"->")!=0){print $9}}'`
+  test_dirname=`ls -l ${checkdir} | grep ${work_dirnumber}`
+
+  echo "++work_dirnumber : ${work_dirnumber}++" >> ${verify_delivery_log}
+  echo "++test_dirname : ${test_dirname}++"     >> ${verify_delivery_log}
+  echo "++work_dirname : ${work_dirname}++"     >> ${verify_delivery_log}
+
+  until [ $work_dirname ] ; do
+     echo "++${work_dirnumber}++"                   >> ${verify_delivery_log}
+     echo "Cannot find trigger file"                >> ${verify_delivery_log}
+     echo "No link associated to ${work_dirnumber}" >> ${verify_delivery_log}
+     break;
+  done
+
+
+  if [ -f ${checkdir}/trigger_${work_dirname} ] ; then
+     mv trigger_${work_dirname} ${checkdir}/processed_trigger_files
+     if [ -f ${checkdir}/trigger_${work_dirname} ] ; then
+        echo "Could not remove trigger file trigger_${work_dirname}" >> ${verify_delivery_log}
+     fi
+  fi
+
+  timeNow="Log_1   "`/bin/date -u +"%Y-%m-%dT%H:%M:%S"`":"
+  echo "$timeNow $funcname $FUNCVERSION --END--" >>  $LOGNNN
+
+  exit
+
+# Last line.

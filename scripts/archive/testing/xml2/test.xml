@@ -1,0 +1,29 @@
+<perldata>
+ <hashref memory_address="0x321b0">
+  <item key="A">
+   <hashref memory_address="0x22acc">
+    <item key="id">Test id</item>
+    <item key="name">Test name</item>
+    <item key="text1">Each scheme will be tried in turn in the hope of finding a cached pre-parsed representation of the XML file. If no cached copy is found, the file will be parsed and the first cache scheme in the list will be used to save a copy of the results. The following cache schemes have been implemented:</item>
+    <item key="text2">Each scheme will be tried in turn in the hope of finding a cached pre-parsed representation of the XML file. If no cached copy is found, the file will be parsed and the first cache scheme in the list will be used to save a copy of the results. The following cache schemes have been implemented:</item>
+   </hashref>
+  </item>
+  <item key="B">
+   <hashref memory_address="0x38b8c">
+    <item key="arr">
+     <arrayref memory_address="0x38bbc">
+      <item key="0">This</item>
+      <item key="1">is</item>
+      <item key="2">a</item>
+      <item key="3">test</item>
+      <item key="4">array</item>
+     </arrayref>
+    </item>
+    <item key="id">Test id</item>
+    <item key="name">Test name</item>
+    <item key="text">Each scheme will be tried in turn in the hope of finding a cached pre-parsed representation of the XML file. If no cached copy is found, the file will be parsed and the first cache scheme in the list will be used to save a copy of the results. The following cache schemes have been implemented:Test id</item>
+   </hashref>
+  </item>
+ </hashref>
+</perldata>
+

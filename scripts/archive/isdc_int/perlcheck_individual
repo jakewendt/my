@@ -1,0 +1,70 @@
+#!/isdc/sw/perl/5.6.0/WS/prod/bin/perl
+die "*******     ERROR:  must give script or --h as argument!\n" unless ($ARGV[0]);
+
+if ($ARGV[0] =~ /--h/) {
+	print "\nUSAGE:  perlcheck <scriptname> [-d]\n\n"
+		."where script name may be a path to a script or just  the name, where it must \n"
+		."then be found by the \'which\' command.  This will create a temporary copy \n"
+		."in HOME without the /bin/sh lines which set the Perl version on the fly but \n"
+		."make compilation testing impossible.  It then runs \'perl -c\' on that temporary \n"
+		."version before removing it.  If -d is specified, \'perl -d\' is run instead, "
+		."to allow interactive debugging.\n";
+	exit;
+}
+
+my @output;
+my $debug;
+
+if (-e "$ARGV[0]") {
+	$script = $ARGV[0];
+}
+else {
+	@output = `which $ARGV[0]`;
+	# us last line;  may come after "Warning: ridiculously long PATH truncated"
+	$script = $output[$#output];
+	chomp $script;
+}
+if ( (defined $ARGV[1]) && ($ARGV[1] =~ /-d/)) {
+	$debug++;
+}
+
+
+open (TMP,">$ENV{HOME}/tmpscript.pl") or die "******     ERROR:  cannot open $ENV{HOME}/tmpscript.pl to write.\n";
+
+open (SCRIPT,"$script") or die "*******     ERROR:  cannot open $script to read.\n";
+
+while(<SCRIPT>) {
+	# Skip the first two lines which look like:
+	#  #! /bin/sh
+	#  eval '  exec perl -x $0 ${1+"$@"} '
+	next if ( /^#!\s*\/bin\/sh/ );
+	next if (/^eval/);
+	#  Replace #! perl line with #!/path/to/perl	  
+	s:#! perl:#!/isdc/sw/perl/5.6.0/WS/prod/bin/perl -w: ;
+	print TMP $_;
+}
+
+close TMP;
+close SCRIPT;
+
+if ( ($#ARGV >= 2) && ($debug))  {
+	my $i;
+	my $command = "perl -d $ENV{HOME}/tmpscript.pl ";
+	#  0 and 1 are the script and -d respectively;  start with 2
+	for ($i = 2; $i <= $#ARGV ; $i++) {
+		$command .= "$ARGV[$i] ";
+	}
+	system("$command");
+}
+elsif ($debug) {
+	system("perl -d $ENV{HOME}/tmpscript.pl");
+}
+else {
+	system("perl -c $ENV{HOME}/tmpscript.pl") unless ($debug);
+}
+
+
+unlink "$ENV{HOME}/tmpscript.pl" unless ($?);
+
+exit;
+

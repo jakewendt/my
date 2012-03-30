@@ -1,0 +1,10 @@
+#!/usr/bin/sh -f
+#
+#  This is a failed attempt to set up a way to nice the xpoll 
+#  processes only on the Office net.  But this doesn't work.
+#  The only thing I found that did work was putting the nice 
+#  command in the TASK line in the resource files, but that 
+#  can't be easily done and undone for different cases.
+#/usr/bin/nice -15 /isdc/sw/opus/3v2/opus/bin/sparc_solaris//xpoll $*
+/isdc/sw/opus/3v2/opus/bin/sparc_solaris//xpoll $*
+

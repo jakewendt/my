@@ -1,0 +1,35 @@
+#######################################################################
+#                                                                     #
+#                    INTEGRAL SCIENCE DATA CENTRE                     #
+#                                                                     #
+#                          ALERT MANAGEMENT                           #
+#                                                                     #
+#                            ALERT COPY                               #
+#                                                                     #
+#                                                                     #
+#  File:      am_cp.par                                               #
+#  Version:   3.3                                                     #
+#  Component: am_cp             			              #
+#                                                                     #
+#  Authors:   Reiner Rohlfs (RR)                                      #
+#             ISDC                                                    #
+#                                                                     #
+#  Purpose:   Parameter file of the am_cp executable                  #
+#                                                                     #
+#  Revision History:                                                  #
+#                                                                     #
+#  version 1.0: 08/06/98 RR  First version                            #
+#               17/07/00 RR  new Parameter: OutDir2                   #
+#          3.3: 10/08/01 RR  new Parameter: ScWIndex                  #
+#                                                                     #
+#######################################################################
+
+OutDir,s,h,,,,"First Directory to which the output file schould be copied"
+OutDir2,s,h,,,,"Second Directory to which the output file schould be copied"
+Subsystem,s,h,,,,"Subsystem that creates the alert file in the current directory"
+DataStream,s,h,,,,"Data Stream that cause the alert: realTime, consolidated or unknown"
+ScWIndex,s,h,,,,"DOL of a science window index of level prp"
+test-1,s,h,,,,"DOL of a science window index of level prp"
+test+1,s,h,,,,"DOL of a science window index of level prp"
+test.1,s,h,,,,"DOL of a science window index of level prp"
+

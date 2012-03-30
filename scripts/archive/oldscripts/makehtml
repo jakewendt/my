@@ -1,0 +1,3 @@
+#!/bin/sh
+
+/bin/ls -1 *.jpg | awk -F. '{print "<a href=\"../images/30p/"$1"_30p.jpg\"><img src=\"../thumbs/05p/"$1"_thumb.jpg\" border=\"NONE\"></a>"}' 
