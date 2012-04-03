@@ -1,6 +1,6 @@
 #!/bin/sh -x
 
-Date=`date "+%y%m%d%H%M%S"`
+Date=`date "+%Y%m%d%H%M%S"`
 
 BackupDir=/Volumes/Passport/Backups/MBP
 
@@ -31,15 +31,18 @@ fi
 /usr/bin/rsync -rltpvz \
 	--progress \
 	--extended-attributes \
-	--delete --backup --backup-dir rsync-backup-$Date \
+	--delete --backup --backup-dir rsync-backup-deleted-$Date \
 	--exclude="AppleWorks User Data" \
 	--exclude="Acrobat User Data" \
 	--exclude="Android" \
 	--exclude="Desktop/Incomplete" \
 	--exclude="Downloads/*.mp4" \
 	--exclude="Downloads/**/*.mp4" \
+	--exclude="Downloads/**/*.wmv" \
 	--exclude="Eclipse" \
+	--exclude="Incomplete" \
 	--exclude="Library/Preferences/Macromedia" \
+	--exclude="Library/Application Support/Adobe/Adobe Device Central CS3" \
 	--exclude="Library/Application Support/Garmin/Maps/*.gmap" \
 	--exclude="Library/Application Support/SyncServices" \
 	--exclude="Library/Caches" \
@@ -50,10 +53,14 @@ fi
 	--exclude="Podcasts" \
 	--exclude="Roxio Converted Items" \
 	--exclude="Microsoft User Data" \
+	--exclude="Xtorrent" \
 	--exclude="Temp" \
 	--exclude="hosting_rails/prod/sites/www/*.m4v" \
 	--exclude="TV Shows" \
+	--exclude="Viewed" \
 	--exclude="rsync-backup*" \
+	--exclude="rsync-backup-deleted*" \
+	--exclude="temp" \
 	--exclude="log/*.log" \
 	--exclude=.DS_Store \
 	--exclude=.fseventsd \
@@ -72,21 +79,21 @@ fi
 #	Need to use extended attributes to preserve iPhoto Library
 #	unfortunately, it copies so much extra 
 #	So many pointless FinderInfo and quarantine extended attributes on MY files
-
-Date=`date "+%y%m%d%H%M%S"`
-
-/usr/bin/rsync -rltpvz --progress \
-	--delete --backup --backup-dir rsync-backup-$Date \
-	--extended-attributes \
-	--exclude=rsync-backup\* \
-	--exclude=.DS_Store \
-	--exclude=temp \
-	--exclude=Viewed \
-	--exclude=Incomplete \
-	--exclude=Xtorrent \
-	--exclude=\*NOT_BACKED_UP\* \
-	--exclude="Downloads/*.mp4" \
-	--exclude="Downloads/**/*.mp4" \
-	--exclude="Downloads/**/*.wmv" \
-	/Users/Shared/ $BackupDir/Shared/
-
+#
+#Date=`date "+%y%m%d%H%M%S"`
+#
+#/usr/bin/rsync -rltpvz --progress \
+#	--delete --backup --backup-dir rsync-backup-$Date \
+#	--extended-attributes \
+#	--exclude=rsync-backup\* \
+#	--exclude=.DS_Store \
+#	--exclude=temp \
+#	--exclude=Viewed \
+#	--exclude=Incomplete \
+#	--exclude=Xtorrent \
+#	--exclude=\*NOT_BACKED_UP\* \
+#	--exclude="Downloads/*.mp4" \
+#	--exclude="Downloads/**/*.mp4" \
+#	--exclude="Downloads/**/*.wmv" \
+#	/Users/Shared/ $BackupDir/Shared/
+#

@@ -1,6 +1,6 @@
 #!/bin/sh -x
 
-Date=`date "+%y%m%d%H%M%S"`
+Date=`date "+%Y%m%d%H%M%S"`
 
 BackupDir=/Volumes/LaCie328/Backups/MBP
 
@@ -35,7 +35,7 @@ fi
 /usr/bin/rsync -rltpvz \
 	--progress \
 	--extended-attributes \
-	--delete --backup --backup-dir rsync-backup-$Date \
+	--delete --backup --backup-dir rsync-backup-deleted-$Date \
 	--exclude="AppleWorks User Data" \
 	--exclude="Acrobat User Data" \
 	--exclude="Android" \
@@ -45,7 +45,9 @@ fi
 	--exclude="Desktop/**/*/*.mp4" \
 	--exclude="Downloads/**/*.mp4" \
 	--exclude="Eclipse" \
+	--exclude="Incomplete" \
 	--exclude="Library/Preferences/Macromedia" \
+	--exclude="Library/Application Support/Adobe/Adobe Device Central CS3" \
 	--exclude="Library/Application Support/Garmin/Maps/*.gmap" \
 	--exclude="Library/Application Support/SyncServices" \
 	--exclude="Library/Caches" \
@@ -57,7 +59,11 @@ fi
 	--exclude="Microsoft User Data" \
 	--exclude="Temp" \
 	--exclude="TV Shows" \
+	--exclude="Viewed" \
+	--exclude="Xtorrent" \
 	--exclude="rsync-backup*" \
+	--exclude="rsync-backup-deleted*" \
+	--exclude="temp" \
 	--exclude="log/*.log" \
 	--exclude=.fseventsd \
 	--exclude=.rvm \
@@ -78,20 +84,20 @@ fi
 #	/Users/jake/Documents/ $BackupDir/jake/Documents/
 
 #	added extended-attributes for iPhoto Library
-
-Date=`date "+%y%m%d%H%M%S"`
-/usr/bin/rsync -rltpvz --progress \
-	--delete --backup --backup-dir rsync-backup-$Date \
-	--extended-attributes \
-	--exclude=rsync-backup\* \
-	--exclude="Downloads/**/*.mp4" \
-	--exclude=temp \
-	--exclude=Viewed \
-	--exclude=Incomplete \
-	--exclude=Xtorrent \
-	--exclude=\*NOT_BACKED_UP\* \
-	/Users/Shared/ $BackupDir/Shared/
-
+#
+#Date=`date "+%y%m%d%H%M%S"`
+#/usr/bin/rsync -rltpvz --progress \
+#	--delete --backup --backup-dir rsync-backup-$Date \
+#	--extended-attributes \
+#	--exclude=rsync-backup\* \
+#	--exclude="Downloads/**/*.mp4" \
+#	--exclude=temp \
+#	--exclude=Viewed \
+#	--exclude=Incomplete \
+#	--exclude=Xtorrent \
+#	--exclude=\*NOT_BACKED_UP\* \
+#	/Users/Shared/ $BackupDir/Shared/
+#
 #/usr/bin/rsync -rltpvz \
 #	--progress \
 #	--delete --backup --backup-dir rsync-backup-$Date \

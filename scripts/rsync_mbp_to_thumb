@@ -162,4 +162,4 @@ fi
 #	--exclude="log/*.log" \
 #	/Users/jake/Documents/ $BackupDir/Documents/
 
-touch $BackupDir/`date "+%y%m%d:%H%M%S"`
+touch $BackupDir/`date "+%Y%m%d:%H%M%S"`
