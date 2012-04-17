@@ -83,6 +83,7 @@ fi
 	--exclude="Podcasts" \
 	--exclude="Roxio Converted Items" \
 	--exclude="Scanner Output" \
+	--exclude="Shared" \
 	--exclude="Sites" \
 	--exclude="Temp" \
 	--exclude="TV Shows" \
