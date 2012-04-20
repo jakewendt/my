@@ -13,6 +13,7 @@ rsync -avz \
 	--exclude="prod/sites/googleearth" \
 	--exclude="svn_old_server" \
 	--exclude=".trash" \
+	--exclude="subdomains/*/log/*.log" \
 	--exclude="prod/sites/*/log/*.log" \
 	--exclude="prod/sites/my_tmp" \
 	--exclude="prod/sites/my.090712" \
