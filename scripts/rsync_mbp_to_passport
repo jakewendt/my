@@ -28,6 +28,11 @@ fi
 #	--exclude="Records" \
 #	--exclude="EncryptedRecords" \
 #	--exclude="Records.sparsebundle" \
+#
+#	contains copies of those in Movies.
+#	may want to just have these if start doing more video
+#	--exclude="Movies/iMovie Events.localized" \
+
 /usr/bin/rsync -rltpvz \
 	--progress \
 	--extended-attributes \
