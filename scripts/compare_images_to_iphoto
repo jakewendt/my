@@ -1,0 +1,17 @@
+#!/usr/local/bin/ruby
+
+##!/bin/sh
+#
+#for file in `ls -1`
+#do
+#	echo $file
+#	ls -l $file
+#	ls -l "/Users/jake/Pictures/iPhoto\ Library/Originals/*/*/${file}"
+#done
+
+Dir['*'].each do |file|
+	puts file
+	puts `ls -l "#{file}"`
+#	apparenly can't quote the stars
+	puts `ls -l "/Users/jake/Pictures/iPhoto Library/Originals"/*/*/"#{file}"`
+end
