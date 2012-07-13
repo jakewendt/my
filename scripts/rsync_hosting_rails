@@ -18,5 +18,6 @@ rsync -avz \
 	--exclude="prod/sites/my_tmp" \
 	--exclude="prod/sites/my.090712" \
 	--exclude="/svn" \
+	--exclude=".svn" \
 	--progress \
 	jakewen@jakewendt.com: ~/hosting_rails/

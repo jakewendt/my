@@ -8,7 +8,8 @@ if ($?prompt) then		# For interactive shells only (ie. not scripts):
 	setenv JEWELER_OPTS "--testunit"
 
 #	setenv GEM_HOME /usr/lib/ruby/user-gems/1.8
-	setenv GEM_HOME /usr/lib/ruby/gems/1.8
+#	setenv GEM_HOME /usr/lib/ruby/gems/1.8
+	setenv GEM_HOME /opt/local/lib/ruby1.9/gems/1.9.1
 
 #	if ( -e /usr/bin/envv ) then
 #		setenv ENVV /usr/bin/envv
@@ -30,7 +31,8 @@ if ($?prompt) then		# For interactive shells only (ie. not scripts):
 #	eval `$ENVV del PATH .`
 
 #setenv PATH /opt/local/bin:/usr/local/mysql/bin:/usr/local/bin:$PATH\:$HOME/local/bin:$HOME/my/scripts:.:/Applications/ImageMagick-6.3.5/bin
-setenv PATH /opt/local/bin:/opt/local/sbin:/usr/local/mysql/bin:/usr/local/bin:${PATH}:$HOME/local/bin:$HOME/my/scripts:.
+#setenv PATH /opt/local/bin:/opt/local/sbin:/usr/local/mysql/bin:/usr/local/bin:${PATH}:$HOME/local/bin:$HOME/my/scripts:.
+setenv PATH /opt/local/bin:/opt/local/sbin:/opt/local/lib/mysql55/bin:/usr/local/bin:${PATH}:$HOME/local/bin:$HOME/my/scripts:.
   
 #	if ( ( $USER == "jakewendt" ) || ( $USER == "jake" ) || ( $USER == "Guest" ) || ( $USER == "admin" ) ) then
 		#	Apple stuff
