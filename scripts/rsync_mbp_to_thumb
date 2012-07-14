@@ -47,7 +47,8 @@ fi
 #	--exclude="Library/Application Support/Firefox" \
 #	--extended-attributes \
 
-/usr/bin/rsync -avzX \
+#/usr/bin/rsync -avzX \
+rsync -avzX \
 	--progress \
 	--delete \
 	--delete-excluded \

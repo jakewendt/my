@@ -35,7 +35,10 @@ fi
 #	--exclude="Movies/iMovie Events.localized" \
 #	--extended-attributes \
 
-/usr/bin/rsync -rltpvzX \
+#/usr/bin/rsync -rltpvzX \
+#rsync -rltpvzX \
+#	Newer versions of rsync use -X instead of --extended-attributes which is much better
+rsync -avzX \
 	--progress \
 	--delete --backup --backup-dir rsync-backup-deleted-$Date \
 	--exclude="AppleWorks User Data" \
@@ -56,6 +59,7 @@ fi
 	--exclude="Library/Internet Plug-Ins" \
 	--exclude="Library/Mail/Bundles (Disabled)/GPGMail.mailbundle" \
 	--exclude="Library/Logs" \
+	--exclude="Library/Saved Application State" \
 	--exclude="Podcasts" \
 	--exclude="Roxio Converted Items" \
 	--exclude="Microsoft User Data" \

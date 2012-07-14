@@ -77,7 +77,8 @@ bands_and_albums = {
 	"We Are Scientists" => nil
 }
 
-command = "/usr/bin/rsync -rvz --size-only --progress "
+#command = "/usr/bin/rsync -rvz --size-only --progress "
+command = "rsync -rvz --size-only --progress "
  
 bands_and_albums.each do |band,albums|
 	command << "--include='#{band}' "
