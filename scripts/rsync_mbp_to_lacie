@@ -2,7 +2,8 @@
 
 Date=`date "+%Y%m%d%H%M%S"`
 
-BackupDir=/Volumes/LaCie328/Backups/MBP
+#BackupDir=/Volumes/LaCie328/Backups/MBP
+BackupDir=/Volumes/LaCie328/Backups/MBP2
 
 if [ ! -d $BackupDir ]
 then
@@ -36,10 +37,10 @@ fi
 #	contains copies of those in Movies.
 #	may want to just have these if start doing more video
 #	--exclude="Movies/iMovie Events.localized" \
+#	--extended-attributes \
 
-/usr/bin/rsync -rltpvz \
+/usr/bin/rsync -rltpvzX \
 	--progress \
-	--extended-attributes \
 	--delete --backup --backup-dir rsync-backup-deleted-$Date \
 	--exclude="AppleWorks User Data" \
 	--exclude="Acrobat User Data" \
