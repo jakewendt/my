@@ -1,7 +1,6 @@
 #!/bin/sh -x
 
-#BackupDir=/Volumes/THUMB/MBP
-BackupDir=/Volumes/THUMB/MBP2
+BackupDir=/Volumes/THUMB/MBP
 
 if [ ! -d $BackupDir ]
 then
