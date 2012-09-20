@@ -57,6 +57,7 @@ rsync -avzX \
 	--exclude="Applications" \
 	--exclude="AppleWorks User Data" \
 	--exclude="Desktop" \
+	--exclude="DroidX-20120916/dcim" \
 	--exclude="Downloads" \
 	--exclude="Eclipse" \
 	--exclude="Library/Screen Savers" \
@@ -82,6 +83,7 @@ rsync -avzX \
 	--exclude="Pics2WorkOn/*.psd" \
 	--exclude="Pics2WorkOn/**/*.psd" \
 	--exclude="Podcasts" \
+	--exclude="RINS_BASE" \
 	--exclude="Roxio Converted Items" \
 	--exclude="Scanner Output" \
 	--exclude="Shared" \
@@ -94,6 +96,7 @@ rsync -avzX \
 	--exclude="github_repo/jakewendt/my_core/downloads/" \
 	--exclude="github_repo/jakewendt/my_core/test/tmp/" \
 	--exclude="github_repo/jakewendt/my_core/test/downloads/" \
+	--exclude="github_repo/ccls/sequencing/ncbi-blast-2.2.27+-src/c++/*Debug*/" \
 	--exclude="hosting_rails" \
 	--exclude="hostingrails.svn/**/attic/" \
 	--exclude="hostingrails.svn/references/videos/" \
