@@ -65,3 +65,5 @@ alias rm="rm -i"
 #	word	grep !* /usr/share/dict/web2
 #	wordcount	((cat !* | tr -s ' 	.,;:?!()[]""' '\012' | cat -n | tail -1 | awk '{print $1}'))
 #	xgrep	(/usr/xpg4/bin/grep -iE)
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
