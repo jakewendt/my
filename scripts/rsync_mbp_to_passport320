@@ -1,0 +1,110 @@
+#!/bin/sh -x
+
+Date=`date "+%Y%m%d%H%M%S"`
+
+#BackupDir=/Volumes/Passport/Backups/MBP
+BackupDir=/Volumes/Passport320/Backups/MBP2
+
+if [ ! -d $BackupDir ]
+then
+	echo "$BackupDir doesn't exist"
+	exit
+else
+	echo "$BackupDir exists"
+fi
+
+#	-a = -rlptgoD
+#	g - groups have become a problem so I'm ignorin em
+#	t - times have become a problem so I'm ignorin em (doesn't seem to matter either way with extended attributes)
+#	D - devices are pointless here so I'm ignorin em
+#	r - recursive
+#	l - links
+#	p - permissions
+#	o - owner
+#	v - verbose
+#	z - compression
+#	c - checksum
+#	--exclude="Documents" \
+#	--exclude="Records.original" \
+#	--exclude="Records" \
+#	--exclude="EncryptedRecords" \
+#	--exclude="Records.sparsebundle" \
+#
+#	contains copies of those in Movies.
+#	may want to just have these if start doing more video
+#	--exclude="Movies/iMovie Events.localized" \
+#	--extended-attributes \
+
+#/usr/bin/rsync -rltpvzX \
+#rsync -rltpvzX \
+#	Newer versions of rsync use -X instead of --extended-attributes which is much better
+rsync -avzX \
+	--progress \
+	--delete --backup --backup-dir rsync-backup-deleted-$Date \
+	--exclude="AppleWorks User Data" \
+	--exclude="Acrobat User Data" \
+	--exclude="Android" \
+	--exclude="Desktop/Incomplete" \
+	--exclude="Downloads/*.mp4" \
+	--exclude="Downloads/**/*.mp4" \
+	--exclude="Downloads/**/*.wmv" \
+	--exclude="Eclipse" \
+	--exclude="Incomplete" \
+	--exclude="Library/Preferences/Macromedia" \
+	--exclude="Library/Application Support/Adobe/Adobe Device Central CS3" \
+	--exclude="Library/Application Support/Garmin/Maps/*.gmap" \
+	--exclude="Library/Application Support/SyncServices" \
+	--exclude="Library/Caches" \
+	--exclude="Library/Google" \
+	--exclude="Library/Internet Plug-Ins" \
+	--exclude="Library/Mail/Bundles (Disabled)/GPGMail.mailbundle" \
+	--exclude="Library/Logs" \
+	--exclude="Library/Saved Application State" \
+	--exclude="Podcasts" \
+	--exclude="Roxio Converted Items" \
+	--exclude="Microsoft User Data" \
+	--exclude="XXX/XVideo*" \
+	--exclude="Temp" \
+	--exclude="hosting_rails/prod/sites/www/*.m4v" \
+	--exclude="TV Shows" \
+	--exclude="Viewed" \
+	--exclude="github_repo/ccls/sequencing/ncbi-blast-*/c++/*Debug*" \
+	--exclude="rsync-backup*" \
+	--exclude="rsync-backup-deleted*" \
+	--exclude="temp" \
+	--exclude="log/*.log" \
+	--exclude=.DS_Store \
+	--exclude=.fseventsd \
+	--exclude=.rvm \
+	--exclude=.Trash \
+	--exclude=.Trashes \
+	--exclude=.TemporaryItems \
+	--exclude=.Spotlight-V100 \
+	--exclude=.dvdcss \
+	--exclude=.jpi_cache \
+	--exclude=\*NOT_BACKED_UP\* \
+	/Users/jake/ $BackupDir/jake/
+
+
+
+#	Need to use extended attributes to preserve iPhoto Library
+#	unfortunately, it copies so much extra 
+#	So many pointless FinderInfo and quarantine extended attributes on MY files
+#
+#Date=`date "+%y%m%d%H%M%S"`
+#
+#/usr/bin/rsync -rltpvz --progress \
+#	--delete --backup --backup-dir rsync-backup-$Date \
+#	--extended-attributes \
+#	--exclude=rsync-backup\* \
+#	--exclude=.DS_Store \
+#	--exclude=temp \
+#	--exclude=Viewed \
+#	--exclude=Incomplete \
+#	--exclude=Xtorrent \
+#	--exclude=\*NOT_BACKED_UP\* \
+#	--exclude="Downloads/*.mp4" \
+#	--exclude="Downloads/**/*.mp4" \
+#	--exclude="Downloads/**/*.wmv" \
+#	/Users/Shared/ $BackupDir/Shared/
+#

@@ -92,6 +92,7 @@ rsync -avzX \
 	--exclude="TV Shows" \
 	--exclude="googleearth/kml/surfaces" \
 	--exclude="*NOT_BACKED_UP*" \
+	--exclude="XXX" \
 	--exclude="github_repo/jakewendt/my_core/tmp/" \
 	--exclude="github_repo/jakewendt/my_core/downloads/" \
 	--exclude="github_repo/jakewendt/my_core/test/tmp/" \
