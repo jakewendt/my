@@ -69,6 +69,7 @@ rsync -rltpvzX \
 	--exclude="TV Shows" \
 	--exclude="Viewed" \
 	--exclude="Xtorrent" \
+	--exclude="XXX" \
 	--exclude="rsync-backup*" \
 	--exclude="rsync-backup-deleted*" \
 	--exclude="temp" \
