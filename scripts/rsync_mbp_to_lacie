@@ -70,6 +70,7 @@ rsync -rltpvzX \
 	--exclude="Viewed" \
 	--exclude="Xtorrent" \
 	--exclude="XXX" \
+	--exclude="ZZZ" \
 	--exclude="rsync-backup*" \
 	--exclude="rsync-backup-deleted*" \
 	--exclude="temp" \

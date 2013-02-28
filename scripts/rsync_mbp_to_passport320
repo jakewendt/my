@@ -64,6 +64,7 @@ rsync -avzX \
 	--exclude="Roxio Converted Items" \
 	--exclude="Microsoft User Data" \
 	--exclude="XXX/XVideo*" \
+	--exclude="ZZZ/XVideo*" \
 	--exclude="Temp" \
 	--exclude="hosting_rails/prod/sites/www/*.m4v" \
 	--exclude="TV Shows" \
