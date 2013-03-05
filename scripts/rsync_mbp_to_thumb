@@ -93,6 +93,7 @@ rsync -avzX \
 	--exclude="googleearth/kml/surfaces" \
 	--exclude="*NOT_BACKED_UP*" \
 	--exclude="XXX" \
+	--exclude="ZZZ" \
 	--exclude="github_repo/jakewendt/my_core/tmp/" \
 	--exclude="github_repo/jakewendt/my_core/downloads/" \
 	--exclude="github_repo/jakewendt/my_core/test/tmp/" \
