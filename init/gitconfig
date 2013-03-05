@@ -15,3 +15,5 @@
 #	git config --global github.user jakewendt
 [github]
 	user = jakewendt
+[push]
+	default = matching
