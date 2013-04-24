@@ -38,6 +38,17 @@ autocmd BufReadPost *
 
 
 
+
+"	As of my recent upgrade to Mountain Lion, vim clears the screen on exit
+"	This stops that clearing.  Don't know exactly how though.
+:set t_ti= t_te=
+
+
+
+
+
+
+
 "
 "	Nothing below this is used
 "
