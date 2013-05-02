@@ -38,6 +38,10 @@ fi
 #/usr/bin/rsync -rltpvzX \
 #rsync -rltpvzX \
 #	Newer versions of rsync use -X instead of --extended-attributes which is much better
+#
+#	probably not enough room on 320
+#	--exclude="Desktop/Dad/Desktop Computer/My Music" \
+#
 rsync -avzX \
 	--progress \
 	--delete --backup --backup-dir rsync-backup-deleted-$Date \
@@ -45,6 +49,7 @@ rsync -avzX \
 	--exclude="Acrobat User Data" \
 	--exclude="Android" \
 	--exclude="Desktop/Incomplete" \
+	--exclude="Desktop/Dad/Desktop Computer/My Music" \
 	--exclude="Downloads/*.mp4" \
 	--exclude="Downloads/**/*.mp4" \
 	--exclude="Downloads/**/*.wmv" \

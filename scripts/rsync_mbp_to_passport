@@ -38,6 +38,9 @@ fi
 #/usr/bin/rsync -rltpvzX \
 #rsync -rltpvzX \
 #	Newer versions of rsync use -X instead of --extended-attributes which is much better
+#
+#	--exclude="Desktop/Dad/Desktop Computer/My Music" \
+#
 rsync -avzX \
 	--progress \
 	--delete --backup --backup-dir rsync-backup-deleted-$Date \
