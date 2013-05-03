@@ -1,4 +1,6 @@
 
+:set nobomb
+
 "	link this file as ~/.vimrc
 
 " kind of annoying
