@@ -7,13 +7,17 @@ do
 #for each in $@
 #do
 	# I suppose that I could use 'basename' here
-	filename=`echo $each | awk -F/ '{print $NF}'`
-	path=`echo $each | awk -F/ '{for (i=1;i<=NF-1;i++) printf ("%s/", $i);}'`
+	#	/ is a valid character if escaped
+	#	b
+#	filename=`echo $each | awk -F/ '{print $NF}'`
+	filename=`basename "$each"`
+#	filepath=`echo $each | awk -F/ '{for (i=1;i<=NF-1;i++) printf ("%s/", $i);}'`
+	filepath=`dirname "$each"`
 	date=`date +%Y%m%d.%H%M%S`
 
-	mkdir -p ${path}versions
-	cp $each ${path}versions/$filename.$date
-	chmod -w ${path}versions/$filename.$date
+	mkdir -p   "${filepath}/versions"
+	cp "$each" "${filepath}/versions/$filename.$date"
+	chmod -w   "${filepath}/versions/$filename.$date"
 
 #	shift is used to modify $@, so why am I trying to use it here?
 #	my for each was probably having problems and I didn't notice.
