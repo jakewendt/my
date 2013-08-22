@@ -9,7 +9,8 @@ if ($?prompt) then		# For interactive shells only (ie. not scripts):
 
 #	setenv GEM_HOME /usr/lib/ruby/user-gems/1.8
 #	setenv GEM_HOME /usr/lib/ruby/gems/1.8
-	setenv GEM_HOME /opt/local/lib/ruby1.9/gems/1.9.1
+#	setenv GEM_HOME /opt/local/lib/ruby1.9/gems/1.9.1
+	setenv GEM_HOME /opt/local/lib/ruby2.0/gems/2.0.0
 
 #	if ( -e /usr/bin/envv ) then
 #		setenv ENVV /usr/bin/envv
