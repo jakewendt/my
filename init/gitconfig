@@ -12,6 +12,7 @@
 	cm = commit -m
 	co = commit
 	up = pull
+	d = diff
 #	git config --global github.user jakewendt
 [github]
 	user = jakewendt
