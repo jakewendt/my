@@ -1,4 +1,24 @@
 
+"	shebang line for /bin/sh has this trailing . which makes it ignored when
+" using some of vims word based movement keys
+"	    *.sh      call SetFileTypeSH(getline(1))
+":set iskeyword=@,48-57,_,192-255,.
+":set iskeyword=@,48-57,_,192-255
+" can't figure out how to override this behaviour
+"au BufNewFile,BufRead *.sh
+"  \ set iskeyword=@,48-57,_,192-255
+"	/opt/local/share/vim/vim74/filetype.vim
+"	/opt/local/share/vim/vim74/scripts.vim
+" /opt/local/share/vim/vim74/syntax/sh.vim
+"
+"	show current file type with ...
+"	:set ft?
+":set g:sh_noisk
+"	whooo.  found some code in syntax/sh.vim to checks the existance
+" of g:sh_noisk before adding the "." to iskeyword
+:let g:sh_noisk = 'something'
+
+
 :set nobomb
 
 "	link this file as ~/.vimrc
