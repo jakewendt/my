@@ -71,6 +71,7 @@ rsync -avzX \
 	--exclude="hosting_rails/prod/sites/www/*.m4v" \
 	--exclude="TV Shows" \
 	--exclude="Viewed" \
+	--exclude="ZZZ/XVideo Favorites Post-20091009" \
 	--exclude="github_repo/ccls/sequencing/ncbi-blast-*/c++/*Debug*" \
 	--exclude="rsync-backup*" \
 	--exclude="rsync-backup-deleted*" \
