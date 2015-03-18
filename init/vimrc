@@ -66,7 +66,9 @@ autocmd BufReadPost *
 :set t_ti= t_te=
 
 
-
+"	Just in case some file type specific format options
+"	Disable the autocomment marker insertion....
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 
 
