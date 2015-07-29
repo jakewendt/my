@@ -60,6 +60,7 @@ rsync -avzX \
 	--exclude="DroidX-20120916/dcim" \
 	--exclude="Downloads" \
 	--exclude="Eclipse" \
+	--exclude="Library" \
 	--exclude="Library/Screen Savers" \
 	--exclude="Library/Mail/**/Attachments" \
 	--exclude="Library/PubSub" \
@@ -139,6 +140,7 @@ rsync -avzX \
 	--exclude="versions" \
 	--exclude=".android" \
 	--exclude=".fseventsd" \
+	--exclude=".gradle" \
 	--exclude=".rvm" \
 	--exclude=".svn" \
 	--exclude=".TemporaryItems" \

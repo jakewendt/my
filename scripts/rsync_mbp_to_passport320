@@ -49,12 +49,15 @@ rsync -avzX \
 	--exclude="Acrobat User Data" \
 	--exclude="Android" \
 	--exclude="Desktop/Incomplete" \
+	--exclude="Desktop/Movies" \
+	--exclude="Desktop/THUMB 20140724:075219" \
 	--exclude="Desktop/Dad/Desktop Computer/My Music" \
 	--exclude="Downloads/*.mp4" \
 	--exclude="Downloads/**/*.mp4" \
 	--exclude="Downloads/**/*.wmv" \
 	--exclude="Eclipse" \
 	--exclude="Incomplete" \
+	--exclude="Library" \
 	--exclude="Library/Preferences/Macromedia" \
 	--exclude="Library/Application Support/Adobe/Adobe Device Central CS3" \
 	--exclude="Library/Application Support/Garmin/Maps/*.gmap" \
@@ -68,8 +71,8 @@ rsync -avzX \
 	--exclude="Podcasts" \
 	--exclude="Roxio Converted Items" \
 	--exclude="Microsoft User Data" \
-	--exclude="XXX/XVideo*" \
-	--exclude="ZZZ/XVideo*" \
+	--exclude="XXX" \
+	--exclude="ZZZ" \
 	--exclude="Temp" \
 	--exclude="hosting_rails/prod/sites/www/*.m4v" \
 	--exclude="TV Shows" \
@@ -79,6 +82,8 @@ rsync -avzX \
 	--exclude="rsync-backup-deleted*" \
 	--exclude="temp" \
 	--exclude="log/*.log" \
+	--exclude=.android \
+	--exclude=.gradle \
 	--exclude=.DS_Store \
 	--exclude=.fseventsd \
 	--exclude=.rvm \
