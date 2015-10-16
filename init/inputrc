@@ -1,0 +1,29 @@
+#
+#	~/.inputrc is for "readline"
+#
+#	ORDER IS APPARENTLY IMPORTANT HERE
+
+#	apparently this is the same as "set -o vi" in .bashrc/.bash_profile
+#	If in .inputrc, MUST be above the partial command history browse
+set editing-mode vi
+
+#	Not quite sure how this file works, but the following 
+#	2 lines allow the user to type something and then 
+#	arrow up or down to scroll through the history of 
+#	commands that match that which was typed.
+#
+#	this doesn't seem to work unless "set -o vi" is in .bashrc/.bash_profile?
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+
+#
+#	Not sure exactly what these 2 do. Mid word?
+#
+#"\eOA": history-search-backward
+#"\eOB": history-search-forward
+
+
+#	type cd lib<TAB> yields cd Library/ !!! Yay. (assuming that it is there.)
+set completion-ignore-case on
+
+
