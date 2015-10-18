@@ -1,0 +1,8 @@
+
+selfupdate
+#sync -v
+outdated
+upgrade outdated
+uninstall inactive
+clean --all installed
+
