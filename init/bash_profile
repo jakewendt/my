@@ -11,3 +11,58 @@
 #	EDITOR=vi
 #	export EDITOR
 #	
+
+#	sudo port install bedtools boost bowtie cmake coreutils curl ds9 gnupg gnuplot gnutar gnutls gzip lftp mariadb parallel pstree py27-pip R samtools unzip util-linux wget wput bash vim git gawk mariadb
+#
+#	sudo port select pip pip27
+#	sudo port select mysql mariadb
+
+#	cd ~; ln -s Library/Python/2.7/ .python
+#	pip install --user awscli
+#	pip install --user deepTools
+
+#	Install kent utils
+#	Install bowtie2
+#	Install trinity
+
+#PATH=${HOME}/local/bin:${HOME}/.trinity:${HOME}/RINS_BASE/bin:${PATH}:${HOME}/local/sbin:${HOME}/.python/bin:${HOME}/.kentutils/bin
+export PATH=${HOME}/local/bin:${HOME}/.python/bin:${HOME}/.kentutils/bin:/opt/local/libexec/gnubin:/opt/local/bin:/opt/local/sbin:${PATH}
+
+#	Use gnu utils be default ...
+#	 /opt/local/libexec/gnubin/
+
+
+alias port_update="sudo port -F ~/port_update.port"
+#    selfupdate
+#    upgrade outdated
+#    uninstall inactive
+#    clean --all installed
+
+#	Put /opt/local/libexec/gnubin in PATH so these 3 aliases aren't needed.
+#alias du=gdu
+#alias awk=gawk
+#alias readlink=greadlink
+
+alias grep="grep -is"
+alias ..="cd .."
+alias cd..="cd .."
+alias la="\ls -al --color=auto"
+alias ll="\ls -lG --color=auto"
+alias ln="ln -s"
+alias more="less"
+alias rm="rm -i"
+alias h=history
+alias c="for i in {1..50}; do echo; done"
+
+#	
+#	"Better" done in .inputrc
+#set -o vi
+
+#	same result
+#xyz() {
+#	echo $1
+#}
+function relink {
+	rm $1
+	ln -s $2 $1
+}
