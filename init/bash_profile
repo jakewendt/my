@@ -12,6 +12,10 @@
 #	export EDITOR
 #	
 
+#	Default
+#PS1=\h:\W \u\$
+PS1='\[\e[1;1m\][\u@\h \w]\$\[\e[0m\] '
+
 #	sudo port install bedtools boost bowtie cmake coreutils curl ds9 gnupg gnuplot gnutar gnutls gzip lftp mariadb parallel pstree py27-pip R samtools unzip util-linux wget wput bash vim git gawk mariadb
 #
 #	sudo port select pip pip27
