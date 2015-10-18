@@ -66,4 +66,13 @@ alias rm="rm -i"
 #	wordcount	((cat !* | tr -s ' 	.,;:?!()[]""' '\012' | cat -n | tail -1 | awk '{print $1}'))
 #	xgrep	(/usr/xpg4/bin/grep -iE)
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+#PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+set -o vi
+#	bind -P	#	shows key bindings
+
+
+#PATH=/opt/local/bin:/opt/local/sbin:/opt/local/bin:/opt/local/sbin:/opt/local/lib/mysql55/bin:/usr/local/mysql/bin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/jake/local/bin:/Users/jake/my/scripts:/Users/jake/.python/bin:.
+#	it seems that running "bash" from within a tsch, pull PATH from the tcsh?
+
+
