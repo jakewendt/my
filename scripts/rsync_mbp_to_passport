@@ -53,6 +53,9 @@ rsync -avzX \
 	--exclude="Downloads/*.mp4" \
 	--exclude="Downloads/**/*.mp4" \
 	--exclude="Downloads/**/*.wmv" \
+	--exclude="Downloads/jdk1.8.0_51" \
+	--exclude="Downloads/android-sdk-macosx" \
+	--exclude="Downloads/GeneTorrent*" \
 	--exclude="Eclipse" \
 	--exclude="Incomplete" \
 	--exclude="Library" \

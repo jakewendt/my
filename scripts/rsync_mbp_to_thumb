@@ -53,6 +53,8 @@ rsync -avzX \
 	--delete-excluded \
 	--exclude="Acrobat User Data" \
 	--exclude="Admin Drop Box" \
+	--exclude="AMI/railsapp" \
+	--exclude="AMI/sequers" \
 	--exclude="Android" \
 	--exclude="Applications" \
 	--exclude="AppleWorks User Data" \
