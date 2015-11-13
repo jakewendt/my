@@ -70,3 +70,8 @@ function relink {
 	rm $1
 	ln -s $2 $1
 }
+
+export DAPPP="/opt/local/bin/dappp"
+export DAPRUNS="/opt/local/bin/dapruns"
+export INCDIR="/opt/local/include"
+export LIBDIR="/opt/local/lib"
