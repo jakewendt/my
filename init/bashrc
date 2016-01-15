@@ -1,4 +1,4 @@
-if [[ -s ~/.rvm/scripts/rvm ]] ; then source ~/.rvm/scripts/rvm ; fi
+#if [[ -s ~/.rvm/scripts/rvm ]] ; then source ~/.rvm/scripts/rvm ; fi
 
 #export JAVA_OPTS="$JAVA_OPTS -J-Xmx1024M"
 #export JRUBY_OPTS="$JRUBY_OPTS -J-Xmx1024M"
