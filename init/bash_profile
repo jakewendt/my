@@ -16,7 +16,7 @@
 #PS1=\h:\W \u\$
 PS1='\[\e[1;1m\][\u@\h \w]\$\[\e[0m\] '
 
-#	sudo port install bedtools boost bowtie cmake coreutils curl ds9 gnupg gnuplot gnutar gnutls gzip lftp mariadb parallel pstree py27-pip R samtools unzip util-linux wget wput bash vim git gawk mariadb
+#	sudo port install bedtools boost bowtie cmake coreutils curl ds9 gnupg gnuplot gnutar gnutls gzip lftp mariadb parallel pstree py27-pip R samtools unzip util-linux wget wput bash vim git gawk mariadb qt4-mac qt5 ruby20 ruby21 ruby22 ruby23
 #
 #	sudo port select pip pip27
 #	sudo port select mysql mariadb
@@ -24,6 +24,7 @@ PS1='\[\e[1;1m\][\u@\h \w]\$\[\e[0m\] '
 #	cd ~; ln -s Library/Python/2.7/ .python
 #	pip install --user awscli
 #	pip install --user deepTools
+#	pip install --user --upgrade awscli deeptools
 
 #	Install kent utils
 #	Install bowtie2
@@ -77,6 +78,8 @@ export INCDIR="/opt/local/include"
 export LIBDIR="/opt/local/lib"
 
 export GEM_HOME="${HOME}/.gem/ruby/2.2.0"
+#export GEM_HOME="${HOME}/.gem/ruby/2.3"
+export GEM_PATH=$GEM_HOME
 export PATH=${GEM_HOME}/bin:${PATH}
 
 #	for whatever reason, qt4-mac doesn't install qmake in the standard bin
