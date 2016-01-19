@@ -77,8 +77,8 @@ export DAPRUNS="/opt/local/bin/dapruns"
 export INCDIR="/opt/local/include"
 export LIBDIR="/opt/local/lib"
 
-export GEM_HOME="${HOME}/.gem/ruby/2.2.0"
-#export GEM_HOME="${HOME}/.gem/ruby/2.3"
+#export GEM_HOME="${HOME}/.gem/ruby/2.2.0"
+export GEM_HOME="${HOME}/.gem/ruby/2.3"
 export GEM_PATH=$GEM_HOME
 export PATH=${GEM_HOME}/bin:${PATH}
 
