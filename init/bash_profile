@@ -84,4 +84,6 @@ export PATH=${GEM_HOME}/bin:${PATH}
 
 #	for whatever reason, qt4-mac doesn't install qmake in the standard bin
 #export PATH=/opt/local/libexec/qt4/bin:${PATH}
+#	for whatever reason, qt5 doesn't install qmake in the standard bin
+export PATH=/opt/local/libexec/qt5/bin:${PATH}
 
