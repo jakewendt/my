@@ -20,6 +20,8 @@ PS1='\[\e[1;1m\][\u@\h \w]\$\[\e[0m\] '
 #
 #	sudo port select pip pip27
 #	sudo port select mysql mariadb
+#	sudo /opt/local/share/mariadb/support-files/mysql.server start
+#	sudo /opt/local/apache2/bin/apachectl start
 
 #	cd ~; ln -s Library/Python/2.7/ .python
 #	pip install --user awscli
