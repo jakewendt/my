@@ -53,6 +53,7 @@ rsync -avzX \
 	--delete-excluded \
 	--exclude="Acrobat User Data" \
 	--exclude="Admin Drop Box" \
+	--exclude="AMI" \
 	--exclude="AMI/railsapp" \
 	--exclude="AMI/sequers" \
 	--exclude="Android" \
@@ -128,6 +129,7 @@ rsync -avzX \
 	--exclude="hostingrails.svn/sites/www/Speed" \
 	--exclude="hostingrails.svn/sites/www/lamps" \
 	--exclude="hostingrails.svn/sites/www/img" \
+	--exclude="herv" \
 	--exclude="vendor/rails" \
 	--exclude="rsync-backup" \
 	--exclude="rsync-backup*" \
@@ -143,6 +145,7 @@ rsync -avzX \
 	--exclude=".android" \
 	--exclude=".fseventsd" \
 	--exclude=".gradle" \
+  --exclude=".gem/ruby/2.2.0" \
 	--exclude=".rvm" \
 	--exclude=".svn" \
 	--exclude=".TemporaryItems" \

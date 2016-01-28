@@ -52,14 +52,7 @@ rsync -avzX \
 	--exclude="AMI/hg19" \
 	--exclude="Desktop/Incomplete" \
 	--exclude="Desktop/Movies" \
-	--exclude="Desktop/THUMB 20140724:075219" \
 	--exclude="Downloads" \
-	--exclude="Downloads/*.mp4" \
-	--exclude="Downloads/**/*.mp4" \
-	--exclude="Downloads/**/*.wmv" \
-	--exclude="Downloads/jdk1.8.0_51" \
-	--exclude="Downloads/android-sdk-macosx" \
-	--exclude="Downloads/GeneTorrent*" \
 	--exclude="Eclipse" \
 	--exclude="Incomplete" \
 	--exclude="Library" \
@@ -70,7 +63,6 @@ rsync -avzX \
 	--exclude="Library/Caches" \
 	--exclude="Library/Google" \
 	--exclude="Library/Internet Plug-Ins" \
-	--exclude="Library/Mail/Bundles (Disabled)/GPGMail.mailbundle" \
 	--exclude="Library/Logs" \
 	--exclude="Library/Saved Application State" \
 	--exclude="Podcasts" \
@@ -81,7 +73,6 @@ rsync -avzX \
 	--exclude="hosting_rails/prod/sites/www/*.m4v" \
 	--exclude="TV Shows" \
 	--exclude="Viewed" \
-	--exclude="github_repo/ccls/sequencing/ncbi-blast-*/c++/*Debug*" \
 	--exclude="herv" \
 	--exclude="rsync-backup*" \
 	--exclude="rsync-backup-deleted*" \
@@ -97,6 +88,7 @@ rsync -avzX \
 	--exclude=.TemporaryItems \
 	--exclude=.Spotlight-V100 \
 	--exclude=.android \
+	--exclude=.bash_sessions \
 	--exclude=.gem \
 	--exclude=.gradle \
 	--exclude=.dvdcss \
@@ -127,3 +119,4 @@ rsync -avzX \
 #	--exclude="Downloads/**/*.wmv" \
 #	/Users/Shared/ $BackupDir/Shared/
 #
+#	--exclude="github_repo/ccls/sequencing/ncbi-blast-*/c++/*Debug*" \
