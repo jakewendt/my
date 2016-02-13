@@ -3,7 +3,7 @@
 Date=`date "+%Y%m%d%H%M%S"`
 
 #BackupDir=/Volumes/Passport/Backups/MBP
-BackupDir=/Volumes/Passport/Backups/MBP2
+BackupDir=/Volumes/PassportUltra/Backups/MBP2
 
 if [ ! -d $BackupDir ]
 then
@@ -40,6 +40,7 @@ fi
 #	Newer versions of rsync use -X instead of --extended-attributes which is much better
 #
 #	--exclude="Desktop/Dad/Desktop Computer/My Music" \
+#	--exclude="Desktop/Movies" \
 #
 rsync -avzX \
 	--progress \
@@ -51,7 +52,6 @@ rsync -avzX \
 	--exclude="AMI/sequers" \
 	--exclude="AMI/hg19" \
 	--exclude="Desktop/Incomplete" \
-	--exclude="Desktop/Movies" \
 	--exclude="Downloads" \
 	--exclude="Eclipse" \
 	--exclude="Incomplete" \
