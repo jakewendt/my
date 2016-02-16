@@ -50,6 +50,7 @@ alias port_update="sudo port -F ~/port_update.port"
 #alias awk=gawk
 #alias readlink=greadlink
 
+alias gzip="gzip --best"
 alias grep="grep -is"
 alias ..="cd .."
 alias cd..="cd .."
