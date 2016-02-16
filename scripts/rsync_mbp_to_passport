@@ -80,6 +80,7 @@ rsync -avzX \
 	--exclude="tmp/cache" \
 	--exclude="log/*.log" \
 	--exclude="versions" \
+	--exclude="ZZZ" \
 	--exclude=.DS_Store \
 	--exclude=.fseventsd \
 	--exclude=.rvm \
