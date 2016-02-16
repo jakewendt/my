@@ -41,21 +41,30 @@ fi
 #
 #	--exclude="Desktop/Dad/Desktop Computer/My Music" \
 #	--exclude="Desktop/Movies" \
+#	--exclude="AppleWorks User Data" \
+#	--exclude="Acrobat User Data" \
+#	--exclude="Android" \
+#	--exclude="Applications" \
+#	--exclude="AMI/sequers" \
+#	--exclude="AMI/hg19" \
+#	--exclude="Desktop/Incomplete" \
+#	--exclude="Downloads" \
+#	--exclude="Eclipse" \
+#	--exclude="Incomplete" \
+#	--exclude="Library" \
+#	--exclude="Podcasts" \
+#	--exclude="Roxio Converted Items" \
+#	--exclude="Microsoft User Data" \
+#	--exclude="Xtorrent" \
+#	--exclude="Temp" \
+#	--exclude="hosting_rails/prod/sites/www/*.m4v" \
+#	--exclude="TV Shows" \
+#	--exclude="Viewed" \
+#	--exclude="herv" \
 #
 rsync -avzX \
 	--progress \
 	--delete --backup --backup-dir rsync-backup-deleted-$Date \
-	--exclude="AppleWorks User Data" \
-	--exclude="Acrobat User Data" \
-	--exclude="Android" \
-	--exclude="Applications" \
-	--exclude="AMI/sequers" \
-	--exclude="AMI/hg19" \
-	--exclude="Desktop/Incomplete" \
-	--exclude="Downloads" \
-	--exclude="Eclipse" \
-	--exclude="Incomplete" \
-	--exclude="Library" \
 	--exclude="Library/Preferences/Macromedia" \
 	--exclude="Library/Application Support/Adobe/Adobe Device Central CS3" \
 	--exclude="Library/Application Support/Garmin/Maps/*.gmap" \
@@ -65,15 +74,6 @@ rsync -avzX \
 	--exclude="Library/Internet Plug-Ins" \
 	--exclude="Library/Logs" \
 	--exclude="Library/Saved Application State" \
-	--exclude="Podcasts" \
-	--exclude="Roxio Converted Items" \
-	--exclude="Microsoft User Data" \
-	--exclude="Xtorrent" \
-	--exclude="Temp" \
-	--exclude="hosting_rails/prod/sites/www/*.m4v" \
-	--exclude="TV Shows" \
-	--exclude="Viewed" \
-	--exclude="herv" \
 	--exclude="rsync-backup*" \
 	--exclude="rsync-backup-deleted*" \
 	--exclude="temp" \
