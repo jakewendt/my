@@ -10,11 +10,17 @@ but for now ...
 
  ln -s ~/my/init/vim          .vim
  ln -s ~/my/init/vimrc        .vimrc
- ln -s ~/my/init/bashrc       .bashrc
  ln -s ~/my/init/bash_profile .bash_profile
+ ln -s ~/my/init/gitconfig    .gitconfig
+ ln -s ~/my/init/inputrc      .inputrc
+ ln -s ~/my/scripts/port_update.port
+
+
+Older, now essentially unused.
+
+ ln -s ~/my/init/bashrc       .bashrc
  ln -s ~/my/init/autotest     .autotest
  ln -s ~/my/init/subversion   .subversion
-
 
 == Todo
 
