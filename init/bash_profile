@@ -1,13 +1,4 @@
 #	
-#	GEM_PATH=$GEM_PATH:$HOME/.gem
-#	export GEM_PATH
-#	
-#	GEM_HOME=~/.gem
-#	export GEM_HOME
-#	
-#	PATH=$PATH:$HOME/bin
-#	export PATH
-#	
 #	EDITOR=vi
 #	export EDITOR
 #	
@@ -16,46 +7,100 @@
 #PS1=\h:\W \u\$
 PS1='\[\e[1;1m\][\u@\h \w]\$\[\e[0m\] '
 
-#	sudo port install bedtools boost bowtie cmake coreutils curl ds9 gnupg gnuplot gnutar gnutls gzip lftp mariadb parallel pstree py27-pip R samtools unzip util-linux wget wput bash vim git gawk mariadb qt4-mac qt5 ruby20 ruby21 ruby22 ruby23
+#	sudo port install bedtools boost bowtie cmake coreutils curl ds9 gnupg gnuplot gnutar gnutls gzip lftp mariadb mariadb-server parallel pstree python27 py27-pip R samtools unzip util-linux wget wput bash vim git gawk qt4-mac qt5 ruby20 ruby21 ruby22 ruby23 apache2 postgresql95\* gcc49 gcc5
+
+#	python / pip
+#		sudo port install python27 py27-pip
+#		sudo port select python python27
+#		sudo port select pip pip27
+#		cd ~; ln -s Library/Python/2.7/ .python
+#		pip install --user awscli
+#		pip install --user deepTools
 #
-#	sudo port select pip pip27
-#	sudo port select mysql mariadb
-#	sudo /opt/local/share/mariadb/support-files/mysql.server start
-#	sudo /opt/local/apache2/bin/apachectl start
+#		pip install --user --upgrade awscli deeptools
+
+#	mariadb
+#		sudo port install mariadb mariadb-server
+#		sudo port select mysql mariadb
+#		sudo /opt/local/share/mariadb/support-files/mysql.server start
+
+#	apache
+#		sudo port install apache2
+#		sudo /opt/local/apache2/bin/apachectl start
 
 #	postgresql
+#		sudo port install postgresql95\*
+#		sudo port select postgresql postgresql95
+#		sudo mkdir -p /opt/local/var/db/postgresql95/defaultdb
+#		sudo chown postgres:postgres /opt/local/var/db/postgresql95/defaultdb
+#		sudo chown postgres:postgres /opt/local/var/db/postgresql95
+#		sudo su postgres -c '/opt/local/lib/postgresql95/bin/initdb -D /opt/local/var/db/postgresql95/defaultdb'
+#
+#		sudo su postgres -c '/opt/local/lib/postgresql95/bin/pg_ctl -D /opt/local/var/db/postgresql95/defaultdb -l /opt/local/var/db/postgresql95/logfile start'
+#
+#		sudo su postgres -c 'createdb jakewendt; createuser --superuser jakewendt;'
+#		psql
 
-#	cd ~; ln -s Library/Python/2.7/ .python
-#	pip install --user awscli
-#	pip install --user deepTools
-#	pip install --user --upgrade awscli deeptools
-
-#	Install kent utils
+#	Install kent utils (sadly not very configurable)
 #		git clone git://github.com/ENCODE-DCC/kentUtils.git
 #		cd kentUtils
 #		make
-#		mkdir -p ~/.kentutils/bin/
-#		cp bin/* ~/.kentutils/bin/
+#		rename kentUtils .kentUtils ~/kentUtils
 #
-#	Install blat
-#		http://hgwdev.cse.ucsc.edu/~kent/src/
+#	Install blat (sadly not very configurable)
+#		http://hgwdev.cse.ucsc.edu/~kent/src/	<--- newer version 36
 #		https://users.soe.ucsc.edu/~kent/src/
-#
-#	Install bowtie2
-#	Install trinity
+#		wget http://hgwdev.cse.ucsc.edu/~kent/src/blatSrc36.zip
+#		unzip blatSrc36.zip
+#		cd blatSrc
+#		mkdir -p ~/bin/x86_64
+#		make
+#		mkdir ~/.blat
+#		mv ~/bin/x86_64 ~/.blat/bin
 
-#PATH=${HOME}/local/bin:${HOME}/.trinity:${HOME}/RINS_BASE/bin:${PATH}:${HOME}/local/sbin:${HOME}/.python/bin:${HOME}/.kentutils/bin
-export PATH=${HOME}/local/bin:${HOME}/.python/bin:${HOME}/.kentutils/bin:/opt/local/libexec/gnubin:/opt/local/bin:/opt/local/sbin:${PATH}
+
+#	Install trinity (tried with gcc49(4.9.3) and gcc5(5.3) with same failures)
+#		git clone https://github.com/trinityrnaseq/trinityrnaseq.git
+#		cd trinityrnaseq
+#		vi trinity-plugins/Makefile ( remove LIBPATH=-ltinfo from samtools section )
+#		make
+#		make plugins
+#		rename trinityrnaseq .trinity ~/trinityrnaseq
+
+
+#	Install bowtie2
+#		http://iweb.dl.sourceforge.net/project/bowtie-bio/bowtie2/2.2.7/bowtie2-2.2.7-macos-x86_64.zip
+#		http://iweb.dl.sourceforge.net/project/bowtie-bio/bowtie2/2.2.7/bowtie2-2.2.7-source.zip
+#
+#		wget http://iweb.dl.sourceforge.net/project/bowtie-bio/bowtie2/2.2.7/bowtie2-2.2.7-source.zip	
+#		unzip bowtie2-2.2.7-source.zip 
+#		cd bowtie2-2.2.7
+#		vi Makefile (change "prefix" from "/usr/local" to "$(HOME)/.local"
+#		make
+#		make install
+#
+
+export PATH=${HOME}/.local/bin:${HOME}/.python/bin:${HOME}/.kentUtils/bin:${HOME}/.blat/bin:${HOME}/.trinity:/opt/local/libexec/gnubin:/opt/local/bin:/opt/local/sbin:${PATH}
 
 #	Use gnu utils by default ...
 #	 /opt/local/libexec/gnubin/
 
 
-alias port_update="sudo port -F ~/port_update.port"
+#
+#	Change this alias to create a tmpfile, run it, then delete it
+#
+#alias port_update="sudo port -F ~/port_update.port"
 #    selfupdate
 #    upgrade outdated
 #    uninstall inactive
 #    clean --all installed
+function port_update {
+	date=`date "+%Y%m%d%H%M%S"`
+	echo -e "selfupdate\noutdated\nupgrade outdated
+		uninstall inactive\nclean --all installed" > /tmp/port_update.$date
+	sudo port -F /tmp/port_update.$date
+	#	\rm /tmp/port_update.$date
+}
 
 #	Put /opt/local/libexec/gnubin in PATH so these 3 aliases aren't needed.
 #alias du=gdu
@@ -74,14 +119,10 @@ alias rm="rm -i"
 alias h=history
 alias c="for i in {1..50}; do echo; done"
 
-#	
+
 #	"Better" done in .inputrc
 #set -o vi
 
-#	same result
-#xyz() {
-#	echo $1
-#}
 function relink {
 	rm $1
 	ln -s $2 $1
@@ -91,6 +132,8 @@ function relink {
 #	The value of LIBRARY_PATH is a colon-separated list of directories, much like PATH. When configured as a native compiler, GCC tries the directories thus specified when searching for special linker files, if it can't find them using GCC_EXEC_PREFIX. Linking using GCC also uses these directories when searching for ordinary libraries for the -l option (but directories specified with -L come first).
 export LIBRARY_PATH="/opt/local/lib/mariadb/mysql/"
 
+
+#	I think that these 4 were/are solely for "dap", the SAS-like software
 export DAPPP="/opt/local/bin/dappp"
 export DAPRUNS="/opt/local/bin/dapruns"
 export INCDIR="/opt/local/include"
@@ -105,4 +148,5 @@ export PATH=${GEM_HOME}/bin:${PATH}
 #export PATH=/opt/local/libexec/qt4/bin:${PATH}
 #	for whatever reason, qt5 doesn't install qmake in the standard bin
 #export PATH=/opt/local/libexec/qt5/bin:${PATH}
+
 
