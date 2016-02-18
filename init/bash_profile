@@ -34,8 +34,8 @@ PS1='\[\e[1;1m\][\u@\h \w]\$\[\e[0m\] '
 #		git clone git://github.com/ENCODE-DCC/kentUtils.git
 #		cd kentUtils
 #		make
-#		mkdir -p ~/.kentutils/bin/
-#		cp bin/* ~/.kentutils/bin/
+#		mkdir -p ~/.kentutils/
+#		mv bin ~/.kentutils/
 #
 #	Install blat
 #		http://hgwdev.cse.ucsc.edu/~kent/src/
