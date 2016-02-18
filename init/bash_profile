@@ -23,19 +23,31 @@ PS1='\[\e[1;1m\][\u@\h \w]\$\[\e[0m\] '
 #	sudo /opt/local/share/mariadb/support-files/mysql.server start
 #	sudo /opt/local/apache2/bin/apachectl start
 
+#	postgresql
+
 #	cd ~; ln -s Library/Python/2.7/ .python
 #	pip install --user awscli
 #	pip install --user deepTools
 #	pip install --user --upgrade awscli deeptools
 
 #	Install kent utils
+#		git clone git://github.com/ENCODE-DCC/kentUtils.git
+#		cd kentUtils
+#		make
+#		mkdir -p ~/.kentutils/bin/
+#		cp bin/* ~/.kentutils/bin/
+#
+#	Install blat
+#		http://hgwdev.cse.ucsc.edu/~kent/src/
+#		https://users.soe.ucsc.edu/~kent/src/
+#
 #	Install bowtie2
 #	Install trinity
 
 #PATH=${HOME}/local/bin:${HOME}/.trinity:${HOME}/RINS_BASE/bin:${PATH}:${HOME}/local/sbin:${HOME}/.python/bin:${HOME}/.kentutils/bin
 export PATH=${HOME}/local/bin:${HOME}/.python/bin:${HOME}/.kentutils/bin:/opt/local/libexec/gnubin:/opt/local/bin:/opt/local/sbin:${PATH}
 
-#	Use gnu utils be default ...
+#	Use gnu utils by default ...
 #	 /opt/local/libexec/gnubin/
 
 
@@ -74,6 +86,10 @@ function relink {
 	rm $1
 	ln -s $2 $1
 }
+
+#	I've only ever had this successfully work with kentUtils for "mysqlclient"!
+#	The value of LIBRARY_PATH is a colon-separated list of directories, much like PATH. When configured as a native compiler, GCC tries the directories thus specified when searching for special linker files, if it can't find them using GCC_EXEC_PREFIX. Linking using GCC also uses these directories when searching for ordinary libraries for the -l option (but directories specified with -L come first).
+export LIBRARY_PATH="/opt/local/lib/mariadb/mysql/"
 
 export DAPPP="/opt/local/bin/dappp"
 export DAPRUNS="/opt/local/bin/dapruns"
