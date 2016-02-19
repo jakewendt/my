@@ -46,23 +46,22 @@ PS1='\[\e[1;1m\][\u@\h \w]\$\[\e[0m\] '
 #		cd kentUtils
 #		make
 #		rename kentUtils .kentUtils ~/kentUtils
-#
+
+
 #	Install blat (sadly not very configurable)
 #		http://hgwdev.cse.ucsc.edu/~kent/src/	<--- newer version 36
 #		https://users.soe.ucsc.edu/~kent/src/
 #		wget http://hgwdev.cse.ucsc.edu/~kent/src/blatSrc36.zip
 #		unzip blatSrc36.zip
 #		cd blatSrc
-#		mkdir -p ~/bin/x86_64
-#		make
-#		mkdir ~/.blat
-#		mv ~/bin/x86_64 ~/.blat/bin
+#		mkdir -p ~/.blat
+#		BINDIR=$HOME/.blat make
 
 
 #	Install trinity (tried with gcc49(4.9.3) and gcc5(5.3) with same failures)
 #		git clone https://github.com/trinityrnaseq/trinityrnaseq.git
 #		cd trinityrnaseq
-#		vi trinity-plugins/Makefile ( remove LIBPATH=-ltinfo from samtools section )
+#		sed -i.original 's/LIBPATH=-ltinfo//' trinity-plugins/Makefile
 #		make
 #		make plugins
 #		rename trinityrnaseq .trinity ~/trinityrnaseq
@@ -75,12 +74,12 @@ PS1='\[\e[1;1m\][\u@\h \w]\$\[\e[0m\] '
 #		wget http://iweb.dl.sourceforge.net/project/bowtie-bio/bowtie2/2.2.7/bowtie2-2.2.7-source.zip	
 #		unzip bowtie2-2.2.7-source.zip 
 #		cd bowtie2-2.2.7
-#		vi Makefile (change "prefix" from "/usr/local" to "$(HOME)/.local"
+#		sed -i.orig 's;/usr/local;$(HOME)/.local;' Makefile
 #		make
 #		make install
-#
 
-export PATH=${HOME}/.local/bin:${HOME}/.python/bin:${HOME}/.kentUtils/bin:${HOME}/.blat/bin:${HOME}/.trinity:/opt/local/libexec/gnubin:/opt/local/bin:/opt/local/sbin:${PATH}
+
+export PATH=${HOME}/.local/bin:${HOME}/.python/bin:${HOME}/.kentUtils/bin:${HOME}/.blat:${HOME}/.trinity:/opt/local/libexec/gnubin:/opt/local/bin:/opt/local/sbin:${PATH}
 
 #	Use gnu utils by default ...
 #	 /opt/local/libexec/gnubin/
