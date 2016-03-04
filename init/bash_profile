@@ -79,7 +79,10 @@ PS1='\[\e[1;1m\][\u@\h \w]\$\[\e[0m\] '
 #		make install
 
 
-export PATH=${HOME}/.local/bin:${HOME}/.python/bin:${HOME}/.kentUtils/bin:${HOME}/.blat:${HOME}/.trinity:/opt/local/libexec/gnubin:/opt/local/bin:/opt/local/sbin:${PATH}
+export GEM_HOME="${HOME}/.gem/ruby/2.3"
+export GEM_PATH=$GEM_HOME
+
+export PATH=${HOME}/.local/bin:${GEM_HOME}/bin:${HOME}/.python/bin:${HOME}/.kentUtils/bin:${HOME}/.blat:${HOME}/.trinity:/opt/local/libexec/gnubin:/opt/local/bin:/opt/local/sbin:${PATH}
 
 #	Use gnu utils by default ...
 #	 /opt/local/libexec/gnubin/
@@ -138,11 +141,6 @@ export DAPPP="/opt/local/bin/dappp"
 export DAPRUNS="/opt/local/bin/dapruns"
 export INCDIR="/opt/local/include"
 export LIBDIR="/opt/local/lib"
-
-#export GEM_HOME="${HOME}/.gem/ruby/2.2.0"
-export GEM_HOME="${HOME}/.gem/ruby/2.3"
-export GEM_PATH=$GEM_HOME
-export PATH=${GEM_HOME}/bin:${PATH}
 
 #	for whatever reason, qt4-mac doesn't install qmake in the standard bin
 #export PATH=/opt/local/libexec/qt4/bin:${PATH}
