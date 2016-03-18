@@ -160,6 +160,7 @@ history -r
 #	-s The args are added to the end of the history list as a single entry.
 history -s port_update
 history -s pip install --user --upgrade awscli deeptools
+history -s sudo su postgres -c \'/opt/local/lib/postgresql95/bin/pg_ctl -D /opt/local/var/db/postgresql95/defaultdb -l /opt/local/var/db/postgresql95/logfile start\'
 history -s sudo /opt/local/share/mariadb/support-files/mysql.server start
 history -s sudo /opt/local/apache2/bin/apachectl start
 
