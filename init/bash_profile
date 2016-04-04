@@ -128,6 +128,7 @@ alias h=history
 alias c="for i in {1..50}; do echo; done"
 alias psme="ps -fU $USER"
 
+alias awsq="mysql_queue.bash --defaults_file ~/.awsqueue.cnf"
 
 #	"Better" done in .inputrc
 #set -o vi
