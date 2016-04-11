@@ -99,6 +99,8 @@ export PATH=${HOME}/.local/bin:${GEM_HOME}/bin:${HOME}/.python/bin:${HOME}/.kent
 #	 /opt/local/libexec/gnubin/
 
 
+#	Functions can be declared with a "function" prefix or "()" suffix or both, but not neither.
+
 #
 #	Change this alias to create a tmpfile, run it, then delete it
 #
