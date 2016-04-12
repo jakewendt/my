@@ -22,7 +22,7 @@ PS1='\[\e[1;1m\][\u@\h \w]\$\[\e[0m\] '
 #		pip install --user awscli
 #		pip install --user deepTools
 #
-#		pip install --user --upgrade awscli deeptools
+#		pip install --user --upgrade awscli deeptools grip
 
 #	mariadb
 #		sudo port install mariadb mariadb-server
