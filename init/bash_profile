@@ -93,7 +93,7 @@ PS1='\[\e[1;1m\][\u@\h \w]\$\[\e[0m\] '
 export GEM_HOME="${HOME}/.gem/ruby/2.3"
 export GEM_PATH=$GEM_HOME
 
-export PATH=${HOME}/.local/bin:${GEM_HOME}/bin:${HOME}/.python/bin:${HOME}/.kentUtils/bin:${HOME}/.blat:${HOME}/.trinity:/opt/local/libexec/gnubin:/opt/local/bin:/opt/local/sbin:/homebrew/bin:${PATH}
+export PATH=${HOME}/.local/bin:${GEM_HOME}/bin:${HOME}/.python/bin:${HOME}/.kentUtils/bin:${HOME}/.blat:${HOME}/.trinity:${HOME}/.blast/bin:/opt/local/libexec/gnubin:/opt/local/bin:/opt/local/sbin:/homebrew/bin:${PATH}
 
 #	Use gnu utils by default ...
 #	 /opt/local/libexec/gnubin/
