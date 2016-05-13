@@ -7,7 +7,7 @@
 #PS1=\h:\W \u\$
 PS1='\[\e[1;1m\][\u@\h \w]\$\[\e[0m\] '
 
-#	sudo port install bedtools boost bowtie cmake coreutils curl ds9 gnupg gnuplot gnutar gnutls gzip lftp mariadb mariadb-server parallel pstree python27 py27-pip R samtools unzip util-linux wget wput bash vim git gawk qt4-mac qt5 ruby20 ruby21 ruby22 ruby23 apache2 postgresql95\* gcc49 gcc5 jq gmake ds9
+#	sudo port install bedtools boost bowtie cmake coreutils curl ds9 gnupg gnuplot gnutar gnutls gzip lftp mariadb mariadb-server parallel pstree python27 py27-pip R samtools unzip util-linux wget wput bash vim git gawk qt4-mac qt5 ruby20 ruby21 ruby22 ruby23 apache2 postgresql95\* gcc49 gcc5 jq gmake ds9 p7zip
 #
 #	ds9 IS NOT command line anymore. It is now a GUI app in /Applications/MacPorts/.
 #		It can be opened via command line, but always creates the GUI interface.
