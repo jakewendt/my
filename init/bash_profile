@@ -167,7 +167,7 @@ export PATH=${PATH}:/opt/local/libexec/qt5/bin
 #	(without using the -r, the history of the new shell will only show those manually added to it.)
 history -r
 #	-s The args are added to the end of the history list as a single entry.
-history -s brew update
+history -s 'brew update && brew upgrade'
 history -s gem update
 history -s port_update
 history -s pip install --user --upgrade awscli deeptools grip pip
