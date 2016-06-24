@@ -133,7 +133,8 @@ alias more="less"
 alias rm="rm -i"
 alias h=history
 alias c="for i in {1..50}; do echo; done"
-alias psme="ps -fU $USER"
+alias psme="ps -fU \$USER"
+alias topme="top -U \$USER"
 
 alias awsq="mysql_queue.bash --defaults_file ~/.awsqueue.cnf"
 alias awsdb="mysql --defaults-file=~/.awsqueue.cnf"
