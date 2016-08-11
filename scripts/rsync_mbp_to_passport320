@@ -85,7 +85,7 @@ rsync -avzX \
 	--exclude="rsync-backup-deleted*" \
 	--exclude="temp" \
 	--exclude="log/*.log" \
-	--exclude=.android \
+	--exclude=.android/ \
 	--exclude=.gradle \
 	--exclude=.DS_Store \
 	--exclude=.fseventsd \
@@ -96,6 +96,9 @@ rsync -avzX \
 	--exclude=.Spotlight-V100 \
 	--exclude=.dvdcss \
 	--exclude=.jpi_cache \
+	--exclude=.bash_sessions/ \
+	--exclude=.R/ \
+	--exclude=.gem/ \
 	--exclude=\*NOT_BACKED_UP\* \
 	/Users/jake/ $BackupDir/jake/
 

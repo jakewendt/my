@@ -45,6 +45,7 @@ fi
 #	--exclude="Library/Application Support/SyncServices" \
 #	--exclude="Library/Application Support/Firefox" \
 #	--extended-attributes \
+#  --exclude=".gem/ruby/2.2.0" \
 
 #/usr/bin/rsync -avzX \
 rsync -avzX \
@@ -142,12 +143,17 @@ rsync -avzX \
 	--exclude="rsync/private/Video" \
 	--exclude="log/*.log" \
 	--exclude="versions" \
-	--exclude=".android" \
+	--exclude=".android/" \
+	--exclude=".bash_sessions/" \
 	--exclude=".fseventsd" \
 	--exclude=".gradle" \
-  --exclude=".gem/ruby/2.2.0" \
+  --exclude=".gem/" \
 	--exclude=".rvm" \
 	--exclude=".svn" \
+	--exclude=".R/" \
+	--exclude=".local/" \
+	--exclude=".trinity/" \
+	--exclude=".kentUtils/" \
 	--exclude=".TemporaryItems" \
 	--exclude=".Trash" \
 	--exclude=".Trashes" \
@@ -155,6 +161,10 @@ rsync -avzX \
 	--exclude=".dvdcss" \
 	--exclude=".jpi_cache" \
 	--exclude=".DS_Store" \
+	--exclude="coverage/" \
+	--exclude="coverage-one-run/" \
+	--exclude="solr/data/" \
+	--exclude="tmp/cache/" \
 	--exclude="Records.sparsebundle" \
 	--exclude="droid_x*" \
 	/Users/jake/ $BackupDir/

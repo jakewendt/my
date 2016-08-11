@@ -96,6 +96,10 @@ rsync -avzX \
 	--exclude=.jpi_cache \
 	--exclude=.cisco \
 	--exclude=.passenger \
+	--exclude=.kentUtils \
+	--exclude=.R \
+	--exclude=solr/data/ \
+	--exclude=tmp/cache/ \
 	--exclude=\*NOT_BACKED_UP\* \
 	/Users/jake/ $BackupDir/jake/
 
