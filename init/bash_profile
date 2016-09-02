@@ -8,6 +8,23 @@
 PS1='\[\e[1;1m\][\u@\h \w]\$\[\e[0m\] '
 
 #	sudo port install bedtools boost bowtie cmake coreutils curl ds9 gnupg gnuplot gnutar gnutls gzip lftp mariadb mariadb-server parallel pstree python27 py27-pip R samtools unzip util-linux wget wput bash vim git gawk qt4-mac qt5 ruby20 ruby21 ruby22 ruby23 apache2 postgresql95\* gcc49 gcc5 jq gmake ds9 p7zip ispell gdb gwhich
+#	php70-apache2handler php70-mysql phpmyadmin 
+
+
+#	First time, need to ... as it adds php to httpd.conf
+#	cd /opt/local/apache2/modules
+#	sudo /opt/local/apache2/bin/apxs -a -e -n php7 mod_php70.so
+#
+#	Also
+#	sudo cp /opt/local/etc/php70/php.ini-development /opt/local/etc/php70/php.ini
+#	sudo ln -s /opt/local/www/phpmyadmin /opt/local/apache2/htdocs/
+#	
+#	Add index.php to the DirectoryIndex list in /opt/local/apache2/conf/httpd.conf
+#		DirectoryIndex index.php index.html
+#	sudo /opt/local/apache2/bin/apachectl restart
+#	open http://localhost/phpmyadmin/
+
+
 #
 #	ds9 IS NOT command line anymore. It is now a GUI app in /Applications/MacPorts/.
 #		It can be opened via command line, but always creates the GUI interface.
