@@ -11,6 +11,8 @@ PS1='\[\e[1;1m\][\u@\h \w]\$\[\e[0m\] '
 #	php70-apache2handler php70-mysql phpmyadmin 
 
 
+#	sudo port select php php70
+#
 #	First time, need to ... as it adds php to httpd.conf
 #	cd /opt/local/apache2/modules
 #	sudo /opt/local/apache2/bin/apxs -a -e -n php7 mod_php70.so
@@ -19,8 +21,24 @@ PS1='\[\e[1;1m\][\u@\h \w]\$\[\e[0m\] '
 #	sudo cp /opt/local/etc/php70/php.ini-development /opt/local/etc/php70/php.ini
 #	sudo ln -s /opt/local/www/phpmyadmin /opt/local/apache2/htdocs/
 #	
-#	Add index.php to the DirectoryIndex list in /opt/local/apache2/conf/httpd.conf
+#	sudo vi /opt/local/apache2/conf/httpd.conf
+#	Add index.php to the DirectoryIndex list
 #		DirectoryIndex index.php index.html
+#	Add ... 
+#	<FilesMatch \.php$>
+#    SetHandler application/x-httpd-php
+#	</FilesMatch>
+#
+#	
+#	sudo vi /opt/local/etc/php70/php.ini
+#	
+#	mysqli.default_socket = "/opt/local/var/run/mariadb/mysqld.sock"
+#	mysqli.default_host = localhost
+#
+#	sudo vi /opt/local/apache2/htdocs/phpmyadmin/config.inc.php 
+#	$cfg['Servers'][$i]['AllowNoPassword'] = true;
+
+#
 #	sudo /opt/local/apache2/bin/apachectl restart
 #	open http://localhost/phpmyadmin/
 
