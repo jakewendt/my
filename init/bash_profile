@@ -7,8 +7,9 @@
 #PS1=\h:\W \u\$
 PS1='\[\e[1;1m\][\u@\h \w]\$\[\e[0m\] '
 
-#	sudo port install bedtools boost bowtie cmake coreutils curl ds9 gnupg gnuplot gnutar gnutls gzip lftp mariadb mariadb-server parallel pstree python27 py27-pip R samtools unzip util-linux wget wput bash vim git gawk qt4-mac qt5 ruby20 ruby21 ruby22 ruby23 apache2 postgresql95\* gcc49 gcc5 jq gmake ds9 p7zip ispell gdb gwhich
+#	sudo port install bedtools boost bowtie cmake coreutils curl ds9 gnupg gnuplot gnutar gnutls gzip lftp mariadb mariadb-server parallel pstree python27 py27-pip R samtools unzip util-linux wget wput bash vim git gawk qt4-mac qt5 ruby20 ruby21 ruby22 ruby23 apache2 postgresql95\* gcc49 gcc5 jq gmake ds9 p7zip ispell gdb gwhich pidof lynx
 #	php70-apache2handler php70-mysql phpmyadmin 
+#	qtwebkit
 
 
 #	sudo port select php php70
@@ -85,7 +86,7 @@ PS1='\[\e[1;1m\][\u@\h \w]\$\[\e[0m\] '
 #		git clone git://github.com/ENCODE-DCC/kentUtils.git
 #		cd kentUtils
 #		make
-#		rename kentUtils .kentUtils ~/kentUtils
+#		mv ~/kentUtils ~/.kentUtils
 
 
 #	Install blat (sadly not very configurable)
