@@ -69,6 +69,7 @@ rsync -avzX \
 	--exclude="Library/Application Support/Adobe/Adobe Device Central CS3" \
 	--exclude="Library/Application Support/Garmin/Maps/*.gmap" \
 	--exclude="Library/Application Support/SyncServices" \
+	--exclude="Library/Application Support/Google/Android File Transfer" \
 	--exclude="Library/Caches" \
 	--exclude="Library/Google" \
 	--exclude="Library/Internet Plug-Ins" \
