@@ -209,6 +209,7 @@ history -s 'brew update && brew upgrade'
 history -s gem update
 history -s port_update
 history -s pip install --user --upgrade awscli deeptools grip pip
+#	pip install --user --upgrade awscli deeptools grip pip --global-option=build_ext  --global-option="-I/opt/local/include"
 history -s sudo su postgres -c \'/opt/local/lib/postgresql95/bin/pg_ctl -D /opt/local/var/db/postgresql95/defaultdb -l /opt/local/var/db/postgresql95/logfile start\'
 history -s sudo /opt/local/share/mariadb/support-files/mysql.server start
 history -s sudo /opt/local/apache2/bin/apachectl start
