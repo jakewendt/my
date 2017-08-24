@@ -59,6 +59,7 @@ PS1='\[\e[1;1m\][\u@\h \w]\$\[\e[0m\] '
 #		pip install --user deepTools
 #
 #		pip install --user --upgrade awscli deeptools grip pip
+#		pip install --user --global-option=build_ext --global-option="-I/opt/local/include/" awscli deeptools grip pip jupyter
 
 #	mariadb
 #		sudo port install mariadb mariadb-server
@@ -208,10 +209,10 @@ history -r
 history -s 'brew update && brew upgrade'
 history -s gem update
 history -s port_update
-history -s pip install --user --upgrade awscli deeptools grip pip
-#	pip install --user --upgrade awscli deeptools grip pip --global-option=build_ext  --global-option="-I/opt/local/include"
+history -s pip install --user --global-option=build_ext --global-option="-I/opt/local/include/" awscli deeptools grip pip jupyter
 history -s sudo su postgres -c \'/opt/local/lib/postgresql95/bin/pg_ctl -D /opt/local/var/db/postgresql95/defaultdb -l /opt/local/var/db/postgresql95/logfile start\'
-history -s sudo /opt/local/share/mariadb/support-files/mysql.server start
-history -s sudo /opt/local/apache2/bin/apachectl start
+#history -s sudo /opt/local/share/mariadb/support-files/mysql.server start
+#history -s sudo /opt/local/apache2/bin/apachectl start
+history -s sudo port unload apache2 && sudo port load apache2
 
 
