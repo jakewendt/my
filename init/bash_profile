@@ -59,7 +59,7 @@ PS1='\[\e[1;1m\][\u@\h \w]\$\[\e[0m\] '
 #		pip install --user deepTools
 #
 #		pip install --user --upgrade awscli deeptools grip pip
-#		pip install --user --global-option=build_ext --global-option="-I/opt/local/include/" awscli deeptools grip pip jupyter gencove
+#		pip install --user --upgrade --global-option=build_ext --global-option="-I/opt/local/include/" awscli deeptools grip pip jupyter gencove
 
 #	mariadb
 #		sudo port install mariadb mariadb-server
@@ -210,12 +210,14 @@ history -s 'brew update && brew upgrade'
 history -s gem update
 history -s port_update
 
-history -s sudo su postgres -c \'/opt/local/lib/postgresql95/bin/pg_ctl -D /opt/local/var/db/postgresql95/defaultdb -l /opt/local/var/db/postgresql95/logfile start\'
+#history -s sudo su postgres -c \'/opt/local/lib/postgresql95/bin/pg_ctl -D /opt/local/var/db/postgresql95/defaultdb -l /opt/local/var/db/postgresql95/logfile start\'
+
 #history -s sudo /opt/local/share/mariadb/support-files/mysql.server start
 #history -s sudo /opt/local/apache2/bin/apachectl start
-history -s sudo port unload apache2 && sudo port load apache2
 
-history -s pip install --user --global-option=build_ext --global-option="-I/opt/local/include/" awscli deeptools grip pip jupyter gencove
+history -s "sudo port unload apache2 && sudo port load apache2"
+
+history -s pip install --upgrade --user --global-option=build_ext --global-option="-I/opt/local/include/" awscli deeptools grip pip jupyter gencove
 
 #history -s sudo /opt/local/share/mariadb/support-files/mysql.server start
 #history -s sudo /opt/local/apache2/bin/apachectl start
