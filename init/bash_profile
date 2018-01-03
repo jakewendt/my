@@ -172,9 +172,11 @@ alias h=history
 alias c="for i in {1..50}; do echo; done"
 alias psme="ps -fU \$USER"
 alias topme="top -U \$USER"
+alias htopme="htop -u \$USER"
 alias which='alias | gwhich --tty-only --read-alias --show-dot --show-tilde'
 alias awsq="mysql_queue.bash --defaults_file ~/.awsqueue.cnf"
 alias awsdb="mysql --defaults-file=~/.awsqueue.cnf"
+alias awsdbdump="mysqldump --defaults-file=~/.awsqueue.cnf QueueDbName"
 
 #	"Better" done in .inputrc
 #set -o vi
@@ -219,7 +221,8 @@ history -s "sudo port unload apache2 && sudo port load apache2"
 
 history -s "sudo port unload mariadb-server && sudo port load mariadb-server"
 
-history -s pip install --upgrade --user --global-option=build_ext --global-option="-I/opt/local/include/" awscli deeptools grip pip jupyter gencove
+#history -s pip install --upgrade --user --global-option=build_ext --global-option="-I/opt/local/include/" awscli deeptools grip pip jupyter gencove
+history -s pip install --upgrade --user awscli deeptools grip pip jupyter gencove
 
 #history -s sudo /opt/local/share/mariadb/support-files/mysql.server start
 #history -s sudo /opt/local/apache2/bin/apachectl start
