@@ -46,6 +46,22 @@ fi
 #	--exclude="Library/Application Support/Firefox" \
 #	--extended-attributes \
 #  --exclude=".gem/ruby/2.2.0" \
+#	--exclude="Library/Screen Savers" \
+#	--exclude="Library/Mail/**/Attachments" \
+#	--exclude="Library/PubSub" \
+#	--exclude="Library/Logs" \
+#	--exclude="Library/Caches" \
+#	--exclude="Library/Fonts" \
+#	--exclude="Library/Application Support" \
+#	--exclude="Library/Mail/Bundles (Disabled)" \
+#	--exclude="Library/Internet Plug-Ins" \
+#	--exclude="Library/Preferences/NeoOffice-*" \
+#	--exclude="Library/Preferences/Macromedia" \
+#	--exclude="Library/Preferences/EPSON" \
+#	--exclude="Library/Preferences/Microsoft" \
+#	--exclude="Library/Preferences/Thoth Preferences" \
+#	--exclude="Library/Saved Searches" \
+#	--exclude="Library/Widgets" \
 
 #/usr/bin/rsync -avzX \
 rsync -avzX \
@@ -65,22 +81,6 @@ rsync -avzX \
 	--exclude="Downloads" \
 	--exclude="Eclipse" \
 	--exclude="Library" \
-	--exclude="Library/Screen Savers" \
-	--exclude="Library/Mail/**/Attachments" \
-	--exclude="Library/PubSub" \
-	--exclude="Library/Logs" \
-	--exclude="Library/Caches" \
-	--exclude="Library/Fonts" \
-	--exclude="Library/Application Support" \
-	--exclude="Library/Mail/Bundles (Disabled)" \
-	--exclude="Library/Internet Plug-Ins" \
-	--exclude="Library/Preferences/NeoOffice-*" \
-	--exclude="Library/Preferences/Macromedia" \
-	--exclude="Library/Preferences/EPSON" \
-	--exclude="Library/Preferences/Microsoft" \
-	--exclude="Library/Preferences/Thoth Preferences" \
-	--exclude="Library/Saved Searches" \
-	--exclude="Library/Widgets" \
 	--exclude="Microsoft User Data" \
 	--exclude="Movies" \
 	--exclude="Music" \
