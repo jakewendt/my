@@ -62,19 +62,21 @@ fi
 #	--exclude="Viewed" \
 #	--exclude="herv" \
 #
+#	--exclude="Library/Preferences/Macromedia" \
+#	--exclude="Library/Application Support/Adobe/Adobe Device Central CS3" \
+#	--exclude="Library/Application Support/Garmin/Maps/*.gmap" \
+#	--exclude="Library/Application Support/SyncServices" \
+#	--exclude="Library/Application Support/Google/Android File Transfer" \
+#	--exclude="Library/Caches" \
+#	--exclude="Library/Google" \
+#	--exclude="Library/Internet Plug-Ins" \
+#	--exclude="Library/Logs" \
+#	--exclude="Library/Saved Application State" \
+
 rsync -avzX \
 	--progress \
 	--delete --backup --backup-dir rsync-backup-deleted-$Date \
-	--exclude="Library/Preferences/Macromedia" \
-	--exclude="Library/Application Support/Adobe/Adobe Device Central CS3" \
-	--exclude="Library/Application Support/Garmin/Maps/*.gmap" \
-	--exclude="Library/Application Support/SyncServices" \
-	--exclude="Library/Application Support/Google/Android File Transfer" \
-	--exclude="Library/Caches" \
-	--exclude="Library/Google" \
-	--exclude="Library/Internet Plug-Ins" \
-	--exclude="Library/Logs" \
-	--exclude="Library/Saved Application State" \
+	--exclude="Library" \
 	--exclude="rsync-backup*" \
 	--exclude="rsync-backup-deleted*" \
 	--exclude="temp" \
