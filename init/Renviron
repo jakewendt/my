@@ -1,3 +1,5 @@
-R_LIBS="/Users/jakewendt/.R"
-R_LIBS_USER="/Users/jakewendt/.R"
+R_LIBS=~/.R
+R_LIBS_USER=~/.R
+#R_LIBS="/Users/jakewendt/.R"
+#R_LIBS_USER="/Users/jakewendt/.R"
 #R_LIBS_SITE="/Users/jakewendt/.R"
