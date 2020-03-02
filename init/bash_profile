@@ -223,7 +223,8 @@ history -s "sudo port unload mariadb-server && sudo port load mariadb-server"
 
 #history -s pip install --upgrade --user --global-option=build_ext --global-option="-I/opt/local/include/" awscli deeptools grip pip jupyter gencove
 #history -s pip install --upgrade --user awscli deeptools grip pip jupyter gencove numpy scipy sklearn pandas requests
-history -s pip install --upgrade --user awscli deeptools grip pip jupyter gencove numpy scipy sklearn pandas requests sqlalchemy seaborn pandoc hail
+
+#history -s pip install --upgrade --user awscli deeptools grip pip jupyter gencove numpy scipy sklearn pandas requests sqlalchemy seaborn pandoc hail boto3
 
 #history -s sudo /opt/local/share/mariadb/support-files/mysql.server start
 #history -s sudo /opt/local/apache2/bin/apachectl start
@@ -231,4 +232,6 @@ history -s pip install --upgrade --user awscli deeptools grip pip jupyter gencov
 #history -s sudo launchctl start /Library/LaunchDaemons/org.macports.apache2.plist 
 #history -s sudo launchctl start /Library/LaunchDaemons/org.macports.mariadb-server.plist
 
+
+history -s pip install --upgrade --user awscli deeptools grip pip jupyter gencove numpy scipy sklearn pandas requests sqlalchemy seaborn pandoc boto3 pandarallel taxadb mysql
 
