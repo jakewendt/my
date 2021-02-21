@@ -128,4 +128,4 @@ rsync -avzX \
 #	--exclude="Downloads/**/*.wmv" \
 #	/Users/Shared/ $BackupDir/Shared/
 #
-#	--exclude="github_repo/ccls/sequencing/ncbi-blast-*/c++/*Debug*" \
+#	--exclude="github/ccls/sequencing/ncbi-blast-*/c++/*Debug*" \

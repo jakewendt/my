@@ -99,11 +99,12 @@ rsync -avzX \
 	--exclude="*NOT_BACKED_UP*" \
 	--exclude="XXX" \
 	--exclude="ZZZ" \
-	--exclude="github_repo/jakewendt/my_core/tmp/" \
-	--exclude="github_repo/jakewendt/my_core/downloads/" \
-	--exclude="github_repo/jakewendt/my_core/test/tmp/" \
-	--exclude="github_repo/jakewendt/my_core/test/downloads/" \
-	--exclude="github_repo/ccls/sequencing/ncbi-blast-2.2.27+-src/c++/*Debug*/" \
+	--exclude="github/jakewendt/my_core/tmp/" \
+	--exclude="github/jakewendt/my_core/downloads/" \
+	--exclude="github/jakewendt/my_core/test/tmp/" \
+	--exclude="github/jakewendt/my_core/test/downloads/" \
+	--exclude="github/ccls/sequencing/ncbi-blast-2.2.27+-src/c++/*Debug*/" \
+	--exclude="github/ucsffrancislab/gotcloud/.git/objects/pack/" \
 	--exclude="hosting_rails" \
 	--exclude="hostingrails.svn/**/attic/" \
 	--exclude="hostingrails.svn/references/videos/" \

@@ -76,3 +76,5 @@ set -o vi
 #	it seems that running "bash" from within a tsch, pull PATH from the tcsh?
 
 
+#pip install --upgrade --user awscli deeptools grip pip jupyter gencove numpy scipy sklearn pandas requests sqlalchemy seaborn pandoc boto3 pandarellel taxadb mysql
+
