@@ -104,7 +104,7 @@ rsync -avzX \
 	--exclude="github/jakewendt/my_core/test/tmp/" \
 	--exclude="github/jakewendt/my_core/test/downloads/" \
 	--exclude="github/ccls/sequencing/ncbi-blast-2.2.27+-src/c++/*Debug*/" \
-	--exclude="github/ucsffrancislab/gotcloud/.git/objects/pack/" \
+	--exclude="github/ucsffrancislab/gotcloud/" \
 	--exclude="hosting_rails" \
 	--exclude="hostingrails.svn/**/attic/" \
 	--exclude="hostingrails.svn/references/videos/" \
